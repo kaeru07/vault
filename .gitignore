@@ -1,0 +1,15 @@
+.env
+.env.*
+*.key
+*.pem
+*.sqlite
+*.db
+.DS_Store
+node_modules/
+dist/
+.next/
+out/
+.vercel/
+.obsidian/workspace*
+.obsidian/cache
+attachments/private/
