@@ -13,6 +13,7 @@ commitHashes: []
 
 > 1 作業 = 1 ファイル の自動生成レビュー。`20_reviews/YYYY-MM-DD_<task-slug>.md` へコピーして使う。
 > 詳細ルールは `/root/company/CLAUDE.local.md` § 作業レビューファイル自動生成ルール。
+> **本ファイルを保存したら、必ず同時に [[../20_reviews/_review_queue]] の「未レビュー」へ 1 件追加すること**（追加形式は queue ファイル末尾を参照）。
 
 ---
 

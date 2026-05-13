@@ -50,8 +50,30 @@ Frontmatter: `date / task / runId / targetApp / monetizationImpact / theme / rel
 2. `20_reviews/YYYY-MM-DD_<slug>.md` として保存
 3. 8 セクションを埋める
 4. Frontmatter の `runId` は progress POST 後の値
-5. ChatGPT 依頼文セクションをそのまま ChatGPT に貼って外部レビューを得る
-6. 戻ってきた指摘を `04_reviews/` 側に要約として昇格させてもよい
+5. **必ず同時に [[_review_queue]] の「未レビュー」へ 1 件追加**（後述）
+6. ChatGPT 依頼文セクションをそのまま ChatGPT に貼って外部レビューを得る
+7. 戻ってきた指摘を `04_reviews/` 側に要約として昇格させてもよい
+
+---
+
+## レビューキュー運用（_review_queue.md・2026-05-14 追加）
+
+`_review_queue.md` を**レビュー状態の正本**として運用する。iPhone Obsidian でチェックボックスを切り替えるだけでレビュー進捗を管理できる。
+
+**ChatGPT 側の想定運用**（GitHub 経由）:
+
+1. `kaeru07/vault` を見る
+2. `20_reviews/_review_queue.md` を読む
+3. `[ ]` 未チェック項目をレビュー対象候補にする
+4. リンク先 `20_reviews/YYYY-MM-DD_<slug>.md` を読み、いつもの観点でレビュー
+
+ユーザーから ChatGPT への依頼例:
+
+> 「レビューキュー見て、未チェックのものをいつもの観点でレビューして」
+
+**Claude / Codex 側の運用**: 新規 `20_reviews/YYYY-MM-DD_<slug>.md` を生成したら、**必ず同時に** `_review_queue.md` の「未レビュー」に 1 件追加する。形式は `_review_queue.md` 末尾の「今後の運用ルール」セクション参照。
+
+**レビュー済みマーク**: iPhone Obsidian で `- [ ]` → `- [x]` に変更する。要対応は `result: needs_followup` を書く。
 
 ---
 

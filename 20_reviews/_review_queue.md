@@ -1,0 +1,111 @@
+# レビューキュー
+
+> ChatGPTレビュー用の入口ファイル。
+> iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
+
+## 未レビュー
+
+- [ ] [[2026-05-14_review-queue-setup]]
+  - app: obsidian-vault
+  - project: obsidian-workflow
+  - priority: medium
+  - summary: 20_reviews レビューキュー運用追加（_review_queue.md 新設・運用ルール反映）
+  - result: 
+- [ ] [[2026-05-14_fix-commit-hashes]]
+  - app: obsidian-vault
+  - project: obsidian-workflow
+  - priority: low
+  - summary: 20_reviews 自己参照修正（commitHashes に push commit 72c5f3f 反映）
+  - result: 
+- [ ] [[2026-05-14_review-file-rule]]
+  - app: company-meta
+  - project: obsidian-workflow
+  - priority: high
+  - summary: 20_reviews 自動生成ルール追加（8 セクション + ChatGPT 依頼文 + 完了マーカー 7 項目化）
+  - result: 
+
+## レビュー済み
+
+- [x] [[サンプル]]
+  - app: 
+  - project: 
+  - priority: 
+  - summary: 
+  - result: ok
+
+## 今後の運用ルール
+
+Claude / Codex / Claude Code が `20_reviews/YYYY-MM-DD_<slug>.md` を生成したら、**必ず同時にこの `_review_queue.md` の「未レビュー」へ 1 件追加**する。
+
+追加形式:
+
+```markdown
+- [ ] [[YYYY-MM-DD_<slug>]]
+  - app: <対象アプリ / company-meta 等>
+  - project: <プロジェクト名 / 略称>
+  - priority: high | medium | low
+  - summary: <1 行要約>
+  - result: 
+```
+
+## ChatGPT レビュー後の運用
+
+ユーザーが iPhone Obsidian で対象行を以下のように変更する:
+
+変更前:
+```
+- [ ] [[YYYY-MM-DD_<slug>]]
+```
+
+変更後:
+```
+- [x] [[YYYY-MM-DD_<slug>]]
+```
+
+このチェック状態をレビュー済み判定の**正本**として扱う。各レビュー Markdown の frontmatter `status:` は必須更新にしない。
+
+要対応は `result: needs_followup` と書く。
+
+## ChatGPT 側の想定運用
+
+依頼例（ユーザーから）:
+
+> 「レビューキュー見て、未チェックのものをいつもの観点でレビューして」
+
+ChatGPT 側の処理順:
+
+1. GitHub の `kaeru07/vault` を見る
+2. `20_reviews/_review_queue.md` を読む
+3. `[ ]` 未チェック項目をレビュー対象候補にする
+4. `app` / `project` / `priority` / `summary` を見て対象を絞る
+5. リンク先 `20_reviews/YYYY-MM-DD_<slug>.md` を読む
+6. いつもの観点でレビューする
+
+## レビュー観点（ChatGPT 共通）
+
+- 抜け漏れ
+- 進め方の妥当性
+- 危険な変更
+- 既存運用との矛盾
+- 未承認 ToDo に着手していないか
+- pending_approval / approved / queued の混在
+- progress.md や正本を壊していないか
+- build / TypeScript / lint / 主要画面確認が未実施なのに OK 扱いされていないか
+- 追加で ToDo 化すべき問題
+- 次に進めるべき作業
+
+## 重要ルール
+
+- `_review_queue.md` のチェック状態をレビュー状態の**正本**にする
+- iPhone で軽く運用できることを最優先
+- `04_reviews/` は重要レビューの**手動キュレーション**用として維持
+- 既存レビュー本文は削除しない
+- GitHub 公開前に秘密情報チェックを行う
+- `.env` / `token` / `cookie` / API キー / 本番 DB 接続文字列 は絶対に commit しない
+
+## 関連
+
+- [[README]]
+- [[../03_prompts/Claude-Code標準運用]]
+- [[../90_templates/session-review-template]]
+- `/root/company/CLAUDE.local.md` § レビューキュー（_review_queue.md）連動

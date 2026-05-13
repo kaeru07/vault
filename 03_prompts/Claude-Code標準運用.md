@@ -135,6 +135,7 @@ POST 不要な場合:
 - **POST 範囲拡大**: 実装変更ゼロでも、設計判断 / 運用ポリシー / 複数案比較 / 収益化・セキュリティ判断 / 「今後こうする」系のルール変更議論は `changedFiles: []` で必ず POST する。POST 省略可は「単純な事実確認・1 行質問・了解応答」のみに狭める → CLAUDE.local.md「POST必須（範囲拡大ルール）」
 - **GitHub 管理 Vault 反映**（2026-05-13 確定）: Vault 編集を伴う作業は `obsidian-sync-vault` → `obsidian-vault` ミラー → `git commit / push` まで実行。詳細 → CLAUDE.local.md「GitHub 管理 Vault 反映ルール」 / [[GitHub反映ルール]]
 - **作業レビューファイル自動生成**（2026-05-14 追加）: 作業終了時に `20_reviews/YYYY-MM-DD_<slug>.md` を 1 件自動生成（8 セクション + ChatGPT 依頼文）。`90_templates/session-review-template.md` をコピーして埋める。完了マーカーは **7 項目**（作業レビューを追加）。詳細 → CLAUDE.local.md「作業レビューファイル自動生成ルール（20_reviews/）」 / [[../20_reviews/README]]
+- **レビューキュー連動**（2026-05-14 追加）: `20_reviews/<slug>.md` を生成したら、同セッション内で必ず [[../20_reviews/_review_queue]] の「未レビュー」先頭に 1 件追加する（チェックボックス状態がレビュー状態の正本）。ChatGPT は GitHub から `_review_queue.md` を入口にレビュー対象を辿る。詳細 → CLAUDE.local.md「レビューキュー（_review_queue.md）連動ルール」
 
 ---
 
