@@ -52,10 +52,16 @@ Claude Code 用プロンプト雛形 + 運用ルール。
 
 ### 04_reviews/
 
-Claude Code 作業の 1 件レビューを時系列で蓄積。差し戻し・棄却も残す。
+Claude Code 作業の 1 件レビューを**手動キュレーション**で蓄積。差し戻し・棄却も残す。
 - [[04_reviews/README|📖 フォルダ運用]]
 - [[04_reviews/Claude作業レビュー運用|レビュー運用ルール]]
 - 個別レビュー: `04_reviews/YYYY-MM-DD-<title>.md`（[[90_templates/claude-review-template|テンプレ]]）
+
+### 20_reviews/
+
+作業終了時に **1 作業 1 ファイル**で自動生成するセッションレビュー（ChatGPT 依頼文込み）。
+- [[20_reviews/README|📖 フォルダ運用]]
+- 個別レビュー: `20_reviews/YYYY-MM-DD_<task-slug>.md`（[[90_templates/session-review-template|テンプレ]]）
 
 ### 05_monetization/
 
