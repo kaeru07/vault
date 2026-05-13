@@ -13,3 +13,4 @@ out/
 .obsidian/workspace*
 .obsidian/cache
 attachments/private/
+.claude/

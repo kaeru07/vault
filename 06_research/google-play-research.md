@@ -1,4 +1,10 @@
-# Google Play / App Store リサーチ
+> ⚠️ **このページは旧版です**。新規調査は [[GooglePlay市場調査]] を使ってください。
+> 本ページは旧メモの参照互換性のために残しています。
+> 個別の調査ノートは `90_templates/market-research-template.md` をコピーして `06_research/<topic>.md` に作成してください。
+
+---
+
+# Google Play / App Store リサーチ（旧版・参照のみ）
 
 ストア公開・ASO・競合分析のメモ。
 
