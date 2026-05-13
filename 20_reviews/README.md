@@ -85,6 +85,8 @@ Frontmatter: `date / task / runId / targetApp / monetizationImpact / theme / rel
 
 **Claude / Codex 側の運用**: 新規 `20_reviews/YYYY-MM-DD_<slug>.md` を生成したら、**必ず同時に** `_review_queue.md` の「未レビュー」に 1 件追加する。形式は `_review_queue.md` 末尾の「今後の運用ルール」セクション参照。
 
+**追加項目に `createdAt` 必須（2026-05-14 追加）**: 各キュー項目の 1 行目（リンク直下）に `createdAt: YYYY-MM-DD HH:mm` を必ず入れる。値はレビュー Markdown 生成時刻（JST）。runId のタイムスタンプ部や対象作業の commit 時刻から逆算してもよい。`reviewedAt` は導入しない（`[x]` をレビュー済み判定の正本とする方針を維持）。
+
 **レビュー済みマーク**: iPhone Obsidian で `- [ ]` → `- [x]` に変更する。要対応は `result: needs_followup` を書く。
 
 ---
