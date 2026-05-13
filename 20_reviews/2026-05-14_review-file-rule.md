@@ -6,7 +6,7 @@ targetApp: company-meta
 monetizationImpact: low
 theme: [obsidian, workflow, prompt-template, review-system, github]
 relatedRunIds: [20260514-000717, 20260513-232739, 20260513-231736, 20260513-214413, 20260513-204614, 20260513-203935, 20260513-202846]
-commitHashes: [d33493b]
+commitHashes: [72c5f3f, d33493b]
 ---
 
 # 2026-05-14 作業レビューファイル自動生成ルール（20_reviews/）の追加
@@ -103,7 +103,7 @@ commitHashes: [d33493b]
 作業: 作業レビューファイル自動生成ルール（20_reviews/）の追加
 runId: 20260514-003058
 日付: 2026-05-14
-GitHub commit: (push 後に追記)
+GitHub commit: 72c5f3f
 
 ## 作業目的
 - Claude/Codex/Claude Code の作業終了時に 20_reviews/YYYY-MM-DD_<slug>.md を1ファイル自動生成し、ChatGPT 等への外部レビュー依頼文を即コピペで流せる構造化テンプレを蓄積する
