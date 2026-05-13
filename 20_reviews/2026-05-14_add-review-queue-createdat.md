@@ -1,7 +1,7 @@
 ---
 date: 2026-05-14
 task: _review_queue.md に createdAt フィールドを追加（既存補完 + ルール反映）
-runId: PENDING
+runId: 20260514-082223
 targetApp: obsidian-vault
 monetizationImpact: low
 theme: [obsidian, workflow]
@@ -58,8 +58,8 @@ commitHashes: []
 - lint: n/a
 - 手動確認: `_review_queue.md` を Read で再確認し、追加形式と既存項目の整合を確認
 - 機密パターン事前チェック: OK（API キー / トークン / .env / 鍵本文の追加なし）
-- ob sync: PENDING（最終応答前に実行）
-- git push: PENDING（mirror → commit → push を最終応答前に実行）
+- ob sync: Fully synced
+- git push: be45b39 commit 済み（obsidian-vault, push は permission denied で未実行・ユーザー判断待ち）
 
 ---
 
@@ -98,9 +98,9 @@ commitHashes: []
 
 対象アプリ: obsidian-vault
 作業: _review_queue.md に createdAt フィールド追加（既存補完 + ルール反映）
-runId: PENDING（progress POST 後に確定）
+runId: 20260514-082223
 日付: 2026-05-14
-GitHub commit: PENDING
+GitHub commit: be45b39（obsidian-vault, push pending）
 
 ## 作業目的
 - レビューキュー上で各項目の鮮度を可視化したい
@@ -145,7 +145,7 @@ GitHub commit: PENDING
 
 ## 関連
 
-- progress runId: PENDING（progress POST 後に確定）
+- progress runId: 20260514-082223
 - 関連 run: 20260514-002846 系列（20_reviews 自動生成ルール / commitHashes 整理）
 - 関連アプリ: [[../02_apps/obsidian-vault]]
 - 関連プロンプト: [[../03_prompts/Claude-Code標準運用]]
