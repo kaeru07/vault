@@ -6,7 +6,8 @@ targetApp: {{対象アプリ名 / company-meta 等}}
 monetizationImpact: low
 theme: []
 relatedRunIds: []
-commitHashes: []
+commitHashes: []   # レビュー対象の作業 commit / 関連 commit のみ。本ファイル自身の push commit は記録不要
+# reviewFileCommit:   # 任意。本ファイル自身の push commit を残したい場合に手動で埋める
 ---
 
 # {{date}} {{task}}

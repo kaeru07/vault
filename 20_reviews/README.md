@@ -42,6 +42,18 @@
 
 Frontmatter: `date / task / runId / targetApp / monetizationImpact / theme / relatedRunIds / commitHashes`
 
+任意フィールド: `reviewFileCommit`（本レビュー Markdown 自身を push した commit hash。後追いで埋めるか空欄でよい）
+
+### commitHashes の意味（2026-05-14 明確化）
+
+`commitHashes` は**レビュー対象の作業 commit / 関連 commit**を記録する欄として運用する。
+
+- **記録する**: レビュー対象の作業 commit / 派生・先行・関連 commit / 修正対象の旧 commit
+- **記録対象外（必須にしない）**: レビュー Markdown 自身を push した commit hash（自己参照問題のため。`git log --follow` で参照可能）
+- **理由**: 自身の push commit hash を frontmatter に書くには「2 度コミット」「amend / force-push」「placeholder の後追い書き換え」などが必要になり、運用が複雑化する
+- **既存レビューへの遡及適用**: 既存 push 済みの commitHashes は変更しない。新規生成分から本ルールを適用
+- **自己参照 commit を残したい場合**: 任意フィールド `reviewFileCommit:` を使う（未記入可）
+
 ---
 
 ## 使い方

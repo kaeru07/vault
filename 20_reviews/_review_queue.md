@@ -5,7 +5,13 @@
 
 ## 未レビュー
 
-- [ ] [[2026-05-14_review-queue-setup]]
+- [ ] [[2026-05-14_clarify-commit-hashes]]
+  - app: obsidian-vault
+  - project: obsidian-workflow
+  - priority: medium
+  - summary: 20_reviews commitHashes 運用整理（意味明確化 + reviewFileCommit 任意フィールド追加・既存遡及なし）
+  - result: 
+- [x] [[2026-05-14_review-queue-setup]]
   - app: obsidian-vault
   - project: obsidian-workflow
   - priority: medium
