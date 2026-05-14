@@ -1,12 +1,12 @@
 ---
 date: 2026-05-15
-task: Claude/Codex 余剰リソース消化用 作業バックログ整理（棚卸し / 30 案 / Shorts / Play・Web / ASO / ToDo / ランキング 4 種）
+task: Claude/Codex 余剰リソース消化用 作業バックログ整理（棚卸し / 30 案 / Shorts / Play・Web / ASO / ToDo / ランキング 4 種）+ 圧縮版 TOP5 追補
 runId: 20260515-000616
 targetApp: company-meta
 monetizationImpact: high
 theme: [workflow, app-strategy, monetization, market-research]
 relatedRunIds: [20260514-234723, 20260514-232120]
-commitHashes: []
+commitHashes: [7d70dd0]
 ---
 
 # 2026-05-15 放置で進められる作業バックログ整理
