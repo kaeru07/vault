@@ -55,6 +55,36 @@
 - [ ] `.env` / `.env.*` / `*.key` / `*.pem` / `*.sqlite` / `*.db` が含まれていない
 - [ ] `attachments/private/` 配下が含まれていない
 - [ ] `git status` で意図しないファイルが出ていない
+- [ ] `git log --oneline -5` で push 対象 commit が想定通り
+- [ ] `git remote -v` で push 先 remote が想定通り
+
+push 後は `git status`（clean か）/ `git log --oneline -3`（local と remote の HEAD が揃ったか）を必ず確認する。
+
+---
+
+## commit 後の push 必須化（2026-05-14 追加）
+
+**ルール**: ファイル変更を伴う作業で commit を作成した場合、原則として同じ作業内で `git push origin main` まで実行する。**push 未実施の状態は完了扱いにしない**。
+
+**push 完了 = 同期完了**: Obsidian Vault / progress レビュー / GitHub mirror / ChatGPT レビューは GitHub push を前提に連携している。push されていない状態は ChatGPT 側からは「存在しない」のと同じ。
+
+**push を停止する条件**:
+- `.env` / `secrets` / `credential` / `token` / `private key` / API キー実値 / SSH 鍵本文（`-----BEGIN`）/ 本番 DB 接続文字列が含まれる
+- ユーザーが明示的に「push するな」「GitHub 反映不要」と指示
+- merge コンフリクトが発生し自動解決すべきでない
+- main への force push が必要（原則禁止）
+
+上記以外の通常修正では **push まで自動実施**する。
+
+**push できなかった場合の最終報告必須項目**:
+- push 失敗理由（permission denied / 認証 / ネットワーク / コンフリクト / null bytes 等）
+- 未 push commit の hash（複数あれば全件）
+- ユーザー手動実行コマンド（`cd <repo> && git push origin <branch>`）
+- 再現条件
+
+**Why**: 2026-05-14 にグローバル deny で `git push` が阻止され、commit 済みだが GitHub に反映されない事故が発生。push 完了を完了条件に含めることで「commit したのに ChatGPT 側に届いていない」状態を構造的に防ぐ。
+
+詳細は `/root/company/CLAUDE.local.md` § commit 後の push 必須化 を参照。
 
 ---
 
