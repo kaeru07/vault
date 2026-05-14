@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-14_local-first-app-ideas]]
+  - createdAt: 2026-05-14 23:47
+  - app: company-meta
+  - project: app-strategy
+  - priority: high
+  - summary: ローカル完結・高継続 Google Play アプリ案 30 件 + ランキング 4 種 + 本命 3 件（打牌セルフ採点 / 朝散歩カレンダー / 庭タイムラプス）
+  - result: 
 - [ ] [[2026-05-14_claude-task-template-update]]
   - createdAt: 2026-05-14 23:21
   - app: company-meta
