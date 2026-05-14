@@ -5,14 +5,21 @@
 
 ## 未レビュー
 
-- [ ] [[2026-05-14_push-required-rule]]
+- [ ] [[2026-05-14_claude-task-template-update]]
+  - createdAt: 2026-05-14 23:21
+  - app: company-meta
+  - project: obsidian-workflow
+  - priority: medium
+  - summary: claude-task-template を最新運用へ更新（完了マーカー 7 項目 / Vault 同期チェックリスト / 20_reviews・_review_queue 連動）
+  - result: 
+- [x] [[2026-05-14_push-required-rule]]
   - createdAt: 2026-05-14 09:09
   - app: company-meta
   - project: obsidian-workflow
   - priority: high
   - summary: commit 後の push 必須化ルール追加 + global git push deny 解除（push 完了 = 同期完了の運用統一）
   - result: 
-- [ ] [[2026-05-14_add-review-queue-createdat]]
+- [x] [[2026-05-14_add-review-queue-createdat]]
   - createdAt: 2026-05-14 08:13
   - app: obsidian-vault
   - project: obsidian-workflow
