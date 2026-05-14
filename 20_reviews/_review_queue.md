@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-15_idle-work-backlog]]
+  - createdAt: 2026-05-15 00:06
+  - app: company-meta
+  - project: app-strategy
+  - priority: high
+  - summary: Claude/Codex 余剰リソース消化用 作業バックログ（既存棚卸し / 新規 30 案 / Shorts / Play・Web / ASO / ToDo / ランキング 4 種）
+  - result: 
 - [ ] [[2026-05-14_local-first-app-ideas]]
   - createdAt: 2026-05-14 23:47
   - app: company-meta
