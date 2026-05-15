@@ -5,11 +5,20 @@ runId: 20260515-123610
 targetApp: scrape-lab-v2
 monetizationImpact: medium
 theme: [workflow, market-research, app-strategy]
-relatedRunIds: []
-commitHashes: []
+relatedRunIds: [20260516-postproc]
+commitHashes: [2e3e761]
+repo: https://github.com/kaeru07/scrape-lab-v2
+repoVisibility: private
+managementState: github-managed
 ---
 
 # 2026-05-15 scrape-lab-v2 新規作成 (v1)
+
+> **2026-05-16 後処理追記**: 本作業時点では git 未初期化のため commitHashes が空だった。
+> 2026-05-16 に git init → 初回 commit `2e3e761` → `kaeru07/scrape-lab-v2` (private) 作成 → push 完了。
+> commitHashes は遡及で初回 commit 1 件を記録（v1 全体が 1 commit）。
+> 管理状態: **github-managed**（local-only → git-only → github-managed）。
+> repo: https://github.com/kaeru07/scrape-lab-v2 / branch: main / visibility: private
 
 ---
 
@@ -74,7 +83,8 @@ commitHashes: []
   - 詳細ページに「Claude/Codex」コピーボックスが描画
 - 機密パターン事前チェック: OK (ルール例示のみ。.env / API キー / 個人情報なし)
 - ob sync: 後述 (この応答内で実行)
-- git push: scrape-lab-v2 は git init 未実施 (n/a)。obsidian-vault は後述
+- git push: 【2026-05-16 後処理で完了】git init → commit `2e3e761` → `kaeru07/scrape-lab-v2` (private) 作成 → push 済み。HEAD=origin/main 一致・clean
+- build/lint 再確認: 【2026-05-16】lint pass / build pass（v1 から退行なし）
 
 ---
 
@@ -85,9 +95,9 @@ commitHashes: []
   - 本文の行レベル diff (文字数差のみ)
   - テーマ別調査 (キーワード→URLリスト→一括取得)
 - 環境制約で実行できなかったこと:
-  - kaeru07/scrape-lab-v2 GitHub リポは存在しないため push は実施せず
+  - 【解消済 2026-05-16】git init / GitHub リポ作成 / push を後処理で完了
 - ユーザー判断待ち:
-  - scrape-lab-v2 を git init して GitHub リポを作るか
+  - 【解消済 2026-05-16】git init → private リポ作成 → push 完了。残るは browser モード等の v2 判断
   - 既存 note アプリの位置づけ (継続 / アーカイブ)
 
 ---

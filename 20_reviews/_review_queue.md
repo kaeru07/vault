@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-16_scrape-lab-v2-postproc]]
+  - createdAt: 2026-05-16 01:50
+  - app: scrape-lab-v2
+  - project: app-strategy
+  - priority: medium
+  - summary: scrape-lab-v2 v1 後処理 (private GitHub管理化 commit 2e3e761 / 20_reviews追記 / 02_apps新設 / v2候補整理)。新機能なし
+  - result: 
 - [ ] [[2026-05-15_progress-codex-experiment]]
   - createdAt: 2026-05-15 22:17
   - app: progress
