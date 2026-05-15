@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-15_scrape-lab-v2-init]]
+  - createdAt: 2026-05-15 12:36
+  - app: scrape-lab-v2
+  - project: app-strategy
+  - priority: high
+  - summary: scrape-lab-v2 新規作成 v1 (Next.js 14 + Cheerio / SSRF ブロック / 差分検知 / JSON・Markdown export / Claude・Codex レビューコピー欄 / iPhone 対応)
+  - result: 
 - [ ] [[2026-05-15_idle-work-backlog]]
   - createdAt: 2026-05-15 00:06
   - app: company-meta
