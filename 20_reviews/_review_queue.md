@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-15_progress-codex-experiment]]
+  - createdAt: 2026-05-15 22:17
+  - app: progress
+  - project: workflow
+  - priority: high
+  - summary: progress に Codex CLI 連携の最小実験機能を追加 (read-only / 1件ずつ / 確認ダイアログ / status・実行・一覧API / /codex 画面 / codex-runs.json 保存)
+  - result: 
 - [ ] [[2026-05-15_scrape-lab-v2-init]]
   - createdAt: 2026-05-15 12:36
   - app: scrape-lab-v2
