@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-16_codex-sdk-experiment]]
+  - createdAt: 2026-05-16 02:01
+  - app: progress
+  - project: workflow
+  - priority: medium
+  - summary: Codex SDK 読み取り専用最小実験 (CLI利用可/Python公式SDK無→subprocess方式 / execution-runs抽出→codexレビュー / 本体無影響・書込なし検証済)
+  - result: 
 - [ ] [[2026-05-16_scrape-lab-v2-postproc]]
   - createdAt: 2026-05-16 01:50
   - app: scrape-lab-v2
