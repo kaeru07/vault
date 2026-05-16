@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-16_chatgpt-inbox-import]]
+  - createdAt: 2026-05-16 17:11
+  - app: progress
+  - project: workflow
+  - summary: ChatGPT投函箱→progress取り込み機能を実装 (00_inbox走査→ToDo化でpending_approval追加 / 内容ハッシュ冪等 / 隔離検証済・本番無影響・要再起動)
+  - priority: medium
+  - result: 
 - [ ] [[2026-05-16_service-map]]
   - createdAt: 2026-05-16 11:35
   - app: company-meta
