@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-16_service-map]]
+  - createdAt: 2026-05-16 11:35
+  - app: company-meta
+  - project: workflow
+  - priority: medium
+  - summary: company 全体を7サービスに分割した俯瞰資料 docs/service-map.{html,json} を新規作成 (読み解きコスト削減 / 実装変更なし)
+  - result: 
 - [ ] [[2026-05-16_codex-sdk-experiment]]
   - createdAt: 2026-05-16 02:01
   - app: progress
