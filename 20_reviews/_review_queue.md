@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-16_vault-inbox-api]]
+  - createdAt: 2026-05-16 18:24
+  - app: progress
+  - project: workflow
+  - priority: high
+  - summary: POST /api/vault-inbox 追加(Bearer認証→obsidian-vault/00_inboxへMD保存+git push試行)。ny01(PUBLIC)へコードのみpush(338e5f1)・正本JSON無変更実証・検証テストMD掃除
+  - result: 
 - [ ] [[2026-05-16_chatgpt-inbox-import]]
   - createdAt: 2026-05-16 17:11
   - app: progress
