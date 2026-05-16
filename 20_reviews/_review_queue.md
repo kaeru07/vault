@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-16_vault-inbox-hardening]]
+  - createdAt: 2026-05-16 19:03
+  - app: progress
+  - project: workflow
+  - priority: high
+  - summary: vault-inbox API強化(VAULT_ROOT/VAULT_GIT_BRANCH環境変数化・main固定撤廃・投函ログndjson)。隔離検証で秘密非記録/git失敗時保存成功/本物vault非汚染を実証。ny01コードのみpush 7ab08fe
+  - result: 
 - [ ] [[2026-05-16_vault-inbox-api]]
   - createdAt: 2026-05-16 18:24
   - app: progress
