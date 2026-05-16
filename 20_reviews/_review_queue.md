@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-16_vault-inbox-token-setup]]
+  - createdAt: 2026-05-16 19:36
+  - app: progress
+  - project: workflow
+  - priority: high
+  - summary: VAULT_INBOX_TOKEN本番設定+pm2 restart+疎通確認(tokenなし401/ありで保存成功)。token値非露出・正本JSON無変更・再起動でvault-inbox等が本番反映
+  - result: 
 - [ ] [[2026-05-16_vault-inbox-hardening]]
   - createdAt: 2026-05-16 19:03
   - app: progress
