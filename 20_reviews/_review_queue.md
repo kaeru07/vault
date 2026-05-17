@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-17_progress-radar-gantt]]
+  - createdAt: 2026-05-18 00:05
+  - app: ny01/progress
+  - project: progress-visibility / radar
+  - priority: high
+  - summary: Vault ToDo実行。progressに/radar案件レーダー(横スクロールガント+今やる1件+バー押下モーダル+ダークモード)を追加。既存データ(app-progress/work-queue/execution-runs)から状態/放置日数/次の1手/収益を自動算出、手入力増やさず既存Queue/ExecutionRun/集中作業モード非変更。tsc/lint/build全OK。本番3010目視はpm2 restart要(ユーザー判断)
+  - result: 
 - [ ] [[2026-05-17_chatgpt-zip-verify-and-vault-reflect]]
   - createdAt: 2026-05-17 19:42
   - app: company-meta
