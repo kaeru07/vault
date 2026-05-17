@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-17_chatgpt-history-indexed]]
+  - createdAt: 2026-05-17 18:51
+  - app: company-meta
+  - project: chatgpt-import / obsidian
+  - priority: high
+  - summary: 健全化したChatGPT履歴ZIP(613MB/661会話/2023-04-05〜2026-05-16)を一時dirに会話JSONのみ展開し索引化。全文Markdown化せず索引6+重複統合要約8を00_inbox/chatgpt-import/に生成(116KB)。high63/medium153/low445、機密14は値非記載。613MB ZIPはVault外移動推奨(非削除)
+  - result: 
 - [ ] [[2026-05-17_chatgpt-import-corrupt-zip]]
   - createdAt: 2026-05-17 17:26
   - app: company-meta
