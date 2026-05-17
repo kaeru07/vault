@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-17_chatgpt-import-corrupt-zip]]
+  - createdAt: 2026-05-17 17:26
+  - app: company-meta
+  - project: chatgpt-import / obsidian
+  - priority: medium
+  - summary: ChatGPT履歴ZIPが不完全アップロードで破損(実245MB/欠損351MB/期待613MB)。会話本体復旧不能、救出は末尾メタ3件のみ(会話タイトル無)。機密候補(確定申告書類5件/明細CSV/user.json PII)を検出し展開せず名称のみ記録。ナレッジ6種は捏造回避で未作成、概要mdに失敗根拠と再UP手順を記録。元ZIP非削除
+  - result: 
 - [ ] [[2026-05-17_progress-stagnation-indicator]]
   - createdAt: 2026-05-17 14:56
   - app: progress
