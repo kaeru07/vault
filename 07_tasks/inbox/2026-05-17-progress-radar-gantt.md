@@ -2,6 +2,10 @@
 title: progress 案件レーダー・ガントチャート追加
 project: progress
 status: pending_approval
+implementationStatus: not_started
+currentPhase: todo_created
+reviewStatus: not_reviewed
+progressPercent: 0
 priority: high
 risk: medium
 revenueImpact: high
@@ -11,9 +15,21 @@ type: feature
 targetApp: ny01/progress
 targetPath: /root/company/apps/ny01/progress
 created: 2026-05-17
+updated: 2026-05-17
 nextAction: Claude Codeで /radar 案件レーダー画面を実装する
 estimate: 1-2h
+blockedReason: ""
+staleAfterDays: 7
+lastExecutionRun: ""
 ---
+
+# 現在の状態
+
+このToDoはVaultへの登録のみ完了。
+
+まだ progress アプリへの /radar 実装、ガントチャート画面作成、Vault→progress連携、放置日数・次の1手の自動生成、実際の可視化は未着手。
+
+誤認防止のため、現時点の実装進捗は 0%。
 
 # 背景
 
