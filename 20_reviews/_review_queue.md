@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-18_issue2-monetization-design]]
+  - createdAt: 2026-05-18 01:26
+  - app: company-meta
+  - project: monetization / vault設計
+  - priority: high
+  - summary: Issue #2(収益化自動化運用設計)が誤完了報告だったと確認(8ファイル無/commit無/OPEN)→正規に8ファイル作成しGitHub反映(16d03e4 closes#2)・Issue完了コメント。AI勝手approved化禁止/週1手動定期から段階導入を明記。8/8反映をls-tree+APIで確認
+  - result: 
 - [ ] [[2026-05-18_radar-deploy-and-todo-reconcile]]
   - createdAt: 2026-05-18 00:38
   - app: ny01/progress
