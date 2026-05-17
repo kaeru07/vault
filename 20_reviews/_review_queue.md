@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-17_vault-multiple-todo-review]]
+  - createdAt: 2026-05-17 12:43
+  - app: company-meta
+  - project: workflow / vault-todo
+  - priority: high
+  - summary: Vault横断の複数ToDo（00_inbox投函箱 / 途中プロジェクト一覧 / progress改善候補 / idle-backlog）を再読み取りし優先順位1本化。high=progress操作盤化2件、medium=連携CLI/ポータルLP/市場調査メモ、投函APIは消化済でclose提案。前回成果物が痕跡ゼロだったため推測せず再算出
+  - result: 
 - [ ] [[2026-05-16_vault-inbox-token-setup]]
   - createdAt: 2026-05-16 19:36
   - app: progress
