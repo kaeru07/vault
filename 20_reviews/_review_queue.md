@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-17_progress-stagnation-indicator]]
+  - createdAt: 2026-05-17 14:56
+  - app: progress
+  - project: progress-visibility / vault-todo
+  - priority: high
+  - summary: Vault inbox high ToDo「progress可視化ダッシュボード改善」に着手。停滞検知を最小改修で実装（getStagnation/sortByAttention純関数追加・◷N日放置バッジ・要注意ソート）。tsc/lint/build全OK、正本JSON非変更。本格改修(ガント/今日の1件)は別ToDo化、残2 ToDoはtriage
+  - result: 
 - [ ] [[2026-05-17_vault-multiple-todo-review]]
   - createdAt: 2026-05-17 12:43
   - app: company-meta
