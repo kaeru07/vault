@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-17_chatgpt-zip-verify-and-vault-reflect]]
+  - createdAt: 2026-05-17 19:42
+  - app: company-meta
+  - project: chatgpt-import / obsidian
+  - priority: high
+  - summary: obsidian-vault ToDo実行。ZIP正常性6項目検証(586M/unzip -t No errors/conversations-000〜006在)=完全正常。前ターン索引化成果をobsidian-vaultへミラーしpush(e159f99)。sync-vaultに集約3ファイル(アプリ別/収益化/運用改善)追加。元ZIP非削除非移動(ToDo禁止事項遵守)
+  - result: 
 - [ ] [[2026-05-17_chatgpt-history-indexed]]
   - createdAt: 2026-05-17 18:51
   - app: company-meta
