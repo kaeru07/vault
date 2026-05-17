@@ -1,11 +1,11 @@
 ---
 title: progress 案件レーダー・ガントチャート追加
 project: progress
-status: pending_approval
-implementationStatus: not_started
-currentPhase: todo_created
+status: done
+implementationStatus: implemented_verified
+currentPhase: deployed_to_3010
 reviewStatus: not_reviewed
-progressPercent: 0
+progressPercent: 100
 priority: high
 risk: medium
 revenueImpact: high
@@ -15,21 +15,28 @@ type: feature
 targetApp: ny01/progress
 targetPath: /root/company/apps/ny01/progress
 created: 2026-05-17
-updated: 2026-05-17
-nextAction: Claude Codeで /radar 案件レーダー画面を実装する
+updated: 2026-05-18
+completed: 2026-05-18
+completedRunId: 20260518-000520
+completedCommit: bae78f0
+nextAction: 完了。本番 localhost:3010/radar 反映済（pm2 restart 実施）。ChatGPTレビュー待ち
 estimate: 1-2h
 blockedReason: ""
 staleAfterDays: 7
-lastExecutionRun: ""
+lastExecutionRun: "20260518-000520"
 ---
 
 # 現在の状態
 
-このToDoはVaultへの登録のみ完了。
+✅ **完了（実装・検証・本番反映済み）**。runId 20260518-000520 / ny01 commit bae78f0。
 
-まだ progress アプリへの /radar 実装、ガントチャート画面作成、Vault→progress連携、放置日数・次の1手の自動生成、実際の可視化は未着手。
+- `/radar` 実装済み: `lib/radar.ts`（既存データ自動算出）/ `app/radar/page.tsx` / `components/radar/RadarBoard.tsx` / TopNav・BottomNav 導線
+- ガントチャート画面・放置日数・次の1手・収益インパクトの自動生成: 実装済み（手入力項目を増やさず app-progress/work-queue/execution-runs から算出）
+- 検証: tsc / lint / build 全OK、`/radar` 2.72kB 生成
+- 本番反映: `pm2 restart progress` 実施済み → `http://localhost:3010/radar` が HTTP 200 で稼働（案件レーダー/今やるべき1件/ガント 描画確認）
+- レビュー: `obsidian-vault/20_reviews/2026-05-17_progress-radar-gantt.md`（_review_queue 登録済・ChatGPTレビュー待ち）
 
-誤認防止のため、現時点の実装進捗は 0%。
+> 注: このセクションの旧記述（実装進捗0%）は登録時点のもので、現在は事実と異なるため上記に更新。残タスクは ChatGPT レビューと、放置しきい値/収益推定/ガント着手日の実データ調整（次の改善候補）。
 
 # 背景
 

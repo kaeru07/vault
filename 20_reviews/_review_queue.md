@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-18_radar-deploy-and-todo-reconcile]]
+  - createdAt: 2026-05-18 00:38
+  - app: ny01/progress
+  - project: progress-visibility / radar
+  - priority: medium
+  - summary: git pull=新規ToDoなし。既実装/radarの残対応をユーザー指示で実施。pm2 restart progress→/radar HTTP200・描画確認(本番反映)。Vault radar ToDoメタを実態done/100%へ整合(外部プロセスの0%注記を承認上書き・要運用整合観察)
+  - result: 
 - [ ] [[2026-05-17_progress-radar-gantt]]
   - createdAt: 2026-05-18 00:05
   - app: ny01/progress
