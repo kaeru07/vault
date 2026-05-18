@@ -27,6 +27,7 @@ runId: 20260517-185136
   - git管理外リスク。ob sync忘れ対策・追記専用ルールはCLAUDE.local.mdに一部反映済 → 残りを点検
 - [ ] **prompt_inbox と work_queue の分離運用を検討**（出典: Obsidian活用法提案）
   - 「思いつきプロンプト貯め場」と「承認済み実行キュー」を分ける。現 _review_queue 運用との整合確認
+  - → 提案ドラフト作成済: [[../../03_prompts/prompt_inbox-work_queue分離運用]]（status: proposal・採用判断はユーザー/pm）
 - [ ] **Claude有料プラン Agent SDK 月次クレジット（6/15〜）の活用方針を決める**（出典: 2026-05-14 Claude有料プランの変更）
   - claude -p / Agent SDK / GitHub Actions のクレジット枠。自動化の費用設計
 
