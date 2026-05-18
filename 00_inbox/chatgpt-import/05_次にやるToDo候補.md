@@ -31,6 +31,7 @@ runId: 20260517-185136
   - → 提案ドラフト作成済: [[../../03_prompts/prompt_inbox-work_queue分離運用]]（status: proposal・採用判断はユーザー/pm）
 - [ ] **Claude有料プラン Agent SDK 月次クレジット（6/15〜）の活用方針を決める**（出典: 2026-05-14 Claude有料プランの変更）
   - claude -p / Agent SDK / GitHub Actions のクレジット枠。自動化の費用設計
+  - → 提案ドラフト作成済: [[../../03_prompts/AgentSDKクレジット活用方針]]（status: proposal・配分比は仮説/公式仕様確認待ち・採用はユーザー）
 
 ## 低優先（候補ストック）
 
