@@ -20,6 +20,7 @@ runId: 20260517-185136
   - → 提案ドラフト作成済: [[../../03_prompts/Codexレビュー常用運用]]（status: proposal・採用判断はユーザー/pm）
 - [ ] **scrape-lab-v2 本体を GitHub管理化 + market-research-hub 設計**（出典: 2026-05-12〜13 リソース活用法/市場調査）
   - JSON/NDJSON蓄積。Claude/Codex共通runner。収益化インパクト順に整理
+  - → 設計部分の提案ドラフト作成済: [[../../06_research/market-research-hub設計]]（status: proposal）。scrape-lab-v2 GitHub管理化は別アプリrepo操作のため未実施＝ユーザー判断
 
 ## 中優先（運用改善）
 
