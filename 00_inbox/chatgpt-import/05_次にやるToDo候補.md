@@ -15,6 +15,7 @@ runId: 20260517-185136
 - [ ] **APIなし「アプリ案工場」Phase1 を progress に追加**（出典: 2026-05-16 AI運用構成提案）
   - 手入力でアプリ案 → 収益化評価軸でスコア → モック作成ToDo自動登録。外部API/DB不使用
   - → [[important/2026-05-16_アプリ案工場-Phase1構想]]
+  - → 設計仕様作成済: [[../../05_monetization/アプリ案工場_Phase1設計]]（status: proposal・設計のみ／実装は本番progressのため人間承認後）
 - [ ] **Codex を読み取り専用レビューに常用する運用を確立**（出典: 2026-05-16 ClaudeとCodexのAgent活用）
   - Claude Code主導 → Codexで対立レビュー。execution-runs.json を渡し標準出力でレビュー要約
   - → 提案ドラフト作成済: [[../../03_prompts/Codexレビュー常用運用]]（status: proposal・採用判断はユーザー/pm）
