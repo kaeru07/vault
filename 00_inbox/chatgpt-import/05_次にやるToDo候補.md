@@ -17,6 +17,7 @@ runId: 20260517-185136
   - → [[important/2026-05-16_アプリ案工場-Phase1構想]]
 - [ ] **Codex を読み取り専用レビューに常用する運用を確立**（出典: 2026-05-16 ClaudeとCodexのAgent活用）
   - Claude Code主導 → Codexで対立レビュー。execution-runs.json を渡し標準出力でレビュー要約
+  - → 提案ドラフト作成済: [[../../03_prompts/Codexレビュー常用運用]]（status: proposal・採用判断はユーザー/pm）
 - [ ] **scrape-lab-v2 本体を GitHub管理化 + market-research-hub 設計**（出典: 2026-05-12〜13 リソース活用法/市場調査）
   - JSON/NDJSON蓄積。Claude/Codex共通runner。収益化インパクト順に整理
 
