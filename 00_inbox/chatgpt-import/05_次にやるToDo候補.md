@@ -25,6 +25,7 @@ runId: 20260517-185136
 
 - [ ] **obsidian-sync-vault のバックアップ方針を確定**（出典: Obsidian活用法提案・複数回指摘）
   - git管理外リスク。ob sync忘れ対策・追記専用ルールはCLAUDE.local.mdに一部反映済 → 残りを点検
+  - → 確定版作成済: [[../../03_prompts/Vaultバックアップ方針]]（週次tar推奨/4世代保持/push=履歴バックアップ を確定・CLAUDE.local.md追記はユーザー判断）
 - [ ] **prompt_inbox と work_queue の分離運用を検討**（出典: Obsidian活用法提案）
   - 「思いつきプロンプト貯め場」と「承認済み実行キュー」を分ける。現 _review_queue 運用との整合確認
   - → 提案ドラフト作成済: [[../../03_prompts/prompt_inbox-work_queue分離運用]]（status: proposal・採用判断はユーザー/pm）
