@@ -37,9 +37,12 @@ created: 2026-05-19
 - 最初の1作業（progress 投入候補・承認後のみ）:
 
 ### 人間判断欄（ChatGPT 方向性判断 → 人間が確定）
+- コマンド書式（[[../05_monetization/ChatGPT承認コマンド標準]]）:
+  `<scenarioId> approve` / `<scenarioId> hold: <理由>` / `<scenarioId> reject: <理由>`
 - ChatGPT 方向性: approve / reject / hold（理由: ____）
 - 人間 status 確定: approved / rejected / hold（[[../05_monetization/decision-log]] へ）
 - 確定日 / 判断者:
+- コマンド原文（受領した1行）: 
 ```
 
 ## 使い方（vloop 連携）

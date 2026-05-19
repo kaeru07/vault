@@ -23,12 +23,12 @@ status: active
 
 ## 判断履歴（最新が上）
 
-| 日付 | シナリオ | 遷移 | 判断者 | 主理由（1行） | 詳細リンク |
-|---|---|---|---|---|---|
-| (まだ承認判断は行われていない) | — | — | — | 全 candidate は pending_approval / candidate のまま | [[scenarios/candidate-001]] 他 |
+| 日付 | シナリオ | 遷移 | 判断者 | 主理由（1行） | コマンド原文（[[ChatGPT承認コマンド標準]]） | 詳細リンク |
+|---|---|---|---|---|---|---|
+| (まだ承認判断は行われていない) | — | — | — | 全 candidate は pending_approval / candidate のまま | — | [[scenarios/candidate-001]] 他 |
 
 > 例（フォーマット参考・実判断ではない）:
-> `2026-05-XX | candidate-001 | pending_approval→approved | 人間(氏名/役割) | 既存資産流用で最速・収益化インパクトhigh | 04_reviews/2026-05-XX-...md`
+> `2026-05-XX | candidate-001 | pending_approval→approved | 人間(氏名/役割) | 既存資産流用で最速・収益化インパクトhigh | candidate-001 approve | 04_reviews/2026-05-XX-...md`
 
 ## 現状サマリー（2026-05-18 時点）
 
