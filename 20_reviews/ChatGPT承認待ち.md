@@ -41,6 +41,8 @@ status: active
 - 最初の1作業: B1 `npm run build` 検証（[[../05_monetization/progress追加ToDo案]] ToDo#1）→ 7日プラン [[../05_monetization/scenarios/candidate-001_7日実行プラン]]
 
 ### 人間判断欄（ChatGPT 方向性判断 → 人間が確定）
+- 承認コマンド（[[../05_monetization/ChatGPT承認コマンド標準]]）:
+  `candidate-001 approve` / `candidate-001 hold: <理由>` / `candidate-001 reject: <理由>`
 - ChatGPT 方向性: （未記入）approve / reject / hold（理由: ____）
 - 人間 status 確定: （未記入）approved / rejected / hold → [[../05_monetization/decision-log]]
 - 確定日 / 判断者: （未記入）
