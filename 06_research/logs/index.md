@@ -18,14 +18,14 @@ status: active（実行のたびに更新）
 
 | 項目 | 値 |
 |---|---|
-| 最終 research-run | (未実行) |
-| 最終 idea-run | (未実行) |
-| 最終成功日 | — |
-| 連続失敗源 | — |
+| 最終 research-run | 2026-05-21 08:32 JST（manual-mvp / Issue #44） |
+| 最終 idea-run | 2026-05-21 08:33 JST（manual / 10 案・上位 3 件抽出） |
+| 最終成功日 | 2026-05-21 |
+| 連続失敗源 | なし |
 | skip リスト | — |
-| 累計 ExecutionRun | 0 |
+| 累計 ExecutionRun | 1（MVP）|
 
-> research-run / idea-run は未実装（[[../../05_monetization/cron_research-run_idea-run設計]] #36 の実装・cron 登録待ち）。実装後は実行のたびに本テーブルを更新する。
+> Issue #44 Epic A 実動作フェーズの MVP 1 サイクルを手動実行（ai-news 1 源・15 件 → 10 案 → 上位 3 件・candidate 化は保留）。research-run / idea-run コマンド本体は未実装（[[../../05_monetization/cron_research-run_idea-run設計]] #36 の実装・cron 登録待ち）。
 
 ## 直近 7 日サマリー（実装後に自動更新）
 
