@@ -100,6 +100,7 @@ gh issue list --repo kaeru07/vault --state open
 ### Step 3: 次に実行する 1 件を選ぶ
 
 - **収益化インパクトを最優先**（high > medium > low > none）
+- **Epic 単位で関連 Issue を続けて選ぶ**（Issue #42 / [[../Epic単位運用]]）。同 Epic 内は依存順（A → B → C）で進める
 - 同等なら priority / 完了条件の明確さ / 安全度
 - `candidate` / `pending_approval` は承認待ち＝実装対象にしない（仮説で承認扱いにしない）
 - 選んだ ToDo と理由を 1〜2 行で宣言（確認は投げない）
