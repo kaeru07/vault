@@ -3,7 +3,7 @@ type: chatgpt-approval-queue
 title: ChatGPT 承認待ち（chatgpt_pending キュー）
 issue: kaeru07/vault#19
 created: 2026-05-19
-updated: 2026-05-19
+updated: 2026-05-22
 status: active
 ---
 
@@ -36,6 +36,8 @@ status: active
 ### 根拠
 - 調査根拠: Google Play 公式ストア一次 + まとめ記事 / n=10 / 2026-05-18（[[../06_research/2026-05-18_収益化定期調査_初回]]）
 - 関連: [[../05_monetization/既存資産_収益転用候補]] 優先1位
+- **補強（2026-05-22 / Issue #49）**: iTunes Search JP「何切る」直接検索（一次データ）で、何切る専業アプリ 10 件以上存在 = 市場成立 / レビュー数最大 354 で**ニッチ・激戦区ではない** / AI 系は「麻雀何切るAI」1 件のみ = **AI 解説の差別化軸が空いている**（[[../06_research/2026-05-22_上位5案追加調査]] §3-1）
+- **追加した差別化軸**: 「Web 版 + AI 解説」（[[../05_monetization/scenarios/candidate-001]] §差別化軸の補強）。判断軸が「公開して広告」から「ニッチ × AI 解説 × Web 版」へ強化
 
 ### 次の一手（承認された場合）
 - 最初の1作業: B1 `npm run build` 検証（[[../05_monetization/progress追加ToDo案]] ToDo#1）→ 7日プラン [[../05_monetization/scenarios/candidate-001_7日実行プラン]]

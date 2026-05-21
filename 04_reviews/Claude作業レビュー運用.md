@@ -135,9 +135,21 @@ flowchart LR
 - session-review-template（[[../90_templates/session-review-template]]）にも「成果物紹介」セクションを追加済
 - 「未確認」を「確認済み」と書かない（CLAUDE.local.md ガード）
 
+## Epic 完了優先（Issue #50）
+
+レビュー単位は「小 Task」ではなく **Epic 単位**を優先する:
+
+- 小 Phase 完了ごとにレビューを刻まない。Epic の完了条件まで進めた段階で 1 件レビュー
+- レビューで「次の小 Issue」を作って実行を分断しない（既存 Epic 内で続行）
+- レビュー観点: Epic 全体の完了条件充足 / Epic 内重複の整理 / A→B→C 入出力連鎖の整合
+- 止まってよいのは「Epic 完了 / 課金・外部公開・破壊的変更 / 規約リスク / 利用制限」のみ
+- 詳細は [[../03_prompts/claude-commands/vloop]] § 最重要ルール / [[../05_monetization/epics]]
+
 ## 関連
 
 - [[../03_prompts/Claude-Code標準運用]]
+- [[../03_prompts/Epic単位運用]]
+- [[../05_monetization/epics]]
 - [[../02_apps/progress]]
 - [[../90_templates/claude-review-template]]
 - [[../90_templates/session-review-template]]
