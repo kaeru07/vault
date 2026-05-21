@@ -18,14 +18,15 @@ status: active（実行のたびに更新）
 
 | 項目 | 値 |
 |---|---|
-| 最終 research-run | 2026-05-21 23:10 JST（manual-3src / 3 源 44 件 / Issue #48） |
+| 最終 research-run | 2026-05-22 08:44 JST（manual-2src / 2 源 25 件 / cron 移行 2 日目） |
 | 最終 idea-run | 2026-05-21 23:13 JST（manual-3src / 40 案 / 上位 5 件・candidate 化保留） |
-| 最終成功日 | 2026-05-21 |
+| 最終成功日 | 2026-05-22 |
 | 連続失敗源 | なし |
 | skip リスト | — |
-| 累計 ExecutionRun | 3（MVP + 30 案拡張 + 3 源 Phase 1 完全化）|
+| 累計 ExecutionRun | 4（MVP + 30 案拡張 + 3 源 Phase 1 完全化 + cron 移行 2 日目）|
+| cron 移行 3 日連続条件 | 2 / 3 日（残り 1 日・3 日目は 2026-05-23 以降）|
 
-> Issue #44 MVP（1 源 15 件）+ Issue #45 30 案拡張 + **Issue #48 Phase 1 完全化（3 源 44 件 / 40 案 / 上位 5 件 / candidate 化保留 / candidate-001 補強材料）** まで手動実行。詳細証跡: [[../daily/2026-05-21_実運転証跡]]。research-run / idea-run コマンド本体は未実装（[[../../05_monetization/cron_research-run_idea-run設計]] #36 の実装・cron 登録待ち）。
+> Issue #44 MVP + #45 30 案拡張 + #48 Phase 1 完全化 + **cron 移行 2 日目（2026-05-22 / research-run 連続性記録）** まで手動実行。詳細証跡: [[../daily/2026-05-21_実運転証跡]]。cron 移行は 3 日連続条件のうち 2 日達成（[[../../05_monetization/cron移行判定基準]]）。research-run / idea-run コマンド本体は未実装。
 
 ## 直近 7 日サマリー（実装後に自動更新）
 
