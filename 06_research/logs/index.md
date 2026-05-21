@@ -18,14 +18,14 @@ status: active（実行のたびに更新）
 
 | 項目 | 値 |
 |---|---|
-| 最終 research-run | 2026-05-21 08:32 JST（manual-mvp / Issue #44） |
-| 最終 idea-run | 2026-05-21 12:09 JST（manual-extend / 30 案・上位 5 件抽出 / Issue #45） |
+| 最終 research-run | 2026-05-21 23:10 JST（manual-3src / 3 源 44 件 / Issue #48） |
+| 最終 idea-run | 2026-05-21 23:13 JST（manual-3src / 40 案 / 上位 5 件・candidate 化保留） |
 | 最終成功日 | 2026-05-21 |
 | 連続失敗源 | なし |
 | skip リスト | — |
-| 累計 ExecutionRun | 2（MVP + 拡張）|
+| 累計 ExecutionRun | 3（MVP + 30 案拡張 + 3 源 Phase 1 完全化）|
 
-> Issue #44 MVP 1 サイクル（ai-news 1 源・15 件 → 10 案 → 上位 3 件）+ Issue #45 拡張（30 案・上位 5 件抽出）まで手動実行。candidate 化は安全弁発動で保留（根拠 = 2）。詳細証跡: [[../daily/2026-05-21_実運転証跡]]。research-run / idea-run コマンド本体は未実装（[[../../05_monetization/cron_research-run_idea-run設計]] #36 の実装・cron 登録待ち）。
+> Issue #44 MVP（1 源 15 件）+ Issue #45 30 案拡張 + **Issue #48 Phase 1 完全化（3 源 44 件 / 40 案 / 上位 5 件 / candidate 化保留 / candidate-001 補強材料）** まで手動実行。詳細証跡: [[../daily/2026-05-21_実運転証跡]]。research-run / idea-run コマンド本体は未実装（[[../../05_monetization/cron_research-run_idea-run設計]] #36 の実装・cron 登録待ち）。
 
 ## 直近 7 日サマリー（実装後に自動更新）
 

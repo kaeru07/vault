@@ -20,6 +20,7 @@ status: active（実行のたびに追記）
 | (未実行) | — | — | — | — | — | — | — | research-run / idea-run 未実装。本ログは形式固定のため設置 |
 | 2026-05-21 | manual-mvp-08:32 | 1 | 1 | 0 | — | 0 | 進行 | Issue #44 MVP 1 サイクル / ai-news 1 源・15 件 / idea-run 10 案・上位 3 件抽出（candidate 化はせず）|
 | 2026-05-21 | manual-extend-12:09 | 1 | 1 | 0 | — | 0 | 進行 | Issue #45 拡張 / idea_pool を 30 案に拡張 / 上位 5 件抽出（candidate 化は引き続き保留）|
+| 2026-05-21 | manual-3src-23:10 | 3 | 3 | 0 | — | 0 | 進行 | Issue #48 Phase 1 完全化 / 3 源（HN+Reddit+iTunes）44 件取得 / idea_pool 40 案に拡張 / 上位 5 件抽出 / candidate 化保留（市場検証不足）/ candidate-001 補強材料あり |
 
 ## 上位 5 件抽出（2026-05-21 30 案版・candidate 化は保留）
 
