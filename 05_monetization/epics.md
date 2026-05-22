@@ -65,13 +65,14 @@ relatedIssues: [kaeru07/vault#42, kaeru07/vault#48, kaeru07/vault#49]
 |---|---|---|
 | 承認ゲート設計 | 承認フロー / コマンド標準 / 承認待ちテンプレ | ✅ 完了（#18/#19/#24） |
 | candidate-001 判断材料 | 承認パック / 公開ブロッカー / 7 日プラン / progress 投入設計 | ✅ 完了（#22/#23/#15/#16）+ #49 補強 |
-| ChatGPT 承認待ち整備 | ChatGPT承認待ち.md に candidate-001 ブロック（最新材料） | ✅ 完了（本サイクルで #49 補強反映） |
-| ChatGPT 方向性承認 | `candidate-001 approve|hold|reject` | ⏳ **ChatGPT + 人間待ち**（vloop スコープ外） |
+| ChatGPT 承認待ち整備 | ChatGPT承認待ち.md に candidate-001 ブロック（最新材料） | ✅ 完了（#50 サイクルで #49 補強反映） |
+| Epic C 仕上げ（承認判断可能状態） | 市場確認 / 実装現実性 / 収益導線 / 着手可否を承認パックに増補 | ✅ 完了（#53・承認パック §9-§14 増補） |
+| ChatGPT 方向性承認 | candidate-001 approve / hold / reject | ⏳ **ChatGPT + 人間待ち**（vloop スコープ外） |
 | approved → progress 投入 | 人間が status 確定 → progress ToDo 化 | ⏳ 人間待ち |
 
-**Epic C 残**: ChatGPT が candidate-001 を方向性承認 → 人間が status 確定（**vloop は判断材料整備まで・承認はしない**）
+**Epic C 残**: ChatGPT が candidate-001 を方向性承認 → 人間が status 確定（**vloop は判断材料整備まで・承認はしない**）。判断材料は #53 で完備
 
-**所属 Issue**: #18 #19 #22 #23 #24 #27 #35
+**所属 Issue**: #18 #19 #22 #23 #24 #27 #35 #53
 
 ---
 
