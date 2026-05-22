@@ -7,12 +7,16 @@
 
 ## 🚀 今すぐ開くページ
 
+- 🧭 [[00_inbox/Vaultの見方_どこを見れば何がわかるか]] — 収益化フローの判断のための見方ガイド（candidate / idea_pool / research / epics / logs / vloop）
 - 📅 [[01_daily/today]] — 今日の進捗・気付き
 - 🎯 [[05_monetization/収益化ロードマップ]] — 最優先方針（短期 / 中期 / 長期）
 - 📋 [[05_monetization/収益化候補一覧]] — 全候補テーブル（週次更新）
+- ✅ [[20_reviews/ChatGPT承認待ち]] — ChatGPT 承認待ちキュー（今の判断対象）
 - 🛑 [[02_apps/途中プロジェクト一覧]] — 停止中・棚上げ
 - 🛠 [[03_prompts/Claude-Code標準運用]] — Claude Code の規模・role・検証・連携ルール
 - 🔄 [[03_prompts/Vault同期ルール]] — `ob sync` の手順
+
+> 索引の役割分担: **本ファイル（00_index）= Vault 全体の構造索引** / **[[00_inbox/Vaultの見方_どこを見れば何がわかるか]] = 収益化フローの判断手順ガイド**。
 
 ---
 
