@@ -99,9 +99,29 @@ Frontmatter: `date / task / runId / targetApp / monetizationImpact / theme / rel
 
 ---
 
+## ChatGPT 承認入口（Issue #54）
+
+収益化シナリオの **ChatGPT 方向性承認の正規入口**は以下:
+
+| 用途 | 正規パス | 状態 |
+|---|---|---|
+| 承認待ちキュー（入口） | `20_reviews/ChatGPT承認待ち.md` | 実在・git 追跡済・origin/main に push 済 |
+| candidate-001 承認パック（判断材料） | `20_reviews/candidate-001_ChatGPT承認パック.md` | 実在・git 追跡済・push 済（§1-§14 完備） |
+
+**ChatGPT が承認待ちを見るとき**:
+
+1. GitHub で `20_reviews/` ディレクトリ一覧を開く（パスを直接推測しない）
+2. 一覧から `ChatGPT承認待ち.md` を開く（candidate ごとの chatgpt_pending ブロックがある）
+3. candidate-001 の詳細判断材料は `candidate-001_ChatGPT承認パック.md` を開く
+4. 承認は `ChatGPT承認待ち.md` の人間判断欄、または Issue コメントで `candidate-001 approve` 等を発行
+
+> **注意（Issue #54 調査結果）**: 上記 2 ファイルはファイル名が日本語のため、GitHub の raw URL では `%` エンコードされる（例: `ChatGPT%E6%89%BF%E8%AA%8D...`）。**パスを直接構築せず、必ずディレクトリ一覧から開く**こと。「Issue コメントに『承認待ちで完備』とある」=「ファイルが実在する」と短絡せず、`20_reviews/` 一覧で実ファイルを確認する。
+
 ## 関連
 
 - [[../90_templates/session-review-template]]
 - [[../03_prompts/Claude-Code標準運用]]
 - [[../04_reviews/Claude作業レビュー運用]]
-- [[../00_index]]
+- [[ChatGPT承認待ち]]
+- [[candidate-001_ChatGPT承認パック]]
+- [[_review_queue]]
