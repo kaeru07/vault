@@ -2,100 +2,105 @@
 title: START HERE — iPhone Obsidian からまず開くページ
 type: vault-entry-en
 issue: kaeru07/vault#56
-relatedIssues: [kaeru07/vault#57]
+relatedIssues: [kaeru07/vault#57, kaeru07/vault#58, kaeru07/vault#59]
 created: 2026-05-23
 updated: 2026-05-23
-status: active（iPhone 検索容易性のための英数字入口）
+tags: [入口, START_HERE]
+status: active
 ---
 
-# 00_START_HERE
+# 🚪 START HERE
 
-> **iPhone Obsidian で迷ったらここから開く**。英数字ファイル名のため iPhone 検索でも見つけやすい。
-> 日本語ファイル名（00_index.md / Vaultの見方_...md など）は iPhone Obsidian の検索でヒットしにくいため、本ファイルを英数字エイリアスとして配置。
-
----
-
-## iPhone Obsidian で見るべき順番
-
-### 1. Vault の全体構造を見る
-[[00_index]] — Vault 全体の構造索引（フォルダ別・テンプレ・運用 QR）
-
-### 2. 収益化フローの判断手順を見る
-[[00_inbox/Vaultの見方_どこを見れば何がわかるか]] — candidate / idea_pool / research / epics / logs / vloop の見方
-
-### 3. ChatGPT 承認待ちを見る（今の判断対象）
-[[20_reviews/ChatGPT承認待ち]] — candidate-001 等の方向性承認キュー
-
-### 4. candidate-001 の判断材料を見る
-[[20_reviews/candidate-001_ChatGPT承認パック]] — §1-§14 完備の承認判断パック
-
-### 5. Epic 全体進捗を見る
-[[05_monetization/epics]] — Epic A/B/C/D のステータスと残作業
-
-### 6. candidate シナリオ群を見る
-- フォルダ: `05_monetization/scenarios/`
-- 主な候補: [[05_monetization/scenarios/candidate-001]]（推奨1位・何切る特化 AI 解説 Web）
-- 他: [[05_monetization/scenarios/candidate-002]]（Shorts送客）/ [[05_monetization/scenarios/candidate-003]]（Obsidian テンプレ）/ [[05_monetization/scenarios/candidate-004]]（麻雀問題系統合）
-- candidate-001 補助: [[05_monetization/scenarios/candidate-001_公開ブロッカー]] / [[05_monetization/scenarios/candidate-001_7日実行プラン]] / [[05_monetization/scenarios/candidate-001_progress投入設計]]
+> [!important] iPhone Obsidian で迷ったらここから開く
+> 英数字ファイル名のため iPhone 検索でも見つけやすい。各リンクは**ファイル直リンク**でフォルダリンクではない。
 
 ---
 
-## ユーザー確認用チェックリスト（Issue #57）
+## ✅ 今やることへ直リンク（4 つだけ）
 
-iPhone Obsidian で以下を順に確認してください:
+> [!todo] ① 承認判断する → [[20_reviews/ChatGPT承認待ち|🗳 ChatGPT 承認待ち]]
+> candidate-001 の承認コマンドはここで発行（candidate-001 approve / hold / reject）
 
-- [ ] 起動 → 検索で `00_START_HERE` を入力 → 本ファイルが開く
-- [ ] 本ファイルから [[00_index]] へ遷移できる（Vault 全体構造索引）
-- [ ] 本ファイルから [[00_inbox/Vaultの見方_どこを見れば何がわかるか]] へ遷移できる（収益化フローガイド）
-- [ ] 本ファイルから [[20_reviews/ChatGPT承認待ち]] へ遷移できる（承認待ちキュー）
-- [ ] 本ファイルから [[20_reviews/candidate-001_ChatGPT承認パック]] へ遷移できる（candidate-001 §1-§14）
-- [ ] 本ファイルから [[05_monetization/epics]] へ遷移できる（Epic 進捗）
-- [ ] 本ファイルから [[05_monetization/scenarios/candidate-001]] へ遷移できる（candidate 詳細）
-- [ ] 検索キーワード（後述）の少なくとも 3 種で目的ファイルが見つかる
+> [!todo] ② candidate-001 を読む → [[20_reviews/candidate-001_ChatGPT承認パック|📦 candidate-001 承認パック §1-§14]]
+> 市場 / 実装 / 収益 / 着手可否を 1 ファイルで判断できる
 
-> 1 つでも開けない場合は ob sync の問題（`obsidian-sync-vault` 側にファイル未反映）。Claude に `Issue #56 逆反映ルール` を再実行依頼してください。
+> [!todo] ③ 全候補を一覧する → [[05_monetization/scenarios/README|📋 candidate 一覧]]
+> 4 件（001/002/003/004）+ candidate-001 補助 3 ファイルへ直リンク
 
----
-
-## iPhone 検索のコツ（Issue #56）
-
-iPhone Obsidian の検索キーワード:
-
-- 全体索引: `00_index` または `index`
-- 見方ガイド: `Vaultの見方` または `00_inbox`
-- 承認待ち: `承認待ち` または `ChatGPT` または `20_reviews`
-- candidate 詳細: `candidate-001` または `承認パック`
-- Epic 進捗: `epics`
-
-> 日本語ファイル名は検索でヒットしないことがある。その場合は本ファイル（00_START_HERE）から `[[link]]` で辿るのが確実。
+> [!todo] ④ 全体進捗を見る → [[05_monetization/epics|🎯 Epic A/B/C/D 進捗]]
+> Epic ごとの現在地と人間判定待ち項目
 
 ---
 
-## なぜこのファイルが必要か（Issue #56 背景）
+## 📚 さらに掘る（必要なら）
 
-GitHub 管理 Vault（`obsidian-vault`）と稼働 Vault（`obsidian-sync-vault` / iPhone と同期）は **別物**。
+> [!note] Vault の見方ガイド（収益化フロー判断手順）
+> [[00_inbox/Vaultの見方_どこを見れば何がわかるか|📖 Vault の見方ガイド]] — candidate / idea_pool / research / vloop 用語解説
 
-- ChatGPT が GitHub 上で直接 commit したファイルは `obsidian-vault` に入る
-- `obsidian-sync-vault` には自動反映されない
-- iPhone Obsidian は `obsidian-sync-vault` 経由で見るため、`obsidian-vault` 直接 commit ファイルは iPhone から見えない
+> [!note] Vault 全体構造索引
+> [[00_index|🗂 00_index]] — フォルダ別・テンプレ・運用 QR
 
-→ 本サイクル（Issue #56 対応）で、不在だった入口ファイルを sync-vault にもコピー + 英数字入口（本ファイル）を追加して iPhone から辿れるようにした。
+> [!note] 元ネタ（市場調査）
+> [[06_research/2026-05-22_上位5案追加調査|🔬 上位 5 案追加調査]] — Epic B 収益化スコアリング根拠
 
----
+> [!note] 自動化進捗
+> [[06_research/logs/research-run-log|⚙ research-run 実行ログ]] — cron 移行 3 日連続達成（2026-05-23）
 
-## 同期導線（運用方針）
-
-- **稼働 Vault**: `/root/company/obsidian-sync-vault`（ob sync で iPhone と同期）
-- **GitHub 管理 Vault**: `/root/company/obsidian-vault`（git remote: vault.git）
-- **公式運用**: sync-vault → obsidian-vault に rsync ミラー（一方向）
-- **逆方向（obsidian-vault → sync-vault）**: ChatGPT が GitHub 直接 commit したファイルがあるときは個別コピー（Issue #56 で対応）
-- 詳細: [[03_prompts/GitHub反映ルール]] / `/root/company/CLAUDE.local.md` § GitHub 管理 Vault 反映ルール
+> [!note] 関係図
+> [[03_prompts/Claude×vloop×Obsidian×Progress関係図|🗺 Claude × vloop × Obsidian × Progress 関係図]]
 
 ---
 
-## 関連
+## 🔍 iPhone Obsidian の検索キーワード
 
-- [[00_index]]（Vault 全体構造索引）
-- [[00_inbox/Vaultの見方_どこを見れば何がわかるか]]（収益化フロー見方ガイド）
-- [[20_reviews/README]]（ChatGPT 承認入口）
-- Issue: kaeru07/vault#56
+> [!tip] 日本語ファイル名は検索でヒットしないことがある
+> 以下の英数字 / 短いキーワードを推奨:
+
+| 探すもの | 検索キーワード |
+|---|---|
+| 本ファイル | `00_START_HERE` または `START` |
+| 全体索引 | `00_index` または `index` |
+| 承認待ち | `承認待ち` または `ChatGPT` |
+| candidate 詳細 | `candidate-001` または `candidate` |
+| candidate 一覧 | `scenarios` または `candidate` |
+| Epic 進捗 | `epics` |
+| 見方ガイド | `Vaultの見方` または `00_inbox` |
+
+---
+
+## ☑ ユーザー確認用チェックリスト（Issue #57）
+
+> [!check] iPhone Obsidian で順に確認
+> - [ ] 検索で `00_START_HERE` → 本ファイルが開く
+> - [ ] [[00_index]] へ遷移できる
+> - [ ] [[00_inbox/Vaultの見方_どこを見れば何がわかるか]] へ遷移できる
+> - [ ] [[20_reviews/ChatGPT承認待ち]] へ遷移できる
+> - [ ] [[20_reviews/candidate-001_ChatGPT承認パック]] へ遷移できる
+> - [ ] [[05_monetization/scenarios/README]] へ遷移できる（candidate 一覧）
+> - [ ] [[05_monetization/scenarios/candidate-001]] へ遷移できる
+> - [ ] [[05_monetization/epics]] へ遷移できる
+
+> [!warning] 開けないリンクがある場合
+> `obsidian-sync-vault` 側にファイル未反映の可能性。Claude に「Issue #56 逆反映ルール再実行」と依頼してください（[[03_prompts/同期導線_sync-vault逆反映|逆反映ルール]]）。
+
+---
+
+## 🔄 同期導線（運用方針）
+
+> [!info] 2 つの Vault の関係
+> - **稼働 Vault**: `obsidian-sync-vault`（ob sync で iPhone 同期）
+> - **GitHub 管理 Vault**: `obsidian-vault`（git remote: vault.git）
+> - **公式運用**: sync-vault → obsidian-vault に rsync ミラー（一方向）
+> - **逆方向**: ChatGPT が GitHub 直接 commit したら個別コピー（[[03_prompts/同期導線_sync-vault逆反映]]）
+
+詳細: [[03_prompts/GitHub反映ルール]] / `/root/company/CLAUDE.local.md` § GitHub 管理 Vault 反映ルール
+
+---
+
+## 📎 関連
+
+- [[00_index]] — Vault 全体構造索引
+- [[00_inbox/Vaultの見方_どこを見れば何がわかるか]] — 収益化フロー見方ガイド
+- [[20_reviews/README]] — ChatGPT 承認入口
+- [[03_prompts/Claude×vloop×Obsidian×Progress関係図]] — 1 枚図
+- Issue: kaeru07/vault#56 / #57 / #58 / #59
