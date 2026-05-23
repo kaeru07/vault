@@ -76,6 +76,23 @@ relatedIssues: [kaeru07/vault#42, kaeru07/vault#48, kaeru07/vault#49]
 
 ---
 
+## Epic D: Vault Onboarding（iPhone 入口・見方ガイド・承認入口）
+
+**目的**: Vault の入口を整備し、iPhone Obsidian からも GitHub からも迷わず辿れる状態にする。
+
+| Phase | 完了条件 | 現状 |
+|---|---|---|
+| 承認入口の正規化 | ChatGPT 承認待ちファイルの正規パス確定・実在確認 | ✅ 完了（#54・実在実証 + 20_reviews/README に明記） |
+| 見方ガイドの正規入口確定 | 収益化フローの判断手順ガイドを正規入口として整備 | ✅ 完了（#55・00_inbox/Vault見方ガイド + 00_index 二層構成） |
+| iPhone Obsidian の同期導線整備 | sync-vault に逆反映 + 英数字入口追加 + 逆反映ルール | ✅ 完了（#56・5 ファイル逆反映 + 00_START_HERE.md + ob sync Fully synced） |
+| iPhone 実運用確認 | ユーザー確認用チェックリスト + scenarios 直接導線 | ✅ 完了（#57・00_START_HERE.md に §ユーザー確認用チェックリスト + §6 scenarios 直接リンク追加） |
+
+**Epic D 残**: ユーザーが iPhone で実際にチェックリストを通せるか確認（vloop スコープ外・ユーザー操作）
+
+**所属 Issue**: #54 #55 #56 #57
+
+---
+
 ## Epic 横断 / 運用
 
 | Issue | 内容 | 状態 |
@@ -84,6 +101,7 @@ relatedIssues: [kaeru07/vault#42, kaeru07/vault#48, kaeru07/vault#49]
 | #42 | Epic 単位運用ルール | ✅ 完了 |
 | #50 | vloop Epic 完了優先運用 | ✅ 完了（vloop.md / 標準運用 / 本ファイル / レビュー運用） |
 | #40 #41 #43 | ChatGPT レビュー手順・1 枚図サマリー | ✅ 完了 |
+| #51 | Claude-Code標準運用.md 追記型修正（既存ルール復元） | ✅ 完了 |
 
 ---
 
@@ -91,19 +109,23 @@ relatedIssues: [kaeru07/vault#42, kaeru07/vault#48, kaeru07/vault#49]
 
 ```mermaid
 flowchart LR
-  A["Epic A 情報収集基盤<br/>Phase 1 完全化済"] --> B["Epic B 案生成基盤<br/>40案・上位5件・判断済"]
+  A["Epic A 情報収集基盤<br/>cron 3日連続達成"] --> B["Epic B 案生成基盤<br/>40案・上位5件・判断済"]
   B --> C["Epic C 候補昇格<br/>candidate-001 承認待ち"]
-  C --> Human["ChatGPT + 人間<br/>方向性承認"]
+  D["Epic D Vault Onboarding<br/>iPhone入口整備完了"] --> All["全 Epic で<br/>人間判定待ちフェーズ"]
+  A --> All
+  B --> All
+  C --> All
 ```
 
-> Epic A / B は設計 + 実動作完了。Epic C は candidate-001 の判断材料完備で **ChatGPT 承認待ち**。
-> vloop の次の主作業は Epic A の「cron 移行 3 日連続条件」消化（実取得を毎日 1 回）。
+> Epic A は cron 3 日連続達成（人間が cron 投入判断）。Epic B は実行フェーズ完了。Epic C は candidate-001 判断材料完備（ChatGPT 承認待ち）。Epic D は iPhone 入口整備完了（ユーザー確認待ち）。
+> vloop の次の主作業は: cron 投入後の運用観察 / 各源 n 増による新規 candidate 起票の再判定 / ChatGPT 承認後の progress 投入準備。
 
 ## 次の一手
 
-1. ChatGPT が candidate-001 を方向性承認（Epic C / `candidate-001 approve|hold|reject`）
-2. vloop は Epic A の cron 移行 3 日連続条件を消化（毎日 1 回 Phase 1 実行）
-3. Epic B は各源 n 増で根拠強化（新規 candidate 起票の再判定）
+1. ChatGPT が candidate-001 を方向性承認（Epic C / candidate-001 approve / hold / reject）
+2. 人間が cron 投入判断（Epic A / cron 移行判定基準 §3 段階導入 a/b/c）
+3. ユーザーが iPhone Obsidian で 00_START_HERE チェックリストを通す（Epic D）
+4. Epic B は各源 n 増で根拠強化（新規 candidate 起票の再判定）
 
 ## 関連
 

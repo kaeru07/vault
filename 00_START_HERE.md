@@ -2,6 +2,7 @@
 title: START HERE — iPhone Obsidian からまず開くページ
 type: vault-entry-en
 issue: kaeru07/vault#56
+relatedIssues: [kaeru07/vault#57]
 created: 2026-05-23
 updated: 2026-05-23
 status: active（iPhone 検索容易性のための英数字入口）
@@ -29,7 +30,30 @@ status: active（iPhone 検索容易性のための英数字入口）
 [[20_reviews/candidate-001_ChatGPT承認パック]] — §1-§14 完備の承認判断パック
 
 ### 5. Epic 全体進捗を見る
-[[05_monetization/epics]] — Epic A/B/C のステータスと残作業
+[[05_monetization/epics]] — Epic A/B/C/D のステータスと残作業
+
+### 6. candidate シナリオ群を見る
+- フォルダ: `05_monetization/scenarios/`
+- 主な候補: [[05_monetization/scenarios/candidate-001]]（推奨1位・何切る特化 AI 解説 Web）
+- 他: [[05_monetization/scenarios/candidate-002]]（Shorts送客）/ [[05_monetization/scenarios/candidate-003]]（Obsidian テンプレ）/ [[05_monetization/scenarios/candidate-004]]（麻雀問題系統合）
+- candidate-001 補助: [[05_monetization/scenarios/candidate-001_公開ブロッカー]] / [[05_monetization/scenarios/candidate-001_7日実行プラン]] / [[05_monetization/scenarios/candidate-001_progress投入設計]]
+
+---
+
+## ユーザー確認用チェックリスト（Issue #57）
+
+iPhone Obsidian で以下を順に確認してください:
+
+- [ ] 起動 → 検索で `00_START_HERE` を入力 → 本ファイルが開く
+- [ ] 本ファイルから [[00_index]] へ遷移できる（Vault 全体構造索引）
+- [ ] 本ファイルから [[00_inbox/Vaultの見方_どこを見れば何がわかるか]] へ遷移できる（収益化フローガイド）
+- [ ] 本ファイルから [[20_reviews/ChatGPT承認待ち]] へ遷移できる（承認待ちキュー）
+- [ ] 本ファイルから [[20_reviews/candidate-001_ChatGPT承認パック]] へ遷移できる（candidate-001 §1-§14）
+- [ ] 本ファイルから [[05_monetization/epics]] へ遷移できる（Epic 進捗）
+- [ ] 本ファイルから [[05_monetization/scenarios/candidate-001]] へ遷移できる（candidate 詳細）
+- [ ] 検索キーワード（後述）の少なくとも 3 種で目的ファイルが見つかる
+
+> 1 つでも開けない場合は ob sync の問題（`obsidian-sync-vault` 側にファイル未反映）。Claude に `Issue #56 逆反映ルール` を再実行依頼してください。
 
 ---
 
