@@ -166,6 +166,33 @@ Issueを自動closeしない。close判断はユーザー側。
 - 次の一手
 - ChatGPTレビュー依頼文
 
+### Step 9: 終了時必須出力（Issue #66）
+
+一括サマリーに加えて、Issue 単位の状態分類を必ず出す。詳細は [[../../20_reviews/Issue完了判定ルール]]。
+
+必須項目:
+
+- 今回の対象Issue
+- 処理済みIssue（状態分類込み）
+- **未処理Issue一覧（省略禁止）**
+- 各Issueの状態: done / user_check / open / merged / obsolete / blocked
+- レビュー状態: reviewed_ok / reviewed_followup / user_check / not_reviewed
+- 停止理由（正当な停止条件のどれか）
+- 次に処理すべきIssue
+- 停止理由の正当性判定（正当 / 不正）
+
+不正な停止例（してはいけない）:
+
+- 1件だけ終わった
+- 次Issueを作った
+- 設計だけ終わった
+- **コメントだけ付けた**
+- 完了っぽいと判断した
+- レビュー対象を明記せず終了
+- 未処理Issueを一覧化せず終了
+
+「コメント済み = done」ではない。コメント済みでも user_check / open のままがある。状態分類は本ファイル §状態分類 + [[../../20_reviews/Issue完了判定ルール]] §1 を参照。
+
 ---
 
 ## 最終報告フォーマット
