@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-24_idea-trace-and-token-speed-prototype]]
+  - createdAt: 2026-05-24 01:35
+  - app: company-meta / obsidian-vault
+  - project: monetization / prototype-loop / idea-trace
+  - priority: high
+  - summary: 試作ループ Epic（#60/#61/#62/#63）一体実装。idea_trace.md（8 案カード+APIなし早見表）+ token-speed-tool.md（trace #62 + MVP 仕様 #60 を 1 ファイル集約）+ 90_prototypes/token-speed-tool/（静的 HTML+JSON モック・外部 CDN ゼロ・サンプル 5 件）+ 試作ループ検証.md（14 案追加 / 3 候補選定 / N-01 試作着地 / Phase1-5 完了）+ 00_START_HERE.md にリンク 3 件追加。10/10 完了条件達成（任意 1 未達）
+  - result: 
 - [ ] [[2026-05-18_issue2-monetization-design]]
   - createdAt: 2026-05-18 01:26
   - app: company-meta

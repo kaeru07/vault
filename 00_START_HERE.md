@@ -34,6 +34,15 @@ status: active
 
 ## 📚 さらに掘る（必要なら）
 
+> [!note] 全アプリ案の trace（Issue #63）
+> [[05_monetization/idea_trace|🧭 idea_trace — 全案の情報源・着想理由・採用判断]] — 情報源 → 気づき → 案 → 候補 → 試作 → 判断を 1 ページで追える
+
+> [!note] 試作モック（Issue #60）
+> [[90_prototypes/token-speed-tool/README|🧪 token-speed-tool MVP モック]] — APIなしで動く LLM ベンチ可視化ツール / [[05_monetization/token-speed-tool|仕様 + trace]]
+
+> [!note] 試作ループ検証（Issue #61）
+> [[05_monetization/試作ループ検証|🔁 試作ループ検証]] — 14 案追加 / 3 候補選定 / N-01 試作着地
+
 > [!note] Vault の見方ガイド（収益化フロー判断手順）
 > [[00_inbox/Vaultの見方_どこを見れば何がわかるか|📖 Vault の見方ガイド]] — candidate / idea_pool / research / vloop 用語解説
 

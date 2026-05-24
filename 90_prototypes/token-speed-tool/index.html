@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Token Speed Tool — APIなし版（MVP モック）</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --good: #22c55e;
+    --warn: #facc15;
+    --bad: #ef4444;
+    --border: #334155;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    line-height: 1.5;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; color: var(--accent); }
+  h2 { font-size: 1.1rem; margin: 24px 0 8px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+  .note { color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  button, .btn {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  button:hover, .btn:hover { border-color: var(--accent); }
+  button.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; background: var(--panel); border-radius: 6px; overflow-x: auto; display: block; }
+  thead, tbody, tr { display: table; width: 100%; table-layout: fixed; }
+  th, td {
+    padding: 8px 6px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    word-break: break-word;
+  }
+  th { background: #0b1224; color: var(--muted); font-weight: 600; }
+  .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; }
+  .badge.high { background: var(--good); color: #0b1224; }
+  .badge.medium { background: var(--warn); color: #0b1224; }
+  .badge.low { background: var(--bad); color: #fff; }
+  .form { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 12px; margin-top: 12px; display: none; }
+  .form.open { display: block; }
+  .form label { display: block; margin: 6px 0 2px; font-size: 0.8rem; color: var(--muted); }
+  .form input, .form textarea, .form select {
+    width: 100%;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .bar { background: var(--panel); border-radius: 4px; padding: 6px 8px; margin: 4px 0; display: grid; grid-template-columns: 140px 1fr 60px; align-items: center; gap: 8px; font-size: 0.8rem; }
+  .bar .fill { height: 14px; background: linear-gradient(90deg, var(--accent), #38f8c5); border-radius: 3px; }
+  .log-area { width: 100%; min-height: 80px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 8px; font-family: monospace; font-size: 0.8rem; }
+  .source-note { font-size: 0.7rem; color: var(--muted); }
+  @media (max-width: 480px) {
+    .grid2 { grid-template-columns: 1fr; }
+    th, td { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Token Speed Tool（APIなし MVP モック）</h1>
+<p class="note">
+外部 LLM API を呼ばずに tokens/sec / TTFT / 体感スコアを比較するブラウザツール。
+データは <code>localStorage</code> 保存 + JSON エクスポート/インポート。<br>
+仕様: <code>05_monetization/token-speed-tool.md</code> ／ trace: Issue <code>kaeru07/vault#60/#62</code>
+</p>
+
+<div class="toolbar">
+  <button class="primary" onclick="toggleForm()">+ 新規追加</button>
+  <button onclick="exportJSON()">Export JSON</button>
+  <label class="btn" style="cursor:pointer;">
+    Import JSON
+    <input type="file" accept=".json" onchange="importJSON(event)" style="display:none;">
+  </label>
+  <button onclick="loadSample()">サンプル読込</button>
+  <button onclick="clearAll()">全消去</button>
+</div>
+
+<div class="form" id="form">
+  <div class="grid2">
+    <div>
+      <label>モデル名</label>
+      <input id="f-model" placeholder="例: claude-sonnet-4-6">
+    </div>
+    <div>
+      <label>実行環境</label>
+      <input id="f-env" placeholder="例: Claude Code CLI / Ollama Local">
+    </div>
+    <div>
+      <label>プロンプト種類</label>
+      <input id="f-promptType" placeholder="例: code-generation">
+    </div>
+    <div>
+      <label>入力文字数</label>
+      <input id="f-inputChars" type="number" placeholder="1200">
+    </div>
+    <div>
+      <label>出力文字数</label>
+      <input id="f-outputChars" type="number" placeholder="3400">
+    </div>
+    <div>
+      <label>TTFT (秒)</label>
+      <input id="f-ttftSec" type="number" step="0.1" placeholder="1.8">
+    </div>
+    <div>
+      <label>総完了時間 (秒)</label>
+      <input id="f-totalSec" type="number" step="0.1" placeholder="12.4">
+    </div>
+    <div>
+      <label>source</label>
+      <input id="f-source" placeholder="self-measured / NN article URL 等">
+    </div>
+    <div>
+      <label>sourceType</label>
+      <select id="f-sourceType">
+        <option value="own-log">own-log (自分のログ)</option>
+        <option value="paste-log">paste-log (他者ログ貼付)</option>
+        <option value="public-bench">public-bench (公開ベンチ)</option>
+        <option value="manual-input">manual-input (手入力)</option>
+        <option value="estimated">estimated (推測値)</option>
+      </select>
+    </div>
+    <div>
+      <label>confidence</label>
+      <select id="f-confidence">
+        <option value="high">high (実測あり)</option>
+        <option value="medium">medium (信頼ログあり)</option>
+        <option value="low">low (推測 / 単発)</option>
+      </select>
+    </div>
+  </div>
+  <label>メモ</label>
+  <textarea id="f-memo" rows="2"></textarea>
+  <div style="margin-top:8px;">
+    <button class="primary" onclick="addEntry()">追加</button>
+    <button onclick="toggleForm()">キャンセル</button>
+  </div>
+</div>
+
+<h2>比較テーブル</h2>
+<div style="overflow-x:auto;">
+<table>
+  <thead>
+    <tr>
+      <th style="width:18%;">Model</th>
+      <th style="width:14%;">Env</th>
+      <th style="width:10%;">tok/s</th>
+      <th style="width:9%;">TTFT</th>
+      <th style="width:11%;">Score</th>
+      <th style="width:12%;">conf</th>
+      <th style="width:26%;">source</th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+</div>
+
+<h2>tokens/sec 比較グラフ</h2>
+<div id="bars"></div>
+
+<h2>ログ貼付解析（簡易）</h2>
+<p class="note">Claude Code / Codex 出力から「tokens/sec: N」「first token: Ns」パターンを抽出してフォームに反映する。</p>
+<textarea class="log-area" id="log" placeholder="例:&#10;Model: claude-sonnet-4-6&#10;first token: 1.8s&#10;total: 12.4s&#10;tokens/sec: 27.4&#10;output: 3400 chars"></textarea>
+<button onclick="parseLog()">解析してフォームに反映</button>
+
+<h2>体感スコアの計算式</h2>
+<p class="note">
+<code>uxScore = min(100, tokensPerSec × 0.4 + (10 / max(TTFT,0.1)) × 4 + (outputChars / 100) × 0.2)</code><br>
+※ 暫定式。実測データが集まったら重みを再調整。
+</p>
+
+<h2>関連</h2>
+<ul>
+  <li>仕様: <code>05_monetization/token-speed-tool.md</code></li>
+  <li>idea_trace: <code>05_monetization/idea_trace.md</code></li>
+  <li>Issue: kaeru07/vault#60 (試作) / #62 (trace) / #61 (試作ループ) / #63 (idea_trace)</li>
+</ul>
+
+<script>
+const STORAGE_KEY = 'tst.entries';
+let entries = [];
+
+function load() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    entries = raw ? JSON.parse(raw) : [];
+  } catch (e) { entries = []; }
+  if (entries.length === 0) loadSample();
+  render();
+}
+
+function save() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+}
+
+function toggleForm() {
+  document.getElementById('form').classList.toggle('open');
+}
+
+function nextId() {
+  const max = entries.reduce((m, e) => Math.max(m, parseInt((e.id||'ent-0').replace('ent-',''))||0), 0);
+  return 'ent-' + String(max + 1).padStart(3, '0');
+}
+
+function uxScore(tps, ttft, outputChars) {
+  const s = (Number(tps)||0) * 0.4
+          + (10 / Math.max(Number(ttft)||0.1, 0.1)) * 4
+          + (Number(outputChars)||0) / 100 * 0.2;
+  return Math.min(100, Math.round(s));
+}
+
+function addEntry() {
+  const get = id => document.getElementById(id).value;
+  const inputChars = Number(get('f-inputChars')) || 0;
+  const outputChars = Number(get('f-outputChars')) || 0;
+  const ttftSec = Number(get('f-ttftSec')) || 0;
+  const totalSec = Number(get('f-totalSec')) || 0;
+  const tokensPerSec = totalSec > 0 ? Math.round((outputChars / totalSec) * 10) / 10 : 0;
+  const entry = {
+    id: nextId(),
+    model: get('f-model') || '(noname)',
+    env: get('f-env') || '',
+    promptType: get('f-promptType') || '',
+    inputChars, outputChars, ttftSec, totalSec, tokensPerSec,
+    uxScore: uxScore(tokensPerSec, ttftSec, outputChars),
+    source: get('f-source') || '',
+    sourceType: get('f-sourceType') || 'manual-input',
+    confidence: get('f-confidence') || 'medium',
+    collectedAt: new Date().toISOString(),
+    memo: get('f-memo') || ''
+  };
+  entries.push(entry);
+  save();
+  render();
+  toggleForm();
+  ['f-model','f-env','f-promptType','f-inputChars','f-outputChars','f-ttftSec','f-totalSec','f-source','f-memo'].forEach(id => document.getElementById(id).value = '');
+}
+
+function deleteEntry(id) {
+  if (!confirm('削除しますか？')) return;
+  entries = entries.filter(e => e.id !== id);
+  save();
+  render();
+}
+
+function render() {
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = '';
+  const sorted = [...entries].sort((a,b) => (b.uxScore||0) - (a.uxScore||0));
+  sorted.forEach(e => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${escape(e.model)}<br><span class="source-note">${escape(e.promptType||'')}</span></td>
+      <td>${escape(e.env)}</td>
+      <td>${e.tokensPerSec||0}</td>
+      <td>${e.ttftSec||0}s</td>
+      <td><strong>${e.uxScore||0}</strong></td>
+      <td><span class="badge ${e.confidence}">${e.confidence}</span><br><span class="source-note">${escape(e.sourceType)}</span></td>
+      <td>${escape(e.source||'-')} <button onclick="deleteEntry('${e.id}')" style="float:right;font-size:0.7rem;padding:2px 6px;">削除</button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+  renderBars(sorted);
+}
+
+function renderBars(sorted) {
+  const bars = document.getElementById('bars');
+  bars.innerHTML = '';
+  const max = sorted.reduce((m, e) => Math.max(m, e.tokensPerSec||0), 1);
+  sorted.forEach(e => {
+    const w = ((e.tokensPerSec||0) / max * 100).toFixed(1);
+    const div = document.createElement('div');
+    div.className = 'bar';
+    div.innerHTML = `
+      <div>${escape(e.model)}</div>
+      <div><div class="fill" style="width:${w}%"></div></div>
+      <div>${e.tokensPerSec||0} t/s</div>
+    `;
+    bars.appendChild(div);
+  });
+}
+
+function escape(s) {
+  return String(s||'').replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function exportJSON() {
+  const blob = new Blob([JSON.stringify(entries, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'token-speed-bench-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function importJSON(ev) {
+  const file = ev.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (!Array.isArray(data)) throw new Error('JSON 配列ではありません');
+      entries = data;
+      save();
+      render();
+      alert('Import 完了: ' + entries.length + ' 件');
+    } catch (err) {
+      alert('Import 失敗: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
+function clearAll() {
+  if (!confirm('全データを消去します。OK?')) return;
+  entries = [];
+  save();
+  render();
+}
+
+function loadSample() {
+  fetch('sample-data.json').then(r => r.json()).then(data => {
+    entries = data;
+    save();
+    render();
+  }).catch(err => {
+    // fetch 失敗時はインラインサンプルを使う
+    entries = INLINE_SAMPLE;
+    save();
+    render();
+  });
+}
+
+function parseLog() {
+  const txt = document.getElementById('log').value;
+  const ttftMatch = txt.match(/first token[:\s]+([\d.]+)\s*s/i);
+  const tpsMatch = txt.match(/tokens?\/sec[:\s]+([\d.]+)/i);
+  const totalMatch = txt.match(/total[:\s]+([\d.]+)\s*s/i);
+  const outputMatch = txt.match(/output[:\s]+([\d]+)/i);
+  const modelMatch = txt.match(/model[:\s]+([\S]+)/i);
+  if (modelMatch) document.getElementById('f-model').value = modelMatch[1];
+  if (ttftMatch) document.getElementById('f-ttftSec').value = ttftMatch[1];
+  if (totalMatch) document.getElementById('f-totalSec').value = totalMatch[1];
+  if (outputMatch) document.getElementById('f-outputChars').value = outputMatch[1];
+  document.getElementById('f-sourceType').value = 'paste-log';
+  document.getElementById('form').classList.add('open');
+}
+
+const INLINE_SAMPLE = [
+  {id:'ent-001',model:'claude-sonnet-4-6',env:'Claude Code CLI',promptType:'code-generation',inputChars:1200,outputChars:3400,ttftSec:1.8,totalSec:12.4,tokensPerSec:27.4,uxScore:0,source:'self-measured',sourceType:'own-log',confidence:'high',collectedAt:'2026-05-24T01:10:00+09:00',memo:'Claude Code で長文コード生成'},
+  {id:'ent-002',model:'codex-2025',env:'Codex Web',promptType:'code-generation',inputChars:1200,outputChars:2800,ttftSec:0.9,totalSec:14.0,tokensPerSec:20.0,uxScore:0,source:'self-measured',sourceType:'own-log',confidence:'high',collectedAt:'2026-05-24T01:12:00+09:00',memo:'Codex 同条件・初回応答早いが total 遅い'},
+  {id:'ent-003',model:'gemini-2.5-pro',env:'AI Studio',promptType:'long-form',inputChars:800,outputChars:5200,ttftSec:1.2,totalSec:11.0,tokensPerSec:47.3,uxScore:0,source:'手入力',sourceType:'manual-input',confidence:'medium',collectedAt:'2026-05-24T01:15:00+09:00',memo:'AI Studio で長文生成'},
+  {id:'ent-004',model:'qwen2.5-7b',env:'Ollama Local (M2 Pro)',promptType:'short-answer',inputChars:200,outputChars:1400,ttftSec:0.4,totalSec:10.0,tokensPerSec:14.0,uxScore:0,source:'paste-log: HN comment',sourceType:'paste-log',confidence:'medium',collectedAt:'2026-05-24T01:18:00+09:00',memo:'ローカル Qwen 2.5 7B'},
+  {id:'ent-005',model:'gpt-4o',env:'ChatGPT Web',promptType:'reasoning',inputChars:600,outputChars:2200,ttftSec:0.8,totalSec:8.0,tokensPerSec:27.5,uxScore:0,source:'estimated',sourceType:'estimated',confidence:'low',collectedAt:'2026-05-24T01:20:00+09:00',memo:'体感ベース推測'}
+].map(e => ({...e, uxScore: uxScore(e.tokensPerSec, e.ttftSec, e.outputChars)}));
+
+load();
+</script>
+
+</body>
+</html>
