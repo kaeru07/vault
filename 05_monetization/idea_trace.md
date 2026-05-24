@@ -70,9 +70,9 @@ tags: [idea, source, candidate, prototype, trace]
 | 有料 API 範囲 💸 | 実 LLM 呼び出しによる自動ベンチ（OpenAI / Anthropic API）→ **MVP では呼ばない**。将来オプションで「Bring your own key」検討 |
 | 収益化導線 | アプリ広告（無料層）/ note 販売（ベンチ結果まとめ）/ Shorts（速度比較動画）/ プレミアム機能（複数モデル一括比較・履歴無制限） |
 | 試作状況 🧪 | 本サイクル（2026-05-24）で MVP 静的 HTML モック作成 → [[../90_prototypes/token-speed-tool/README]] |
-| 試作リンク | [[scenarios/candidate-005]] / [[token-speed-tool]] (仕様) / [[../90_prototypes/token-speed-tool/README]] (モック) |
-| 判断履歴 | 2026-05-21 idea_pool 登録（粗 score 10）→ 2026-05-22 上位 5 案に入る → 2026-05-22 hold（AI 分野継続性難で）→ 2026-05-24 vloop1「APIなし前提」で再評価・MVP モック試作 → **2026-05-24 vloop2 candidate-005 として正規化（28/40・25/30）** |
-| 次の判断 | ChatGPT が candidate-005 を方向性レビュー / ユーザーが iPhone 実機表示確認 / 7 日実行プラン化 |
+| 試作リンク | [[scenarios/candidate-005]] / [[scenarios/candidate-005_公開ブロッカー]] / [[scenarios/candidate-005_7日実行プラン]] / [[scenarios/candidate-005_progress投入設計]] / [[../20_reviews/candidate-005_ChatGPT承認パック]] / [[token-speed-tool]] (仕様) / [[../90_prototypes/token-speed-tool/README]] (モック) |
+| 判断履歴 | 2026-05-21 idea_pool 登録（粗 score 10）→ 2026-05-22 上位 5 案に入る → 2026-05-22 hold（AI 分野継続性難で）→ 2026-05-24 vloop1「APIなし前提」で再評価・MVP モック試作 → 2026-05-24 vloop2 candidate-005 として正規化（28/40・25/30）→ **2026-05-24 vloop3 承認材料 4 ファイル完備（公開ブロッカー / 7 日プラン / progress 投入設計 / ChatGPT 承認パック）= candidate-001 と同水準** |
+| 次の判断 | ChatGPT が candidate-005_ChatGPT承認パック を方向性レビュー → 人間が approved 判断 → progress 投入 |
 | 関連 Issue | #60 試作 / #62 trace / #61 試作ループ |
 
 ---

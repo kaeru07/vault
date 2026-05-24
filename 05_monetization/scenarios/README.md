@@ -36,6 +36,15 @@ tags: [入口, candidate, 収益化]
 > - [[candidate-001_7日実行プラン]] — Day1〜Day7 ToDo
 > - [[candidate-001_progress投入設計]] — 承認後の progress ToDo 化設計
 
+## candidate-005 補助ファイル（2026-05-24 追加）
+
+> [!todo] candidate-005 の判断材料も 4 ファイルに分散
+> MVP モック動作確認済・ChatGPT 方向性承認待ち（candidate のまま・pending_approval に上げていない）:
+> - [[candidate-005_公開ブロッカー]] — B1〜B9 ブロッカー一覧
+> - [[candidate-005_7日実行プラン]] — Day1〜Day7 ToDo（candidate-001 と並走スケジュール付き）
+> - [[candidate-005_progress投入設計]] — 承認後の progress ToDo 化設計
+> - [[../../20_reviews/candidate-005_ChatGPT承認パック]] — 自己完結の承認パック §1-§14
+
 ## 関連
 
 - [[../../20_reviews/ChatGPT承認待ち]] — 承認入口

@@ -37,8 +37,8 @@ status: active
 > [!note] 全アプリ案の trace（Issue #63）
 > [[05_monetization/idea_trace|🧭 idea_trace — 全案の情報源・着想理由・採用判断]] — 情報源 → 気づき → 案 → 候補 → 試作 → 判断を 1 ページで追える
 
-> [!note] candidate-005（試作着地済）
-> [[05_monetization/scenarios/candidate-005|💎 candidate-005 LLM トークン速度ベンチ可視化（APIなし）]] — scoreTotal 28/40 / [[90_prototypes/token-speed-tool/README|MVP モック]] / [[05_monetization/token-speed-tool|仕様 + trace]]
+> [!note] candidate-005（承認材料 4 ファイル完備）
+> [[05_monetization/scenarios/candidate-005|💎 candidate-005 LLM トークン速度ベンチ可視化（APIなし）]] — scoreTotal 28/40 / [[20_reviews/candidate-005_ChatGPT承認パック|📦 承認パック §1-§14]] / [[05_monetization/scenarios/candidate-005_公開ブロッカー|B1-B9]] / [[05_monetization/scenarios/candidate-005_7日実行プラン|Day1-7]] / [[05_monetization/scenarios/candidate-005_progress投入設計|progress 投入]] / [[90_prototypes/token-speed-tool/README|MVP モック]] / [[05_monetization/token-speed-tool|仕様 + trace]]
 
 > [!note] 試作モック 3 件（Issue #60 / #61）
 > - [[90_prototypes/token-speed-tool/README|🧪 token-speed-tool]] — APIなしで動く LLM ベンチ可視化ツール

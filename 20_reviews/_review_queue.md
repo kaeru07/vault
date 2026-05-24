@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-24_candidate-005-approval-pack]]
+  - createdAt: 2026-05-24 20:30
+  - app: company-meta / obsidian-vault
+  - project: monetization / candidate-005 / approval
+  - priority: high
+  - summary: candidate-005 承認材料 4 ファイル完備（公開ブロッカー B1-B9 / 7 日実行プラン Day1-7 + candidate-001 並走表 / progress 投入設計 + 3 ToDo + チェックリスト / ChatGPT 承認パック §1-§14 自己完結）。candidate-001 と同水準。status は candidate のまま（pending_approval にも approved にも上げていない / ChatGPT 承認待ち.md にも追加していない・人間判断待ち）。scenarios/README + idea_trace + 00_START_HERE にリンク追加
+  - result: 
 - [ ] [[2026-05-24_candidate-005-and-n03-n04-prototypes]]
   - createdAt: 2026-05-24 19:20
   - app: company-meta / obsidian-vault
