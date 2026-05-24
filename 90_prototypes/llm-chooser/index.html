@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM Chooser — Claude / Codex / Gemini / ローカル 使い分けチャート</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --c1: #a78bfa;
+    --c2: #fbbf24;
+    --c3: #34d399;
+    --c4: #f87171;
+    --border: #334155;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 16px;
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    line-height: 1.5;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; color: var(--accent); }
+  h2 { font-size: 1.05rem; margin: 24px 0 8px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+  .note { color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
+  .quiz { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin: 12px 0; }
+  .quiz h3 { margin: 0 0 8px; font-size: 1rem; }
+  .choice {
+    display: block;
+    width: 100%;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 6px 0;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  .choice:hover { border-color: var(--accent); }
+  .result {
+    background: var(--panel);
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    padding: 16px;
+    margin: 12px 0;
+    display: none;
+  }
+  .result.active { display: block; }
+  .pick { font-size: 1.2rem; font-weight: bold; color: var(--accent); margin-bottom: 8px; }
+  .reason { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+  .card-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+    border-left: 4px solid var(--accent);
+  }
+  .card.claude { border-left-color: var(--c1); }
+  .card.codex { border-left-color: var(--c2); }
+  .card.gemini { border-left-color: var(--c3); }
+  .card.local { border-left-color: var(--c4); }
+  .card h3 { margin: 0 0 6px; font-size: 1rem; }
+  .card .tag {
+    display: inline-block;
+    background: var(--bg);
+    color: var(--muted);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    margin: 2px 4px 2px 0;
+  }
+  table { width: 100%; border-collapse: collapse; background: var(--panel); border-radius: 6px; overflow-x: auto; }
+  th, td {
+    padding: 8px 6px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+  th { background: #0b1224; color: var(--muted); font-weight: 600; }
+  .btn-back {
+    background: var(--border);
+    color: var(--text);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  @media (min-width: 768px) {
+    .card-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<h1>LLM Chooser — 使い分けチャート</h1>
+<p class="note">
+質問に答えると、その用途に合う LLM（Claude / Codex / Gemini / ローカル LLM）を提案する 1 枚物の判定フロー。
+**APIなし・静的 HTML 1 枚**で動く（外部 CDN ゼロ・file:// で開いても動作）。
+</p>
+
+<div id="quiz-container"></div>
+
+<div id="result" class="result">
+  <div class="pick" id="pick"></div>
+  <div class="reason" id="reason"></div>
+  <div style="margin-bottom:12px;">
+    <strong>得意なこと:</strong><br>
+    <span id="strong"></span>
+  </div>
+  <div style="margin-bottom:12px;">
+    <strong>苦手なこと:</strong><br>
+    <span id="weak"></span>
+  </div>
+  <div id="alt-note" style="font-size:0.85rem;color:var(--muted);margin-bottom:12px;"></div>
+  <button class="btn-back" onclick="restart()">もう一度判定する</button>
+</div>
+
+<h2>全 LLM 早見表</h2>
+<div class="card-grid">
+  <div class="card claude">
+    <h3>Claude（Anthropic）</h3>
+    <span class="tag">長文コード</span>
+    <span class="tag">Agent</span>
+    <span class="tag">CLI</span>
+    <span class="tag">Vault連携</span>
+    <p style="font-size:0.85rem;margin:6px 0;">
+    Claude Code が CLI で動く。長文コード生成・複雑なリファクタ・複数ファイル横断の作業に強い。Vault / progress / Obsidian と相性良。
+    </p>
+  </div>
+  <div class="card codex">
+    <h3>Codex（OpenAI）</h3>
+    <span class="tag">短い指示</span>
+    <span class="tag">Web</span>
+    <span class="tag">初回応答速</span>
+    <p style="font-size:0.85rem;margin:6px 0;">
+    Codex は短い指示への初回応答が速い。Web UI 中心。Agent SDK 経由でも使えるが Claude Code ほど成熟していない（個人観察）。
+    </p>
+  </div>
+  <div class="card gemini">
+    <h3>Gemini（Google）</h3>
+    <span class="tag">長文入出力</span>
+    <span class="tag">マルチモーダル</span>
+    <span class="tag">AI Studio無料層</span>
+    <p style="font-size:0.85rem;margin:6px 0;">
+    Gemini は超長文入出力（数十万トークン）が強み。AI Studio に無料層あり。マルチモーダル（画像 / 音声 / 動画）も扱える。
+    </p>
+  </div>
+  <div class="card local">
+    <h3>ローカル LLM（Ollama / llama.cpp）</h3>
+    <span class="tag">プライバシー</span>
+    <span class="tag">API課金ゼロ</span>
+    <span class="tag">オフライン</span>
+    <p style="font-size:0.85rem;margin:6px 0;">
+    ローカル LLM はネット不要 + API 課金ゼロ。プライバシー要件が高い用途・GPU/CPU 性能テスト用に最適。精度は商用 LLM より劣る。
+    </p>
+  </div>
+</div>
+
+<h2>機能比較表</h2>
+<div style="overflow-x:auto;">
+<table>
+  <thead>
+    <tr>
+      <th style="width:24%;">観点</th>
+      <th>Claude</th>
+      <th>Codex</th>
+      <th>Gemini</th>
+      <th>ローカル LLM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>長文コード生成</td><td>◎</td><td>○</td><td>○</td><td>△</td></tr>
+    <tr><td>初回応答の速さ</td><td>○</td><td>◎</td><td>○</td><td>◎（短文）</td></tr>
+    <tr><td>長文入力（10万+トークン）</td><td>○</td><td>△</td><td>◎</td><td>△</td></tr>
+    <tr><td>CLI / Agent 連携</td><td>◎（Claude Code）</td><td>○（SDK）</td><td>△</td><td>○（自前構築）</td></tr>
+    <tr><td>マルチモーダル</td><td>○</td><td>○</td><td>◎</td><td>×</td></tr>
+    <tr><td>無料層</td><td>制限あり</td><td>制限あり</td><td>◎（AI Studio）</td><td>◎（完全無料）</td></tr>
+    <tr><td>プライバシー（社外秘）</td><td>△（規約次第）</td><td>△</td><td>△</td><td>◎</td></tr>
+    <tr><td>オフライン動作</td><td>×</td><td>×</td><td>×</td><td>◎</td></tr>
+    <tr><td>動作速度（tokens/sec）</td><td>20-30</td><td>20-25</td><td>30-50</td><td>10-50（ハード次第）</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>関連</h2>
+<ul>
+  <li>spec/source: <code>05_monetization/idea_trace.md</code>（案 N-03）</li>
+  <li>類似試作: <code>90_prototypes/token-speed-tool/</code>（候補-005 / LLM ベンチ可視化）</li>
+  <li>Issue: kaeru07/vault#61（試作ループ）</li>
+</ul>
+
+<script>
+const QUIZ = [
+  {
+    id: 'q1',
+    q: '主にやりたいことは？',
+    choices: [
+      { label: '長文コード生成 / 複数ファイル横断のリファクタ', next: 'q2' },
+      { label: '短い質問・コードスニペット生成', next: 'qcodex' },
+      { label: 'PDF / 画像 / 動画 / 超長文の解析', next: 'rgemini' },
+      { label: 'オフライン / 完全プライベートで動かしたい', next: 'rlocal' },
+    ]
+  },
+  {
+    id: 'q2',
+    q: 'CLI から使いたい？',
+    choices: [
+      { label: 'はい（ターミナルで Agent ぽく動かす）', next: 'rclaude' },
+      { label: 'いいえ（Web UI で十分）', next: 'q3' },
+    ]
+  },
+  {
+    id: 'q3',
+    q: 'コードを 10 万トークン以上のファイルで扱う？',
+    choices: [
+      { label: 'はい（巨大なファイル / 大量履歴）', next: 'rgemini' },
+      { label: 'いいえ（数千トークン程度）', next: 'rclaude' },
+    ]
+  },
+  {
+    id: 'qcodex',
+    q: '無料層を最優先する？',
+    choices: [
+      { label: 'はい（とにかく無料で）', next: 'rgemini' },
+      { label: 'いいえ（速さと UX 優先）', next: 'rcodex' },
+    ]
+  },
+];
+
+const RESULTS = {
+  rclaude: {
+    pick: '🟣 Claude（Claude Code 推奨）',
+    reason: '長文コード生成 / 複数ファイル横断 / CLI Agent としての成熟度が最も高い。Vault / progress と連携した日常運用に強い。',
+    strong: '・コード生成（長文）<br>・複数ファイル横断のリファクタ<br>・Vault / progress / Obsidian 連携<br>・対話的な深い設計検討',
+    weak: '・無料層が限定的<br>・マルチモーダル（画像 / 動画）は Gemini に劣る',
+    alt: '代替: Web UI 中心なら Claude.ai。コード中心なら Claude Code CLI。',
+  },
+  rcodex: {
+    pick: '🟡 Codex（OpenAI）',
+    reason: '短い指示への初回応答が速い。Web UI 中心で気軽に使える。',
+    strong: '・短い質問<br>・初回応答の速さ<br>・SDK 連携',
+    weak: '・長文コード生成は Claude に劣る<br>・無料層は Gemini AI Studio より制限あり',
+    alt: '代替: CLI で動かしたいなら Claude Code、無料層なら Gemini AI Studio。',
+  },
+  rgemini: {
+    pick: '🟢 Gemini（Google AI Studio 無料層）',
+    reason: '無料層が手厚く、超長文入力（数十万トークン）+ マルチモーダルが強み。',
+    strong: '・無料層が広い<br>・超長文入出力<br>・マルチモーダル（画像 / 音声 / 動画）<br>・PDF 全文読み込み',
+    weak: '・コード生成は Claude / Codex に劣る（個人観察）<br>・CLI Agent としてはまだ発展途上',
+    alt: '代替: コード中心なら Claude Code、短い問いなら Codex。',
+  },
+  rlocal: {
+    pick: '🔴 ローカル LLM（Ollama / llama.cpp）',
+    reason: 'ネット不要 + API 課金ゼロ + 完全プライベート。GPU / CPU 性能に依存。',
+    strong: '・オフライン動作<br>・社外秘データの取り扱い<br>・API 課金ゼロ<br>・速度実測（自分のハード）',
+    weak: '・精度は商用 LLM より劣る<br>・モデル選定とセットアップに手間<br>・長文コード生成は厳しい',
+    alt: '代替: クラウドで精度優先なら Claude / Gemini。ハイブリッド（手元はローカル / 仕上げはクラウド）も有効。',
+  },
+};
+
+function showQuestion(qid) {
+  const q = QUIZ.find(x => x.id === qid);
+  if (!q) return;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  const div = document.createElement('div');
+  div.className = 'quiz';
+  div.innerHTML = `<h3>${q.q}</h3>`;
+  q.choices.forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'choice';
+    btn.textContent = c.label;
+    btn.onclick = () => {
+      if (c.next.startsWith('r')) showResult(c.next);
+      else showQuestion(c.next);
+    };
+    div.appendChild(btn);
+  });
+  container.appendChild(div);
+  document.getElementById('result').classList.remove('active');
+}
+
+function showResult(rid) {
+  const r = RESULTS[rid];
+  if (!r) return;
+  document.getElementById('quiz-container').innerHTML = '';
+  document.getElementById('pick').textContent = r.pick;
+  document.getElementById('reason').textContent = r.reason;
+  document.getElementById('strong').innerHTML = r.strong;
+  document.getElementById('weak').innerHTML = r.weak;
+  document.getElementById('alt-note').textContent = r.alt;
+  document.getElementById('result').classList.add('active');
+}
+
+function restart() {
+  showQuestion('q1');
+}
+
+showQuestion('q1');
+</script>
+
+</body>
+</html>

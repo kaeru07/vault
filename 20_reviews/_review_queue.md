@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-24_candidate-005-and-n03-n04-prototypes]]
+  - createdAt: 2026-05-24 19:20
+  - app: company-meta / obsidian-vault
+  - project: monetization / prototype-loop / candidate-005
+  - priority: high
+  - summary: 試作ループ Epic 拡張（vloop2）。candidate-005 として token-speed-tool を scenarios 正規化（28/40 / 6 軸 25/30 / approved 化せず candidate のまま）+ N-03 LLM Chooser 静的 HTML 試作（クイズ 4 種 + 4 LLM カード + 比較表 9×4）+ N-04 Vault Search Cheatsheet 静的 HTML 試作（検索ボックス + 20 件対応表 + iPhone/GitHub Tips）+ idea_trace を 8→10 案体制に拡張 + 試作ループ検証 Phase6 追記 + 00_START_HERE に candidate-005 + 試作モック 3 件入口追加
+  - result: 
 - [ ] [[2026-05-24_idea-trace-and-token-speed-prototype]]
   - createdAt: 2026-05-24 01:35
   - app: company-meta / obsidian-vault

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vault Search Cheatsheet — iPhone Obsidian + GitHub Vault 検索パターン早見表</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --good: #22c55e;
+    --warn: #facc15;
+    --border: #334155;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 16px;
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    line-height: 1.5;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; color: var(--accent); }
+  h2 { font-size: 1.05rem; margin: 24px 0 8px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+  .note { color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
+  .search-box {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 6px; padding: 12px; margin: 12px 0;
+  }
+  .search-box input {
+    width: 100%;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 1rem;
+  }
+  .stats { color: var(--muted); font-size: 0.8rem; margin-top: 6px; }
+  table { width: 100%; border-collapse: collapse; background: var(--panel); border-radius: 6px; overflow-x: auto; }
+  th, td {
+    padding: 8px 6px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    vertical-align: top;
+  }
+  th { background: #0b1224; color: var(--muted); font-weight: 600; position: sticky; top: 0; }
+  tr.hidden { display: none; }
+  tr:hover { background: rgba(56,189,248,0.05); }
+  code {
+    background: var(--bg);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    font-family: monospace;
+  }
+  kbd {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-family: monospace;
+    font-size: 0.8em;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--panel);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 0.7rem;
+    margin-right: 4px;
+  }
+  .badge.iphone { color: var(--good); border-color: var(--good); }
+  .badge.github { color: var(--warn); border-color: var(--warn); }
+  .badge.both { color: var(--accent); border-color: var(--accent); }
+</style>
+</head>
+<body>
+
+<h1>Vault Search Cheatsheet</h1>
+<p class="note">
+iPhone Obsidian + GitHub 管理 Vault の**検索パターン早見表**。検索ボックスでこのページ内も絞り込める。<br>
+**APIなし・静的 HTML 1 枚**（外部 CDN ゼロ・file:// で開いても動く）。
+</p>
+
+<div class="search-box">
+  <input type="text" id="search" placeholder="🔍 検索キーワード（例: candidate / 何切る / vloop / Shorts）" oninput="filter()">
+  <div class="stats" id="stats"></div>
+</div>
+
+<h2>探したいもの → 検索キーワード対応表</h2>
+<div style="overflow-x:auto;">
+<table id="kw-table">
+  <thead>
+    <tr>
+      <th style="width:24%;">探したいもの</th>
+      <th style="width:30%;">検索キーワード</th>
+      <th style="width:14%;">対応</th>
+      <th>備考 / リンク</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Vault の入口</td><td><code>00_START_HERE</code> / <code>START</code></td><td><span class="badge both">両方</span></td><td>iPhone Obsidian でも GitHub Web でもヒット</td></tr>
+    <tr><td>全体索引</td><td><code>00_index</code> / <code>index</code></td><td><span class="badge both">両方</span></td><td>フォルダ別構造索引</td></tr>
+    <tr><td>承認待ち</td><td><code>承認待ち</code> / <code>ChatGPT</code></td><td><span class="badge both">両方</span></td><td>20_reviews/ChatGPT承認待ち.md</td></tr>
+    <tr><td>candidate-001 詳細</td><td><code>candidate-001</code></td><td><span class="badge both">両方</span></td><td>麻雀何切る AI 本命</td></tr>
+    <tr><td>candidate 全件</td><td><code>scenarios</code> / <code>candidate</code></td><td><span class="badge both">両方</span></td><td>scenarios/README.md</td></tr>
+    <tr><td>Epic 進捗</td><td><code>epics</code></td><td><span class="badge both">両方</span></td><td>05_monetization/epics.md</td></tr>
+    <tr><td>見方ガイド</td><td><code>Vaultの見方</code> / <code>00_inbox</code></td><td><span class="badge both">両方</span></td><td>収益化フロー判断手順</td></tr>
+    <tr><td>idea_trace</td><td><code>idea_trace</code> / <code>idea trace</code></td><td><span class="badge both">両方</span></td><td>全アプリ案ハブ（#63）</td></tr>
+    <tr><td>token-speed-tool</td><td><code>token-speed-tool</code> / <code>token speed</code></td><td><span class="badge both">両方</span></td><td>候補-005 / APIなしベンチ可視化</td></tr>
+    <tr><td>試作モック一覧</td><td><code>90_prototypes</code> / <code>prototypes</code></td><td><span class="badge github">GitHub のみ</span></td><td>HTML / JSON は ob sync で同期されない</td></tr>
+    <tr><td>vloop 過去サマリー</td><td><code>vloop_</code> / <code>vloop log</code></td><td><span class="badge both">両方</span></td><td>03_prompts/claude-commands/logs/</td></tr>
+    <tr><td>レビュー記録</td><td><code>2026-05</code> / <code>review</code></td><td><span class="badge both">両方</span></td><td>20_reviews/ + 04_reviews/</td></tr>
+    <tr><td>レビューキュー</td><td><code>_review_queue</code> / <code>review queue</code></td><td><span class="badge both">両方</span></td><td>ChatGPT レビュー入口</td></tr>
+    <tr><td>idea_pool（自動生成案）</td><td><code>idea_pool</code> / <code>2026-05-21</code></td><td><span class="badge both">両方</span></td><td>NDJSON 形式（40 案）</td></tr>
+    <tr><td>収益化ロードマップ</td><td><code>収益化ロードマップ</code></td><td><span class="badge both">両方</span></td><td>05_monetization/</td></tr>
+    <tr><td>cron / 自動化</td><td><code>cron</code> / <code>research-run</code></td><td><span class="badge both">両方</span></td><td>Epic A 情報収集基盤</td></tr>
+    <tr><td>Shorts 関連</td><td><code>Shorts</code> / <code>nanikiru</code></td><td><span class="badge both">両方</span></td><td>02_apps/nanikiru-shorts.md</td></tr>
+    <tr><td>mahjong / 麻雀</td><td><code>mahjong</code> / <code>何切る</code></td><td><span class="badge both">両方</span></td><td>02_apps/mahjong.md</td></tr>
+    <tr><td>意思決定ログ</td><td><code>decision-log</code> / <code>decision</code></td><td><span class="badge both">両方</span></td><td>05_monetization/decision-log.md</td></tr>
+    <tr><td>Vault 同期ルール</td><td><code>同期</code> / <code>sync</code></td><td><span class="badge both">両方</span></td><td>03_prompts/Vault同期ルール.md / GitHub反映ルール</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>iPhone Obsidian の検索 Tips</h2>
+<ul>
+  <li>日本語ファイル名は<strong>ヒットしないことがある</strong> → 英数字キーワード（上表）優先</li>
+  <li><kbd>クイックスイッチャー</kbd> でファイル名検索（最速）</li>
+  <li><kbd>検索</kbd> アイコンで全文検索（重い場合あり）</li>
+  <li><code>tag:#tagname</code> でタグ検索（frontmatter tags 対応）</li>
+  <li><code>"フレーズ"</code> でフレーズ完全一致</li>
+  <li><code>path:05_monetization</code> でフォルダ絞り込み（Obsidian 1.0+）</li>
+</ul>
+
+<h2>GitHub Web の検索 Tips</h2>
+<ul>
+  <li>リポジトリ画面の <kbd>/</kbd> でファイル名検索（一番速い）</li>
+  <li>右上の検索バーで全文検索（インデックス未完了だと遅れる）</li>
+  <li><code>filename:candidate</code> でファイル名フィルタ</li>
+  <li><code>path:20_reviews</code> でフォルダフィルタ</li>
+  <li><code>extension:md</code> で md のみ</li>
+  <li>blame で「いつ誰がこの行を書いたか」</li>
+</ul>
+
+<h2>iPhone と GitHub で結果が違うとき</h2>
+<ul>
+  <li><strong>iPhone でだけ見えない</strong> → <code>obsidian-sync-vault</code> 側に未反映の可能性 → ChatGPT に「逆反映ルール再実行」と依頼</li>
+  <li><strong>GitHub でだけ見えない</strong> → <code>obsidian-vault</code> 側に未 push → Claude Code に「GitHub 反映」と依頼</li>
+  <li><strong>HTML / JSON が iPhone で見えない</strong> → ob sync は Markdown のみ同期。HTML / JSON は GitHub Web で見る</li>
+  <li><strong>candidate を見つけられない</strong> → <code>scenarios</code> で検索（README.md が candidate 全件中継）</li>
+</ul>
+
+<h2>関連</h2>
+<ul>
+  <li>spec/source: <code>05_monetization/idea_trace.md</code>（案 N-04）</li>
+  <li>Vault 見方ガイド: <code>00_inbox/Vaultの見方_どこを見れば何がわかるか.md</code></li>
+  <li>START HERE: <code>00_START_HERE.md</code></li>
+  <li>Issue: kaeru07/vault#61</li>
+</ul>
+
+<script>
+function filter() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const rows = document.querySelectorAll('#kw-table tbody tr');
+  let hit = 0;
+  rows.forEach(r => {
+    const text = r.textContent.toLowerCase();
+    const match = q === '' || text.includes(q);
+    r.classList.toggle('hidden', !match);
+    if (match) hit++;
+  });
+  document.getElementById('stats').textContent = q ? `${hit}/${rows.length} 件ヒット` : '';
+}
+</script>
+
+</body>
+</html>

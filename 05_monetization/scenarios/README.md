@@ -18,7 +18,7 @@ tags: [入口, candidate, 収益化]
 > - ChatGPT 承認待ち（[[../../20_reviews/ChatGPT承認待ち|承認待ちキュー]]）
 > - 承認パック §1-§14 完備（[[../../20_reviews/candidate-001_ChatGPT承認パック|候補-001 承認パック]]）
 
-## candidate 全 4 件
+## candidate 全 5 件
 
 | ID | 一言 | impact | status | リンク |
 |---|---|---|---|---|
@@ -26,6 +26,7 @@ tags: [入口, candidate, 収益化]
 | 002 | 麻雀何切る Shorts（candidate-001 への送客） | medium | candidate | [[candidate-002]] |
 | 003 | Obsidian テンプレ販売 | low | candidate（要再調査） | [[candidate-003]] |
 | 004 | 麻雀問題系 3 アプリ統合 | medium | candidate | [[candidate-004]] |
+| 005 | LLM トークン速度・体感ベンチ可視化（APIなし） | medium | candidate（MVP モック完成） | [[candidate-005]] |
 
 ## candidate-001 補助ファイル
 

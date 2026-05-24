@@ -37,8 +37,13 @@ status: active
 > [!note] 全アプリ案の trace（Issue #63）
 > [[05_monetization/idea_trace|🧭 idea_trace — 全案の情報源・着想理由・採用判断]] — 情報源 → 気づき → 案 → 候補 → 試作 → 判断を 1 ページで追える
 
-> [!note] 試作モック（Issue #60）
-> [[90_prototypes/token-speed-tool/README|🧪 token-speed-tool MVP モック]] — APIなしで動く LLM ベンチ可視化ツール / [[05_monetization/token-speed-tool|仕様 + trace]]
+> [!note] candidate-005（試作着地済）
+> [[05_monetization/scenarios/candidate-005|💎 candidate-005 LLM トークン速度ベンチ可視化（APIなし）]] — scoreTotal 28/40 / [[90_prototypes/token-speed-tool/README|MVP モック]] / [[05_monetization/token-speed-tool|仕様 + trace]]
+
+> [!note] 試作モック 3 件（Issue #60 / #61）
+> - [[90_prototypes/token-speed-tool/README|🧪 token-speed-tool]] — APIなしで動く LLM ベンチ可視化ツール
+> - [[90_prototypes/llm-chooser/README|🎯 LLM Chooser]] — Claude/Codex/Gemini/ローカル 使い分けチャート（N-03）
+> - [[90_prototypes/vault-search-cheatsheet/README|🔍 Vault Search Cheatsheet]] — iPhone+GitHub Vault 検索パターン早見表（N-04）
 
 > [!note] 試作ループ検証（Issue #61）
 > [[05_monetization/試作ループ検証|🔁 試作ループ検証]] — 14 案追加 / 3 候補選定 / N-01 試作着地

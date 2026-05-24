@@ -35,7 +35,7 @@ tags: [idea, source, candidate, prototype, trace]
 
 ---
 
-## 案カード一覧（主要 8 件）
+## 案カード一覧（主要 10 件・vloop2 で N-03 / N-04 追加）
 
 ### 1. 🟡🆓 candidate-001: 何切るAI（mahjong + AI 解説 Web）
 
@@ -57,11 +57,11 @@ tags: [idea, source, candidate, prototype, trace]
 
 ---
 
-### 2. 🟡🆓🧪 token-speed-tool: LLM トークン速度・ベンチ可視化ツール（Issue #60/#62）
+### 2. 🟡🆓🧪 token-speed-tool: LLM トークン速度・ベンチ可視化ツール（Issue #60/#62 / **candidate-005 正規化済**）
 
 | 項目 | 内容 |
 |---|---|
-| 状態 | candidate（APIなし試作着手・本サイクルで MVP モック作成） |
+| 状態 | **candidate-005 として scenarios 正規化済**（[[scenarios/candidate-005]]）/ MVP モック動作確認済 |
 | 情報源タイプ | HN（Hacker News）+ Claude Code / Codex 実体験 + ローカル LLM 比較ニーズ |
 | 情報源 | HN「How fast is N tokens/s really」（ideaId 20260521-003 / [[idea_pool/2026-05-21.ndjson]]）/ HN「Show HN: CPU only transcription」（関連・20260521-002）/ Claude Code 利用時のトークン速度体感差 / ローカル LLM（Ollama / llama.cpp）速度比較ニーズ |
 | 気づき | tokens/sec という単一指標だけでなく**「初回応答時間 / 総生成時間 / 出力量」を体感スコア化**したい需要が AI 開発者層にある。既存ベンチサイトは数値羅列で読みづらい |
@@ -70,9 +70,9 @@ tags: [idea, source, candidate, prototype, trace]
 | 有料 API 範囲 💸 | 実 LLM 呼び出しによる自動ベンチ（OpenAI / Anthropic API）→ **MVP では呼ばない**。将来オプションで「Bring your own key」検討 |
 | 収益化導線 | アプリ広告（無料層）/ note 販売（ベンチ結果まとめ）/ Shorts（速度比較動画）/ プレミアム機能（複数モデル一括比較・履歴無制限） |
 | 試作状況 🧪 | 本サイクル（2026-05-24）で MVP 静的 HTML モック作成 → [[../90_prototypes/token-speed-tool/README]] |
-| 試作リンク | [[token-speed-tool]] (MVP 仕様) / [[../90_prototypes/token-speed-tool/README]] |
-| 判断履歴 | 2026-05-21 idea_pool 登録（粗 score 10）→ 2026-05-22 上位 5 案に入る → 2026-05-22 hold（AI 分野継続性難で）→ 2026-05-24 「APIなし前提」で再評価 → Issue #60/#62 で再着手 → **本サイクル MVP モック試作 + candidate 化** |
-| 次の判断 | ユーザー + ChatGPT が「APIなし MVP で広告向きか」判定 → candidate-005 起票 or hold 継続 |
+| 試作リンク | [[scenarios/candidate-005]] / [[token-speed-tool]] (仕様) / [[../90_prototypes/token-speed-tool/README]] (モック) |
+| 判断履歴 | 2026-05-21 idea_pool 登録（粗 score 10）→ 2026-05-22 上位 5 案に入る → 2026-05-22 hold（AI 分野継続性難で）→ 2026-05-24 vloop1「APIなし前提」で再評価・MVP モック試作 → **2026-05-24 vloop2 candidate-005 として正規化（28/40・25/30）** |
+| 次の判断 | ChatGPT が candidate-005 を方向性レビュー / ユーザーが iPhone 実機表示確認 / 7 日実行プラン化 |
 | 関連 Issue | #60 試作 / #62 trace / #61 試作ループ |
 
 ---
@@ -154,7 +154,47 @@ tags: [idea, source, candidate, prototype, trace]
 
 ---
 
-### 8. 🔵🆓 Scrape Lab v2（情報源パイプライン）
+### 8. 🔵🆓🧪 N-03: LLM Chooser（Claude / Codex / Gemini / ローカル 使い分けチャート）
+
+| 項目 | 内容 |
+|---|---|
+| 状態 | idea / 試作モック完成（次サイクルで candidate 判断） |
+| 情報源タイプ | ユーザー発案 + 試作ループ Phase2 選定（N-03 ID） |
+| 情報源 | [[試作ループ検証]] Phase2 で N-01 と並ぶ 3 候補入り |
+| 気づき | 「どの LLM を使うべきか」の判定フローは静的 HTML 1 枚で十分成立する。AI 利用者層に SNS 拡散しやすい |
+| 採用理由 | candidate-005（token-speed-tool）と**相互送客**できる / 単独でも note 化容易 |
+| APIなし範囲 🆓 | 質問分岐 / カード表示 / 比較表 / すべて静的 HTML+JSON ベース（API 呼び出しゼロ）|
+| 有料 API 範囲 💸 | なし |
+| 収益化導線 | 広告 + テンプレ販売（チートシート md）+ Shorts 送客 |
+| 試作状況 🧪 | [[../90_prototypes/llm-chooser/README]]（クイズ 4 種・全 LLM カード・機能比較表 9 項目 × 4 LLM） |
+| 試作リンク | [[../90_prototypes/llm-chooser/README]] |
+| 判断履歴 | 2026-05-24 vloop1 N-03 として 14 案に追加 → vloop2 静的 HTML 試作完了 |
+| 次の判断 | ChatGPT が判定基準（個人観察ベース）の妥当性レビュー / iPhone 表示確認 / candidate 化判断 |
+| 関連 Issue | #61 試作ループ |
+
+---
+
+### 9. 🔵🆓🧪 N-04: Vault Search Cheatsheet（iPhone Obsidian + GitHub Vault 検索チートシート）
+
+| 項目 | 内容 |
+|---|---|
+| 状態 | idea / 試作モック完成 |
+| 情報源タイプ | 既存資産（Vault の見方ガイド）+ ユーザー発案 |
+| 情報源 | [[../00_inbox/Vaultの見方_どこを見れば何がわかるか]] / 試作ループ Phase2 で N-04 選定 |
+| 気づき | iPhone Obsidian の日本語ファイル名検索の制約 / GitHub Web 検索仕様の差は、**1 枚物の早見表で吸収できる** |
+| 採用理由 | 既存資産を Web 化するだけで成立 / Vault ユーザ層と直接接続 / 自己メンテも容易 |
+| APIなし範囲 🆓 | 静的 HTML 1 枚（検索ボックスでテーブル絞り込み） |
+| 有料 API 範囲 💸 | なし |
+| 収益化導線 | 広告（Obsidian / Vault ユーザ層・低 CPC だが読了率高）+ テンプレ販売（拡張版 md）+ note |
+| 試作状況 🧪 | [[../90_prototypes/vault-search-cheatsheet/README]]（20 件キーワード対応表 + iPhone/GitHub Tips + トラブル対応） |
+| 試作リンク | [[../90_prototypes/vault-search-cheatsheet/README]] |
+| 判断履歴 | 2026-05-24 vloop1 N-04 として 14 案に追加 → vloop2 静的 HTML 試作完了 |
+| 次の判断 | 既存「Vault の見方ガイド」との内容重複整理 / iPhone 表示確認 / candidate 化判断 |
+| 関連 Issue | #61 試作ループ / #55 見方ガイド / #58 START_HERE |
+
+---
+
+### 10. 🔵🆓 Scrape Lab v2（情報源パイプライン）
 
 | 項目 | 内容 |
 |---|---|
@@ -195,9 +235,11 @@ flowchart LR
 | 案 | APIなしで成立する範囲 | 有料 API 必須範囲 | MVP は APIなしで可能か |
 |---|---|---|---|
 | candidate-001 何切る AI | UI / 牌効率 / 事前生成解説 | 動的 AI 解説（任意） | ✅ 可 |
-| token-speed-tool | 手入力 / ログ貼付 / 体感スコア / 比較 | 自動ベンチ（オプション） | ✅ 可（本サイクルで MVP モック作成） |
+| candidate-005 token-speed-tool | 手入力 / ログ貼付 / 体感スコア / 比較 | 自動ベンチ（オプション） | ✅ 可（MVP モック動作確認済） |
 | mahjong-trainer | 全機能 | なし | ✅ 可 |
 | nanikiru-shorts | 全機能 | なし | ✅ 可 |
+| N-03 LLM Chooser | 全機能（クイズ + 早見表 + 比較表） | なし | ✅ 可（静的 HTML 完成） |
+| N-04 Vault Search Cheatsheet | 全機能（検索ボックス + 対応表 + Tips） | なし | ✅ 可（静的 HTML 完成） |
 | Qwen3.7-Max 評価 | 手入力比較表のみ | 自動評価（必須） | ⚠ 限定的 |
 | 文字起こし SaaS | UI のみ | 文字起こしエンジン（必須） | ❌ 不可 |
 | Scrape Lab v2 | 全機能 | なし | ✅ 可 |
