@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-24_candidate-006-007-and-project-todos]]
+  - createdAt: 2026-05-24 23:10
+  - app: company-meta / obsidian-vault
+  - project: monetization / candidate-006-007 / 案件別ToDo一覧
+  - priority: high
+  - summary: vloop6 candidate-006（N-03 LLM Chooser / 26-40 / コンパクト版）+ candidate-007（N-04 Vault Search Cheatsheet / 28-40 / 既存資産との重複整理 3 統合方針案付き）として scenarios 正規化。新運用ルール「案件別ToDo運用ルール」準拠の案件別ToDo一覧.md 新規作成（6 案件）。scenarios/README 5→7 件 + idea_trace §8/§9 反映 + 00_START_HERE 入口 5→6 件化（案件別ToDo一覧を最優先①）。補助 4 ファイル × 2 = 8 ファイルは次サイクル（やりっぱなし防止キュー優先 6 登録）
+  - result: 
 - [ ] [[2026-05-24_vault-accumulation-rule-residual]]
   - createdAt: 2026-05-24 22:35
   - app: company-meta / obsidian-vault

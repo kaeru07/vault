@@ -158,11 +158,11 @@ tags: [idea, source, candidate, prototype, trace]
 
 ---
 
-### 8. 🔵🆓🧪 N-03: LLM Chooser（Claude / Codex / Gemini / ローカル 使い分けチャート）
+### 8. 🟡🆓🧪 N-03 → candidate-006: LLM Chooser（Claude / Codex / Gemini / ローカル 使い分けチャート）
 
 | 項目 | 内容 |
 |---|---|
-| 状態 | idea / 試作モック完成（次サイクルで candidate 判断） |
+| 状態 | **candidate-006 として scenarios 正規化済**（vloop6 / status: candidate）/ MVP モック動作確認済 |
 | 情報源タイプ | ユーザー発案 + 試作ループ Phase2 選定（N-03 ID） |
 | 情報源 | [[試作ループ検証]] Phase2 で N-01 と並ぶ 3 候補入り |
 | 気づき | 「どの LLM を使うべきか」の判定フローは静的 HTML 1 枚で十分成立する。AI 利用者層に SNS 拡散しやすい |
@@ -171,18 +171,18 @@ tags: [idea, source, candidate, prototype, trace]
 | 有料 API 範囲 💸 | なし |
 | 収益化導線 | 広告 + テンプレ販売（チートシート md）+ Shorts 送客 |
 | 試作状況 🧪 | [[../90_prototypes/llm-chooser/README]]（クイズ 4 種・全 LLM カード・機能比較表 9 項目 × 4 LLM） |
-| 試作リンク | [[../90_prototypes/llm-chooser/README]] |
-| 判断履歴 | 2026-05-24 vloop1 N-03 として 14 案に追加 → vloop2 静的 HTML 試作完了 |
-| 次の判断 | ChatGPT が判定基準（個人観察ベース）の妥当性レビュー / iPhone 表示確認 / candidate 化判断 |
+| 試作リンク | [[scenarios/candidate-006]] / [[../90_prototypes/llm-chooser/README]] |
+| 判断履歴 | 2026-05-24 vloop1 N-03 として 14 案に追加 → vloop2 静的 HTML 試作完了 → **vloop6 candidate-006 として scenarios 正規化（26/40）** |
+| 次の判断 | ChatGPT が判定基準（個人観察ベース）の妥当性レビュー / iPhone 表示確認 / 補助 4 ファイル化（次サイクル） |
 | 関連 Issue | #61 試作ループ |
 
 ---
 
-### 9. 🔵🆓🧪 N-04: Vault Search Cheatsheet（iPhone Obsidian + GitHub Vault 検索チートシート）
+### 9. 🟡🆓🧪 N-04 → candidate-007: Vault Search Cheatsheet（iPhone Obsidian + GitHub Vault 検索チートシート）
 
 | 項目 | 内容 |
 |---|---|
-| 状態 | idea / 試作モック完成 |
+| 状態 | **candidate-007 として scenarios 正規化済**（vloop6 / status: candidate）/ MVP モック動作確認済 |
 | 情報源タイプ | 既存資産（Vault の見方ガイド）+ ユーザー発案 |
 | 情報源 | [[../00_inbox/Vaultの見方_どこを見れば何がわかるか]] / 試作ループ Phase2 で N-04 選定 |
 | 気づき | iPhone Obsidian の日本語ファイル名検索の制約 / GitHub Web 検索仕様の差は、**1 枚物の早見表で吸収できる** |
@@ -191,9 +191,9 @@ tags: [idea, source, candidate, prototype, trace]
 | 有料 API 範囲 💸 | なし |
 | 収益化導線 | 広告（Obsidian / Vault ユーザ層・低 CPC だが読了率高）+ テンプレ販売（拡張版 md）+ note |
 | 試作状況 🧪 | [[../90_prototypes/vault-search-cheatsheet/README]]（20 件キーワード対応表 + iPhone/GitHub Tips + トラブル対応） |
-| 試作リンク | [[../90_prototypes/vault-search-cheatsheet/README]] |
-| 判断履歴 | 2026-05-24 vloop1 N-04 として 14 案に追加 → vloop2 静的 HTML 試作完了 |
-| 次の判断 | 既存「Vault の見方ガイド」との内容重複整理 / iPhone 表示確認 / candidate 化判断 |
+| 試作リンク | [[scenarios/candidate-007]] / [[../90_prototypes/vault-search-cheatsheet/README]] |
+| 判断履歴 | 2026-05-24 vloop1 N-04 として 14 案に追加 → vloop2 静的 HTML 試作完了 → **vloop6 candidate-007 として scenarios 正規化（28/40）** |
+| 次の判断 | 既存「Vault の見方ガイド」との内容重複整理（vloop6 §候補-007 で 3 つの統合方針案を提示）/ iPhone 表示確認 / 補助 4 ファイル化（次サイクル）|
 | 関連 Issue | #61 試作ループ / #55 見方ガイド / #58 START_HERE |
 
 ---

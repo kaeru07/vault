@@ -28,7 +28,7 @@ tags: [入口, candidate, 収益化]
 > - 判断するための資料一式 §1-§14 完備（[[../../20_reviews/candidate-005_ChatGPT承認パック|候補-005 承認パック]]）
 > - MVP モック動作確認済（[[../../90_prototypes/token-speed-tool/README]]）
 
-## candidate 全 5 件
+## candidate 全 7 件
 
 | ID | 一言 | impact | status | リンク |
 |---|---|---|---|---|
@@ -36,7 +36,9 @@ tags: [入口, candidate, 収益化]
 | 002 | 麻雀何切る Shorts（candidate-001 への送客） | medium | candidate | [[candidate-002]] |
 | 003 | Obsidian テンプレ販売 | low | candidate（要再調査） | [[candidate-003]] |
 | 004 | 麻雀問題系 3 アプリ統合 | medium | candidate | [[candidate-004]] |
-| 005 | LLM トークン速度・体感ベンチ可視化（APIなし） | medium | candidate（MVP モック完成） | [[candidate-005]] |
+| 005 | LLM トークン速度・体感ベンチ可視化（API なし） | medium | candidate（MVP モック + 判断するための資料一式 4 件完備） | [[candidate-005]] |
+| 006 | LLM Chooser 使い分けチャート（API なし） | low | candidate（MVP モック完成 / vloop6 起票） | [[candidate-006]] |
+| 007 | Vault Search Cheatsheet（API なし） | low | candidate（MVP モック完成 / vloop6 起票） | [[candidate-007]] |
 
 ## candidate-001 補助ファイル
 
@@ -54,6 +56,14 @@ tags: [入口, candidate, 収益化]
 > - [[candidate-005_7日実行プラン]] — Day1〜Day7 ToDo（candidate-001 と並走スケジュール付き）
 > - [[candidate-005_progress投入設計]] — 承認後の progress ToDo 化設計
 > - [[../../20_reviews/candidate-005_ChatGPT承認パック]] — 自己完結の承認パック §1-§14
+
+## candidate-006 / 007 補助ファイル（2026-05-24 vloop6 で起票・補助 4 ファイルは次サイクル候補）
+
+> [!todo] candidate-006 / 007 は candidate 本体のみ存在
+> 試作 MVP モックは完成しているが、判断するための資料一式（承認パック等の補助 4 ファイル）は次サイクル候補:
+> - [[candidate-006]]（LLM Chooser・コンパクト版 candidate）
+> - [[candidate-007]]（Vault Search Cheatsheet・コンパクト版 candidate）
+> - 補助 4 ファイル × 2 = 8 ファイルは次サイクル予定（やりっぱなし防止キューに登録）
 
 ## 関連
 

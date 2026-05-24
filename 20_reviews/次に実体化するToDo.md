@@ -24,17 +24,18 @@ tags: [優先キュー, planned_only, 次に実体化]
 
 ---
 
-## ✅ 直近 vloop（vloop1-5）で実体化完了したもの
+## ✅ 直近 vloop（vloop1-6）で実体化完了したもの
 
 | Issue | 元の ToDo | 状態 | 実体ファイル / 場所 |
 |---|---|---|---|
 | #60 | トークン速度ツール API なし試作 | **artifact_exists + user_check** | [[../05_monetization/token-speed-tool]] + [[../90_prototypes/token-speed-tool/README]] + 判断するための資料一式 4 ファイル + [[candidate-005_ChatGPT承認パック]] |
-| #61 | 複数案試作ループ | **artifact_exists + user_check** | [[../05_monetization/試作ループ検証]] + [[../90_prototypes/llm-chooser/README]] + [[../90_prototypes/vault-search-cheatsheet/README]] |
+| #61 | 複数案試作ループ | **artifact_exists + user_check**（vloop6 で candidate-006 / 007 起票）| [[../05_monetization/試作ループ検証]] + [[../90_prototypes/llm-chooser/README]] + [[../90_prototypes/vault-search-cheatsheet/README]] + [[../05_monetization/scenarios/candidate-006]] + [[../05_monetization/scenarios/candidate-007]] |
 | #62 | トークン速度ツール trace | **artifact_exists** | [[../05_monetization/token-speed-tool]] Part1 + [[../05_monetization/idea_trace]] §2 |
 | #63 | 全アプリ案情報源ページ | **artifact_exists** | [[../05_monetization/idea_trace]]（10 案カード）+ [[../05_monetization/案の情報源と採用理由]] 日本語エイリアス |
-| #70 | やりっぱなし防止キュー | **artifact_exists** | 本ページ（[[次に実体化するToDo]]） |
-| #68 | 現在地図テンプレ | **artifact_exists**（Phase1 完了 + Phase2 を 3 ページに反映: epics / Issue完了判定ルール / idea_trace / 試作ループ検証）| [[../90_templates/現在地図テンプレ]] |
-| #69 | 内部用語日本語化 | **partial_done**（主要 6 ページに用語注記追加: 00_START_HERE / scenarios/README / 案の情報源と採用理由 / idea_trace / Issue完了判定ルール / 試作ループ検証）| 上記 6 ページ |
+| #70 | やりっぱなし防止キュー + 案件別 ToDo 一覧 | **artifact_exists**（vloop6 で案件別ToDo一覧追加）| 本ページ + [[案件別ToDo一覧]] |
+| #68 | 現在地図テンプレ | **artifact_exists**（Phase1 完了 + Phase2 を 4 ページ反映: epics / Issue完了判定ルール / idea_trace / 試作ループ検証）| [[../90_templates/現在地図テンプレ]] |
+| #69 | 内部用語日本語化 | **partial_done**（主要 8 ページに用語注記追加: 00_START_HERE / scenarios/README / 案の情報源と採用理由 / idea_trace / Issue完了判定ルール / 試作ループ検証 / 案件別ToDo一覧 / 次に実体化するToDo）| 上記 8 ページ |
+| **新規 vloop6** | **N-03 / N-04 candidate 化判断** | **artifact_exists**（vloop6 で candidate-006 / 007 起票）| [[../05_monetization/scenarios/candidate-006]] / [[../05_monetization/scenarios/candidate-007]] |
 
 > [!note] **user_check = あなたの確認待ち**
 > 上記 #60 / #61 は Claude 側の作業は完了しているが、ユーザーが iPhone 実機 / ブラウザで確認するまで「完全 done」にはしない。
@@ -65,16 +66,24 @@ tags: [優先キュー, planned_only, 次に実体化]
 | 次に Claude が何をすべきか | Phase 分割（フォルダ別 / テンプレ別 / 用語別 = #69 と一部統合可）して計画化 |
 | ユーザー確認が必要か | Phase 計画確定時にユーザーが優先順位判断 |
 
-### 優先 3: N-03 / N-04 有力候補化判断（candidate-006 / candidate-007 起票）
+### 優先 3（vloop6 で完了）: ~~N-03 / N-04 有力候補化判断~~ → candidate-006 / 007 起票済
 
 | 項目 | 内容 |
 |---|---|
-| 状態 | **artifact_exists**（試作は完成済）/ 有力候補化判断 planned_only |
-| 何をやるのか | N-03 LLM Chooser / N-04 Vault Search Cheatsheet を candidate-006 / candidate-007 として scenarios 正規化 |
-| なぜ必要なのか | 試作完成後、収益化判断を済ませて承認待ちフローに乗せる |
-| 今どの状態か | 試作完成（[[../90_prototypes/llm-chooser/README]] / [[../90_prototypes/vault-search-cheatsheet/README]]）/ 有力候補化判断未着手 |
-| 次に Claude が何をすべきか | ChatGPT が試作レビュー後、candidate-006 / 007 として scenarios 化（N-03 判定基準客観化要 / N-04 既存 Vault 見方ガイドとの重複整理要）|
-| ユーザー確認が必要か | ChatGPT レビュー結果を見てユーザーが有力候補化進めるか判断 |
+| 状態 | **artifact_exists**（vloop6 で起票完了）|
+| 達成内容 | [[../05_monetization/scenarios/candidate-006]]（LLM Chooser / 26-40）+ [[../05_monetization/scenarios/candidate-007]]（Vault Search Cheatsheet / 28-40）|
+| 残作業 | candidate-006 / 007 の補助 4 ファイル × 2 = 8 ファイル（次サイクル候補 = 新しい優先 6）|
+
+### 優先 6（vloop6 で新規発生）: candidate-006 / 007 の判断するための資料一式
+
+| 項目 | 内容 |
+|---|---|
+| 状態 | **planned_only**（候補本体は完成 / 補助 4 ファイル × 2 は未着手）|
+| 何をやるのか | candidate-006 / 007 に公開ブロッカー + 7 日プラン + progress 投入設計 + ChatGPT 承認パック を各 4 ファイルずつ作成（計 8 ファイル）|
+| なぜ必要なのか | candidate-005 と同水準まで持っていく / ChatGPT が方向性レビューできる状態にする |
+| 今どの状態か | 候補本体のみ完成 / 補助 4 ファイル未着手 |
+| 次に Claude が何をすべきか | 次サイクルで candidate-005 と同形式で 8 ファイル作成 |
+| ユーザー確認が必要か | ChatGPT 方向性レビュー時に判断 |
 
 ### 優先 4（vloop5 追加）: #69 残ページ完全日本語化
 
