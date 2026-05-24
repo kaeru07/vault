@@ -109,16 +109,21 @@ relatedIssues: [kaeru07/vault#42, kaeru07/vault#48, kaeru07/vault#49]
 
 ```mermaid
 flowchart LR
-  A["Epic A 情報収集基盤<br/>cron 3日連続達成"] --> B["Epic B 案生成基盤<br/>40案・上位5件・判断済"]
-  B --> C["Epic C 候補昇格<br/>candidate-001 承認待ち"]
-  D["Epic D Vault Onboarding<br/>iPhone入口整備完了"] --> All["全 Epic で<br/>人間判定待ちフェーズ"]
-  A --> All
-  B --> All
-  C --> All
+  A["Epic A 情報収集基盤<br/>cron 3日連続達成"]:::done --> B["Epic B 案生成基盤<br/>40案・上位5件・判断済"]:::done
+  B --> C["Epic C 候補昇格<br/>candidate-001 + candidate-005 承認待ち"]:::user
+  D["Epic D Vault Onboarding<br/>iPhone入口整備完了"]:::user
+  E["Epic 試作ループ<br/>(N-01試作 + candidate-005 正規化 + 承認材料完備)"]:::done --> C
+  F["Epic Vault蓄積運用ルール準拠<br/>(#70/#68/#69)"]:::working
+
+  classDef done fill:#22c55e,color:#0b1224
+  classDef user fill:#facc15,color:#0b1224
+  classDef working fill:#38bdf8,color:#0b1224
+  classDef next fill:#a78bfa,color:#0b1224
 ```
 
-> Epic A は cron 3 日連続達成（人間が cron 投入判断）。Epic B は実行フェーズ完了。Epic C は candidate-001 判断材料完備（ChatGPT 承認待ち）。Epic D は iPhone 入口整備完了（ユーザー確認待ち）。
-> vloop の次の主作業は: cron 投入後の運用観察 / 各源 n 増による新規 candidate 起票の再判定 / ChatGPT 承認後の progress 投入準備。
+> 用語注: Epic = 大きな作業テーマ / 緑=完了 / 黄=あなた確認待ち / 水=今 vloop で進行中 / 紫=次サイクル予定
+> Epic A は cron 3 日連続達成（あなたが cron 投入判断）。Epic B は実行フェーズ完了。Epic C は candidate-001 + candidate-005 判断材料完備（ChatGPT 方向性レビュー + あなた承認待ち）。Epic D は iPhone 入口整備完了（あなたの実機確認待ち）。Epic 試作ループは vloop1-3 で N-01 試作 + candidate-005 正規化 + 承認材料完備まで完了。Epic Vault 蓄積運用ルール準拠は本 vloop4 で進行中（#70/#68/#69）。
+> 次の作業は: candidate-005 を candidate-001 と並走させる準備 / Vault 蓄積運用ルールの主要ページへの完全反映 / cron 投入後の運用観察。
 
 ## 次の一手
 

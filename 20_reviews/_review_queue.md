@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-24_vault-accumulation-rule-compliance]]
+  - createdAt: 2026-05-24 21:00
+  - app: company-meta / obsidian-vault
+  - project: vault / workflow / 蓄積運用ルール準拠
+  - priority: high
+  - summary: Vault 蓄積運用ルール準拠 Epic（#70/#63/#68/#69 一体実装）。次に実体化するToDo.md 新規（planned_only/artifact_exists/user_check/done 分類 + 次サイクル優先キュー + やりっぱなし防止ルール）+ 案の情報源と採用理由.md 新規（idea_trace 日本語エイリアス + 早見表 + APIなし表）+ 現在地図テンプレ.md 新規（Mermaid 標準テンプレ + 状態色分け + 3 種）+ epics.md classDef 追加（テンプレ反映実証）+ 00_START_HERE 日本語化 + 5 入口化 + scenarios/README 用語注記 + candidate-005 並走候補セクション
+  - result: 
 - [ ] [[2026-05-24_candidate-005-approval-pack]]
   - createdAt: 2026-05-24 20:30
   - app: company-meta / obsidian-vault

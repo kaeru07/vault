@@ -8,15 +8,25 @@ updated: 2026-05-23
 tags: [入口, candidate, 収益化]
 ---
 
-# 📋 candidate 一覧
+# 📋 有力候補（candidate）一覧
 
-> **iPhone Obsidian でフォルダリンクが効かないときの中継ファイル**。各 candidate に直リンクで飛べる。
+> **iPhone Obsidian でフォルダリンクが効かないときの中継ファイル**。各 candidate（有力候補）に直リンクで飛べる。
+
+> [!note] 用語の言い換え（Issue #69）
+> candidate = 有力候補 / 承認パック = 判断するための資料一式 / 公開ブロッカー = 公開前に解決が必要な問題 / progress 投入 = 承認後に作業 ToDo として progress アプリに追加する流れ / Epic = 大きな作業テーマ
 
 > [!important] 今の最有力候補
 > **[[candidate-001|🥇 candidate-001 麻雀何切るアプリ公開 + Web 版 + AI 解説]]**
-> - 収益化スコア 24/30 で突出（[[../../06_research/2026-05-22_上位5案追加調査|Epic B スコアリング]]）
-> - ChatGPT 承認待ち（[[../../20_reviews/ChatGPT承認待ち|承認待ちキュー]]）
-> - 承認パック §1-§14 完備（[[../../20_reviews/candidate-001_ChatGPT承認パック|候補-001 承認パック]]）
+> - 収益化スコア 24/30 で突出（[[../../06_research/2026-05-22_上位5案追加調査|大きな作業テーマ B スコアリング]]）
+> - ChatGPT 方向性レビュー待ち（[[../../20_reviews/ChatGPT承認待ち|承認待ちキュー]]）
+> - 判断するための資料一式 §1-§14 完備（[[../../20_reviews/candidate-001_ChatGPT承認パック|候補-001 承認パック]]）
+
+> [!important] 並走候補（本日 vloop1-3 で完備）
+> **[[candidate-005|💎 candidate-005 LLM トークン速度ベンチ可視化（API なし）]]**
+> - 収益化スコア 25/30 / scoreTotal 28/40 で candidate-001 と並走可能
+> - ChatGPT 方向性レビュー待ち
+> - 判断するための資料一式 §1-§14 完備（[[../../20_reviews/candidate-005_ChatGPT承認パック|候補-005 承認パック]]）
+> - MVP モック動作確認済（[[../../90_prototypes/token-speed-tool/README]]）
 
 ## candidate 全 5 件
 
