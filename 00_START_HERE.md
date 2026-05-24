@@ -58,6 +58,9 @@ status: active
 > [!note] 試作ループ検証（Issue #61）
 > [[05_monetization/試作ループ検証|🔁 試作ループ検証]] — 14 案追加 / 3 候補選定 / N-01 試作着地
 
+> [!note] Vault 全体棚卸し（Issue #59）
+> [[20_reviews/Vault全体棚卸し|🗂 Vault 全体棚卸し]] — 旧運用 / 新運用 / 暫定 / 削除候補の分類 + 全体マップ + iPhone 確認手順
+
 > [!note] Hermes Agent × Codex 組み込み検討（Issue #67）
 > [[06_research/hermes-agent-codex-組み込み検討|🛰 Hermes 検討材料]] — 5 段階運用ループ / 既存資産接続点 / 試用対象 candidate-001 / 最小運用フロー（Hermes 無しでも回せる迂回ルートあり）
 

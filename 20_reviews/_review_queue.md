@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-25_vault-inventory]]
+  - createdAt: 2026-05-25 00:30
+  - app: company-meta / obsidian-vault
+  - project: vault / 全体棚卸し / 旧運用整理
+  - priority: medium
+  - summary: vloop8 Vault 全体棚卸し（Issue #59）。Vault全体棚卸し.md 新規（Phase 1-6・全体マップ Mermaid 図・主要 17 フォルダ実在マップ + 14 主要 .md 正本マップ・旧/新/暫定/削除候補分類・正本マッピング 7 種・iPhone 確認手順 8 ステップ + 復旧手順・完了条件 8/8 達成）。破壊的削除一切なし（注記対応のみ）。04_reviews/ + 07_tasks/inbox/ 個別注記は次サイクル / 「無題のフォルダ」削除はユーザー判断。
+  - result: 
 - [ ] [[2026-05-24_hermes-codex-integration-research]]
   - createdAt: 2026-05-24 23:40
   - app: company-meta / obsidian-vault
