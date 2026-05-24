@@ -13,6 +13,9 @@ tags: [入口, 運用, レビュー, 完了判定]
 > [!important] 「完了っぽい」をやめ、状態分類で確定判断する
 > Issue #64（完了判定）+ Issue #65（レビュー記録）+ Issue #66（vloop 監査）を統合した運用ルール。
 
+> [!note] 用語の言い換え（Issue #69）
+> done = 完了 / user_check = あなた確認待ち / open = 未対応 / merged = 統合済 / obsolete = 不要化 / blocked = 停止 / reviewed_ok = レビュー済（追加対応なし）/ reviewed_followup = レビュー済（追加対応あり）/ not_reviewed = 未レビュー / vloop = Claude がまとめて作業を進める仕組み
+
 ---
 
 ## 1. Issue 状態の 6 分類（Issue #64 Phase 1）
@@ -28,6 +31,31 @@ tags: [入口, 運用, レビュー, 完了判定]
 
 > [!warning] コメントだけで done にしない
 > commit/push や成果物が不明なものは done に分類できない。実在確認していないファイルを根拠にしない。
+
+### 状態 6 分類の判定フロー（Issue #68 反映）
+
+```mermaid
+flowchart LR
+  Start["Issue を判定する"] --> Q1{"完了条件<br/>すべて満たす?"}
+  Q1 -->|"No"| Q2{"統合済み?"}
+  Q1 -->|"Yes"| Q3{"ユーザー実機<br/>確認が必要?"}
+  Q2 -->|"Yes"| MGD["🔵 merged<br/>(統合済)"]:::merged
+  Q2 -->|"No"| Q4{"旧運用?"}
+  Q4 -->|"Yes"| OBS["⚫ obsolete<br/>(不要化)"]:::merged
+  Q4 -->|"No"| Q5{"外部要因で<br/>動けない?"}
+  Q5 -->|"Yes"| BLK["⛔ blocked<br/>(停止)"]:::blocked
+  Q5 -->|"No"| OPN["🟠 open<br/>(未対応)"]:::open
+  Q3 -->|"Yes"| UC["🧑 user_check<br/>(あなた確認待ち)"]:::user
+  Q3 -->|"No"| DONE["✅ done<br/>(完了)"]:::done
+
+  classDef done fill:#22c55e,color:#0b1224
+  classDef user fill:#facc15,color:#0b1224
+  classDef open fill:#fb923c,color:#0b1224
+  classDef merged fill:#60a5fa,color:#0b1224
+  classDef blocked fill:#ef4444,color:#fff
+```
+
+> 用語注: ✅完了 = 作業も検証も終わった / 🧑あなた確認待ち = Claude 側完了・ユーザー操作待ち / 🟠未対応 = まだ着手していない / 🔵統合済 = 別 Issue に吸収された / ⚫不要化 = 旧運用で参照のみ / ⛔停止 = 外部要因で動けない（テンプレ準拠: [[../90_templates/現在地図テンプレ]]）
 
 ---
 

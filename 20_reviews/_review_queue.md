@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-24_vault-accumulation-rule-residual]]
+  - createdAt: 2026-05-24 22:35
+  - app: company-meta / obsidian-vault
+  - project: vault / workflow / 蓄積運用ルール準拠 残作業
+  - priority: medium
+  - summary: vloop5 Vault 蓄積運用ルール準拠 Epic 残作業。idea_trace（用語注記 + 凡例日本語化 + 1 枚図 classDef）+ Issue完了判定ルール（用語注記 + 状態 6 分類判定フロー Mermaid 新規）+ 試作ループ検証（用語注記 + 1 枚図 classDef）+ 次に実体化するToDo（vloop1-5 反映 + 優先順位再編成 + 優先 4/5 追加）。partial_done を継続管理する運用を実証。
+  - result: 
 - [ ] [[2026-05-24_vault-accumulation-rule-compliance]]
   - createdAt: 2026-05-24 21:00
   - app: company-meta / obsidian-vault

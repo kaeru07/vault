@@ -11,27 +11,31 @@ tags: [idea, source, candidate, prototype, trace]
 
 # idea_trace — 全アプリ案の情報源・着想理由・採用判断
 
-> Issue #63。全案について「**情報源 → 気づき → 案 → 候補 → 試作 → 評価 → 判断**」を 1 ページで追えるハブ。
-> 詳細はリンク先（candidate / app / 試作 / レビュー）へ。本ページは**索引と着想経路の正本**。
+> Issue #63 / #69。全案について「**情報源 → 気づき → 案 → 有力候補 → 試作 → 評価 → 判断**」を 1 ページで追える正本ページ。
+> 詳細はリンク先（有力候補 / app / 試作 / レビュー）へ。本ページは**索引と着想経路の正本**。
+> 日本語入口は [[案の情報源と採用理由]] を参照。
+
+> [!note] 用語の言い換え（Issue #69）
+> idea = 案 / candidate = 有力候補 / approved = 承認済 / hold = 保留 / reject = 棄却 / Epic = 大きな作業テーマ / source = 情報源 / insight = 気づき / prototype = 試作 / API なし = 外部 LLM/SaaS API を呼ばない構成
 
 > [!important] このページの読み方
-> - 案ごとにカード形式。**情報源**と**採用理由**と**APIなし範囲**を最重要視する
-> - candidate / hold / reject の判断はここに残し、詳細は scenarios / 06_research に飛ばす
+> - 案ごとにカード形式。**情報源**と**採用理由**と**API なし範囲**を最重要視する
+> - 有力候補 / 保留 / 棄却 の判断はここに残し、詳細は scenarios / 06_research に飛ばす
 > - 新案を追加するときは末尾テンプレをコピーする
 
 ---
 
 ## 凡例
 
-| 記号 | 意味 |
-|---|---|
-| 🟢 | approved（人間 + ChatGPT 承認済み・進行可） |
-| 🟡 | candidate（ChatGPT 承認待ち / hold 含む） |
-| 🔵 | idea（idea_pool 段階） |
-| 🧪 | prototype（試作あり） |
-| 🛑 | reject / 棚上げ |
-| 💸 | 有料 API 必須範囲あり（要注意） |
-| 🆓 | API なしで成立する範囲のみ |
+| 記号 | 意味（日本語）| 内部名 |
+|---|---|---|
+| 🟢 | 承認済（あなた + ChatGPT が方向性 OK） | approved |
+| 🟡 | 有力候補（ChatGPT 方向性レビュー待ち / 保留含む）| candidate |
+| 🔵 | 案（自動生成された案プールの段階） | idea |
+| 🧪 | 試作あり（モック or MVP が動く） | prototype |
+| 🛑 | 棄却 / 棚上げ | reject |
+| 💸 | 有料 API 必須範囲あり（要注意） | — |
+| 🆓 | API なしで成立する範囲のみ | — |
 
 ---
 
@@ -214,19 +218,24 @@ tags: [idea, source, candidate, prototype, trace]
 
 ```mermaid
 flowchart LR
-  Source["情報源<br/>HN / Reddit / iTunes / 既存資産"] --> Insight["気づき<br/>市場空白・差別化軸"]
-  Insight --> Idea["案<br/>idea_pool に登録"]
-  Idea --> Score["上位抽出<br/>収益化6軸スコア"]
-  Score --> Candidate["candidate<br/>chatgpt_pending"]
-  Candidate --> Proto["試作<br/>(MVP / モック)"]
-  Proto --> Review["評価<br/>1枚図サマリー"]
-  Review --> Decision{"approve<br/>/ hold / reject"}
-  Decision -->|approve| Progress["progress 投入"]
-  Decision -->|hold| Idea
-  Decision -->|reject| Graveyard["idea-graveyard"]
+  Source["情報源<br/>HN / Reddit / iTunes / 既存資産"]:::done --> Insight["気づき<br/>市場空白・差別化軸"]:::done
+  Insight --> Idea["案<br/>(自動生成された案プールに登録)"]:::done
+  Idea --> Score["上位抽出<br/>収益化6軸スコア"]:::done
+  Score --> Candidate["有力候補<br/>(ChatGPT 方向性レビュー待ち)"]:::user
+  Candidate --> Proto["試作<br/>(MVP / モック)"]:::done
+  Proto --> Review["評価<br/>1枚図サマリー"]:::done
+  Review --> Decision{"承認 / 保留 / 棄却"}:::user
+  Decision -->|"承認"| Progress["承認後にToDoへ追加する流れ"]:::next
+  Decision -->|"保留"| Idea
+  Decision -->|"棄却"| Graveyard["案の墓場"]:::merged
+
+  classDef done fill:#22c55e,color:#0b1224
+  classDef user fill:#facc15,color:#0b1224
+  classDef next fill:#a78bfa,color:#0b1224
+  classDef merged fill:#60a5fa,color:#0b1224
 ```
 
-> 用語注: tokens/sec = 1 秒あたりの生成トークン数 / TTFT = 初回応答までの秒数 / candidate = 承認前の有力候補 / approve = ChatGPT + 人間が方向性承認 / hold = 保留（捨てない）/ APIなし = 外部 LLM/SaaS API を呼ばない構成
+> 用語注: tokens/sec = 1 秒あたりの生成トークン数 / TTFT = 初回応答までの秒数 / 有力候補 = 承認前の判断対象（candidate）/ 承認 = ChatGPT + あなたが方向性 OK（approve）/ 保留 = 後で再評価（hold・捨てない）/ 棄却 = 案の墓場へ移動（reject）/ API なし = 外部 LLM/SaaS API を呼ばない構成 / 緑=完了 / 黄=あなた確認待ち / 紫=次の段階 / 青=統合・棚上げ
 
 ---
 

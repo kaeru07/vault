@@ -24,14 +24,17 @@ tags: [優先キュー, planned_only, 次に実体化]
 
 ---
 
-## ✅ 直近 vloop（vloop1-3）で実体化完了したもの
+## ✅ 直近 vloop（vloop1-5）で実体化完了したもの
 
 | Issue | 元の ToDo | 状態 | 実体ファイル / 場所 |
 |---|---|---|---|
-| #60 | トークン速度ツール APIなし試作 | **artifact_exists + user_check** | [[../05_monetization/token-speed-tool]] + [[../90_prototypes/token-speed-tool/README]] + 承認材料 4 ファイル + [[candidate-005_ChatGPT承認パック]] |
+| #60 | トークン速度ツール API なし試作 | **artifact_exists + user_check** | [[../05_monetization/token-speed-tool]] + [[../90_prototypes/token-speed-tool/README]] + 判断するための資料一式 4 ファイル + [[candidate-005_ChatGPT承認パック]] |
 | #61 | 複数案試作ループ | **artifact_exists + user_check** | [[../05_monetization/試作ループ検証]] + [[../90_prototypes/llm-chooser/README]] + [[../90_prototypes/vault-search-cheatsheet/README]] |
 | #62 | トークン速度ツール trace | **artifact_exists** | [[../05_monetization/token-speed-tool]] Part1 + [[../05_monetization/idea_trace]] §2 |
-| #63 | 全アプリ案情報源ページ | **artifact_exists** | [[../05_monetization/idea_trace]]（10 案カード）+ 本サイクルで [[../05_monetization/案の情報源と採用理由]] 別名エイリアス追加 |
+| #63 | 全アプリ案情報源ページ | **artifact_exists** | [[../05_monetization/idea_trace]]（10 案カード）+ [[../05_monetization/案の情報源と採用理由]] 日本語エイリアス |
+| #70 | やりっぱなし防止キュー | **artifact_exists** | 本ページ（[[次に実体化するToDo]]） |
+| #68 | 現在地図テンプレ | **artifact_exists**（Phase1 完了 + Phase2 を 3 ページに反映: epics / Issue完了判定ルール / idea_trace / 試作ループ検証）| [[../90_templates/現在地図テンプレ]] |
+| #69 | 内部用語日本語化 | **partial_done**（主要 6 ページに用語注記追加: 00_START_HERE / scenarios/README / 案の情報源と採用理由 / idea_trace / Issue完了判定ルール / 試作ループ検証）| 上記 6 ページ |
 
 > [!note] **user_check = あなたの確認待ち**
 > 上記 #60 / #61 は Claude 側の作業は完了しているが、ユーザーが iPhone 実機 / ブラウザで確認するまで「完全 done」にはしない。
@@ -40,29 +43,7 @@ tags: [優先キュー, planned_only, 次に実体化]
 
 ## 🔥 次に Claude/vloop が手を動かすべき ToDo（優先順）
 
-### 優先 1: #68 現在地図テンプレ + 主要ページ反映
-
-| 項目 | 内容 |
-|---|---|
-| 状態 | **planned_only**（本サイクルで in_progress → artifact_exists へ移行予定）|
-| 何をやるのか | Mermaid flowchart の現在地図テンプレを作る + done/user_check/open を一目で分かる表記に統一 + 主要ページに反映 |
-| なぜ必要なのか | ユーザーが「全 Epic で人間判定待ちフェーズ」と書かれた図に違和感を持っていた。状態分類が混同されている |
-| 今どの状態か | テンプレ未作成・本サイクル着手 |
-| 次に Claude が何をすべきか | 90_templates/ 配下に現在地図テンプレ作成 → 00_START_HERE / epics.md / Issue完了判定ルール に反映 |
-| ユーザー確認が必要か | テンプレ確定後にユーザー視点でレビュー |
-
-### 優先 2: #69 内部用語のユーザー向け日本語化
-
-| 項目 | 内容 |
-|---|---|
-| 状態 | **planned_only**（本サイクルで一部 in_progress 予定・全置換は次サイクル以降）|
-| 何をやるのか | 「承認パック」「公開ブロッカー」「progress 投入」等の内部用語を、ユーザー向け表現を主にし内部名を括弧で補足する |
-| なぜ必要なのか | iPhone Obsidian で読む際に意味が伝わりにくい |
-| 今どの状態か | Issue #69 本文に置換マッピング表あり。実置換未着手 |
-| 次に Claude が何をすべきか | 本サイクルは主要 5-6 ページ（00_START_HERE / scenarios/README / idea_trace / epics / 次に実体化するToDo）のみ反映。残りは次サイクル |
-| ユーザー確認が必要か | 主要ページ反映後、iPhone Obsidian で読みやすさレビュー |
-
-### 優先 3: #67 Hermes Agent × Codex を運用に組み込み検討
+### 優先 1: #67 Hermes Agent × Codex を運用に組み込み検討
 
 | 項目 | 内容 |
 |---|---|
@@ -73,7 +54,7 @@ tags: [優先キュー, planned_only, 次に実体化]
 | 次に Claude が何をすべきか | 次サイクルで議論型 Issue として ChatGPT と整理（vloop 単独では結論出ない可能性） |
 | ユーザー確認が必要か | ChatGPT と Claude で範囲確定後、ユーザーが収益化インパクト判断 |
 
-### 優先 4: #59 Vault 全体棚卸し（旧運用と新運用統一）
+### 優先 2: #59 Vault 全体棚卸し（旧運用と新運用統一）
 
 | 項目 | 内容 |
 |---|---|
@@ -84,16 +65,38 @@ tags: [優先キュー, planned_only, 次に実体化]
 | 次に Claude が何をすべきか | Phase 分割（フォルダ別 / テンプレ別 / 用語別 = #69 と一部統合可）して計画化 |
 | ユーザー確認が必要か | Phase 計画確定時にユーザーが優先順位判断 |
 
-### 優先 5: N-03 / N-04 candidate 化判断
+### 優先 3: N-03 / N-04 有力候補化判断（candidate-006 / candidate-007 起票）
 
 | 項目 | 内容 |
 |---|---|
-| 状態 | **artifact_exists**（試作は完成済）/ candidate 化判断 planned_only |
+| 状態 | **artifact_exists**（試作は完成済）/ 有力候補化判断 planned_only |
 | 何をやるのか | N-03 LLM Chooser / N-04 Vault Search Cheatsheet を candidate-006 / candidate-007 として scenarios 正規化 |
 | なぜ必要なのか | 試作完成後、収益化判断を済ませて承認待ちフローに乗せる |
-| 今どの状態か | 試作完成（[[../90_prototypes/llm-chooser/README]] / [[../90_prototypes/vault-search-cheatsheet/README]]）/ candidate 化判断未着手 |
+| 今どの状態か | 試作完成（[[../90_prototypes/llm-chooser/README]] / [[../90_prototypes/vault-search-cheatsheet/README]]）/ 有力候補化判断未着手 |
 | 次に Claude が何をすべきか | ChatGPT が試作レビュー後、candidate-006 / 007 として scenarios 化（N-03 判定基準客観化要 / N-04 既存 Vault 見方ガイドとの重複整理要）|
-| ユーザー確認が必要か | ChatGPT レビュー結果を見てユーザーが candidate 化進めるか判断 |
+| ユーザー確認が必要か | ChatGPT レビュー結果を見てユーザーが有力候補化進めるか判断 |
+
+### 優先 4（vloop5 追加）: #69 残ページ完全日本語化
+
+| 項目 | 内容 |
+|---|---|
+| 状態 | **partial_done**（vloop4+5 で主要 6 ページ反映 / 残り低優先ページ）|
+| 何をやるのか | candidate-001/002/003/004/005 本体 + epics 本文 + 各補助 md（公開ブロッカー / 7 日プラン / progress 投入設計）への用語注記追加 |
+| なぜ必要なのか | iPhone Obsidian での読解容易性向上 |
+| 今どの状態か | 主要 6 ページ反映済（00_START_HERE / scenarios/README / 案の情報源と採用理由 / idea_trace / Issue完了判定ルール / 試作ループ検証） |
+| 次に Claude が何をすべきか | candidate 本体 5 件 + 補助 md 多数。1 サイクルで全件は重いため次サイクルで実施 |
+| ユーザー確認が必要か | 残ページ反映後、iPhone でレビュー |
+
+### 優先 5（vloop5 追加）: #68 残ページへの Mermaid 反映
+
+| 項目 | 内容 |
+|---|---|
+| 状態 | **partial_done**（vloop4+5 で 4 ページ反映: epics / Issue完了判定ルール / idea_trace / 試作ループ検証）|
+| 何をやるのか | 残りの主要 Mermaid 図に classDef 色分けを追加 / 新規 Mermaid 必要箇所への図追加 |
+| なぜ必要なのか | 状態色分けの統一性向上 |
+| 今どの状態か | 4 ページ反映済。candidate 系・vloop サマリー過去分は未反映 |
+| 次に Claude が何をすべきか | 直近の vloop サマリーで本テンプレを採用継続。candidate 本体への Mermaid 追加は次サイクル |
+| ユーザー確認が必要か | 反映後の見やすさレビュー |
 
 ---
 
