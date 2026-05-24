@@ -95,6 +95,7 @@ tags: [入口, ToDo, 案件別]
 | Epic B 案生成（40 案 + 上位 5 件）| **完了** | 収益化 6 軸スコアリング済 | 各源 n 増（30→100/日）は次サイクル候補 | 不要 |
 | Hermes Agent × Codex 検討（#67）| **未対応 / 検討中** | 既存運用への組み込み検討 | 次サイクル: 議論型 Issue として ChatGPT と整理 | 範囲確認後の収益化インパクト判断 |
 | Vault 全体棚卸し（#59）| **未対応** | 旧運用と新運用の統一 | Phase 分割計画（次サイクル）| Phase 計画確定 |
+| Hermes Agent × Codex 組み込み検討（#67）| **検討材料あり**（vloop7）| 5 段階運用ループ / 既存資産との接続点 / 試用対象 candidate-001 / 最小運用フロー / 収益化インパクト比較 | candidate-001 approved 後に最小運用フロー実行 | 採用判断（API 課金関連）|
 
 関連: [[../05_monetization/案の情報源と採用理由]] / [[../05_monetization/idea_trace]] / [[../05_monetization/epics]] / [[../05_monetization/cron移行判定基準]]
 

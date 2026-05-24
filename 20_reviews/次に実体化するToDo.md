@@ -44,16 +44,14 @@ tags: [優先キュー, planned_only, 次に実体化]
 
 ## 🔥 次に Claude/vloop が手を動かすべき ToDo（優先順）
 
-### 優先 1: #67 Hermes Agent × Codex を運用に組み込み検討
+### 優先 1（vloop7 で完了）: ~~#67 Hermes Agent × Codex を運用に組み込み検討~~ → 検討材料完備
 
 | 項目 | 内容 |
 |---|---|
-| 状態 | **planned_only / 検討中**（本サイクルでは着手しない）|
-| 何をやるのか | Hermes Agent × Codex を市場調査 → 実装 → 改善サイクルにどう組み込むか整理 |
-| なぜ必要なのか | 既存 Progress / Vault 運用に取り込めれば収益化サイクル高速化 |
-| 今どの状態か | Issue #67 本文に検討範囲明示・実検討未着手 |
-| 次に Claude が何をすべきか | 次サイクルで議論型 Issue として ChatGPT と整理（vloop 単独では結論出ない可能性） |
-| ユーザー確認が必要か | ChatGPT と Claude で範囲確定後、ユーザーが収益化インパクト判断 |
+| 状態 | **artifact_exists（検討材料整備完了）**（vloop7）|
+| 達成内容 | [[../06_research/hermes-agent-codex-組み込み検討]] — 5 段階運用ループ + 既存資産接続点 + 試用対象 candidate-001 + 最小運用フロー + 収益化インパクト比較 + Hermes 採用閾値 |
+| 残作業 | candidate-001 が approved 後に最小運用フロー実行（vloop スコープ外・人間判断 + API 課金）|
+| 推奨 | 本サイクルでは検討材料整備のみ / 採用判断は candidate-001 approved 後 |
 
 ### 優先 2: #59 Vault 全体棚卸し（旧運用と新運用統一）
 

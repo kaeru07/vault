@@ -58,6 +58,9 @@ status: active
 > [!note] 試作ループ検証（Issue #61）
 > [[05_monetization/試作ループ検証|🔁 試作ループ検証]] — 14 案追加 / 3 候補選定 / N-01 試作着地
 
+> [!note] Hermes Agent × Codex 組み込み検討（Issue #67）
+> [[06_research/hermes-agent-codex-組み込み検討|🛰 Hermes 検討材料]] — 5 段階運用ループ / 既存資産接続点 / 試用対象 candidate-001 / 最小運用フロー（Hermes 無しでも回せる迂回ルートあり）
+
 > [!note] Vault の見方ガイド（収益化フロー判断手順）
 > [[00_inbox/Vaultの見方_どこを見れば何がわかるか|📖 Vault の見方ガイド]] — 有力候補 / 案プール / 市場調査 / vloop 用語解説
 

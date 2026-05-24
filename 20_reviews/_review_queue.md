@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-24_hermes-codex-integration-research]]
+  - createdAt: 2026-05-24 23:40
+  - app: company-meta / obsidian-vault
+  - project: monetization / ai-workflow / research-automation
+  - priority: medium
+  - summary: vloop7 Hermes Agent × Codex 組み込み検討 材料整備（Issue #67）。06_research/hermes-agent-codex-組み込み検討.md 新規 10 セクション。5 段階運用ループ + 既存資産接続点（7 資産マップ）+ Hermes 独自価値範囲（SNS 反応・レビュー不満抽出）+ 試用対象 candidate-001 選定（理由 5 件）+ 最小運用フロー 6 ステップ + Hermes 無し迂回ルート + 採用閾値仮説（週 5 本投稿 / 月 8h 手動分析）+ Hermes 出力で approved 化しないルール明記。未確認情報の扱い注記済。Claude 推奨: candidate-001 approved 後に判断。
+  - result: 
 - [ ] [[2026-05-24_candidate-006-007-and-project-todos]]
   - createdAt: 2026-05-24 23:10
   - app: company-meta / obsidian-vault
