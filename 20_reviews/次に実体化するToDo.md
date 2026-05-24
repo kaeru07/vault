@@ -1,17 +1,22 @@
 ---
-title: 次に実体化するToDo（やりっぱなし防止キュー）
-type: vault-priority-queue
+title: 次に実体化するToDo（参照のみ・非推奨 / 互換用）
+type: vault-priority-queue-deprecated
 issue: kaeru07/vault#70
-relatedIssues: [kaeru07/vault#63, kaeru07/vault#68, kaeru07/vault#69]
+relatedIssues: [kaeru07/vault#80, kaeru07/vault#76]
 created: 2026-05-24
-updated: 2026-05-24
-status: active（vloop ごとに更新）
-tags: [優先キュー, planned_only, 次に実体化]
+updated: 2026-05-25
+status: deprecated（vloop9 / 案件別ToDo一覧 が正本）
+tags: [非推奨, 参照のみ, 互換]
 ---
 
-# 次に実体化するToDo（やりっぱなし防止キュー）
+# 次に実体化するToDo（参照のみ）
 
-> Issue #70 に基づく次サイクル優先キュー。
+> [!warning] このページは非推奨です（Issue #76 / #80）
+> **正本は [[案件別ToDo一覧]]**（A 実行ToDo / B あなた確認待ち / C 承認待ち / D 完了移動候補 の 4 セクション構造）
+> 本ページは vloop4-8 時代の互換用 / 参照のみ。新規 ToDo は本ページに追加せず、案件別ToDo一覧 へ追加してください。
+> 完了 ToDo は [[完了ToDoログ]] へ。
+
+> Issue #70 に基づく次サイクル優先キュー（旧運用）。
 > 「ToDo を作っただけ」「方針だけ決めた」状態のものを一覧化し、次に Claude/vloop が手を動かす対象を明示する。
 
 > [!important] このページの読み方

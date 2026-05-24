@@ -1,147 +1,144 @@
 ---
-title: 案件別ToDo一覧（案件別ToDo運用ルールの正本）
+title: 案件別ToDo一覧（実行 ToDo / あなた確認待ち / 承認待ち の正本）
 type: vault-todo-by-project
-issue: kaeru07/vault#70
-relatedIssues: [kaeru07/vault#69, kaeru07/vault#68]
+issue: kaeru07/vault#80
+relatedIssues: [kaeru07/vault#74, kaeru07/vault#76, kaeru07/vault#77, kaeru07/vault#78, kaeru07/vault#79, kaeru07/vault#70]
 created: 2026-05-24
-updated: 2026-05-24
-status: active（vloop ごとに更新）
-tags: [入口, ToDo, 案件別]
+updated: 2026-05-25
+status: active（vloop ごとに更新 / 本ページが正本）
+tags: [入口, ToDo, 案件別, 正本]
 ---
 
-# 案件別ToDo一覧
+# 案件別ToDo一覧（正本）
 
-> [[案件別ToDo運用ルール]] に基づく案件別 ToDo の正本。
-> vloop 開始時は `00_START_HERE → 本ページ → 次に実体化するToDo → ChatGPT 承認待ち → 関連案件ページ` の順で読む。
+> **このページが ToDo の正本です。**
+> Issue は内部作業用 / 本ページがユーザー向け正本（[[Vault蓄積運用ルール]] / [[案件別ToDo運用ルール]]）
 
-> [!important] このページの位置付け
-> - **Issue は内部作業用**、本ページが**ユーザー向け正本**
-> - vloop は本ページから読み始める（Issue 一覧からではない）
-> - vloop 終了時は本ページへ進捗を必ず反映
+> [!important] vloop 開始時の読み順
+> 1. [[../00_START_HERE]]
+> 2. **本ページ（案件別ToDo一覧）** ← ここから ToDo を選ぶ
+> 3. [[ChatGPT承認待ち]]（承認判断時のみ）
+
+> [!note] 構造（Issue #76 / #80）
+> 4 セクション固定:
+> - **A. 実行ToDo** — Claude / vloop が次に手を動かす対象（承認不要）
+> - **B. あなた確認待ち（user_check）** — Claude 側完了・あなたの確認で前進
+> - **C. 承認待ち（approval）** — ChatGPT 方向性レビュー + あなた approve / hold / reject 判断
+> - **D. 完了移動候補** — 達成済で次回 vloop で [[完了ToDoログ]] へ移す候補
+>
+> **承認が必要なものだけチェックボックス** `[ ]` を使う / 実行 ToDo はチェックボックスなし
 
 > [!note] 用語注（Issue #69）
-> 未対応 = open / 作業中 = in_progress / 成果物あり = artifact_exists / あなたの確認待ち = user_check / 完了 = done / 統合済み = merged / 停止中 = blocked / 有力候補 = candidate / 判断するための資料一式 = 承認パック / 大きな作業テーマ = Epic
+> 有力候補 = candidate / 判断するための資料一式 = 承認パック / 公開前に解決が必要な問題 = ブロッカー / 承認後にToDoへ追加する流れ = progress 投入 / vloop = Claude がまとめて作業を進める仕組み
 
 ---
 
-## 1. 🗂 Vault 運用
+# A. 実行 ToDo（Claude / vloop が次に手を動かす対象 / 承認不要）
 
-主な保存先: `20_reviews/` 配下 / `00_START_HERE.md` / `90_templates/`
+> 優先順位順。次の vloop はここから上から処理する。
+> **重複統合済**（同目的の旧 ToDo は merged 扱い・本ページの 1 行に集約）
 
-| ToDo | 状態 | 何をするか | 次に vloop がやること | ユーザー確認 |
+## 1. 🀄 麻雀アプリ（candidate-001）
+
+| 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
-| 本ページ（案件別ToDo一覧）整備 | **成果物あり** | 案件 6 件で ToDo を整理 | 各 vloop 終了時に更新 | iPhone Obsidian でリンクが開けるか |
-| Vault 蓄積運用ルール準拠（#70/#68/#69/#63）| **成果物あり / 残あり** | やりっぱなし防止キュー + Mermaid テンプレ + 用語日本語化 | 残ページ用語日本語化（candidate 本体 5 件 + 補助 md）| 主要 6 ページの読みやすさ |
-| 00_START_HERE 入口整備 | **成果物あり** | iPhone から 1 タップで主要ページへ | 案件別ToDo一覧へのリンク追加（本サイクル） | iPhone Safari でリンク確認 |
-| 現在地図テンプレ反映 | **成果物あり / 残あり** | Mermaid テンプレ → 主要 4 ページ反映済 | candidate 本体への Mermaid 図追加 | 不要 |
+| — | 麻雀 | candidate-001 本体への用語注記追加（#69 残）| open | ChatGPT 用語マッピングに沿って 1 ファイル言い換え |
+| — | 麻雀 | candidate-001 補助 md への用語注記（公開ブロッカー / 7 日プラン / progress 投入設計）| open | 同上 / 3 ファイル |
 
-関連: [[次に実体化するToDo]] / [[Vault蓄積運用ルール]] / [[../90_templates/現在地図テンプレ]]
+## 2. 🧪 トークン速度ツール（candidate-005）
 
----
-
-## 2. 🀄 麻雀アプリ（candidate-001）
-
-主な保存先: `02_apps/mahjong.md` / `05_monetization/scenarios/candidate-001*.md`
-
-| ToDo | 状態 | 何をするか | 次に vloop がやること | ユーザー確認 |
+| 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
-| candidate-001 判断するための資料一式（承認パック）整備 | **成果物あり / user_check** | 5 ファイル完備（candidate-001 本体 + 公開ブロッカー + 7 日プラン + progress 投入設計 + ChatGPT 承認パック）| ChatGPT 方向性レビュー待ち | ChatGPT が approve / hold / reject 判断 |
-| candidate-001 本体への用語注記追加 | **未対応** | 「承認パック → 判断するための資料一式」等の言い換え | 次サイクル | 不要 |
-| approved 後の build 検証（B1）| **planned_only** | apps/mahjong で `npm run build` | 承認後 progress 投入時に着手 | 承認判断 + build 結果確認 |
+| — | トークン速度 | candidate-005 本体への用語注記（#69 残）| open | 1 ファイル言い換え |
+| — | トークン速度 | candidate-005 補助 md への用語注記（公開ブロッカー / 7 日プラン / progress 投入設計）| open | 同上 / 3 ファイル |
 
-関連: [[../02_apps/mahjong]] / [[../05_monetization/scenarios/candidate-001]] / [[../05_monetization/scenarios/candidate-001_ChatGPT承認パック]] / [[../05_monetization/scenarios/candidate-001_公開ブロッカー]] / [[../05_monetization/scenarios/candidate-001_7日実行プラン]] / [[../05_monetization/scenarios/candidate-001_progress投入設計]]
+## 3. 🔁 複数案試作（candidate-006 / 007）
 
----
-
-## 3. 🧪 トークン速度ツール（candidate-005）
-
-主な保存先: `05_monetization/token-speed-tool.md` / `05_monetization/scenarios/candidate-005*.md` / `90_prototypes/token-speed-tool/`
-
-| ToDo | 状態 | 何をするか | 次に vloop がやること | ユーザー確認 |
+| 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
-| candidate-005 試作モック | **成果物あり / user_check** | API なし MVP 静的 HTML + JSON サンプル 5 件 | ChatGPT 方向性レビュー待ち | iPhone Safari でブラウザ動作確認 |
-| candidate-005 判断するための資料一式 | **成果物あり / user_check** | 4 ファイル完備（公開ブロッカー B1-B9 + 7 日プラン + progress 投入設計 + ChatGPT 承認パック）| ChatGPT 方向性レビュー待ち | ChatGPT が approve / hold / reject 判断 |
-| candidate-005 本体への用語注記 | **未対応** | 言い換え + 内部名括弧補足 | 次サイクル | 不要 |
-| 公開後の B4 実測データ蓄積 | **planned_only** | Claude Code / Codex / Gemini / ローカル LLM 実測 10-15 件追加 | 承認 + 公開後 | 不要（自分の利用ついで）|
+| **A-3-1** | 候補-006/007 | **candidate-006 / 007 の判断するための資料一式（補助 4 ファイル × 2 = 8 ファイル）作成** | planned_only | candidate-005 と同形式で 8 ファイル |
+| — | N-03 | LLM Chooser 判定基準客観化検討 | open | 個人観察ベースから何を客観化できるか方針 1 ページ |
+| — | N-04 | Vault Search Cheatsheet と既存「Vault の見方ガイド」統合方針決定 | open | A/B/C いずれかをユーザー確認 → 統合実装 |
 
-関連: [[../05_monetization/token-speed-tool]] / [[../05_monetization/scenarios/candidate-005]] / [[../05_monetization/scenarios/candidate-005_ChatGPT承認パック]] / [[../90_prototypes/token-speed-tool/README]]
+## 4. 🗂 Vault 運用
 
----
-
-## 4. 🔁 複数案試作ループ（候補-006 / 007）
-
-主な保存先: `05_monetization/試作ループ検証.md` / `05_monetization/idea_trace.md` / `90_prototypes/{llm-chooser,vault-search-cheatsheet}/`
-
-| ToDo | 状態 | 何をするか | 次に vloop がやること | ユーザー確認 |
+| 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
-| 試作ループ実証（vloop1-2）| **完了** | 14 案追加 + 3 候補選定 + N-01 試作着地 + Phase6 で 2 案目試作 | n/a | n/a |
-| N-03 LLM Chooser → candidate-006 起票 | **成果物あり**（本 vloop6 で起票）| candidate-004 形式で正規化（コンパクト版）| 判断するための資料一式は次サイクル候補 | ChatGPT 方向性レビュー後に判断 |
-| N-04 Vault Search Cheatsheet → candidate-007 起票 | **成果物あり**（本 vloop6 で起票）| 同上 | 同上 | 既存 Vault 見方ガイドとの重複整理 |
-| N-12 麻雀役一覧チートシート等 N-02/05/06/07/08/12/13/14 | **未対応 / 案のみ** | 静的 HTML 試作の追加検討 | 次サイクル以降 | 不要 |
+| **A-4-1** | Vault | 旧運用フォルダ個別ファイルへの注記追加（04_reviews/ 3 件 + 07_tasks/inbox/ 1 件 + chatgpt/ README）| open（#59 残）| 各ファイル先頭に `> [!note] 旧運用 / 参照のみ` 追加 |
+| — | Vault | 全 .md ファイル横断「存在しないパス案内」grep 検査 | open（#59 残・大規模）| 主要入口は確認済 / 全件は別途 |
+| — | Vault | `Vaultの見方_どこを見れば何がわかるか` の分割 / 簡略化（#59 本文指摘）| open | 分割方針 → 実施 |
+| — | Vault | chatgpt/ フォルダの運用ルール確定 | open | README に運用方針を 1 ページ |
+| — | Vault | #68 Mermaid テンプレを candidate 本体へ反映 | open | candidate-001/005/006/007 本体に状態色分け Mermaid 追加 |
 
-関連: [[../05_monetization/試作ループ検証]] / [[../90_prototypes/llm-chooser/README]] / [[../90_prototypes/vault-search-cheatsheet/README]] / [[../05_monetization/idea_trace]] §8/§9
+## 5. 💡 収益化案
 
----
-
-## 5. 💡 収益化案・案の追跡
-
-主な保存先: `05_monetization/案の情報源と採用理由.md` / `05_monetization/idea_trace.md`
-
-| ToDo | 状態 | 何をするか | 次に vloop がやること | ユーザー確認 |
+| 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
-| 全案 trace ハブ（10 案カード）| **成果物あり** | idea_trace.md + 案の情報源と採用理由.md（日本語エイリアス）| 候補-006/007 起票後に §8/§9 更新 | iPhone でリンク確認 |
-| API なし早見表 | **成果物あり** | 9 案の API なし範囲一覧 | 候補-006/007 追加で 11 案へ | 不要 |
-| Epic A 情報収集（cron 移行 3 日連続達成）| **user_check** | 人間が cron 投入判断 | n/a（人間判断）| cron 投入可否 |
-| Epic B 案生成（40 案 + 上位 5 件）| **完了** | 収益化 6 軸スコアリング済 | 各源 n 増（30→100/日）は次サイクル候補 | 不要 |
-| Hermes Agent × Codex 検討（#67）| **未対応 / 検討中** | 既存運用への組み込み検討 | 次サイクル: 議論型 Issue として ChatGPT と整理 | 範囲確認後の収益化インパクト判断 |
-| Vault 全体棚卸し（#59）| **成果物あり / partial_done**（vloop8 / Phase 1-5 達成）| 主要フォルダ実在マップ + 旧/新/暫定/削除候補分類 + 正本マッピング + iPhone 確認手順 + 完了条件 8/8 達成 | 残作業: 個別ファイルへの「📦 移行済」注記追加 + 全 .md 存在しないパス grep 検査（次サイクル）| 「無題のフォルダ」削除（iPhone Obsidian で実施）|
-| Hermes Agent × Codex 組み込み検討（#67）| **検討材料あり**（vloop7）| 5 段階運用ループ / 既存資産との接続点 / 試用対象 candidate-001 / 最小運用フロー / 収益化インパクト比較 | candidate-001 approved 後に最小運用フロー実行 | 採用判断（API 課金関連）|
-
-関連: [[../05_monetization/案の情報源と採用理由]] / [[../05_monetization/idea_trace]] / [[../05_monetization/epics]] / [[../05_monetization/cron移行判定基準]]
+| — | 収益化 | Hermes Agent 最小運用フロー実行（candidate-001 approved 後）| blocked（candidate-001 承認待ち）| 承認後に着手 |
 
 ---
 
-## 6. 🗳 レビュー・承認
+# B. あなた確認待ち（user_check / Claude 完了済 / あなたの確認で前進）
 
-主な保存先: `20_reviews/ChatGPT承認待ち.md` / `20_reviews/_review_queue.md` / 各 candidate 承認パック
-
-| ToDo | 状態 | 何をするか | 次に vloop がやること | ユーザー確認 |
-|---|---|---|---|---|
-| ChatGPT 承認待ち.md に candidate-001 ブロック | **成果物あり / user_check** | 既存（vloop1 サイクル前から）| ChatGPT 方向性レビュー待ち | approve / hold / reject 判断 |
-| ChatGPT 承認待ち.md に candidate-005 ブロック | **未対応**（意図的・pending_approval 昇格は人間判断後）| candidate-005 承認材料完備済 / 昇格判断後に追加 | 人間 pending_approval 昇格後に追加 | pending_approval 昇格可否 |
-| _review_queue.md（レビューキュー）| **成果物あり** | vloop ごとに先頭追加 | 各 vloop 終了時に追加 | ChatGPT が先頭からレビュー |
-| 候補-006/007 承認パック化 | **planned_only** | candidate-004 形式での補助 4 ファイル | 次サイクル | 不要 |
-
-関連: [[ChatGPT承認待ち]] / [[_review_queue]] / [[candidate-001_ChatGPT承認パック]] / [[candidate-005_ChatGPT承認パック]]
-
----
-
-## 🚨 ユーザー確認待ち（最優先で見るもの）
-
-| 内容 | 確認場所 | 確認すること |
-|---|---|---|
-| candidate-001 / candidate-005 の判断するための資料一式 | [[ChatGPT承認待ち]] + 各承認パック | ChatGPT が approve / hold / reject 判断 |
-| iPhone Obsidian 入口 | [[../00_START_HERE]] | リンクが iPhone Safari で開けるか |
-| 試作モック 3 件（token-speed-tool / llm-chooser / vault-search-cheatsheet）| `90_prototypes/*/index.html` | ブラウザ動作確認 + iPhone 表示確認 |
-| cron 投入判断 | [[../05_monetization/cron移行判定基準]] | research-run / idea-run の自動化 |
+| 案件 | 内容 | 確認場所 | 確認すること |
+|---|---|---|---|
+| 麻雀 | candidate-001 試作 / MVP | apps/mahjong（リポジトリ）| build / Vercel デプロイ状態（B1 / B2）|
+| トークン速度 | candidate-005 試作 | [[../90_prototypes/token-speed-tool/README]] | iPhone Safari でサンプル 5 件動作確認 |
+| 複数案試作 | N-03 試作 | [[../90_prototypes/llm-chooser/README]] | iPhone Safari でクイズ動作確認 |
+| 複数案試作 | N-04 試作 | [[../90_prototypes/vault-search-cheatsheet/README]] | iPhone Safari で検索ボックス動作確認 |
+| Vault | 00_START_HERE 入口 | [[../00_START_HERE]] | iPhone Obsidian で全リンクが開けるか |
+| Vault | Vault 全体棚卸し（#59）| [[Vault全体棚卸し]] | 旧運用 / 新運用 / 暫定 / 削除候補分類の妥当性 |
+| Vault | 「無題のフォルダ」削除 | iPhone Obsidian | フォルダ削除（Claude は実施しない）|
+| 収益化案 | cron 投入判断 | [[../05_monetization/cron移行判定基準]] | research-run / idea-run 自動化開始可否 |
 
 ---
 
-## 🆕 新しく発生した ToDo（本サイクル発生分）
+# C. 承認待ち（ChatGPT 方向性レビュー + あなた approve / hold / reject 判断）
 
-- 候補-006 / 007 の判断するための資料一式（4 ファイル × 2 = 8 ファイル）→ planned_only / 次サイクル
-- 残ページ用語日本語化（candidate 本体 5 件 + 補助 md）→ planned_only / 次サイクル
-- 案件別ToDo一覧 自体の vloop ごと更新運用 → 継続運用
+> 承認が必要なものだけチェックボックス `[ ]` を使う。
+> 完了したら `[x]` にして D セクションへ移動。
+
+## 候補-001 / 005 / 006 / 007 の方向性承認
+
+- [ ] **candidate-001 方向性レビュー**（[[candidate-001_ChatGPT承認パック]] §1-§14）→ approve / hold / reject
+- [ ] **candidate-005 方向性レビュー**（[[candidate-005_ChatGPT承認パック]] §1-§14）→ approve / hold / reject
+- [ ] **candidate-006 方向性レビュー**（[[../05_monetization/scenarios/candidate-006]]）→ approve / hold / reject
+- [ ] **candidate-007 方向性レビュー**（[[../05_monetization/scenarios/candidate-007]] / 既存資産統合方針 A/B/C 含む）→ approve / hold / reject
+
+## 運用ルール / 検討材料
+
+- [ ] **Hermes Agent 公式仕様確認**（[[../06_research/hermes-agent-codex-組み込み検討]] §9）→ 採用判断 OK / NG
+- [ ] **候補-005 pending_approval 昇格判断**（resources 4 ファイル完備）→ 昇格する / hold
+- [ ] **candidate-005 ChatGPT 承認待ち.md への追加判断**（pending_approval 昇格後）→ Claude が追加 / 追加しない
+
+---
+
+# D. 完了移動候補（次回 vloop で [[完了ToDoログ]] へ移す候補）
+
+> 状態が done になり、user_check も終わったものを移動。本セクションは vloop ごとに整理する。
+
+- Issue #59 Vault 全体棚卸し（user_check 残・vloop8 完了）→ Vault 全体棚卸し.md user_check 解除後に移動
+- Issue #67 Hermes Agent × Codex 検討材料整備（vloop7 完了 / 採用判断は別 ToDo）→ ChatGPT 確認後に移動
+- Issue #61 試作ループ検証（vloop1-6 完了）→ ChatGPT 確認後に移動
+
+---
+
+## 既存運用との関係
+
+- 本ページが ToDo の**正本**（[[案件別ToDo運用ルール]]）
+- [[次に実体化するToDo]] は**参照のみ**（vloop8 以前の互換 / 非推奨）
+- [[完了ToDoログ]] が完了履歴の正本
+- [[ChatGPT承認待ち]] は C 承認待ちセクションの詳細版（候補-001 のみ）
 
 ---
 
 ## 関連
 
-- [[案件別ToDo運用ルール]]（本ページの根拠ルール）
+- [[案件別ToDo運用ルール]]（本ページの正本ルール）
 - [[Vault蓄積運用ルール]]（Issue ではなく Vault が正本）
-- [[次に実体化するToDo]]（やりっぱなし防止キュー）
+- [[完了ToDoログ]]（完了履歴）
+- [[次に実体化するToDo]]（参照のみ / 非推奨）
 - [[../00_START_HERE]]
 - [[ChatGPT承認待ち]]
-- [[../05_monetization/idea_trace]]
-- [[../05_monetization/案の情報源と採用理由]]
-- Issue: kaeru07/vault#70 / #69 / #68 / #63
+- [[Vault全体棚卸し]]
+- Issue: kaeru07/vault#80 / #74 / #76 / #77 / #78 / #79 / #70

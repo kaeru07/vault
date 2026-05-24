@@ -20,29 +20,26 @@ status: active
 
 ---
 
-## ✅ 今やることへ直リンク（6 つ）
+## ✅ 今やることへ直リンク（4 つ・1-2 タップで到達）
 
-> [!todo] ① 案件別の ToDo を見る → [[20_reviews/案件別ToDo一覧|📂 案件別ToDo一覧]]
-> Vault 運用 / 麻雀アプリ / トークン速度ツール / 複数案試作 / 収益化案 / レビュー承認 の 6 案件で整理（[[20_reviews/案件別ToDo運用ルール|ルール]]）
+> [!todo] ① **案件別ToDo一覧（ToDo の正本）** → [[20_reviews/案件別ToDo一覧|📂 案件別ToDo一覧]]
+> A 実行ToDo / B あなた確認待ち / C 承認待ち / D 完了移動候補 を 1 ページで管理（[[20_reviews/案件別ToDo運用ルール|ルール]] / Issue #80）。**vloop はここから ToDo を選ぶ**
 
-> [!todo] ② 次に作るもの・あなた確認待ちを見る → [[20_reviews/次に実体化するToDo|📌 次に実体化するToDo]]
-> 「ToDo を作っただけ・実体がない・あなた確認待ち」を 1 ページで追える（Issue #70）
+> [!todo] ② 承認判断する → [[20_reviews/ChatGPT承認待ち|🗳 ChatGPT 承認待ち]] + [[20_reviews/candidate-001_ChatGPT承認パック|📦 candidate-001 承認パック §1-§14]] / [[20_reviews/candidate-005_ChatGPT承認パック|📦 candidate-005 承認パック §1-§14]]
+> 有力候補を ChatGPT がレビューし、あなたが approve / hold / reject
 
-> [!todo] ③ 判断する → [[20_reviews/ChatGPT承認待ち|🗳 ChatGPT 承認待ち]]
-> 有力候補の方向性を ChatGPT がレビューし、あなたが approve / hold / reject する入口
+> [!todo] ③ 全候補を一覧する → [[05_monetization/scenarios/README|📋 有力候補一覧（candidate 7 件）]]
+> 001-007 + 各補助ファイル直リンク
 
-> [!todo] ④ candidate-001 を読む（判断するための資料一式）→ [[20_reviews/candidate-001_ChatGPT承認パック|📦 candidate-001 承認パック §1-§14]]
-> 市場 / 実装 / 収益 / 着手可否を 1 ファイルで判断できる
-
-> [!todo] ⑤ 全候補を一覧する → [[05_monetization/scenarios/README|📋 有力候補一覧（candidate）]]
-> **7 件**（001/002/003/004/005/**006/007**）+ 各補助ファイルへ直リンク
-
-> [!todo] ⑥ 全体進捗を見る → [[05_monetization/epics|🎯 大きな作業テーマ A/B/C/D 進捗]]
-> 大きな作業テーマ（Epic）ごとの現在地と「あなた確認待ち」項目
+> [!todo] ④ 全体進捗を見る → [[05_monetization/epics|🎯 Epic A/B/C/D 進捗]]
+> 大きな作業テーマ（Epic）ごとの現在地
 
 ---
 
 ## 📚 さらに掘る（必要なら）
+
+> [!note] 完了 ToDo 履歴 → [[20_reviews/完了ToDoログ|🏁 完了 ToDo ログ]]
+> vloop ごとの達成項目（移動された完了 ToDo）
 
 > [!note] 全アプリ案の追跡表（Issue #63 / #69）
 > [[05_monetization/案の情報源と採用理由|🧭 案の情報源と採用理由]]（日本語入口）/ [[05_monetization/idea_trace|idea_trace 正本]] — 情報源 → 気づき → 案 → 有力候補 → 試作 → 判断を 1 ページで追える

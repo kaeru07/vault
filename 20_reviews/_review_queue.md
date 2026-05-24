@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-25_issue-80-todo-refactor]]
+  - createdAt: 2026-05-25 00:45
+  - app: company-meta / obsidian-vault
+  - project: vault / workflow / 案件別ToDo一覧 正本化
+  - priority: high
+  - summary: Issue #80 実行パック。Phase 1-5 を 1 サイクルで実ファイル反映。完了ToDoログ.md 新規（vloop1-8 で達成した 20+ 件移動）+ 案件別ToDo一覧.md 全面リファクタ（A 実行 / B 確認待ち / C 承認待ち / D 完了移動候補 の 4 セクション / 承認のみチェックボックス）+ START_HERE 入口 6→4 件（1-2 タップ）+ 次に実体化するToDo 非推奨化（status: deprecated）+ 重複統合。新規 Issue / ToDo を増やさず既存設計を実体化。
+  - result: 
 - [ ] [[2026-05-25_vault-inventory]]
   - createdAt: 2026-05-25 00:30
   - app: company-meta / obsidian-vault
