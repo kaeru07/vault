@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-25_vloop11-vault整備]]
+  - createdAt: 2026-05-25 21:38
+  - app: company-meta / obsidian-vault / obsidian-sync-vault
+  - project: vault / workflow / Issue #59 残 / リンク検査
+  - priority: medium
+  - summary: vloop11 Vault 整備（Issue #59 残作業実体化）。Vaultの見方ガイド簡略化（1 分索引 + 最新候補状況 + 分割方針 / 破壊的削除なし）+ 全 .md 横断「存在しないパス案内」grep 検査（162 ファイル / 1,454 リンク中 185 件検出 / カテゴリ A-F 分類 + 修正方針案 X/Y/Z 比較 + Claude 推奨案 X）。Issue #59 全体クローズ判断材料が揃った状態に到達。
+  - result: 
 - [ ] [[2026-05-25_vloop10-aセクション残実体化]]
   - createdAt: 2026-05-25 21:02
   - app: company-meta / obsidian-vault / obsidian-sync-vault

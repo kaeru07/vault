@@ -4,7 +4,7 @@ type: vault-todo-by-project
 issue: kaeru07/vault#80
 relatedIssues: [kaeru07/vault#74, kaeru07/vault#76, kaeru07/vault#77, kaeru07/vault#78, kaeru07/vault#79, kaeru07/vault#70]
 created: 2026-05-24
-updated: 2026-05-25 (vloop10)
+updated: 2026-05-25 (vloop11)
 status: active（vloop ごとに更新 / 本ページが正本）
 tags: [入口, ToDo, 案件別, 正本]
 ---
@@ -40,10 +40,10 @@ tags: [入口, ToDo, 案件別, 正本]
 
 ## 1. 🀄 麻雀アプリ（candidate-001）
 
-| 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
-|---|---|---|---|---|
-| — | 麻雀 | candidate-001 本体への用語注記追加（#69 残）| **done**（vloop9 / 2026-05-25）| D セクションへ移動 |
-| — | 麻雀 | candidate-001 補助 md への用語注記（公開ブロッカー / 7 日プラン / progress 投入設計）| **done**（vloop9 / 2026-05-25・3 ファイル完了）| D セクションへ移動 |
+| 優先  | 案件  | ToDo                                                         | 状態                                     | 次の 1 アクション |
+| --- | --- | ------------------------------------------------------------ | -------------------------------------- | ---------- |
+| —   | 麻雀  | candidate-001 本体への用語注記追加（#69 残）                              | **done**（vloop9 / 2026-05-25）          | D セクションへ移動 |
+| —   | 麻雀  | candidate-001 補助 md への用語注記（公開ブロッカー / 7 日プラン / progress 投入設計） | **done**（vloop9 / 2026-05-25・3 ファイル完了） | D セクションへ移動 |
 
 ## 2. 🧪 トークン速度ツール（candidate-005）
 
@@ -65,8 +65,8 @@ tags: [入口, ToDo, 案件別, 正本]
 | 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
 | **A-4-1** | Vault | 旧運用フォルダ個別ファイルへの注記追加（04_reviews/ 3 件 + 07_tasks/inbox/ 1 件 + chatgpt/ README）| **done**（vloop9 / 2026-05-25・review-template.md は既に旧版注記済でスキップ）| D セクションへ移動 |
-| — | Vault | 全 .md ファイル横断「存在しないパス案内」grep 検査 | open（#59 残・大規模）| 主要入口は確認済 / 全件は別途 |
-| — | Vault | `Vaultの見方_どこを見れば何がわかるか` の分割 / 簡略化（#59 本文指摘）| open | 分割方針 → 実施 |
+| — | Vault | 全 .md ファイル横断「存在しないパス案内」grep 検査 | **done**（vloop11 / 2026-05-25・検査結果 185 件 / カテゴリ A-F 分類 / 推奨案 X）| ChatGPT 方向性レビュー後にカテゴリ F 修正 |
+| — | Vault | `Vaultの見方_どこを見れば何がわかるか` の分割 / 簡略化（#59 本文指摘）| **done**（vloop11 / 2026-05-25・1 分索引 + 最新候補状況 + 分割方針追加）| 分割実施は ChatGPT / ユーザー判断 |
 | — | Vault | chatgpt/ フォルダの運用ルール確定 | **done**（vloop10 / 2026-05-25・README v1 確定）| D セクションへ移動 |
 | — | Vault | #68 Mermaid テンプレを candidate 本体へ反映 | **done**（vloop10 / 2026-05-25・candidate-001/005/006/007 本体に 4 件反映）| D セクションへ移動 |
 
@@ -117,7 +117,12 @@ tags: [入口, ToDo, 案件別, 正本]
 
 > 状態が done になり、user_check も終わったものを移動。本セクションは vloop ごとに整理する。
 
-## vloop10 完了分（次回 vloop11 で [[完了ToDoログ]] へ移動）
+## vloop11 完了分（次回 vloop12 で [[完了ToDoログ]] へ移動）
+
+- **Vaultの見方ガイド簡略化**（1 分索引 + 最新候補状況 + 分割方針追加 / 破壊的削除なし）
+- **全 .md 横断「存在しないパス案内」grep 検査**（185 件検出 / カテゴリ A-F 分類 / 06_research/2026-05-25_broken-links-検査結果.md）
+
+## vloop10 完了分（次回 vloop11 で [[完了ToDoログ]] へ移動 → vloop11 で実施済）
 
 - **#68 Mermaid テンプレを candidate-001/005/006/007 本体へ反映**（4 ファイル状態色分け Mermaid 追加）
 - **N-03 LLM Chooser 判定基準客観化方針**（3 層構造 1 ページ完成 / 06_research/2026-05-25_llm-chooser-判定基準客観化方針.md）

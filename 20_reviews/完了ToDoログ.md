@@ -4,7 +4,7 @@ type: vault-completed-log
 issue: kaeru07/vault#74
 relatedIssues: [kaeru07/vault#80, kaeru07/vault#70]
 created: 2026-05-25
-updated: 2026-05-25 (vloop10)
+updated: 2026-05-25 (vloop11)
 status: active（vloop ごとに追加）
 tags: [完了, ログ, 履歴]
 ---
@@ -111,6 +111,17 @@ tags: [完了, ログ, 履歴]
 |---|---|---|---|---|
 | 2026-05-25 | 複数案試作 | N-03 LLM Chooser 判定基準客観化方針 1 ページ完成（3 層構造 / ChatGPT 方向性レビュー材料）| [[../06_research/2026-05-25_llm-chooser-判定基準客観化方針]] | 20260525-vloop10 |
 | 2026-05-25 | 複数案試作 | N-04 Vault Search Cheatsheet 統合方針 A/B/C 比較整理（Claude 推奨案 B / ChatGPT 質問テンプレ §7）| [[../06_research/2026-05-25_vault-search-cheatsheet-統合方針比較]] | 20260525-vloop10 |
+
+---
+
+## 2026-05-25（vloop11 達成分 / Issue #59 残実体化）
+
+### Vault 整備系
+
+| 達成日 | 案件 | 達成内容 | 成果物 | runId |
+|---|---|---|---|---|
+| 2026-05-25 | Vault 運用 | Vaultの見方ガイド簡略化（1 分索引 + 最新候補状況 + 分割方針追加 / 破壊的削除なし / #59 本文指摘解消）| [[../00_inbox/Vaultの見方_どこを見れば何がわかるか]] | 20260525-vloop11 |
+| 2026-05-25 | Vault 運用 | 全 .md 横断「存在しないパス案内」grep 検査（162 ファイル / 1,454 リンク中 185 件検出 / カテゴリ A-F 分類）| [[../06_research/2026-05-25_broken-links-検査結果]] | 20260525-vloop11 |
 
 ---
 
