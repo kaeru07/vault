@@ -63,6 +63,27 @@ iTunes Search JP（無料 API）の一次データ確認結果（[[../../06_rese
 - 2026-05-22 補強（Issue #49 / Epic B 追加調査・iTunes Search 何切る市場データで差別化軸を実データ裏付け）
 - 2026-05-22 Epic C 仕上げ（Issue #53・市場確認/実装現実性/収益導線/着手可否を承認パックに増補。ChatGPT 承認判断可能状態に到達。**status は pending_approval のまま・approved 化は人間判断待ち**）
 
+## 🗺 現在地図（Issue #68 / 状態色分け Mermaid）
+
+```mermaid
+flowchart LR
+  P1["着想<br/>(2026-05-18)"]:::done --> P2["候補化<br/>(candidate)"]:::done
+  P2 --> P3["市場補強<br/>(2026-05-22 iTunes Search)"]:::done
+  P3 --> P4["承認パック §1-§14<br/>(2026-05-22)"]:::done
+  P4 --> P5["ChatGPT 方向性レビュー<br/>+ あなた approve 判断"]:::user
+  P5 -->|"approved"| P6["B1 build 検証<br/>(Day1)"]:::next
+  P6 --> P7["B2 デプロイ確認<br/>(Day2)"]:::next
+  P7 --> P8["B3 ストア文面 / B4 素材 / B5 動画<br/>(Day3-6)"]:::next
+  P8 --> P9["公開 + AdMob 収益化"]:::next
+
+  classDef done fill:#22c55e,color:#0b1224
+  classDef user fill:#facc15,color:#0b1224
+  classDef next fill:#a78bfa,color:#0b1224
+  classDef blocked fill:#ef4444,color:#fff
+```
+
+> 用語注: ✅ 緑=完了 / 🧑 黄=あなた確認待ち / ⏭ 紫=次サイクル（approved 後）/ B1〜B5 = 公開ブロッカー（公開を阻む問題）の種別番号 / AdMob = Google の広告 SDK
+
 ## 関連
 - 調査レポート: [[../../06_research/2026-05-18_収益化定期調査_初回]] / [[../../06_research/2026-05-22_上位5案追加調査]]
 - [[../収益化シナリオ承認フロー]] / [[../progress連携基準]]

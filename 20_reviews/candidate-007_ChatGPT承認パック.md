@@ -149,6 +149,7 @@ iPhone Obsidian + GitHub Vault の**検索パターン早見表**を静的 HTML 
 ## 14. 関連リンク
 
 - [[../05_monetization/scenarios/candidate-007]] — candidate 本体
+- [[../06_research/2026-05-25_vault-search-cheatsheet-統合方針比較]] — B2 統合方針 A/B/C 比較（vloop10 新規 / Claude 推奨案 B / 質問テンプレ §7）
 - [[../05_monetization/scenarios/candidate-007_公開ブロッカー]]
 - [[../05_monetization/scenarios/candidate-007_7日実行プラン]]
 - [[../05_monetization/scenarios/candidate-007_progress投入設計]]

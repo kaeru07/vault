@@ -119,6 +119,26 @@ relatedIssues: [kaeru07/vault#61, kaeru07/vault#62, kaeru07/vault#63]
 - **収益化直接性**: candidate-001 の方が高い（既存資産流用度大）
 - **本命と並走**の位置付け → candidate-001 完了を待たず並行進行可
 
+## 🗺 現在地図（Issue #68 / 状態色分け Mermaid）
+
+```mermaid
+flowchart LR
+  P1["着想<br/>(2026-05-21 HN)"]:::done --> P2["候補化<br/>(candidate / 2026-05-24)"]:::done
+  P2 --> P3["MVP モック試作<br/>(静的 HTML + JSON)"]:::done
+  P3 --> P4["承認パック §1-§14<br/>(2026-05-24)"]:::done
+  P4 --> P5["ChatGPT 方向性レビュー<br/>+ あなた approve 判断"]:::user
+  P5 -->|"approved"| P6["B1 iPhone 実機確認<br/>+ B9 規約整理 (Day1)"]:::next
+  P6 --> P7["B2 Vercel デプロイ<br/>(Day2)"]:::next
+  P7 --> P8["B4 実測蓄積 / B5 ログ拡張 / B7 動画 / B6 AdSense<br/>(Day3-7)"]:::next
+  P8 --> P9["公開 + AdSense + note + Shorts 送客"]:::next
+
+  classDef done fill:#22c55e,color:#0b1224
+  classDef user fill:#facc15,color:#0b1224
+  classDef next fill:#a78bfa,color:#0b1224
+```
+
+> 用語注: ✅ 緑=完了 / 🧑 黄=あなた確認待ち / ⏭ 紫=次サイクル（approved 後）/ B1〜B9 = 公開ブロッカー / AdSense = Google の Web 広告 SDK / Shorts 送客 = 短尺動画からアプリへ誘導
+
 ## 関連
 
 - [[../token-speed-tool]] — 仕様 + trace（本候補の正本）

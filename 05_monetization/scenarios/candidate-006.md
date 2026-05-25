@@ -89,8 +89,29 @@ relatedIssues: [kaeru07/vault#63]
 - candidate-005（高度な機能・体感スコア）+ candidate-006（入門的判定フロー）で**カバー範囲が異なる**
 - candidate-006 → candidate-005 への送客導線が成立する仮説
 
+## 🗺 現在地図（Issue #68 / 状態色分け Mermaid）
+
+```mermaid
+flowchart LR
+  P1["着想<br/>(2026-05-24 vloop2 N-03)"]:::done --> P2["候補化<br/>(candidate / 2026-05-24 vloop6)"]:::done
+  P2 --> P3["MVP モック試作<br/>(クイズ 4 種 + LLM カード)"]:::done
+  P3 --> P4["承認パック §1-§14<br/>(2026-05-25 vloop9)"]:::done
+  P4 --> P5["ChatGPT 方向性レビュー<br/>+ あなた approve 判断"]:::user
+  P5 -->|"approved"| P6["B1 iPhone 実機 + B2 判定基準客観化<br/>(Day1)"]:::next
+  P6 --> P7["B3 Vercel デプロイ<br/>(Day2)"]:::next
+  P7 --> P8["B4 実利用ログ蓄積 / B5 重み UI / B8 テンプレ / B7 動画<br/>(Day3-7)"]:::next
+  P8 --> P9["公開 + AdSense + テンプレ販売<br/>+ candidate-005 への相互送客"]:::next
+
+  classDef done fill:#22c55e,color:#0b1224
+  classDef user fill:#facc15,color:#0b1224
+  classDef next fill:#a78bfa,color:#0b1224
+```
+
+> 用語注: ✅ 緑=完了 / 🧑 黄=あなた確認待ち / ⏭ 紫=次サイクル（approved 後）/ B1〜B8 = 公開ブロッカー / 判定基準客観化 = 個人観察を観察可能な指標で裏付ける（N-03 既知制約）/ 相互送客 = 別 candidate との間で訪問者を行き来させる導線
+
 ## 関連
 
+- [[../../06_research/2026-05-25_llm-chooser-判定基準客観化方針]] — B2 N-03 客観化方針（vloop10 新規 / 3 層構造）
 - [[../../90_prototypes/llm-chooser/README]] — MVP モック
 - [[../idea_trace]] §8 — 案の追跡表での位置付け
 - [[../試作ループ検証]] — 試作ループの結果

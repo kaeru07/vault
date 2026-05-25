@@ -92,8 +92,29 @@ iPhone Obsidian + GitHub Vault の**検索パターン早見表**を静的 HTML 
   - (C) 既存ガイドへ統合し、本候補は HTML サンプルのみ残す
 - → 次サイクルで方針決定（ChatGPT 方向性レビュー時に質問）
 
+## 🗺 現在地図（Issue #68 / 状態色分け Mermaid）
+
+```mermaid
+flowchart LR
+  P1["着想<br/>(2026-05-24 vloop2 N-04)"]:::done --> P2["候補化<br/>(candidate / 2026-05-24 vloop6)"]:::done
+  P2 --> P3["MVP モック試作<br/>(検索ボックス + 20 件早見表)"]:::done
+  P3 --> P4["承認パック §1-§15<br/>(2026-05-25 vloop9)"]:::done
+  P4 --> P5["ChatGPT 方向性レビュー<br/>+ 統合方針 A/B/C 決定<br/>+ あなた approve 判断"]:::user
+  P5 -->|"approved + 統合方針決定"| P6["B1 iPhone 実機 + B9 規約整理<br/>(Day1)"]:::next
+  P6 --> P7["B2 既存ガイド統合実施<br/>(Day2)"]:::next
+  P7 --> P8["B3 Vercel デプロイ + B5 UX + B4 蓄積運用 + B7 テンプレ + B8 note<br/>(Day3-7)"]:::next
+  P8 --> P9["公開 + AdSense + テンプレ販売 + note 販売"]:::next
+
+  classDef done fill:#22c55e,color:#0b1224
+  classDef user fill:#facc15,color:#0b1224
+  classDef next fill:#a78bfa,color:#0b1224
+```
+
+> 用語注: ✅ 緑=完了 / 🧑 黄=あなた確認待ち / ⏭ 紫=次サイクル（approved 後）/ B1〜B9 = 公開ブロッカー / 統合方針 A/B/C = 既存「Vault の見方ガイド」との統合 3 案（A 併存 / B 既存索引化（推奨）/ C 既存に統合）/ note 販売 = note.com 等で有料記事として販売
+
 ## 関連
 
+- [[../../06_research/2026-05-25_vault-search-cheatsheet-統合方針比較]] — B2 統合方針 A/B/C 比較（vloop10 新規 / Claude 推奨案 B）
 - [[../../90_prototypes/vault-search-cheatsheet/README]] — MVP モック
 - [[../../00_inbox/Vaultの見方_どこを見れば何がわかるか]] — 既存資産（重複整理対象）
 - [[../idea_trace]] §9 — 案の追跡表での位置付け

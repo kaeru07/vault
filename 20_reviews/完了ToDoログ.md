@@ -4,7 +4,7 @@ type: vault-completed-log
 issue: kaeru07/vault#74
 relatedIssues: [kaeru07/vault#80, kaeru07/vault#70]
 created: 2026-05-25
-updated: 2026-05-25 (vloop9)
+updated: 2026-05-25 (vloop10)
 status: active（vloop ごとに追加）
 tags: [完了, ログ, 履歴]
 ---
@@ -93,6 +93,24 @@ tags: [完了, ログ, 履歴]
 |---|---|---|---|---|
 | 2026-05-25 | 複数案試作 | candidate-006（llm-chooser）補助 4 ファイル新規作成（A-3-1）| [[../05_monetization/scenarios/candidate-006_公開ブロッカー]] / [[../05_monetization/scenarios/candidate-006_7日実行プラン]] / [[../05_monetization/scenarios/candidate-006_progress投入設計]] / [[candidate-006_ChatGPT承認パック]] | 20260525-vloop9 |
 | 2026-05-25 | 複数案試作 | candidate-007（vault-search-cheatsheet）補助 4 ファイル新規作成（A-3-1）| [[../05_monetization/scenarios/candidate-007_公開ブロッカー]] / [[../05_monetization/scenarios/candidate-007_7日実行プラン]] / [[../05_monetization/scenarios/candidate-007_progress投入設計]] / [[candidate-007_ChatGPT承認パック]] | 20260525-vloop9 |
+
+---
+
+## 2026-05-25（vloop10 達成分 / A セクション残実体化）
+
+### Vault 運用 / 図表化系
+
+| 達成日 | 案件 | 達成内容 | 成果物 | runId |
+|---|---|---|---|---|
+| 2026-05-25 | Vault 運用 | #68 Mermaid テンプレを candidate-001/005/006/007 本体へ反映（4 件 状態色分け Mermaid 追加）| [[../05_monetization/scenarios/candidate-001]] / [[../05_monetization/scenarios/candidate-005]] / [[../05_monetization/scenarios/candidate-006]] / [[../05_monetization/scenarios/candidate-007]] | 20260525-vloop10 |
+| 2026-05-25 | Vault 運用 | chatgpt/ フォルダ運用ルール README v1 確定（暫定 → 補助フォルダ役割確定 / 案件別ToDo一覧 A-4 解消）| [[../chatgpt/README]] | 20260525-vloop10 |
+
+### 候補-006 / 007 方針整理系
+
+| 達成日 | 案件 | 達成内容 | 成果物 | runId |
+|---|---|---|---|---|
+| 2026-05-25 | 複数案試作 | N-03 LLM Chooser 判定基準客観化方針 1 ページ完成（3 層構造 / ChatGPT 方向性レビュー材料）| [[../06_research/2026-05-25_llm-chooser-判定基準客観化方針]] | 20260525-vloop10 |
+| 2026-05-25 | 複数案試作 | N-04 Vault Search Cheatsheet 統合方針 A/B/C 比較整理（Claude 推奨案 B / ChatGPT 質問テンプレ §7）| [[../06_research/2026-05-25_vault-search-cheatsheet-統合方針比較]] | 20260525-vloop10 |
 
 ---
 

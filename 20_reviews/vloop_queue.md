@@ -2,7 +2,7 @@
 title: vloop_queue（vloop実行対象）
 type: vloop-queue
 created: 2026-05-25
-updated: 2026-05-25 (vloop9)
+updated: 2026-05-25 (vloop10)
 status: active
 source_issue: kaeru07/vault#87
 tags: [vloop, ToDo, 承認, 案件別, 自動実行]
@@ -85,14 +85,16 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 
 ## Vault運用
 
-### 実行承認済み / 承認不要（vloop9 で消化済 / 継続運用項目）
+### 実行承認済み / 承認不要（vloop9-10 で消化済 / 継続運用項目）
 
 - [x] 案件別ToDo一覧を正本として維持し、Issueだけに残っている新規ToDoをVaultへ反映する（継続運用）
-- [x] 完了ToDoを `20_reviews/完了ToDoログ.md` へ移動する（vloop9 で 5 件追記）
+- [x] 完了ToDoを `20_reviews/完了ToDoログ.md` へ移動する（vloop9 で 5 件 / vloop10 で 4 件追記）
 - [x] `00_START_HERE.md` から `vloop_queue.md` と `案件別ToDo一覧.md` へ辿れるようにする
 - [x] `20_reviews/次に実体化するToDo.md` を正本扱いから外し、非推奨/参照用にする
 - [x] 重複ToDoを目的ベースで統合し、統合元は merged 扱いにする
 - [x] **旧運用フォルダ個別ファイル注記追加（A-4-1 / vloop9 完了 / Issue #59 残作業解消）**
+- [x] **#68 Mermaid テンプレを candidate-001/005/006/007 本体へ反映（vloop10 完了 / 4 ファイル）**
+- [x] **chatgpt/ フォルダ運用ルール README v1 確定（vloop10 完了）**
 
 ### 承認待ち
 
@@ -135,6 +137,8 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 
 - [x] 案の情報源と採用理由ページへ主要候補を追記する
 - [x] **candidate-006 / 007 の判断するための資料一式（補助 4 ファイル × 2 = 8 ファイル）作成（A-3-1 / vloop9 完了）**
+- [x] **N-03 LLM Chooser 判定基準客観化方針 1 ページ完成（vloop10 完了 / 3 層構造）**
+- [x] **N-04 Vault Search Cheatsheet 統合方針 A/B/C 比較整理（vloop10 完了 / Claude 推奨案 B）**
 
 ### 承認待ち
 

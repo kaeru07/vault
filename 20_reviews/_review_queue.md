@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-25_vloop10-aセクション残実体化]]
+  - createdAt: 2026-05-25 21:02
+  - app: company-meta / obsidian-vault / obsidian-sync-vault
+  - project: vault / workflow / candidate-006-007 / 判定基準客観化 / 統合方針 / Mermaid
+  - priority: high
+  - summary: vloop10 案件別ToDo A セクション残 4 件を実ファイル反映。#68 Mermaid テンプレを candidate-001/005/006/007 本体へ反映（状態色分け 4 件）+ N-03 LLM Chooser 判定基準客観化方針 1 ページ（3 層構造）+ N-04 Vault Search Cheatsheet 統合方針 A/B/C 比較整理（Claude 推奨案 B）+ chatgpt/ フォルダ運用ルール README v1 確定。candidate-006/007 が判定基準客観化方針 + 統合方針推奨案付きで ChatGPT 方向性レビュー可能状態に到達。
+  - result: 
 - [ ] [[2026-05-25_vloop9-todo-execution]]
   - createdAt: 2026-05-25 12:42
   - app: company-meta / obsidian-vault / obsidian-sync-vault

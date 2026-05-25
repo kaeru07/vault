@@ -4,7 +4,7 @@ type: vault-todo-by-project
 issue: kaeru07/vault#80
 relatedIssues: [kaeru07/vault#74, kaeru07/vault#76, kaeru07/vault#77, kaeru07/vault#78, kaeru07/vault#79, kaeru07/vault#70]
 created: 2026-05-24
-updated: 2026-05-25 (vloop9)
+updated: 2026-05-25 (vloop10)
 status: active（vloop ごとに更新 / 本ページが正本）
 tags: [入口, ToDo, 案件別, 正本]
 ---
@@ -57,8 +57,8 @@ tags: [入口, ToDo, 案件別, 正本]
 | 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
 | **A-3-1** | 候補-006/007 | **candidate-006 / 007 の判断するための資料一式（補助 4 ファイル × 2 = 8 ファイル）作成** | **done**（vloop9 / 2026-05-25・8 ファイル完了）| ChatGPT 方向性レビュー送付 |
-| — | N-03 | LLM Chooser 判定基準客観化検討 | open | 個人観察ベースから何を客観化できるか方針 1 ページ |
-| — | N-04 | Vault Search Cheatsheet と既存「Vault の見方ガイド」統合方針決定 | open | A/B/C いずれかをユーザー確認 → 統合実装 |
+| — | N-03 | LLM Chooser 判定基準客観化検討 | **done**（vloop10 / 2026-05-25・3 層構造方針 1 ページ完成）| ChatGPT 方向性レビュー時に質問 §5 を確認 |
+| — | N-04 | Vault Search Cheatsheet と既存「Vault の見方ガイド」統合方針決定 | **artifact_exists**（vloop10 / 2026-05-25・A/B/C 比較整理 + Claude 推奨案 B 完成・方針決定は ChatGPT 待ち）| ChatGPT 方向性レビュー時に統合方針 A/B/C 決定 |
 
 ## 4. 🗂 Vault 運用
 
@@ -67,8 +67,8 @@ tags: [入口, ToDo, 案件別, 正本]
 | **A-4-1** | Vault | 旧運用フォルダ個別ファイルへの注記追加（04_reviews/ 3 件 + 07_tasks/inbox/ 1 件 + chatgpt/ README）| **done**（vloop9 / 2026-05-25・review-template.md は既に旧版注記済でスキップ）| D セクションへ移動 |
 | — | Vault | 全 .md ファイル横断「存在しないパス案内」grep 検査 | open（#59 残・大規模）| 主要入口は確認済 / 全件は別途 |
 | — | Vault | `Vaultの見方_どこを見れば何がわかるか` の分割 / 簡略化（#59 本文指摘）| open | 分割方針 → 実施 |
-| — | Vault | chatgpt/ フォルダの運用ルール確定 | open | README に運用方針を 1 ページ |
-| — | Vault | #68 Mermaid テンプレを candidate 本体へ反映 | open | candidate-001/005/006/007 本体に状態色分け Mermaid 追加 |
+| — | Vault | chatgpt/ フォルダの運用ルール確定 | **done**（vloop10 / 2026-05-25・README v1 確定）| D セクションへ移動 |
+| — | Vault | #68 Mermaid テンプレを candidate 本体へ反映 | **done**（vloop10 / 2026-05-25・candidate-001/005/006/007 本体に 4 件反映）| D セクションへ移動 |
 
 ## 5. 💡 収益化案
 
@@ -117,7 +117,14 @@ tags: [入口, ToDo, 案件別, 正本]
 
 > 状態が done になり、user_check も終わったものを移動。本セクションは vloop ごとに整理する。
 
-## vloop9 完了分（次回 vloop10 で [[完了ToDoログ]] へ移動）
+## vloop10 完了分（次回 vloop11 で [[完了ToDoログ]] へ移動）
+
+- **#68 Mermaid テンプレを candidate-001/005/006/007 本体へ反映**（4 ファイル状態色分け Mermaid 追加）
+- **N-03 LLM Chooser 判定基準客観化方針**（3 層構造 1 ページ完成 / 06_research/2026-05-25_llm-chooser-判定基準客観化方針.md）
+- **N-04 Vault Search Cheatsheet 統合方針 A/B/C 比較整理**（Claude 推奨 B / 06_research/2026-05-25_vault-search-cheatsheet-統合方針比較.md）
+- **chatgpt/ フォルダ運用ルール README v1 確定**（暫定 → 補助フォルダ役割確定）
+
+## vloop9 完了分（次回 vloop10 で [[完了ToDoログ]] へ移動 → vloop10 で実施済）
 
 - **A-4-1 旧運用フォルダ個別ファイル注記追加**（04_reviews/ 3 件 + 07_tasks/inbox/ 1 件 + chatgpt/ README）→ Issue #59 残作業を解消
 - **A-1 candidate-001 本体・補助 3 ファイル用語注記追加**（#69 残）
