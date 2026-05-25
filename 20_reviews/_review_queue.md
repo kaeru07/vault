@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-25_vloop9-todo-execution]]
+  - createdAt: 2026-05-25 12:42
+  - app: company-meta / obsidian-vault / obsidian-sync-vault
+  - project: vault / workflow / candidate-006-007 / 用語注記 / 案件別ToDo実行
+  - priority: high
+  - summary: vloop9 案件別ToDo 実行（Issue #80 / #87 継続実体化）。A セクション 4 件を実ファイル反映。A-4-1 旧運用フォルダ個別ファイル注記追加（#59 残解消 / 4 ファイル）+ A-1 candidate-001 本体 + 補助 3 ファイル用語注記（#69 残）+ A-2 candidate-005 本体 + 補助 3 ファイル用語注記（#69 残）+ A-3-1 candidate-006/007 補助 4 ファイル × 2 = 8 ファイル新規（公開ブロッカー / 7 日プラン / progress 投入設計 / ChatGPT 承認パック）。新規 Issue / ToDo を増やさず既存設計を実体化。candidate-006/007 が ChatGPT 方向性レビュー可能状態に到達。
+  - result: 
 - [ ] [[2026-05-25_issue-80-todo-refactor]]
   - createdAt: 2026-05-25 00:45
   - app: company-meta / obsidian-vault

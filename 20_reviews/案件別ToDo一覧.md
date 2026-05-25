@@ -4,7 +4,7 @@ type: vault-todo-by-project
 issue: kaeru07/vault#80
 relatedIssues: [kaeru07/vault#74, kaeru07/vault#76, kaeru07/vault#77, kaeru07/vault#78, kaeru07/vault#79, kaeru07/vault#70]
 created: 2026-05-24
-updated: 2026-05-25
+updated: 2026-05-25 (vloop9)
 status: active（vloop ごとに更新 / 本ページが正本）
 tags: [入口, ToDo, 案件別, 正本]
 ---
@@ -42,21 +42,21 @@ tags: [入口, ToDo, 案件別, 正本]
 
 | 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
-| — | 麻雀 | candidate-001 本体への用語注記追加（#69 残）| open | ChatGPT 用語マッピングに沿って 1 ファイル言い換え |
-| — | 麻雀 | candidate-001 補助 md への用語注記（公開ブロッカー / 7 日プラン / progress 投入設計）| open | 同上 / 3 ファイル |
+| — | 麻雀 | candidate-001 本体への用語注記追加（#69 残）| **done**（vloop9 / 2026-05-25）| D セクションへ移動 |
+| — | 麻雀 | candidate-001 補助 md への用語注記（公開ブロッカー / 7 日プラン / progress 投入設計）| **done**（vloop9 / 2026-05-25・3 ファイル完了）| D セクションへ移動 |
 
 ## 2. 🧪 トークン速度ツール（candidate-005）
 
 | 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
-| — | トークン速度 | candidate-005 本体への用語注記（#69 残）| open | 1 ファイル言い換え |
-| — | トークン速度 | candidate-005 補助 md への用語注記（公開ブロッカー / 7 日プラン / progress 投入設計）| open | 同上 / 3 ファイル |
+| — | トークン速度 | candidate-005 本体への用語注記（#69 残）| **done**（vloop9 / 2026-05-25）| D セクションへ移動 |
+| — | トークン速度 | candidate-005 補助 md への用語注記（公開ブロッカー / 7 日プラン / progress 投入設計）| **done**（vloop9 / 2026-05-25・3 ファイル完了）| D セクションへ移動 |
 
 ## 3. 🔁 複数案試作（candidate-006 / 007）
 
 | 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
-| **A-3-1** | 候補-006/007 | **candidate-006 / 007 の判断するための資料一式（補助 4 ファイル × 2 = 8 ファイル）作成** | planned_only | candidate-005 と同形式で 8 ファイル |
+| **A-3-1** | 候補-006/007 | **candidate-006 / 007 の判断するための資料一式（補助 4 ファイル × 2 = 8 ファイル）作成** | **done**（vloop9 / 2026-05-25・8 ファイル完了）| ChatGPT 方向性レビュー送付 |
 | — | N-03 | LLM Chooser 判定基準客観化検討 | open | 個人観察ベースから何を客観化できるか方針 1 ページ |
 | — | N-04 | Vault Search Cheatsheet と既存「Vault の見方ガイド」統合方針決定 | open | A/B/C いずれかをユーザー確認 → 統合実装 |
 
@@ -64,7 +64,7 @@ tags: [入口, ToDo, 案件別, 正本]
 
 | 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|
-| **A-4-1** | Vault | 旧運用フォルダ個別ファイルへの注記追加（04_reviews/ 3 件 + 07_tasks/inbox/ 1 件 + chatgpt/ README）| open（#59 残）| 各ファイル先頭に `> [!note] 旧運用 / 参照のみ` 追加 |
+| **A-4-1** | Vault | 旧運用フォルダ個別ファイルへの注記追加（04_reviews/ 3 件 + 07_tasks/inbox/ 1 件 + chatgpt/ README）| **done**（vloop9 / 2026-05-25・review-template.md は既に旧版注記済でスキップ）| D セクションへ移動 |
 | — | Vault | 全 .md ファイル横断「存在しないパス案内」grep 検査 | open（#59 残・大規模）| 主要入口は確認済 / 全件は別途 |
 | — | Vault | `Vaultの見方_どこを見れば何がわかるか` の分割 / 簡略化（#59 本文指摘）| open | 分割方針 → 実施 |
 | — | Vault | chatgpt/ フォルダの運用ルール確定 | open | README に運用方針を 1 ページ |
@@ -102,8 +102,8 @@ tags: [入口, ToDo, 案件別, 正本]
 
 - [ ] **candidate-001 方向性レビュー**（[[candidate-001_ChatGPT承認パック]] §1-§14）→ approve / hold / reject
 - [ ] **candidate-005 方向性レビュー**（[[candidate-005_ChatGPT承認パック]] §1-§14）→ approve / hold / reject
-- [ ] **candidate-006 方向性レビュー**（[[../05_monetization/scenarios/candidate-006]]）→ approve / hold / reject
-- [ ] **candidate-007 方向性レビュー**（[[../05_monetization/scenarios/candidate-007]] / 既存資産統合方針 A/B/C 含む）→ approve / hold / reject
+- [ ] **candidate-006 方向性レビュー**（[[candidate-006_ChatGPT承認パック]] §1-§14 / vloop9 完成）→ approve / hold / reject
+- [ ] **candidate-007 方向性レビュー**（[[candidate-007_ChatGPT承認パック]] §1-§15 / 既存資産統合方針 A/B/C 含む / vloop9 完成）→ approve / hold / reject
 
 ## 運用ルール / 検討材料
 
@@ -116,6 +116,15 @@ tags: [入口, ToDo, 案件別, 正本]
 # D. 完了移動候補（次回 vloop で [[完了ToDoログ]] へ移す候補）
 
 > 状態が done になり、user_check も終わったものを移動。本セクションは vloop ごとに整理する。
+
+## vloop9 完了分（次回 vloop10 で [[完了ToDoログ]] へ移動）
+
+- **A-4-1 旧運用フォルダ個別ファイル注記追加**（04_reviews/ 3 件 + 07_tasks/inbox/ 1 件 + chatgpt/ README）→ Issue #59 残作業を解消
+- **A-1 candidate-001 本体・補助 3 ファイル用語注記追加**（#69 残）
+- **A-2 candidate-005 本体・補助 3 ファイル用語注記追加**（#69 残）
+- **A-3-1 candidate-006 / 007 補助 4 ファイル × 2 = 8 ファイル作成**（公開ブロッカー / 7 日プラン / progress 投入設計 / ChatGPT 承認パック）
+
+## 既存（前回 vloop までの完了分）
 
 - Issue #59 Vault 全体棚卸し（user_check 残・vloop8 完了）→ Vault 全体棚卸し.md user_check 解除後に移動
 - Issue #67 Hermes Agent × Codex 検討材料整備（vloop7 完了 / 採用判断は別 ToDo）→ ChatGPT 確認後に移動

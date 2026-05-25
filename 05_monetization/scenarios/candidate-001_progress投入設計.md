@@ -13,6 +13,17 @@ status: 設計のみ（approved 前は投入しない）
 > **実装・実投入はしない**（candidate-001 は `pending_approval`。投入は approved 後＋人間が実施）。
 > 起点: [[candidate-001_公開ブロッカー]]（B1〜B5）/ [[candidate-001_7日実行プラン]] / [[../progress連携基準]]
 
+> [!note] 用語注（Issue #69）
+> - progress 投入 = progress（作業履歴アプリ・localhost:3010）への ToDo 追加
+> - ExecutionRun = progress 内の「作業 1 件分の実行記録」（runId 付き）
+> - approved / 承認済み = 実装着手 OK の状態（ChatGPT + あなたの判断）
+> - pending_approval / 承認待ち = まだ承認判断が出ていない状態
+> - scenarioId / vaultRef = progress と Vault を相互に結ぶための識別子（どの有力候補・どのページ由来か）
+> - /vloop = Claude が ToDo を Epic 単位でまとめて進める実行コマンド
+> - /focus = Claude を「1 作業に集中して進めるモード」で動かす実行コマンド
+> - B1〜B5 = 公開ブロッカー（公開を阻む問題）の種別番号
+> - revenueImpact = 収益インパクト（high / medium / low / none の 4 段階）
+
 ## 投入の前提（ゲート）
 
 - candidate-001 の `status: approved` かつ `approvedBy` 記入済（[[../ChatGPT承認ゲート標準]]）

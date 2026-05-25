@@ -13,6 +13,17 @@ status: 計画のみ（承認後に着手・progress 投入は人間）
 > **計画のみ。approved 化・progress 投入・本番実装はしない**（[[../収益化シナリオ承認フロー]] / /vloop 禁止事項）。
 > 起点は [[candidate-005_公開ブロッカー]] の解除順（B1→B2→B9→B4→B5→B7→B6→B8）。
 
+> [!note] 用語注（Issue #69）
+> - approved / 承認済み = ChatGPT + あなたの判断で「実装着手 OK」になった状態
+> - Day0 = 承認判断の日 / Day1 = 承認翌日（実作業 1 日目）
+> - B1〜B9 = 公開ブロッカー（公開を阻む問題）の種別番号
+> - progress 投入 = progress（作業履歴アプリ・localhost:3010）への ToDo 追加
+> - Vercel = 静的サイト・Next.js を無料層でホストできる代表サービス
+> - sample-data.json = MVP モック内のサンプル測定データ JSON
+> - Ollama / OpenAI Playground = ローカル / Web で LLM を動かす代表的ツール
+> - Shorts = YouTube Shorts などの短尺動画
+> - nanikiru-shorts 基盤 = 既存の麻雀 Shorts 動画自動生成パイプライン（流用可能）
+
 ## 前提（Day0・人間 + ChatGPT）
 
 - candidate-005 が `approved`（ChatGPT 方向性承認 → 人間 status 確定）

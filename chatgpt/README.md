@@ -1,4 +1,12 @@
-# chatgpt/ — ChatGPT 連携メモ
+> [!warning] ⏸ 暫定 / 運用ルール未確定
+> このフォルダ（`chatgpt/`）は **用途未確定の暫定置き場**。現在は README のみで実体ファイルなし。
+> ChatGPT 連携の正本入口は [[../20_reviews/ChatGPT承認待ち]] / [[../20_reviews/_review_queue]] を使用してください。
+> 詳細は [[../20_reviews/Vault全体棚卸し]] §Phase 1 §暫定（運用ルール未確定）を参照。
+> chatgpt/ フォルダの本格運用ルール確定は [[../20_reviews/案件別ToDo一覧]] A-4 残作業。
+
+---
+
+# chatgpt/ — ChatGPT 連携メモ（暫定置き場）
 
 > ChatGPT 由来の要約・レビュー結果・プロンプト雛形・会話ログの一部を残すためのフォルダ。
 > GitHub 経由で ChatGPT 側から参照されることを想定。

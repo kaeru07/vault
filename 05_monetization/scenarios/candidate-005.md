@@ -14,9 +14,22 @@ issue: kaeru07/vault#60
 relatedIssues: [kaeru07/vault#61, kaeru07/vault#62, kaeru07/vault#63]
 ---
 
+> [!note] 用語注（Issue #69）
+> - candidate / 有力候補 = 収益化する価値があるかもしれない案
+> - approved / 承認済み = ChatGPT + あなたの判断で「実装着手 OK」になった状態
+> - chatgpt_pending / pending_approval = ChatGPT 方向性レビュー前 / レビュー後の承認待ち
+> - progress 投入 = progress（作業履歴アプリ・localhost:3010）への ToDo 追加
+> - tokens/sec = 1 秒あたりに LLM が出力するトークン数（生成速度）
+> - TTFT = Time To First Token / 最初の 1 文字が出るまでの待ち時間
+> - 体感スコア = tokens/sec と TTFT を重み付けして「人にとっての速さ」を 1 つの数値にしたもの
+> - MVP モック = 試作の最小版（90_prototypes/ 配下に置く完成度の低い動作版）
+> - Shorts 送客 = YouTube Shorts や短尺動画からアプリへ誘導すること
+> - note 販売 = note.com 等で有料記事として情報をまとめて販売すること
+> - nanikiru-shorts 基盤 = 既存の麻雀 Shorts 動画自動生成パイプライン（流用可能な資産）
+
 ## 収益化シナリオ（1 文）
 
-外部 LLM API を呼ばずに **tokens/sec / TTFT / 体感スコア**を比較できるブラウザツールを公開し、AI 開発者層への広告・note 販売・Shorts 送客で収益化する。
+外部 LLM API を呼ばずに **tokens/sec（1 秒あたり生成トークン数）/ TTFT（最初の 1 文字までの待ち時間）/ 体感スコア（速度の総合点）**を比較できるブラウザツールを公開し、AI 開発者層への広告・note 販売・Shorts 送客で収益化する。
 
 ## 対象アプリまたは資産
 

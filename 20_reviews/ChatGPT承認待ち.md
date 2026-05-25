@@ -22,12 +22,12 @@ status: active
 - 推奨: **candidate-001 を最初に進める**（high 唯一・既存資産流用で実装速度最大・最初の1作業が1分解明確）
 
 ### 比較候補
-| 候補 | revenueImpact | scoreTotal | 一言 |
-|---|---|---|---|
-| candidate-001 麻雀何切るアプリ公開 | high | 28 | 公開ブロッカー解消だけで収益導線（推奨1位） |
-| candidate-002 麻雀何切るShorts | medium | 27 | 001 への送客で相乗 |
-| candidate-004 麻雀問題系3アプリ統合 | medium | 25 | 統合方針確定が前提 |
-| candidate-003 Obsidianテンプレ | low | 24 | 調査根拠2・要再調査 |
+| 候補                         | revenueImpact | scoreTotal | 一言                     |
+| -------------------------- | ------------- | ---------- | ---------------------- |
+| candidate-001 麻雀何切るアプリ公開   | high          | 28は        | 公開ブロッカー解消だけで収益導線（推奨1位） |
+| candidate-002 麻雀何切るShorts  | medium        | 27         | 001 への送客で相乗            |
+| candidate-004 麻雀問題系3アプリ統合  | mediumこ       | 25         | 統合方針確定が前提              |
+| candidate-003 Obsidianテンプレ | low           | 24         | 調査根拠2・要再調査             |
 
 ### メリット / デメリット
 - メリット: 既存 mahjong ほぼ完成・vercel.json あり／何切る市場は専業アプリ複数で成立／動画化容易（candidate-002 連動）

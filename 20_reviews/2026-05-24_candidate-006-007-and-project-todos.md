@@ -29,17 +29,17 @@ commitHashes: []
 
 ## 3. 変更ファイル
 
-| ファイル | 変更内容 |
-|---|---|
-| `20_reviews/案件別ToDo一覧.md` | 新規（新運用ルール準拠の正本 / 6 案件 / ユーザー確認待ち / 新規発生 ToDo）|
-| `05_monetization/scenarios/candidate-006.md` | 新規（コンパクト版 candidate）|
-| `05_monetization/scenarios/candidate-007.md` | 新規（コンパクト版 candidate + 既存資産との重複整理 3 案）|
-| `05_monetization/scenarios/README.md` | 7 件テーブル + candidate-006/007 補助セクション |
-| `05_monetization/idea_trace.md` | §8/§9 ステータス変更 + 履歴更新 |
-| `00_START_HERE.md` | 入口 6 件化 + 案件別ToDo一覧を最優先 + 7 件に更新 |
-| `20_reviews/次に実体化するToDo.md` | 実体化済 8 件目 + 優先 3 完了 + 優先 6 追加 |
-| `20_reviews/2026-05-24_candidate-006-007-and-project-todos.md` | 本ファイル新規 |
-| `20_reviews/_review_queue.md` | 先頭追加 |
+| ファイル                                                           | 変更内容                                          |
+| -------------------------------------------------------------- | --------------------------------------------- |
+| `20_reviews/案件別ToDo一覧.md`                                      | 新規（新運用ルール準拠の正本 / 6 案件 / ユーザー確認待ち / 新規発生 ToDo） |
+| `05_monetization/scenarios/candidate-006.md`                   | 新規（コンパクト版 candidate）                          |
+| `05_monetization/scenarios/candidate-007.md`                   | 新規（コンパクト版 candidate + 既存資産との重複整理 3 案）         |
+| `05_monetization/scenarios/README.md`                          | 7 件テーブル + candidate-006/007 補助セクション           |
+| `05_monetization/idea_trace.md`                                | §8/§9 ステータス変更 + 履歴更新                          |
+| `00_START_HERE.md`                                             | 入口 6 件化 + 案件別ToDo一覧を最優先 + 7 件に更新              |
+| `20_reviews/次に実体化するToDo.md`                                    | 実体化済 8 件目 + 優先 3 完了 + 優先 6 追加                 |
+| `20_reviews/2026-05-24_candidate-006-007-and-project-todos.md` | 本ファイル新規                                       |
+| `20_reviews/_review_queue.md`                                  | 先頭追加                                          |
 
 ## 4. 検証結果
 

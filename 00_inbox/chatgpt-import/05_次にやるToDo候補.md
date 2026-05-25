@@ -15,25 +15,19 @@ runId: 20260517-185136
 - [ ] **APIなし「アプリ案工場」Phase1 を progress に追加**（出典: 2026-05-16 AI運用構成提案）
   - 手入力でアプリ案 → 収益化評価軸でスコア → モック作成ToDo自動登録。外部API/DB不使用
   - → [[important/2026-05-16_アプリ案工場-Phase1構想]]
-  - → 設計仕様作成済: [[../../05_monetization/アプリ案工場_Phase1設計]]（status: proposal・設計のみ／実装は本番progressのため人間承認後）
 - [ ] **Codex を読み取り専用レビューに常用する運用を確立**（出典: 2026-05-16 ClaudeとCodexのAgent活用）
   - Claude Code主導 → Codexで対立レビュー。execution-runs.json を渡し標準出力でレビュー要約
-  - → 提案ドラフト作成済: [[../../03_prompts/Codexレビュー常用運用]]（status: proposal・採用判断はユーザー/pm）
 - [ ] **scrape-lab-v2 本体を GitHub管理化 + market-research-hub 設計**（出典: 2026-05-12〜13 リソース活用法/市場調査）
   - JSON/NDJSON蓄積。Claude/Codex共通runner。収益化インパクト順に整理
-  - → 設計部分の提案ドラフト作成済: [[../../06_research/market-research-hub設計]]（status: proposal）。scrape-lab-v2 GitHub管理化は別アプリrepo操作のため未実施＝ユーザー判断
 
 ## 中優先（運用改善）
 
 - [ ] **obsidian-sync-vault のバックアップ方針を確定**（出典: Obsidian活用法提案・複数回指摘）
   - git管理外リスク。ob sync忘れ対策・追記専用ルールはCLAUDE.local.mdに一部反映済 → 残りを点検
-  - → 確定版作成済: [[../../03_prompts/Vaultバックアップ方針]]（週次tar推奨/4世代保持/push=履歴バックアップ を確定・CLAUDE.local.md追記はユーザー判断）
 - [ ] **prompt_inbox と work_queue の分離運用を検討**（出典: Obsidian活用法提案）
   - 「思いつきプロンプト貯め場」と「承認済み実行キュー」を分ける。現 _review_queue 運用との整合確認
-  - → 提案ドラフト作成済: [[../../03_prompts/prompt_inbox-work_queue分離運用]]（status: proposal・採用判断はユーザー/pm）
 - [ ] **Claude有料プラン Agent SDK 月次クレジット（6/15〜）の活用方針を決める**（出典: 2026-05-14 Claude有料プランの変更）
   - claude -p / Agent SDK / GitHub Actions のクレジット枠。自動化の費用設計
-  - → 提案ドラフト作成済: [[../../03_prompts/AgentSDKクレジット活用方針]]（status: proposal・配分比は仮説/公式仕様確認待ち・採用はユーザー）
 
 ## 低優先（候補ストック）
 

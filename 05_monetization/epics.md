@@ -26,12 +26,12 @@ relatedIssues: [kaeru07/vault#42, kaeru07/vault#48, kaeru07/vault#49]
 
 **目的**: 無料情報源から毎日トレンドを収集し daily/ に蓄積する。
 
-| Phase | 完了条件 | 現状 |
-|---|---|---|
-| 設計 | 取得方法 / 保存規約 / cron 設計 / 失敗継続 / ログ | ✅ 完了（#25/#29/#30/#36/#37/#39） |
-| MVP 実動作 | 1 源で daily 生成 → 案生成 → 上位抽出 | ✅ 完了（#44/#45/#46・2026-05-21） |
-| Phase 1 完全化 | 3 源以上で daily 44 件 / 40 案 / 上位 5 件 | ✅ 完了（#48・2026-05-21・HN+Reddit+iTunes） |
-| 自動化移行 | cron 7 判定基準を 3 日連続クリア → cron 投入 | ✅ **3 日連続達成（2026-05-21/22/23）→ 人間が cron 投入可否を判定** |
+| Phase       | 完了条件                              | 現状                                                |
+| ----------- | --------------------------------- | ------------------------------------------------- |
+| 設計          | 取得方法 / 保存規約 / cron 設計 / 失敗継続 / ログ | ✅ 完了（#25/#29/#30/#36/#37/#39）                     |
+| MVP 実動作     | 1 源で daily 生成 → 案生成 → 上位抽出        | ✅ 完了（#44/#45/#46・2026-05-21）                      |
+| Phase 1 完全化 | 3 源以上で daily 44 件 / 40 案 / 上位 5 件 | ✅ 完了（#48・2026-05-21・HN+Reddit+iTunes）             |
+| 自動化移行       | cron 7 判定基準を 3 日連続クリア → cron 投入   | ✅ **3 日連続達成（2026-05-21/22/23）→ 人間が cron 投入可否を判定** |
 
 **Epic A 残**: 人間による cron 投入判断（§3 段階導入 a/b/c）+ research-run / idea-run コマンド本体実装（別アプリリポジトリ・人間承認後）
 
@@ -61,14 +61,14 @@ relatedIssues: [kaeru07/vault#42, kaeru07/vault#48, kaeru07/vault#49]
 
 **目的**: candidate を ChatGPT 承認待ちに整備し、approved 後に progress 投入する。
 
-| Phase | 完了条件 | 現状 |
-|---|---|---|
-| 承認ゲート設計 | 承認フロー / コマンド標準 / 承認待ちテンプレ | ✅ 完了（#18/#19/#24） |
-| candidate-001 判断材料 | 承認パック / 公開ブロッカー / 7 日プラン / progress 投入設計 | ✅ 完了（#22/#23/#15/#16）+ #49 補強 |
-| ChatGPT 承認待ち整備 | ChatGPT承認待ち.md に candidate-001 ブロック（最新材料） | ✅ 完了（#50 サイクルで #49 補強反映） |
-| Epic C 仕上げ（承認判断可能状態） | 市場確認 / 実装現実性 / 収益導線 / 着手可否を承認パックに増補 | ✅ 完了（#53・承認パック §9-§14 増補） |
-| ChatGPT 方向性承認 | candidate-001 approve / hold / reject | ⏳ **ChatGPT + 人間待ち**（vloop スコープ外） |
-| approved → progress 投入 | 人間が status 確定 → progress ToDo 化 | ⏳ 人間待ち |
+| Phase                  | 完了条件                                      | 現状                                |
+| ---------------------- | ----------------------------------------- | --------------------------------- |
+| 承認ゲート設計                | 承認フロー / コマンド標準 / 承認待ちテンプレ                 | ✅ 完了（#18/#19/#24）                 |
+| candidate-001 判断材料     | 承認パック / 公開ブロッカー / 7 日プラン / progress 投入設計  | ✅ 完了（#22/#23/#15/#16）+ #49 補強     |
+| ChatGPT 承認待ち整備         | ChatGPT承認待ち.md に candidate-001 ブロック（最新材料） | ✅ 完了（#50 サイクルで #49 補強反映）          |
+| Epic C 仕上げ（承認判断可能状態）   | 市場確認 / 実装現実性 / 収益導線 / 着手可否を承認パックに増補       | ✅ 完了（#53・承認パック §9-§14 増補）         |
+| ChatGPT 方向性承認          | candidate-001 approve / hold / reject     | ⏳ **ChatGPT + 人間待ち**（vloop スコープ外） |
+| approved → progress 投入 | 人間が status 確定 → progress ToDo 化           | ⏳ 人間待ち                            |
 
 **Epic C 残**: ChatGPT が candidate-001 を方向性承認 → 人間が status 確定（**vloop は判断材料整備まで・承認はしない**）。判断材料は #53 で完備
 
@@ -80,12 +80,12 @@ relatedIssues: [kaeru07/vault#42, kaeru07/vault#48, kaeru07/vault#49]
 
 **目的**: Vault の入口を整備し、iPhone Obsidian からも GitHub からも迷わず辿れる状態にする。
 
-| Phase | 完了条件 | 現状 |
-|---|---|---|
-| 承認入口の正規化 | ChatGPT 承認待ちファイルの正規パス確定・実在確認 | ✅ 完了（#54・実在実証 + 20_reviews/README に明記） |
-| 見方ガイドの正規入口確定 | 収益化フローの判断手順ガイドを正規入口として整備 | ✅ 完了（#55・00_inbox/Vault見方ガイド + 00_index 二層構成） |
-| iPhone Obsidian の同期導線整備 | sync-vault に逆反映 + 英数字入口追加 + 逆反映ルール | ✅ 完了（#56・5 ファイル逆反映 + 00_START_HERE.md + ob sync Fully synced） |
-| iPhone 実運用確認 | ユーザー確認用チェックリスト + scenarios 直接導線 | ✅ 完了（#57・00_START_HERE.md に §ユーザー確認用チェックリスト + §6 scenarios 直接リンク追加） |
+| Phase                   | 完了条件                               | 現状                                                                  |
+| ----------------------- | ---------------------------------- | ------------------------------------------------------------------- |
+| 承認入口の正規化                | ChatGPT 承認待ちファイルの正規パス確定・実在確認       | ✅ 完了（#54・実在実証 + 20_reviews/README に明記）                              |
+| 見方ガイドの正規入口確定            | 収益化フローの判断手順ガイドを正規入口として整備           | ✅ 完了（#55・00_inbox/Vault見方ガイド + 00_index 二層構成）                       |
+| iPhone Obsidian の同期導線整備 | sync-vault に逆反映 + 英数字入口追加 + 逆反映ルール | ✅ 完了（#56・5 ファイル逆反映 + 00_START_HERE.md + ob sync Fully synced）       |
+| iPhone 実運用確認            | ユーザー確認用チェックリスト + scenarios 直接導線    | ✅ 完了（#57・00_START_HERE.md に §ユーザー確認用チェックリスト + §6 scenarios 直接リンク追加） |
 
 **Epic D 残**: ユーザーが iPhone で実際にチェックリストを通せるか確認（vloop スコープ外・ユーザー操作）
 
@@ -95,13 +95,13 @@ relatedIssues: [kaeru07/vault#42, kaeru07/vault#48, kaeru07/vault#49]
 
 ## Epic 横断 / 運用
 
-| Issue | 内容 | 状態 |
-|---|---|---|
-| #28 | 案工場完全自動化フロー（A+B+C 統合 Runbook） | ✅ 設計完了 |
-| #42 | Epic 単位運用ルール | ✅ 完了 |
-| #50 | vloop Epic 完了優先運用 | ✅ 完了（vloop.md / 標準運用 / 本ファイル / レビュー運用） |
-| #40 #41 #43 | ChatGPT レビュー手順・1 枚図サマリー | ✅ 完了 |
-| #51 | Claude-Code標準運用.md 追記型修正（既存ルール復元） | ✅ 完了 |
+| Issue       | 内容                                | 状態                                     |
+| ----------- | --------------------------------- | -------------------------------------- |
+| #28         | 案工場完全自動化フロー（A+B+C 統合 Runbook）     | ✅ 設計完了                                 |
+| #42         | Epic 単位運用ルール                      | ✅ 完了                                   |
+| #50         | vloop Epic 完了優先運用                 | ✅ 完了（vloop.md / 標準運用 / 本ファイル / レビュー運用） |
+| #40 #41 #43 | ChatGPT レビュー手順・1 枚図サマリー           | ✅ 完了                                   |
+| #51         | Claude-Code標準運用.md 追記型修正（既存ルール復元） | ✅ 完了                                   |
 
 ---
 
@@ -109,21 +109,16 @@ relatedIssues: [kaeru07/vault#42, kaeru07/vault#48, kaeru07/vault#49]
 
 ```mermaid
 flowchart LR
-  A["Epic A 情報収集基盤<br/>cron 3日連続達成"]:::done --> B["Epic B 案生成基盤<br/>40案・上位5件・判断済"]:::done
-  B --> C["Epic C 候補昇格<br/>candidate-001 + candidate-005 承認待ち"]:::user
-  D["Epic D Vault Onboarding<br/>iPhone入口整備完了"]:::user
-  E["Epic 試作ループ<br/>(N-01試作 + candidate-005 正規化 + 承認材料完備)"]:::done --> C
-  F["Epic Vault蓄積運用ルール準拠<br/>(#70/#68/#69)"]:::working
-
-  classDef done fill:#22c55e,color:#0b1224
-  classDef user fill:#facc15,color:#0b1224
-  classDef working fill:#38bdf8,color:#0b1224
-  classDef next fill:#a78bfa,color:#0b1224
+  A["Epic A 情報収集基盤<br/>cron 3日連続達成"] --> B["Epic B 案生成基盤<br/>40案・上位5件・判断済"]
+  B --> C["Epic C 候補昇格<br/>candidate-001 承認待ち"]
+  D["Epic D Vault Onboarding<br/>iPhone入口整備完了"] --> All["全 Epic で<br/>人間判定待ちフェーズ"]
+  A --> All
+  B --> All
+  C --> All
 ```
 
-> 用語注: Epic = 大きな作業テーマ / 緑=完了 / 黄=あなた確認待ち / 水=今 vloop で進行中 / 紫=次サイクル予定
-> Epic A は cron 3 日連続達成（あなたが cron 投入判断）。Epic B は実行フェーズ完了。Epic C は candidate-001 + candidate-005 判断材料完備（ChatGPT 方向性レビュー + あなた承認待ち）。Epic D は iPhone 入口整備完了（あなたの実機確認待ち）。Epic 試作ループは vloop1-3 で N-01 試作 + candidate-005 正規化 + 承認材料完備まで完了。Epic Vault 蓄積運用ルール準拠は本 vloop4 で進行中（#70/#68/#69）。
-> 次の作業は: candidate-005 を candidate-001 と並走させる準備 / Vault 蓄積運用ルールの主要ページへの完全反映 / cron 投入後の運用観察。
+> Epic A は cron 3 日連続達成（人間が cron 投入判断）。Epic B は実行フェーズ完了。Epic C は candidate-001 判断材料完備（ChatGPT 承認待ち）。Epic D は iPhone 入口整備完了（ユーザー確認待ち）。
+> vloop の次の主作業は: cron 投入後の運用観察 / 各源 n 増による新規 candidate 起票の再判定 / ChatGPT 承認後の progress 投入準備。
 
 ## 次の一手
 

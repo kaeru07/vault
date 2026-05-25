@@ -2,7 +2,7 @@
 title: vloop_queue（vloop実行対象）
 type: vloop-queue
 created: 2026-05-25
-updated: 2026-05-25
+updated: 2026-05-25 (vloop9)
 status: active
 source_issue: kaeru07/vault#87
 tags: [vloop, ToDo, 承認, 案件別, 自動実行]
@@ -85,13 +85,14 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 
 ## Vault運用
 
-### 実行承認済み / 承認不要
+### 実行承認済み / 承認不要（vloop9 で消化済 / 継続運用項目）
 
-- [x] 案件別ToDo一覧を正本として維持し、Issueだけに残っている新規ToDoをVaultへ反映する
-- [x] 完了ToDoを `20_reviews/完了ToDoログ.md` へ移動する
+- [x] 案件別ToDo一覧を正本として維持し、Issueだけに残っている新規ToDoをVaultへ反映する（継続運用）
+- [x] 完了ToDoを `20_reviews/完了ToDoログ.md` へ移動する（vloop9 で 5 件追記）
 - [x] `00_START_HERE.md` から `vloop_queue.md` と `案件別ToDo一覧.md` へ辿れるようにする
 - [x] `20_reviews/次に実体化するToDo.md` を正本扱いから外し、非推奨/参照用にする
 - [x] 重複ToDoを目的ベースで統合し、統合元は merged 扱いにする
+- [x] **旧運用フォルダ個別ファイル注記追加（A-4-1 / vloop9 完了 / Issue #59 残作業解消）**
 
 ### 承認待ち
 
@@ -105,7 +106,7 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 
 - [x] `02_apps/mahjong.md` を司令塔ページとして整理する
 - [x] 麻雀画像解析/鳴き読み問題生成の現在地を案件別ToDo一覧へ反映する
-- [x] candidate-001 本体と補助ファイルの分かりづらい用語をユーザー向け日本語に直す
+- [x] **candidate-001 本体と補助ファイルの分かりづらい用語をユーザー向け日本語に直す（A-1 / vloop9 完了 / 4 ファイル）**
 
 ### 承認待ち
 
@@ -120,6 +121,7 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 
 - [x] トークン速度・LLMベンチ案件の司令塔ページを作る
 - [x] APIなしでできる範囲、手入力/ログ貼り付け/JSON保存の方針を整理する
+- [x] **candidate-005 本体と補助ファイルの用語注記追加（A-2 / vloop9 完了 / 4 ファイル）**
 
 ### 承認待ち
 
@@ -132,6 +134,7 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 ### 実行承認済み / 承認不要
 
 - [x] 案の情報源と採用理由ページへ主要候補を追記する
+- [x] **candidate-006 / 007 の判断するための資料一式（補助 4 ファイル × 2 = 8 ファイル）作成（A-3-1 / vloop9 完了）**
 
 ### 承認待ち
 

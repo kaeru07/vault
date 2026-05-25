@@ -4,7 +4,7 @@ type: vault-completed-log
 issue: kaeru07/vault#74
 relatedIssues: [kaeru07/vault#80, kaeru07/vault#70]
 created: 2026-05-25
-updated: 2026-05-25
+updated: 2026-05-25 (vloop9)
 status: active（vloop ごとに追加）
 tags: [完了, ログ, 履歴]
 ---
@@ -25,14 +25,14 @@ tags: [完了, ログ, 履歴]
 
 ### Vault 運用基盤系
 
-| 達成日 | 案件 | 達成内容 | 成果物 | runId |
-|---|---|---|---|---|
-| 2026-05-24 | Vault 運用 | やりっぱなし防止キュー新規（#70）| [[次に実体化するToDo]] | 20260524-vloop4 |
-| 2026-05-24 | Vault 運用 | 現在地図テンプレ新規（#68 Phase 1）| [[../90_templates/現在地図テンプレ]] | 20260524-vloop4 |
-| 2026-05-24 | Vault 運用 | 案件別ToDo一覧 新規（#70 / 新運用ルール準拠）| [[案件別ToDo一覧]] | 20260524-vloop6 |
-| 2026-05-24 | Vault 運用 | 00_START_HERE 入口 6 件化（vloop6）| [[../00_START_HERE]] | 20260524-vloop6 |
-| 2026-05-24 | Vault 運用 | Mermaid 状態色分けテンプレを主要 4 ページに反映（#68 Phase 2 partial）| epics / Issue完了判定ルール / idea_trace / 試作ループ検証 | 20260524-vloop4-5 |
-| 2026-05-24 | Vault 運用 | 主要 8 ページに用語日本語化注記追加（#69 partial）| 00_START_HERE / scenarios/README / 案の情報源と採用理由 / idea_trace / Issue完了判定ルール / 試作ループ検証 / 案件別ToDo一覧 / 次に実体化するToDo | 20260524-vloop4-5 |
+| 達成日        | 案件       | 達成内容                                               | 成果物                                                                                                           | runId             |
+| ---------- | -------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------- |
+| 2026-05-24 | Vault 運用 | やりっぱなし防止キュー新規（#70）                                 | [[次に実体化するToDo]]                                                                                               | 20260524-vloop4   |
+| 2026-05-24 | Vault 運用 | 現在地図テンプレ新規（#68 Phase 1）                            | [[../90_templates/現在地図テンプレ]]                                                                                  | 20260524-vloop4   |
+| 2026-05-24 | Vault 運用 | 案件別ToDo一覧 新規（#70 / 新運用ルール準拠）                       | [[案件別ToDo一覧]]                                                                                                 | 20260524-vloop6   |
+| 2026-05-24 | Vault 運用 | 00_START_HERE 入口 6 件化（vloop6）                      | [[../00_START_HERE]]                                                                                          | 20260524-vloop6   |
+| 2026-05-24 | Vault 運用 | Mermaid 状態色分けテンプレを主要 4 ページに反映（#68 Phase 2 partial） | epics / Issue完了判定ルール / idea_trace / 試作ループ検証                                                                   | 20260524-vloop4-5 |
+| 2026-05-24 | Vault 運用 | 主要 8 ページに用語日本語化注記追加（#69 partial）                   | 00_START_HERE / scenarios/README / 案の情報源と採用理由 / idea_trace / Issue完了判定ルール / 試作ループ検証 / 案件別ToDo一覧 / 次に実体化するToDo | 20260524-vloop4-5 |
 
 ### 試作ループ系
 
@@ -76,6 +76,23 @@ tags: [完了, ログ, 履歴]
 | 2026-05-25 | Vault 運用 | 案件別ToDo一覧 全面リファクタ（#76 / 4 セクション構造）| [[案件別ToDo一覧]] | 20260525-vloop9 |
 | 2026-05-25 | Vault 運用 | START_HERE 導線整理（#78 / 1-2 タップ化）| [[../00_START_HERE]] | 20260525-vloop9 |
 | 2026-05-25 | Vault 運用 | 次に実体化するToDo.md を「参照のみ」化（#76）| [[次に実体化するToDo]] | 20260525-vloop9 |
+
+## 2026-05-25（vloop9 続編 達成分 / A セクション実体化）
+
+### Vault 運用 / 用語日本語化系
+
+| 達成日 | 案件 | 達成内容 | 成果物 | runId |
+|---|---|---|---|---|
+| 2026-05-25 | Vault 運用 | 旧運用フォルダ個別ファイル注記追加（A-4-1 / #59 残作業解消 / review-template.md は既に旧版注記済でスキップ）| 04_reviews/README / 04_reviews/Claude作業レビュー運用 / 07_tasks/inbox/2026-05-17-progress-radar-gantt / chatgpt/README | 20260525-vloop9 |
+| 2026-05-25 | 麻雀 | candidate-001 本体 + 補助 3 ファイル用語注記追加（A-1 / #69 残）| [[../05_monetization/scenarios/candidate-001]] + 公開ブロッカー / 7日実行プラン / progress投入設計 | 20260525-vloop9 |
+| 2026-05-25 | トークン速度 | candidate-005 本体 + 補助 3 ファイル用語注記追加（A-2 / #69 残）| [[../05_monetization/scenarios/candidate-005]] + 公開ブロッカー / 7日実行プラン / progress投入設計 | 20260525-vloop9 |
+
+### 複数案試作（candidate-006 / 007）補助ファイル新規
+
+| 達成日 | 案件 | 達成内容 | 成果物 | runId |
+|---|---|---|---|---|
+| 2026-05-25 | 複数案試作 | candidate-006（llm-chooser）補助 4 ファイル新規作成（A-3-1）| [[../05_monetization/scenarios/candidate-006_公開ブロッカー]] / [[../05_monetization/scenarios/candidate-006_7日実行プラン]] / [[../05_monetization/scenarios/candidate-006_progress投入設計]] / [[candidate-006_ChatGPT承認パック]] | 20260525-vloop9 |
+| 2026-05-25 | 複数案試作 | candidate-007（vault-search-cheatsheet）補助 4 ファイル新規作成（A-3-1）| [[../05_monetization/scenarios/candidate-007_公開ブロッカー]] / [[../05_monetization/scenarios/candidate-007_7日実行プラン]] / [[../05_monetization/scenarios/candidate-007_progress投入設計]] / [[candidate-007_ChatGPT承認パック]] | 20260525-vloop9 |
 
 ---
 

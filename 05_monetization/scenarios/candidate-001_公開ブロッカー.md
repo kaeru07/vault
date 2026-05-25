@@ -13,6 +13,16 @@ status: 調査整理のみ（実装・公開はしない）
 > **読み取り調査のみ。実装・公開・approved 化・progress 投入はしない**（[[../収益化シナリオ承認フロー]] / /vloop 禁止事項）。
 > candidate-001 は現在 `pending_approval`（未承認）。本作業は承認判断の材料。
 
+> [!note] 用語注（Issue #69）
+> - 公開ブロッカー = 公開を阻む問題（B1〜B5 で番号管理）
+> - candidate / 有力候補 = 収益化する価値があるかもしれない案
+> - approved / 承認済み = ChatGPT + あなたの判断で「実装着手 OK」になった状態
+> - pending_approval / 承認待ち = まだ承認判断が出ていない状態
+> - progress 投入 = progress（作業履歴アプリ・localhost:3010）への ToDo 追加
+> - B1〜B5 = 公開ブロッカーの種別番号（B1 build / B2 デプロイ / B3 ストア文面 / B4 素材 / B5 動画）
+> - ASO 文面 = アプリストア向けの説明文（検索流入を増やすための文言）
+> - OGP = SNS でリンクが展開されるときに表示される画像・タイトル設定
+
 ## 調査メタ（妥当性）
 - どこを調べたか: `apps/mahjong/`（README / package.json / vercel.json / public/ / next.config / git log）/ 2026-05-19 / n=1リポジトリ
 - 情報源種別: 内部一次（リポジトリ実体）

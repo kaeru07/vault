@@ -13,6 +13,14 @@ status: 計画のみ（承認後に着手・progress投入は人間）
 > **計画のみ。approved 化・progress 投入・本番実装はしない**（[[../収益化シナリオ承認フロー]] / /vloop 禁止事項）。
 > 起点は [[candidate-001_公開ブロッカー]] の解除順（B1→B2→B3→B4→B5）。**Day1 は「承認済みであること」が前提条件**。
 
+> [!note] 用語注（Issue #69）
+> - approved / 承認済み = 実装着手 OK の状態（ChatGPT + あなたの承認）
+> - Day0 = 承認判断の日（人間が判断）/ Day1 = 承認翌日（実作業 1 日目）
+> - progress 投入 = progress（作業履歴アプリ・localhost:3010）への ToDo 追加
+> - B1〜B5 = 公開ブロッカー（公開を阻む問題）の種別番号
+> - candidate-002 / nanikiru-shorts 基盤 = 麻雀 Shorts 動画生成の別案件（[[candidate-002]]）
+> - Go / No-Go 判断 = 公開してよいか（Go）/ まだ公開しないか（No-Go）の最終判断
+
 ## 前提（Day0・人間）
 - candidate-001 が `approved`（[[../../20_reviews/2026-05-19_承認候補選定]] の推奨に基づき人間が判断）
 - 作業は apps/mahjong リポジトリ内で完結（company CLAUDE.md 原則）。Vault には記録のみ

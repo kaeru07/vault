@@ -1,3 +1,10 @@
+> [!note] 📦 旧運用 / 参照のみ
+> このフォルダ（`07_tasks/inbox/`）は **旧運用**。ToDo の正本は [[../../20_reviews/案件別ToDo一覧]] へ移行済み。
+> 本ファイルは歴史記録として残します。
+> 詳細は [[../../20_reviews/Vault全体棚卸し]] §Phase 1 §旧運用 を参照。
+
+---
+
 ---
 title: progress 案件レーダー・ガントチャート追加
 project: progress
