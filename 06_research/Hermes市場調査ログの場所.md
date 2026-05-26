@@ -15,5 +15,8 @@
 ## 調査方針
 06_research/market-research-method.md
 
+## インデックス
+06_research/market-research-index.md
+
 ## GitHub反映
-このフォルダはHermes/Codex市場調査ジョブ完了後にgit Vaultへミラーされ、commit/pushされる。
+市場調査ジョブ完了後、git Vaultへミラーされcommit/pushされる。
