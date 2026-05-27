@@ -12,4 +12,6 @@
 ## 履歴
 
 
+
+- 2026-05-27: AI 学習アプリ / Anthropic、韓国法人代表を任命 / Gemini API Managed Agents / AI 学習アプリ: 無料枠は少数の教材・生成回数に制限し、月額または年額で「無制限クイズ・要約・チュ… / エラーなし / partial(market,news,tools)
 - 2026-05-26: AI アプリ発見 / Google I/O 2026: Gemini 3.5 Flash / Google AI Studio Android app build / Google Play / エラーなし / partial(market,news,tools)
