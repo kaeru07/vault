@@ -5,6 +5,27 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-29_research-os]]
+  - createdAt: 2026-05-29 08:29
+  - app: news-app
+  - project: news-app / Research OS / Topic横断
+  - priority: medium
+  - summary: Research DBを構造化Research OSへ。Topic単位URL(/research/topic/[id]:単独+関連Timeline+重複候補)、タグ検索(/research/tag/[tag])、ToDo化導線(/research/todo-candidates:JSON shape)を新設。timelineKey/duplicateKey/similarityHints/sourceDate/relatedTopics/duplicateCandidatesを型・parser・UI・横断集計に追加。evidence/sources metrics、stale判定、confidence UI強化、一覧にtodo/stale件数+タグ雲。Hermes/Codex schema更新。2026-05-26を新フォーマット化(timeline共有/stale demo)。build成功・fallback維持。GitHubミラー未push。
+  - result: 
+- [ ] [[2026-05-28_research-structured-db]]
+  - createdAt: 2026-05-28 22:59
+  - app: news-app
+  - project: news-app / Research構造化DB / Hermes-Codex接続準備
+  - priority: medium
+  - summary: Researchを構造化Research DBへ強化。schema拡張(topicId/summaryTlDr/confidence/tags/sourceType/affectsProjects/todoCandidate/updatedAt)、parser強化(日英見出し/[label]URL/sourceType推定/確度正規化/affectsProjectsネスト/yes-no)、TopicCardにTL;DR・確度・タグ・sourceTypeバッジ・ToDo候補・影響PJ追加、一覧/概要にTopic数・S/A・上位タグ・TL;DR表示、Hermes/Codex用テンプレ3点追加。旧フォーマットはfallback維持。build成功。GitHubミラー未push。
+  - result: 
+- [ ] [[2026-05-28_research-topic-cards]]
+  - createdAt: 2026-05-28 21:53
+  - app: news-app
+  - project: news-app / research詳細表示 / Vault連携
+  - priority: medium
+  - summary: Vault由来の市場調査Markdownを1トピック=1カードで表示。新フォーマット解析(結論/トピック一覧/ToDo/保留/参考URL)とTopicカードUI(種別・重要度バッジ・要約・収益化示唆・次アクション・参考URL外部リンク・根拠折りたたみ)を追加。解析不能は従来MarkdownViewにfallback。2026-05-27をカード表示で確認、build成功。GitHubミラーは未push。
+  - result: 
 - [ ] [[2026-05-25_vloop11-vault整備]]
   - createdAt: 2026-05-25 21:38
   - app: company-meta / obsidian-vault / obsidian-sync-vault
