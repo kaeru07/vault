@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[AI工場オペレーションセンター設計レビュー]]
+  - createdAt: 2026-05-30 09:40
+  - app: progress / company-meta
+  - project: AI工場オペレーションセンター / Epic #91 設計レビュー
+  - priority: high
+  - summary: Epic #91（ProgressをAI工場の管制塔化）の設計レビュー。実装なし。不足9件特定（G1 Epic構造化[Goal/Progress/Remaining/LatestRun/NextAction] / G2 ToDo source / G3 Approval優先度 / G4 ヘルスカウント / G5 選択式承認明文化 / G6 Decision Log二層分離 / G7 ExecutionRun→ToDo追跡 / G8 vloop[x]橋渡し / G9 放置定義流用）。推奨データ構造（epics.json / project-tasksへsource追加 / approvals.json優先度+選択式 / HealthSummary派生 / operational-decisions.ndjson・全て既存非破壊・API/課金なし）。推奨画面 /operations モバイル縦1カラム（ヘルスバー→選択式承認1タップ→Epic進行→自動実行状態→Decision Log）。継続実行は停止5条件のみ。優先順位①ポリシー確定②Epic構造化③source④選択式承認⑤ヘルス⑥運用DLog→自動実行制御はPhase2。
+  - result: 
 - [ ] [[2026-05-29_research-os]]
   - createdAt: 2026-05-29 08:29
   - app: news-app
