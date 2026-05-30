@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[vloop運用-progress統合-役割整理]]
+  - createdAt: 2026-05-30 15:20
+  - app: progress / company-meta
+  - project: Issue #90 #91 / AI工場オペレーションセンター / 役割整理
+  - priority: high
+  - summary: Progress /operations をbuild通過まで完成(ny01 commit 6291e14 push済)。vloop運用の5判断確定(正本=案件別ToDo一覧 / Progress queueはread-onlyビュー / 承認ゲート保護で統合しない / 自動起動時の入口優先順位)。#91自動起動は次フェーズ設計メモ。
+  - result: 
 - [ ] [[AI工場オペレーションセンター設計レビュー]]
   - createdAt: 2026-05-30 09:40
   - app: progress / company-meta
