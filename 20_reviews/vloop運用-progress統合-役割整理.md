@@ -4,7 +4,7 @@ type: integration-policy
 issue: kaeru07/vault#90
 relatedIssues: [kaeru07/vault#91]
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-05-30 (vloop #91 境界追記)
 status: active
 tags: [vloop, progress, automation, 役割整理, 正本]
 ---
@@ -116,6 +116,20 @@ commit `6291e14`（`kaeru07/ny01`）。
 ## 7. 関連
 
 - Issue #90 / #91
+- [[2026-05-30_issue-91-ops-center-next-phase]]
 - [[vloop_queue]] / [[案件別ToDo一覧]] / [[完了ToDoログ]]
 - [[Issue完了判定ルール]] / [[vloop停止条件監査ルール]]
 - [[../03_prompts/claude-commands/logs/vloop_2026-05-30_HHMM]]（本サイクルのログ）
+
+---
+
+## 8. #91 次フェーズの実行境界（2026-05-30 vloop追記）
+
+Issue #91 の残機能は、次の 2 つに分けて扱う。
+
+| 区分 | 内容 | vloop 扱い |
+|---|---|---|
+| 承認不要 | `/operations` の読み取り専用改善、approval / Decision Log のローカルスキーマ整備、Decision Log 読み戻し導線、ExecutionRun から新 ToDo 候補を下書き化 | 実行可。ただし未承認 ToDo を `[x]` 化しない |
+| 承認待ち | VPS 起動時自動再開、毎朝 11:00 起動、Claude 上限回復後再開、pm2 / cron / systemd 実操作、外部公開、認証情報・課金設定利用 | 実行しない。`[ ]` 承認待ちに残す |
+
+詳細な境界は [[2026-05-30_issue-91-ops-center-next-phase]] を正本とする。

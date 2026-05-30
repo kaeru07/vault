@@ -2,7 +2,7 @@
 title: vloop_queue（vloop実行対象）
 type: vloop-queue
 created: 2026-05-25
-updated: 2026-05-25 (vloop11)
+updated: 2026-05-30 (vloop #91 反映)
 status: active
 source_issue: kaeru07/vault#87
 tags: [vloop, ToDo, 承認, 案件別, 自動実行]
@@ -145,6 +145,27 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 ### 承認待ち
 
 - [ ] Hermes Agent × Codex の市場調査→実装→改善サイクルを本格運用へ入れる
+
+---
+
+## AI工場オペレーションセンター（Issue #91）
+
+### 実行承認済み / 承認不要
+
+- [x] **#90 前段完了内容と #91 本文を確認し、承認不要範囲 / 承認待ち範囲を Vault 正本へ反映する（vloop 2026-05-30 完了）**
+- [x] **#91 Decision Log 読み戻し導線を、pm2/cron 実操作なしで設計対象として分離する（vloop 2026-05-30 完了）**
+
+### 次回以降の承認不要候補
+
+- [x] `operational-decisions.ndjson` を次回実行文脈として読むローカル導線を、外部公開・認証情報利用・自動起動なしで実装検討する
+
+### 承認待ち
+
+- [ ] VPS 起動時に vloop / autoexec を自動再開する
+- [ ] 毎朝 11:00 に vloop / autoexec を自動起動する
+- [ ] Claude 上限回復後の自動再開を実装する
+- [ ] pm2 / cron / systemd を新規設定または実操作する
+- [ ] 外部公開・認証情報利用・課金設定を伴う連携を実装する
 
 ---
 

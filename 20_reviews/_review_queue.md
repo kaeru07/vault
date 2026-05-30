@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-30_issue-91-ops-center-next-phase]]
+  - createdAt: 2026-05-30 16:29
+  - app: progress / company-meta
+  - project: Issue #91 / AI工場オペレーションセンター / 次フェーズ境界
+  - priority: high
+  - summary: #90 前段完了内容と #91 本文を照合し、承認不要で進める範囲（read-only改善、approval/Decision Logローカル整備、ExecutionRun由来ToDo下書き）と承認待ちに残す範囲（VPS起動時/毎朝11:00/上限回復後の自動起動、pm2/cron/systemd実操作、外部公開、認証情報・課金利用）を分離。案件別ToDo一覧 / vloop_queue に反映。
+  - result: 
 - [ ] [[vloop運用-progress統合-役割整理]]
   - createdAt: 2026-05-30 15:20
   - app: progress / company-meta
