@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-30_automation-engine]]
+  - createdAt: 2026-05-30 23:35
+  - app: progress
+  - project: progress / AI工場統合 / Phase2 Automation強化
+  - priority: high
+  - summary: Phase2でAI工場エンジン(Automation)強化。ExecutionRun↔Epic自動結合(resolveEpicId: epicId明示→relatedTodoIds→targetApps、DB変更なし後方互換)をPOSTに組込み、targetApp=ny01/progress・epicId省略のRunがepic-91へ自動付与されることを実証。/operationsを/automationへ307統合し、承認=/approvals・決定=/decisions・Epic=/epic・全体ヘルス=Dashboardへ役割分離(独立プロダクト化しない)。Automation画面に現在状態(running/paused/blocked)・vloop制御・Executor設定(Claude/Codex/Both)・Auto Resume/Auto Fallbackトグル(automation-config.jsonへ永続化、発火は後続)・Codex切替ポリシー(ALLOW/DENY共有定数化)・次回予定・Factory配置を実装。tsc/build/lint OK・全ルート200/307。Auto Resume/Fallbackは設定保存のみで自動発火させず安全側。
+  - result: 
 - [ ] [[2026-05-30_epic-detail-mvp]]
   - createdAt: 2026-05-30 21:56
   - app: progress
