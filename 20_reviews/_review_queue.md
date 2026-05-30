@@ -5,33 +5,12 @@
 
 ## 未レビュー
 
-- [ ] [[2026-05-30_ai-factory-automation-phase2]]
-  - createdAt: 2026-05-30 18:20
-  - app: progress / company-meta
-  - project: Issue #91 / AI工場自動化 Phase2 / Approval Decision pending_approval
+- [ ] [[2026-05-30_ai-factory-progress-integration]]
+  - createdAt: 2026-05-30 21:02
+  - app: progress
+  - project: progress / AI工場統合設計 / handoff内部化
   - priority: high
-  - summary: handoffを独立正本にせず、ExecutionRun + Decision Log + Next Actions + Approval Queue から生成するビューに整理。Approval Queue生成API、Decision Log context API、ExecutionRun nextActions取得/ pending_approval生成API、handoff生成ビューAPIを追加。集中作業プロンプトへDecision Logを注入。nextActionsからpending_approval 3件生成を検証。
-  - result:
-- [ ] [[2026-05-30_ai-factory-automation-mvp]]
-  - createdAt: 2026-05-30 17:10
-  - app: progress / company-meta
-  - project: Issue #91 / AI工場自動化 MVP / executor抽象
-  - priority: high
-  - summary: 収益化・Factory台帳・市場調査連携を後回しにし、AI工場自動化を優先。既存 vloop / queue / project-tasks / ExecutionRun / Approval / Decision Log / handoff を調査し、新規キューを作らず executor 任意フィールドを追加。Progress /operations に automation readiness、executor別状態、handoff不足、ExecutionRun nextActions候補を read-only 表示する設計と実装を追加。
-  - result:
-- [ ] [[2026-05-30_issue-91-ops-center-next-phase]]
-  - createdAt: 2026-05-30 16:29
-  - app: progress / company-meta
-  - project: Issue #91 / AI工場オペレーションセンター / 次フェーズ境界
-  - priority: high
-  - summary: #90 前段完了内容と #91 本文を照合し、承認不要で進める範囲（read-only改善、approval/Decision Logローカル整備、ExecutionRun由来ToDo下書き）と承認待ちに残す範囲（VPS起動時/毎朝11:00/上限回復後の自動起動、pm2/cron/systemd実操作、外部公開、認証情報・課金利用）を分離。案件別ToDo一覧 / vloop_queue に反映。
-  - result: 
-- [ ] [[vloop運用-progress統合-役割整理]]
-  - createdAt: 2026-05-30 15:20
-  - app: progress / company-meta
-  - project: Issue #90 #91 / AI工場オペレーションセンター / 役割整理
-  - priority: high
-  - summary: Progress /operations をbuild通過まで完成(ny01 commit 6291e14 push済)。vloop運用の5判断確定(正本=案件別ToDo一覧 / Progress queueはread-onlyビュー / 承認ゲート保護で統合しない / 自動起動時の入口優先順位)。#91自動起動は次フェーズ設計メモ。
+  - summary: AI工場を別システムにせずProgressへ進化させる統合路線に確定。データ層は既にhandoff派生済み(generateHandoffView, 正本ではない明記)＝IA問題と特定。handoff2系統(session.handoffText自由文UI露出 / generateHandoffView派生)を整理し、handoffはUIラベル撤去・「続きから実行」アクション化・内部API維持。正本はVault/Progress/ExecutionRun/Decision Logの4固定。Progressを単一シェル化(Dashboard/Epic/ToDo/Approval/Decision/ExecutionRun/Automation/Factory)、operations→Automation+Epic詳細へ解体、ai-driveモック撤去。Epic詳細=縦串/全Approval・Decision・Run=横串。実装Phase0(ラベル撤去・非破壊)→4(Factory)。実装変更ゼロ・方針確定。
   - result: 
 - [ ] [[2026-05-29_research-os]]
   - createdAt: 2026-05-29 08:29
