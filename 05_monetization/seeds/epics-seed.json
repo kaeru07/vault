@@ -1,0 +1,24 @@
+[
+  {
+    "epicId": "epic-91",
+    "githubIssue": 91,
+    "title": "AI工場オペレーションセンター（自動実行・承認・継続実行基盤）",
+    "goal": "ProgressをAI工場の管制塔にし、AIが止まらずToDoを継続消化できる運用基盤を作る",
+    "progress": 20,
+    "remainingWork": [
+      "/operations ページ実装（自動実行 開始/停止/再開・pm2制御）",
+      "ヘルスダッシュボード表示（実行可/実行中/承認待ち/上限待ち/停止/Epic/放置の件数）",
+      "選択式承認カード実装（priority 3段階・1タップ決定）",
+      "Epic進行カード（Goal/進捗/NextAction/直近Run）",
+      "operational-decisions.ndjson 連携（次回実行引き継ぎ）"
+    ],
+    "latestRunId": null,
+    "nextAction": "progress app に /operations ページを実装する（Runbook参照: 05_monetization/AI工場_operations実装Runbook.md）",
+    "decisionPolicy": "autonomous",
+    "autoApprovalRule": "Epicゴール非変更・課金なし・非destructiveの判断はClaudeが自律決定",
+    "status": "active",
+    "relatedTodoIds": [],
+    "updatedAt": "2026-05-30"
+  }
+]
+</content>

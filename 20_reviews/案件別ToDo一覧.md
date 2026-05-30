@@ -70,7 +70,16 @@ tags: [入口, ToDo, 案件別, 正本]
 | — | Vault | chatgpt/ フォルダの運用ルール確定 | **done**（vloop10 / 2026-05-25・README v1 確定）| D セクションへ移動 |
 | — | Vault | #68 Mermaid テンプレを candidate 本体へ反映 | **done**（vloop10 / 2026-05-25・candidate-001/005/006/007 本体に 4 件反映）| D セクションへ移動 |
 
-## 5. 💡 収益化案
+## 5. 🏭 AI工場オペレーションセンター（Epic #91）
+
+| 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
+|---|---|---|---|---|
+| **E91-1** | 工場運用 | 継続実行ポリシー文書確定（03_prompts/継続実行ポリシー.md） | **done**（2026-05-30） | vloop 起動時に参照 |
+| **E91-2** | 工場運用 | epics/approvals/operational-decisions seed データ作成 | **done**（2026-05-30） | progress app へデプロイ |
+| **E91-3** | 工場運用 | Progress /operations ページ実装 Runbook 作成 | **done**（2026-05-30） | progress app アクセス時に Runbook 読んで即実装 |
+| **E91-4** | 工場運用 | Progress /operations ページ実装（pm2制御・開始/停止/再開 / ヘルス / 承認 / Epic） | **user_check**（承認待ち・progress app への実装を承認するか） | 承認後 progress app で実装 |
+
+## 6. 💡 収益化案
 
 | 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
 |---|---|---|---|---|

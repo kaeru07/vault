@@ -148,6 +148,22 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 
 ---
 
+## AI工場オペレーションセンター（Epic #91）
+
+### 実行承認済み / 承認不要（Vault側作業）
+
+- [x] **継続実行ポリシーを `03_prompts/継続実行ポリシー.md` として確定する**（停止5条件 / autonomous判断の範囲 / vloop読み取り可能形式）
+- [x] **epics seed データを作成する**（`05_monetization/seeds/epics-seed.json` / Epic #91 初期エントリ）
+- [x] **approvals seed データを作成する**（`05_monetization/seeds/approvals-seed.json` / スキーマ確定）
+- [x] **operational-decisions seed を作成する**（`05_monetization/seeds/operational-decisions-seed.ndjson`）
+- [x] **Progress /operations ページ実装 Runbook を作成する**（`05_monetization/AI工場_operations実装Runbook.md` / progress app アクセス時に即実装できる粒度）
+
+### 承認待ち（progress 本番アプリへの実装 = pm2制御を伴う）
+
+- [ ] **Progress アプリへ /operations ページを実装する**（pm2 制御・開始/停止/再開 / ヘルスダッシュボード / 選択式承認 / Epic進行カード）
+
+---
+
 ## vloop終了時ルール
 
 vloop終了時は、以下を更新する。
