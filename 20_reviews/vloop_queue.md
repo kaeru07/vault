@@ -150,17 +150,38 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 
 ## AI工場オペレーションセンター（Epic #91）
 
-### 実行承認済み / 承認不要（Vault側作業）
+> 作業対象: `/root/company/apps/ny01/progress`
+> 詳細は `05_monetization/AI工場_operations実装Runbook.md` を参照。
+> 継続実行ポリシー: `03_prompts/継続実行ポリシー.md`（autonomous・途中でユーザー確認しない）
 
-- [x] **継続実行ポリシーを `03_prompts/継続実行ポリシー.md` として確定する**（停止5条件 / autonomous判断の範囲 / vloop読み取り可能形式）
-- [x] **epics seed データを作成する**（`05_monetization/seeds/epics-seed.json` / Epic #91 初期エントリ）
-- [x] **approvals seed データを作成する**（`05_monetization/seeds/approvals-seed.json` / スキーマ確定）
-- [x] **operational-decisions seed を作成する**（`05_monetization/seeds/operational-decisions-seed.ndjson`）
-- [x] **Progress /operations ページ実装 Runbook を作成する**（`05_monetization/AI工場_operations実装Runbook.md` / progress app アクセス時に即実装できる粒度）
+### Vault側（完了済み）
 
-### 承認待ち（progress 本番アプリへの実装 = pm2制御を伴う）
+- [x] 継続実行ポリシー確定（`03_prompts/継続実行ポリシー.md`）
+- [x] seed データ作成（`05_monetization/seeds/`）
+- [x] 実装 Runbook 作成（`05_monetization/AI工場_operations実装Runbook.md`）
 
-- [ ] **Progress アプリへ /operations ページを実装する**（pm2 制御・開始/停止/再開 / ヘルスダッシュボード / 選択式承認 / Epic進行カード）
+### Progress app 実装（1ファイル＝1チェックボックス）
+
+- [x] **[E91-P1] 前提確認** — `/root/company/apps/ny01/progress` で `ls data/real/` と `pm2 list` と `npx tsc --noEmit` を実行して現状を把握する
+- [x] **[E91-P2] data/real/epics.json 作成** — `[{"epicId":"epic-91","githubIssue":91,"title":"AI工場オペレーションセンター","goal":"ProgressをAI工場の管制塔にし、AIが止まらずToDoを継続消化できる運用基盤を作る","progress":20,"remainingWork":["/operations ページ実装","ヘルスダッシュボード","選択式承認カード","Epic進行カード"],"latestRunId":null,"nextAction":"実装を進める","decisionPolicy":"autonomous","status":"active","updatedAt":"2026-05-30"}]`
+- [x] **[E91-P3] data/real/approvals.json 作成** — `[]`（空配列）
+- [x] **[E91-P4] data/real/operational-decisions.ndjson 作成** — 空ファイル
+- [x] **[E91-P5] lib/types/operations.ts 新規作成** — Runbook §Step2 の型定義をそのまま実装する（Epic / Approval / OperationalDecision / HealthSummary / ApprovalPriority / ApprovalCategory 等）
+- [x] **[E91-P6] lib/operations-store.ts 新規作成** — Runbook §Step3 を実装する。work-queue.json と app-progress.json の実際の構造を先に `cat` で確認してから集計ロジックを書く
+- [x] **[E91-P7] app/api/operations/health/route.ts 新規作成** — GET: `computeHealthSummary()` を返す
+- [x] **[E91-P8] app/api/operations/epics/route.ts 新規作成** — GET: `getEpics()` を返す
+- [x] **[E91-P9] app/api/operations/approvals/route.ts 新規作成** — GET: `getPendingApprovals()` / POST: `{ approvalId, decidedOption }` で `decideApproval()` を呼ぶ
+- [x] **[E91-P10] app/api/operations/autoexec/route.ts 新規作成** — `pm2 list` でプロセス名を確認 → GET: pm2ステータス取得 / POST: `{ action: start|stop|restart }` でpm2制御。`VLOOP_PM2_NAME` 環境変数で設定
+- [x] **[E91-P11] app/operations/page.tsx 新規作成** — Runbook §Step5 を実装する（'use client' / モバイル縦1カラム / ヘルスバー・自動実行コントロール・承認カード・Epic進行カード）
+- [x] **[E91-P12] ナビゲーションに /operations リンク追加** — 既存 layout/nav コンポーネントを確認して追加。ラベルは「工場」
+- [x] **[E91-P13] .env.local に VLOOP_PM2_NAME 追記** — `pm2 list` で確認したプロセス名を設定
+- [x] **[E91-P14] 型チェック・ビルド確認** — `npx tsc --noEmit` → `npm run build` → エラーがあれば自律修正して通す
+- [x] **[E91-P15] 本番反映・動作確認** — `pm2 restart progress` → `curl http://localhost:3010/operations` でレスポンス確認
+- [x] **[E91-P16] Vaultにレビューファイル生成** — `20_reviews/YYYY-MM-DD_epic91-operations-impl.md` を生成し `20_reviews/_review_queue.md` 未レビューセクションに追記。`epics.json` の `progress` と `latestRunId` を更新する
+
+### 承認待ち
+
+- [ ] Phase2: ExecutionRunレビュー→自動ToDo生成（source=execution_review）
 
 ---
 
