@@ -158,6 +158,7 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 ### 次回以降の承認不要候補
 
 - [x] `operational-decisions.ndjson` を次回実行文脈として読むローカル導線を、外部公開・認証情報利用・自動起動なしで実装検討する
+- [x] **Claude / Codex 固定ではなく executor 抽象で AI実行基盤を設計し、Progress `/operations` に自動化 readiness を read-only 表示する（vloop 2026-05-30 実装）**
 
 ### 承認待ち
 

@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-30_ai-factory-automation-mvp]]
+  - createdAt: 2026-05-30 17:10
+  - app: progress / company-meta
+  - project: Issue #91 / AI工場自動化 MVP / executor抽象
+  - priority: high
+  - summary: 収益化・Factory台帳・市場調査連携を後回しにし、AI工場自動化を優先。既存 vloop / queue / project-tasks / ExecutionRun / Approval / Decision Log / handoff を調査し、新規キューを作らず executor 任意フィールドを追加。Progress /operations に automation readiness、executor別状態、handoff不足、ExecutionRun nextActions候補を read-only 表示する設計と実装を追加。
+  - result:
 - [ ] [[2026-05-30_issue-91-ops-center-next-phase]]
   - createdAt: 2026-05-30 16:29
   - app: progress / company-meta
