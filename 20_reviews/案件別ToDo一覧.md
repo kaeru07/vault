@@ -82,8 +82,9 @@ tags: [入口, ToDo, 案件別, 正本]
 |---|---|---|---|---|
 | — | AI工場 | #90 前段完了内容と #91 本文を確認し、承認不要範囲 / 承認待ち範囲を Vault 正本へ反映 | **done**（vloop 2026-05-30 / [[2026-05-30_issue-91-ops-center-next-phase]]） | D セクションへ移動 |
 | — | AI工場 | executor 抽象（claude / codex / manual / other）と automation readiness を Progress `/operations` に read-only 実装 | **done**（vloop 2026-05-30 / [[2026-05-30_ai-factory-automation-mvp]]） | D セクションへ移動 |
-| **A-6-1** | AI工場 | Decision Log 読み戻し導線を executor 起動プロンプトへ注入する | open（承認不要範囲 / 実装は ny01 側） | 次回 vloop で安全なローカル実装 |
-| **A-6-2** | AI工場 | ExecutionRun nextActions から pending_approval ToDo 下書きを生成する | open（承認不要範囲 / 自動 queued 化は禁止） | 次回 vloop で API 設計 |
+| — | AI工場 | Approval Queue生成 / Decision Log読み戻し / ExecutionRun nextActions→pending_approval生成 | **done**（vloop 2026-05-30 / [[2026-05-30_ai-factory-automation-phase2]]） | D セクションへ移動 |
+| **A-6-1** | AI工場 | executor blocked 時に Approval Queue生成APIを呼ぶ導線 | open（承認不要範囲 / 自動実行開始なし） | 次回 vloop で実装 |
+| **A-6-2** | AI工場 | pending_approval ToDoをモバイルで approve / hold / reject しやすくする | open（承認不要範囲） | 次回 vloop でUI改善 |
 
 ---
 
@@ -138,6 +139,7 @@ tags: [入口, ToDo, 案件別, 正本]
 
 - **Issue #91 実行境界の Vault 正本反映**（#90 前段完了確認 + #91 本文確認 + 承認不要 / 承認待ち境界を [[2026-05-30_issue-91-ops-center-next-phase]] に固定）
 - **AI工場自動化 MVP / executor 抽象実装**（Claude/Codex 固定を避け、Progress `/operations` に automation readiness / executor / handoff 状態を read-only 表示）
+- **AI工場自動化 Phase2**（Approval Queue生成API / Decision Log context API / nextActions→pending_approval生成API / handoff生成ビュー）
 
 ## vloop10 完了分（次回 vloop11 で [[完了ToDoログ]] へ移動 → vloop11 で実施済）
 

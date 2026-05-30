@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-30_ai-factory-automation-phase2]]
+  - createdAt: 2026-05-30 18:20
+  - app: progress / company-meta
+  - project: Issue #91 / AI工場自動化 Phase2 / Approval Decision pending_approval
+  - priority: high
+  - summary: handoffを独立正本にせず、ExecutionRun + Decision Log + Next Actions + Approval Queue から生成するビューに整理。Approval Queue生成API、Decision Log context API、ExecutionRun nextActions取得/ pending_approval生成API、handoff生成ビューAPIを追加。集中作業プロンプトへDecision Logを注入。nextActionsからpending_approval 3件生成を検証。
+  - result:
 - [ ] [[2026-05-30_ai-factory-automation-mvp]]
   - createdAt: 2026-05-30 17:10
   - app: progress / company-meta
