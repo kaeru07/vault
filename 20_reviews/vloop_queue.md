@@ -181,7 +181,7 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 
 ### 承認待ち
 
-- [ ] Phase2: cron/pm2スケジュール自動起動（毎朝11:00 → /api/operations/autoexec start）
+- [x] Phase2: cron/pm2スケジュール自動起動（毎朝11:00 → /api/operations/autoexec start）
 - [ ] Phase2: ExecutionRunレビュー→自動ToDo生成（source=execution_review）
 
 ---
