@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_codex-handoff]]
+  - createdAt: 2026-05-31 00:25
+  - app: progress
+  - project: progress / AI工場統合 / Phase3 Codex半自動引き継ぎ
+  - priority: high
+  - summary: Claude上限時にCodexへ手動でスムーズ引き継ぐ半自動切替を実装。generateCodexPromptが既存正本(ExecutionRun/Decision/NextActions/Approval/Epic/変更ファイル/未完了)から単一プレーンテキスト(冒頭に安全判定固定・入れ子コードフェンスなし・長JSONなし・モバイルコピー対応)を生成。Epic詳細[次回予定]とAutomationに「Codexへ引き継ぐ」パネル(生成元情報+安全判定付き✓+コピー)、Automationに「Codex結果を戻す」フォーム(executorUsed=codex/source=codex_mobile、epicId自動解決)。完全自動切替・Codex CLI直叩き・Hermes外部連携は不使用。tsc/build/lint OK、codex-prompt安全判定付き1628字で```不含、結果戻しE2E(codex_mobile)確認後テストRun削除。Auto Fallback発火とCodex報告構造化パースは後回し。
+  - result: 
 - [ ] [[2026-05-30_automation-engine]]
   - createdAt: 2026-05-30 23:35
   - app: progress
