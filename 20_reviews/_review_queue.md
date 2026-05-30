@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_auto-fallback]]
+  - createdAt: 2026-05-31 01:59
+  - app: progress
+  - project: progress / AI工場統合 / Phase4 Auto Fallback発火
+  - priority: high
+  - summary: Claude上限時の半自動Codex引き継ぎを発火実装。Automation『Claude上限として扱う』ボタン→evaluateAutoFallbackが優先順(設定OFF→承認待ち→decisionPolicy≠autonomous→pending_approval→requiresClaude→keyword補助)で厳格判定→安全ならgenerateCodexPromptを自動生成し通知(codex_ready)、不可ならblocked理由表示(approval_required/decision_required/requires_approval/requires_claude/destructive/no_codex_candidate)。automation-log.ndjson(追記専用)にfallbackTriggered/Reason/Target/codexPromptGenerated/sourceRunId/safetyGuard/blockedReason記録。Codex自動起動・CLI直叩き・Hermes不使用。検証:OFF→blocked、実epic-91→blocked(requires_approval[pending3]/destructive=正当)、クリーン一時epic→codex_ready(安全判定付き/```不含/executorUsed=codex指示)、temp削除でデータ復元。tsc/build/lint OK。
+  - result: 
 - [ ] [[2026-05-31_shikaku-quiz-mvp]]
   - createdAt: 2026-05-31 00:58
   - app: shikaku-quiz
