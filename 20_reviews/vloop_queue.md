@@ -179,11 +179,11 @@ tags: [vloop, ToDo, 承認, 案件別, 自動実行]
 - [x] **[E91-P15] 本番反映・動作確認** — 完了（pm2 restart progress）
 - [x] **[E91-P16] Vaultにレビューファイル生成** — 完了（vloop運用-progress統合-役割整理.md 生成 / _review_queue.md 追記）
 
-### /operations ナビ統合修正（ユーザー確認：「見えない」）
+### /operations ナビ統合修正（ページはある・タブが見当たらないだけの可能性）
 
-- [x] **[E91-FIX1] 現状診断** — `pm2 list` でプロセス確認 → `curl -s http://localhost:3010/operations` でレスポンス確認 → BottomNav/TopNav の実ファイルを `cat` して「工場」リンクが存在するか確認
-- [x] **[E91-FIX2] ナビ修正** — 既存のナビコンポーネント（BottomNav.tsx / TopNav.tsx / layout.tsx）を確認し、/operations へのリンクが正しく追加されているかを検証。なければ追加する。既存ページ（/focus, /queue 等）と同じ形式で追加する
-- [x] **[E91-FIX3] ビルド・再起動** — `npm run build` → `pm2 restart progress` → `curl http://localhost:3010/operations` で200を確認
+- [x] **[E91-FIX1] ナビ実ファイル確認** — `find . -name "*.tsx" | xargs grep -l "BottomNav\|navigation\|NavBar" | head -10` でナビコンポーネントを特定し `cat` する。「工場」または「/operations」の記述があるか確認する
+- [x] **[E91-FIX2] BottomNavにタブ追加** — 既存タブ（/focus, /queue 等）と同じ形式で `/operations`「工場」タブをBottomNavに追加する。既存タブが4件以上あるなら最も使用頻度が低いものと入れ替えるか、スクロール対応にする
+- [x] **[E91-FIX3] ビルド・再起動** — `npm run build` → `pm2 restart progress`
 
 ### 承認待ち
 
