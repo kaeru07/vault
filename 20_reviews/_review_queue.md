@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_shikaku-quiz-mvp]]
+  - createdAt: 2026-05-31 00:58
+  - app: shikaku-quiz
+  - project: 新規アプリ / 資格クイズ ITパスポート対策 MVP
+  - priority: medium
+  - summary: 完全新規(作りかけでない)アプリとして資格学習クイズMVPを静的HTML1枚で実装。ITパスポート風4択12問を自作(過去問転載なし・著作権配慮)、分野選択/シャッフル/即時正誤+解説/分野別正答率/自己ベストlocalStorage/AdSenseプレースホルダ2箇所。外部CDNゼロでオフライン・file://動作。JS構文(vm.Script)・データ整合(12問a範囲内/4択/分野6:3:3)・外部参照ゼロを検証。実機描画は未確認(ユーザー確認待ち)。既存ファイル非変更・.env非参照・公開/課金なし。収益化はWeb公開+AdSense+他資格横展開。本番は問題の内容監修必須。
+  - result: 
 - [ ] [[2026-05-31_codex-handoff]]
   - createdAt: 2026-05-31 00:25
   - app: progress

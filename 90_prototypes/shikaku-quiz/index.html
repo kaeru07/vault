@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>資格クイズ — ITパスポート対策（MVP）</title>
+<style>
+  :root {
+    --bg: #f5f7fb;
+    --panel: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --accent-weak: #dbeafe;
+    --good: #16a34a;
+    --good-weak: #dcfce7;
+    --bad: #dc2626;
+    --bad-weak: #fee2e2;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 16px 16px 48px; }
+  header h1 { font-size: 20px; margin: 16px 0 2px; }
+  header p { margin: 0; color: var(--muted); font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .btn {
+    display: block; width: 100%; border: none; border-radius: 12px;
+    padding: 15px 16px; font-size: 16px; font-weight: 600; cursor: pointer;
+    background: var(--accent); color: #fff; transition: opacity .15s, transform .05s;
+  }
+  .btn:active { transform: scale(0.99); }
+  .btn.secondary { background: var(--accent-weak); color: var(--accent); }
+  .field-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .field-tags label {
+    flex: 1; min-width: 90px; text-align: center; padding: 10px; border-radius: 10px;
+    border: 1px solid var(--border); font-size: 13px; cursor: pointer; background: #fff;
+  }
+  .field-tags input { display: none; }
+  .field-tags input:checked + span { color: var(--accent); font-weight: 700; }
+  .field-tags label:has(input:checked) { border-color: var(--accent); background: var(--accent-weak); }
+  .meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); }
+  .bar { height: 6px; background: var(--border); border-radius: 99px; overflow: hidden; margin-top: 8px; }
+  .bar > span { display: block; height: 100%; background: var(--accent); transition: width .3s; }
+  .tag {
+    display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px;
+    border-radius: 99px; background: var(--accent-weak); color: var(--accent); margin-bottom: 10px;
+  }
+  .qtext { font-size: 17px; font-weight: 600; margin: 4px 0 16px; }
+  .choice {
+    display: block; width: 100%; text-align: left; border: 1px solid var(--border);
+    background: #fff; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px;
+    font-size: 15px; cursor: pointer; transition: background .1s, border-color .1s;
+  }
+  .choice:active { background: #f9fafb; }
+  .choice.correct { background: var(--good-weak); border-color: var(--good); color: var(--good); font-weight: 700; }
+  .choice.wrong { background: var(--bad-weak); border-color: var(--bad); color: var(--bad); font-weight: 700; }
+  .choice.disabled { pointer-events: none; opacity: .85; }
+  .explain {
+    margin-top: 8px; padding: 14px; border-radius: 12px; background: #f8fafc;
+    border: 1px solid var(--border); font-size: 14px; display: none;
+  }
+  .explain.show { display: block; }
+  .explain .r { font-weight: 700; }
+  .explain .r.ok { color: var(--good); }
+  .explain .r.ng { color: var(--bad); }
+  .result-score { font-size: 44px; font-weight: 800; text-align: center; margin: 8px 0 0; }
+  .result-sub { text-align: center; color: var(--muted); margin: 0 0 12px; }
+  .breakdown { font-size: 14px; }
+  .breakdown .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .breakdown .row:last-child { border-bottom: none; }
+  .ad {
+    margin-top: 16px; border: 1px dashed var(--border); border-radius: 12px;
+    padding: 12px; text-align: center; color: #b9c0cc; font-size: 12px; background: #fafbfc;
+  }
+  .hidden { display: none; }
+  footer { text-align: center; color: var(--muted); font-size: 11px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>📘 資格クイズ — ITパスポート対策</h1>
+    <p>すきま時間に4択で過去問演習。MVP（自作問題12問）</p>
+  </header>
+
+  <!-- ===== スタート画面 ===== -->
+  <section id="start" class="card">
+    <p style="margin-top:0">出題する分野を選んで「スタート」を押してください。</p>
+    <div class="field-tags" id="fieldPicker">
+      <label><input type="radio" name="field" value="all" checked><span>全分野</span></label>
+      <label><input type="radio" name="field" value="ストラテジ"><span>ストラテジ</span></label>
+      <label><input type="radio" name="field" value="マネジメント"><span>マネジメント</span></label>
+      <label><input type="radio" name="field" value="テクノロジ"><span>テクノロジ</span></label>
+    </div>
+    <p id="bestLine" class="meta" style="margin-top:14px"></p>
+    <button class="btn" id="startBtn" style="margin-top:8px">スタート</button>
+    <!-- 収益化: 広告枠（本番は AdSense ユニットを差し込む。実IDは未設定） -->
+    <div class="ad">広告枠（AdSense） — 本番で挿入</div>
+  </section>
+
+  <!-- ===== 出題画面 ===== -->
+  <section id="quiz" class="card hidden">
+    <div class="meta">
+      <span id="counter">1 / 12</span>
+      <span id="scoreNow">正解 0</span>
+    </div>
+    <div class="bar"><span id="progressBar" style="width:0%"></span></div>
+    <div style="margin-top:16px">
+      <span class="tag" id="qTag">分野</span>
+      <div class="qtext" id="qText">問題文</div>
+      <div id="choices"></div>
+      <div class="explain" id="explain"></div>
+    </div>
+    <button class="btn hidden" id="nextBtn" style="margin-top:8px">次へ</button>
+  </section>
+
+  <!-- ===== 結果画面 ===== -->
+  <section id="result" class="card hidden">
+    <div class="result-score" id="finalScore">0 / 0</div>
+    <p class="result-sub" id="finalPct">正答率 0%</p>
+    <div class="breakdown" id="breakdown"></div>
+    <div class="ad">広告枠（AdSense） — 結果画面下</div>
+    <button class="btn" id="retryBtn" style="margin-top:16px">もう一度</button>
+    <button class="btn secondary" id="homeBtn" style="margin-top:10px">分野を選び直す</button>
+  </section>
+
+  <footer>
+    ※ 問題はMVP用の自作サンプルです。本番公開時は内容監修が必要。<br>
+    資格クイズ MVP / 静的HTML・外部CDNなし・オフライン動作
+  </footer>
+</div>
+
+<script>
+// ===== 問題データ（自作サンプル / 著作権配慮で過去問の転載はしない） =====
+const QUESTIONS = [
+  { f:"テクノロジ", q:"2進数「1011」を10進数で表したものはどれか。", c:["9","10","11","13"], a:2,
+    e:"各桁の重みは 8・4・2・1。1011 = 8 + 2 + 1 = 11。" },
+  { f:"テクノロジ", q:"主記憶に使われるDRAMの性質として適切なものはどれか。", c:["電源を切っても記憶を保持する","電源を切ると記憶が消える（揮発性）","HDDより低速な補助記憶である","光で読み書きする"], a:1,
+    e:"DRAMは揮発性メモリで、電源を切ると内容が失われる。電源不要で保持するのはROMやフラッシュメモリ。" },
+  { f:"テクノロジ", q:"フィッシング詐欺の説明として最も適切なものはどれか。", c:["正規企業を装った偽サイトやメールで個人情報を盗む","通信を暗号化して保護する技術","脆弱性を修正する更新作業","データを圧縮して保存する方式"], a:0,
+    e:"フィッシングは正規を装い、ID・パスワードやカード番号などを入力させて盗む手口。" },
+  { f:"テクノロジ", q:"公開鍵暗号方式の特徴はどれか。", c:["暗号化と復号に同じ鍵を使う","暗号化と復号で異なる鍵（公開鍵・秘密鍵）を使う","鍵を使わずに暗号化する","ハッシュ値から本文を復元する"], a:1,
+    e:"公開鍵暗号は公開鍵で暗号化し、対応する秘密鍵で復号する。同じ鍵を使うのは共通鍵暗号。" },
+  { f:"テクノロジ", q:"関係データベースの主キーの説明として適切なものはどれか。", c:["表の各行を一意に識別する列（または列の組）","二つの表を結合する命令","重複を許す任意の列","データを暗号化する鍵"], a:0,
+    e:"主キーは行を一意に識別する。値の重複やNULLは許されない。" },
+  { f:"テクノロジ", q:"さまざまなモノにセンサや通信機能を持たせてインターネットに接続する仕組みはどれか。", c:["IoT","VPN","CMS","RPA"], a:0,
+    e:"IoT（Internet of Things）。VPNは仮想専用線、CMSは制作管理、RPAは業務自動化。" },
+  { f:"マネジメント", q:"プロジェクトの全体所要日数を決める、最長の作業経路を何というか。", c:["クリティカルパス","マイルストーン","ベースライン","スコープ"], a:0,
+    e:"クリティカルパス上の作業が遅れると全体が遅れる。最も余裕のない経路。" },
+  { f:"マネジメント", q:"作業項目を縦軸、時間を横軸にとり、各作業を横棒で表す進捗管理図はどれか。", c:["ガントチャート","散布図","レーダチャート","パレート図"], a:0,
+    e:"ガントチャートは日程・進捗の可視化に使う。パレート図は重点分析に使う。" },
+  { f:"マネジメント", q:"システム監査の主な目的として適切なものはどれか。", c:["独立した立場で情報システムを点検・評価し改善につなげる","新機能を開発する","利用者教育を実施する","サーバを購入する"], a:0,
+    e:"システム監査は独立性・客観性をもって評価し、助言・改善を行う。" },
+  { f:"ストラテジ", q:"企業の「強み・弱み・機会・脅威」を分析する手法はどれか。", c:["SWOT分析","PPM","ファイブフォース","バランススコアカード"], a:0,
+    e:"SWOTはStrengths/Weaknesses/Opportunities/Threatsの4観点で内部・外部環境を整理する。" },
+  { f:"ストラテジ", q:"投資額に対してどれだけの利益を得られたかを表す指標はどれか。", c:["ROI（投資利益率）","CSR","SLA","NDA"], a:0,
+    e:"ROI=利益÷投資額。CSRは社会的責任、SLAはサービス品質保証、NDAは秘密保持契約。" },
+  { f:"ストラテジ", q:"企業が一般消費者に直接商品やサービスを提供する取引形態はどれか。", c:["BtoB","BtoC","CtoC","BtoG"], a:1,
+    e:"BtoC（Business to Consumer）。BtoBは企業間、CtoCは消費者間、BtoGは対行政。" },
+];
+
+// ===== 状態 =====
+let pool = [], idx = 0, correct = 0, answered = false;
+const perField = {};
+
+const $ = (id) => document.getElementById(id);
+const show = (id) => $(id).classList.remove("hidden");
+const hide = (id) => $(id).classList.add("hidden");
+
+function selectedField() {
+  const el = document.querySelector('input[name="field"]:checked');
+  return el ? el.value : "all";
+}
+
+function loadBest() {
+  try {
+    const b = JSON.parse(localStorage.getItem("shikaku_best") || "null");
+    $("bestLine").textContent = b ? `自己ベスト：${b.correct}/${b.total}（${b.pct}%・${b.field}）` : "まだ記録がありません";
+  } catch (_) { $("bestLine").textContent = "まだ記録がありません"; }
+}
+
+function start() {
+  const f = selectedField();
+  pool = f === "all" ? QUESTIONS.slice() : QUESTIONS.filter(q => q.f === f);
+  // シャッフル
+  for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
+  idx = 0; correct = 0;
+  for (const k in perField) delete perField[k];
+  hide("start"); hide("result"); show("quiz");
+  render();
+}
+
+function render() {
+  answered = false;
+  const q = pool[idx];
+  $("counter").textContent = `${idx + 1} / ${pool.length}`;
+  $("scoreNow").textContent = `正解 ${correct}`;
+  $("progressBar").style.width = `${(idx / pool.length) * 100}%`;
+  $("qTag").textContent = q.f;
+  $("qText").textContent = q.q;
+  $("explain").classList.remove("show");
+  $("explain").innerHTML = "";
+  hide("nextBtn");
+  const box = $("choices");
+  box.innerHTML = "";
+  q.c.forEach((text, i) => {
+    const b = document.createElement("button");
+    b.className = "choice";
+    b.textContent = text;
+    b.onclick = () => choose(i, b);
+    box.appendChild(b);
+  });
+}
+
+function choose(i, btn) {
+  if (answered) return;
+  answered = true;
+  const q = pool[idx];
+  const buttons = $("choices").querySelectorAll(".choice");
+  buttons.forEach((b, j) => {
+    b.classList.add("disabled");
+    if (j === q.a) b.classList.add("correct");
+    if (j === i && i !== q.a) b.classList.add("wrong");
+  });
+  const ok = i === q.a;
+  if (ok) correct++;
+  perField[q.f] = perField[q.f] || { ok: 0, total: 0 };
+  perField[q.f].total++;
+  if (ok) perField[q.f].ok++;
+  $("scoreNow").textContent = `正解 ${correct}`;
+  const ex = $("explain");
+  ex.innerHTML = `<span class="r ${ok ? "ok" : "ng"}">${ok ? "正解！" : "不正解"}</span><br>${q.e}`;
+  ex.classList.add("show");
+  show("nextBtn");
+}
+
+function next() {
+  idx++;
+  if (idx >= pool.length) finish();
+  else render();
+}
+
+function finish() {
+  hide("quiz"); show("result");
+  const total = pool.length;
+  const pct = total ? Math.round((correct / total) * 100) : 0;
+  $("finalScore").textContent = `${correct} / ${total}`;
+  $("finalPct").textContent = `正答率 ${pct}%`;
+  const bd = $("breakdown");
+  bd.innerHTML = "";
+  Object.keys(perField).forEach(f => {
+    const d = perField[f];
+    const row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `<span>${f}</span><span>${d.ok} / ${d.total}</span>`;
+    bd.appendChild(row);
+  });
+  // 自己ベスト更新
+  try {
+    const prev = JSON.parse(localStorage.getItem("shikaku_best") || "null");
+    if (!prev || pct > prev.pct) {
+      localStorage.setItem("shikaku_best", JSON.stringify({ correct, total, pct, field: selectedField() === "all" ? "全分野" : selectedField() }));
+    }
+  } catch (_) {}
+}
+
+$("startBtn").onclick = start;
+$("nextBtn").onclick = next;
+$("retryBtn").onclick = start;
+$("homeBtn").onclick = () => { hide("result"); hide("quiz"); show("start"); loadBest(); };
+
+loadBest();
+</script>
+</body>
+</html>
