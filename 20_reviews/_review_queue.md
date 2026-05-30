@@ -5,6 +5,13 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-30_epic-detail-mvp]]
+  - createdAt: 2026-05-30 21:56
+  - app: progress
+  - project: progress / AI工場統合 / Phase1 Epic詳細
+  - priority: high
+  - summary: Phase1完了。Epic詳細 /epic/[epicId] をAI工場の主画面として新設(+一覧/epic)。不足はExecutionRun↔Epic結合キーのみと特定し、ExecutionRun.epicId?とEpic.targetApps?を追加(任意・後方互換)で解消(新DB/移行なし)。getEpicDetailは既存正本の読み取り集約のみ(書き込みゼロ)。前回作業/決定事項/次回予定/承認待ち/実行履歴/自動実行状態を1画面化、handoffはUI非表示で「続きから実行」ボタンとして内部利用。Phase0(operationsのhandoffラベル→継続実行情報)も実施。ナビは工場導線追加(BottomNavはAI自走と差し替え)。tsc/build/lint OK・/epic/epic-91 HTTP200全セクション。一時500(前回POSTのnextActionsがオブジェクト配列)はnextActionText正規化で堅牢化。
+  - result: 
 - [ ] [[2026-05-30_ai-factory-progress-integration]]
   - createdAt: 2026-05-30 21:02
   - app: progress
