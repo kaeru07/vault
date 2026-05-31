@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_factory-live-smoke]]
+  - createdAt: 2026-05-31 19:42
+  - app: progress
+  - project: progress / AI工場統合 / Factory実運転疎通テスト
+  - priority: high
+  - summary: 実データでFactory実運転を疎通確認(新機能追加なし・実運転のみ)。テストEpic投入(epic-progress/eligible=true)→Factory ON→auto maxRuns=1 confirm→実claude -p起動(146s)→completed→ExecutionRun記録(runId 20260531-192701/source=factory_runner/runnerMode=auto/factoryRun=true/executorUsed=claude/changedFiles=progress/app/page.tsx/nextActions=空)→max_runs_reached停止(nextActions空のdoneCriteria要確認停止も成立)。Claude上限シミュ(claude-limit force)はauto_fallback記録(automation-log5件)+safetyGuard+canRunOnCodex=trueだが、progressスコープのpending_approvalタスクで要承認→安全にblocked(codex_readyは別途クリーンスコープで確認済runId155036)。UI状態Running(ON+dispatchable)/Paused(OFF)確認、Blocked/CodexReadyはロジック実装済。問題点=runner同期実行で146sブロック/実claude -pがprogress repo実編集(cwd分離要)/doneCriteria自動判定未。安全対応=実行前tarスナップショット+Claude編集(app/page.tsx 1行)をgit checkout復元+データ5ファイル復元→net変更ゼロ・git status元の48件・tsc OK。残課題=doneCriteria自動評価/runner background化/cwdサンドボックス/複数Epic(P2)/スケジュール有効化(承認後)/通知。完全自動化の最小ループが実データで疎通成功。
+  - result: 
+
 - [ ] [[2026-05-31_factory-runner-mvp]]
   - createdAt: 2026-05-31 19:04
   - app: progress
