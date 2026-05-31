@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_factory-runner-mvp]]
+  - createdAt: 2026-05-31 19:04
+  - app: progress
+  - project: progress / AI工場統合 / Factory実行自動化MVP
+  - priority: high
+  - summary: Dispatch Planを「作るだけ」から「executorへ渡して実行→ExecutionRun記録→Epic内ループ」へ前進。Phase A実機調査でclaude(-p v2.1.158→PONG)/codex(exec v0.135.0)の非対話起動が可能と確認。executor adapter(claude/codex/manual)共通IF(status/stdout/stderr/resultSummary/changedFiles/errorType/rateLimited/needsApproval/nextActions)+getAdapterレジストリ(executor非依存)。factory-runner: scan→pick→Dispatch→adapter Run→ExecutionRun自動記録(factoryRun/source=factory_runner/runnerMode)→Epic内ループ。caps=1起動最大3Run/同一Epic最大3Run(無限ループ防止)。基本Claude→result.rateLimited時にAutoFallback評価(ON&canRunOnCodex)→Codex、不可なら停止記録。Approval発生時createApproval+停止/blocked/fail停止/nextActions空でdoneCriteria要確認停止。モード=dry_run(既定・実起動なし・記録なし)/manual(manual adapter・記録あり・手動実行待ち停止)/auto(confirm必須・claude -p/codex exec実起動)。codex adapterは実行前にclassifyCodexEligibilityで安全判定二重化。スケジュール(systemd service/timer毎朝11時/boot/cron)はdocs/factory-schedule/に未有効化の設計案のみ(enable=ユーザー承認後)。検証:build/tsc/lint OK、claude -p→PONG、T1 OFF→factory_off、T2 dry_run 1step記録なし、T3 manual→ExecutionRun記録、T4 auto confirm無→auto_requires_confirm/実起動なし、検証後全復元(epic-91のみ/OFF)。auto実epicは未実行(ファイル変更回避)。新正本なし・既存安全ゲート不変。次=ユーザー承認後に安全な小Epicでauto最大1Run疎通。
+  - result: 
+
 - [ ] [[2026-05-31_factory-on-off]]
   - createdAt: 2026-05-31 18:07
   - app: progress
