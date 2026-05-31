@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_ai-factory-next-phase]]
+  - createdAt: 2026-05-31 15:50
+  - app: progress
+  - project: progress / AI工場統合 / 次フェーズ(Auto Resume/Approval即処理/Factory設計)
+  - priority: high
+  - summary: AI工場完成に向けた次フェーズ。Phase1 Auto Resume実装(Claude上限後に安全作業だけ自動継続。既存AutoFallback安全ゲートを再利用しfeature-toggleのdisabledのみ除外、state=running/paused/blocked/auto_resumed、再開対象件数・最終再開時刻、記録先ExecutionRun(source=auto_resume)+AutomationLog、executor非依存pickResumeExecutor)。Phase2 Approval即処理(Epic詳細でインライン承認/却下/保留→既存decide API→Decision Log自動保存→次回vloop反映、/approvalsは横断受信箱維持)。Phase3 Factoryオーケストレーションは設計docのみ(状態遷移図/対象・対象外/AutoResume・Automation・Approval・Decisionとの4境界/Claude・Codex・Both運用フロー/DecisionPolicy 3値標準化検討/残作業7項目)。Progress唯一の管制塔・新正本なし・handoff非正本・Claude/Codex専用設計禁止・Factory本体未実装を遵守。検証:build/tsc/lint OK、AutoResume(OFF→paused/ON実データ→blocked(safety)/cleanScope→running→POST→auto_resumed+ExecutionRun+AutomationLog)、Approval即処理(Epic詳細描画+decide(推奨B)→Decision Log保存epicId付き)、検証後tmp全復元(161runs/approvals0/autoResume=false)。設計図は[[../06_research/factory-orchestration-design]]。progressコードは未commit(ユーザー判断)。
+  - result: 
+
 - [ ] [[2026-05-31_factory-ux]]
   - createdAt: 2026-05-31 15:20
   - app: progress
