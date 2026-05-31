@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_done-criteria]]
+  - createdAt: 2026-05-31 20:09
+  - app: progress
+  - project: progress / AI工場統合 / doneCriteria自動判定
+  - priority: high
+  - summary: Epic ContractのdoneCriteriaをExecutionRunから自動評価しdone/continueを判定するエンジンを実装(executor非依存・Claude/Codex共通)。L1機械判定(build/typecheck/lintをchecks-runnerで実行しExecutionRun.checksへOK/NG構造化保存)/L2 changedFiles一致/L3 summary・rawReportとのbigram曖昧一致(閾値text0.18/files0.25/汎用0.3)/meta(ExecutionRun記録・未承認作業)/L4全達成done・L5一部continue。factory-runnerに組込み(従来のnextActions空停止→runChecks実行→doneCriteria verdict停止に置換、done=epic_done停止/continue=次Run)。API /api/operations/done-criteria。UI=Automation FactoryProgressCardとEpic詳細にdoneCriteria達成状況(✓/✗・level・evidence・達成率N/M・DONE/CONTINUEバッジ)。判定可=build/typecheck/lint(L1高精度)・変更系(L2/L3)・ExecutionRun/未承認(meta)。判定弱=主観品質・外部条件・否定・日本語同義語。誤判定リスク=L3偽陽性/checks未記録偽陰性/件数条件のchangedFiles長依存→Epic done自動マークはせず停止に留め人/Approval判断。検証:build/tsc/lint OK、合成でDONE4/4・CONTINUE2/4、実運転=実claude(174s)→ExecutionRun(runner checks tsc/lint OK+claude自己POST changedFiles=app/epic/page.tsx)→doneCriteria集約4/4→epic_done停止。安全=実行前tarスナップショット+データ復元(epic-91のみ/OFF/runs0)、claude編集はapp/epic/page.tsxのblockedラベル1語(停止中→ブロック中)のみharness判断で保持・tsc clean。新正本なし。
+  - result: 
+
 - [ ] [[2026-05-31_factory-live-smoke]]
   - createdAt: 2026-05-31 19:42
   - app: progress
