@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_claude-limit-detection]]
+  - createdAt: 2026-05-31 14:51
+  - app: progress
+  - project: progress / AI工場統合 / Claude上限自動検知（Auto Resume前提）
+  - priority: high
+  - summary: 「Claude上限として扱う」手動ボタン依存を廃止し、vloop実行ログ(stop_reason)/ExecutionRun(errors[]・fallbackReason・runStatus=failed)/Automation Log の3ログから自動判定する層を実装。ExecutionRunは構造化フィールドのみ走査しrawReportの話題語『上限』(実データ38件)で誤検知しない。パターン(rate limit/usage limit/quota/429/limit reached/claude usage limit/5-hour limit/overloaded/和文上限語)一致+failed→high、一致のみ→medium、failedだが上限語なし→low、stop_reason一致→high・上限制限単独→low、automation-log→low。high/medium→detected→既存triggerAutoFallback発火、lowのみ→ambiguous=block_for_review(誤判定回避)。GET=検知のみ/POST=検知→ログ→trigger or force。Auto Fallbackの安全ゲート(evaluateAutoFallback)は不変・前段に追加。手動ボタンはforce上書きで残置。検証:curl 7ケース(none/ambiguous/detected-high/POST自動発火で既存ゲート到達/block_for_review/force)+tsc/build/lint OK、合成データは159runs/automation-log4行へ完全復元。Auto Resume本体は未実装(検知の完成のみ)。progressコードは未commit(ユーザー判断)。
+  - result: 
+
 - [ ] [[2026-05-31_auto-fallback]]
   - createdAt: 2026-05-31 01:59
   - app: progress
