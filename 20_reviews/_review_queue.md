@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_codex-handoff-policy]]
+  - createdAt: 2026-05-31 17:42
+  - app: progress
+  - project: progress / AI工場統合 / Codex引き継ぎ運用方針変更(Executor非依存)
+  - priority: high
+  - summary: 「ユーザーはExecutorを意識しない」方針へ変更。手動Codex引き継ぎ(CodexHandoffPanel:Automation/Epic詳細)・Factory Dispatchの手動executor選択・AutoFallback手動上書きをDevModeGateで開発者モード限定化(既定OFFで非表示)。AutoFallbackの自動検知バナーは常時表示の正規パスとして残す。Automation最上位に状態中心のFactoryProgressCardを新設(state優先順位 実行中>承認待ち>停止中>再開待ち>Codex準備完了>アイドル、Factory ON/OFF、対象Epic、停止理由、実行待ち/承認待ち/停止件数、Claude利用状況none/detected/ambiguous、実行Executor参考、最終実行/Fallback日時+理由+status、次回予定)。computeFactoryStatusは既存health/config/claude上限検知/auto resume/dispatch scan/automation log/ExecutionRunの派生ビュー(新正本なし)。確認5点回答:手動引き継ぎは開発者モード限定が推奨(削除/非表示と比較しコード温存+疎通テスト両立)。検証:build/tsc/lint OK、factory-status=停止中(factoryOff)、dev OFFで手動UI非表示・自動検知残る・epic-91 200、データ変更なし。次の一手=開発者モードONで手動Dispatch1周→OFFで状態中心運用の疎通テスト。
+  - result: 
+
 - [ ] [[2026-05-31_factory-dispatch]]
   - createdAt: 2026-05-31 16:56
   - app: progress
