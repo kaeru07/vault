@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_factory-on-off]]
+  - createdAt: 2026-05-31 18:07
+  - app: progress
+  - project: progress / AI工場統合 / Factory ON/OFF
+  - priority: high
+  - summary: Factoryの完全自動運転を開始・停止できるON/OFFを実装。AutomationConfigにfactoryEnabled追加(既定OFF・旧config後方互換でgetAutomationConfigを既定マージ化)。scanFactoryDispatchをfactoryEnabledでゲート→OFF時は一切scanしない(候補空)、ON時のみscan→pick。factory-statusにfactoryRunState(Running/Paused/Blocked/CodexReady)追加(OFF→Paused、ON&上限&Codex可→CodexReady、ON&candidates>0→Running、ON&candidates0→Blocked)。Automation最上位のFactory進行状況カードにON/OFFトグル(automation-config POST factoryEnabled)と状態バッジ。automation-config POSTのwhitelistにfactoryEnabled追加。既存Factory Dispatch(手動・開発者モード)はscan結果に接続済み、OFF時はヒント表示。cron/pm2/systemd/Hermes/Executor追加/完全無人化は未実装。確認4点回答(ON=scan→pick→Plan→プロンプト生成まで自動・実起動は手動/OFF=scan即停止/疎通条件=Factory ON+開発者モードON+対象Epic1件/Loop前不足=ループ本体・サーキットブレーカ・executor抽象・実起動手段・factory_loop source)。レビューにFactory状態遷移図・ON/OFF仕様・疎通テスト手順を収録。検証:build/tsc/lint OK、T1 OFF→Paused/scan0、T2 ON+不完全→Blocked、T3 ON+dispatchable→Running、後方互換確認、検証後復元(OFF/epic-91のみ)。新正本なし・既存ロジック不変。次=Factory ON+開発者モードで手動Dispatch1周の疎通テスト。
+  - result: 
+
 - [ ] [[2026-05-31_codex-handoff-policy]]
   - createdAt: 2026-05-31 17:42
   - app: progress
