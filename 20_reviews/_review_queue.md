@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_codex-adapter-fix]]
+  - createdAt: 2026-05-31 21:09
+  - app: progress
+  - project: progress / AI工場統合 / Factory完成・Codex adapter修正
+  - priority: high
+  - summary: Codex adapterのstdin hang(『Reading additional input from stdin』で300s timeout)を根本修正。真因はstdinではなく、shell helperの if(opts.input) が空文字''をfalsy判定しstdin.end()を呼ばず、stdin pipeが開いたままcodexがEOF待ちしていたこと。修正:input未指定時はspawnのstdinを'ignore'(/dev/null相当)、指定時のみpipe+write+end。codex/claude adapterのinput:''除去。併せてCodex安全判定が他Epic由来のglobal nextActionsの『削除』を誤検知してblockする問題も、意図テキストをEpic固有のgoal+doneCriteriaに限定して修正。codex起動はcodex exec -C <dir> --skip-git-repo-check -s workspace-write。完了条件の実運転(実データ): simulateRateLimit→AutoFallback(auto_fallback記録/canRunOnCodex=true)→Codex実行(completed 174s・hangせず)→runChecks(typescript=OK/lint=OK)→ExecutionRun記録(20260531-210606 executorUsed=codex/source=factory_runner/runnerMode=auto/factoryRun=true/runStatus=completed)→doneCriteria 3/4(continue)まで成功。criterion1(1箇所変更)のみ未達はrunnerのchangedFilesが既存dirtyファイルで空判定のため(本番clean repoでは非発生)。Claude→Codex時系列を報告に収録。検証はprogress repoで実施しcodexがapp/automation/page.tsxを文言修正→検証後tarスナップショットで全復元(epic-91のみ/OFF/factory_runner run 0/git status 51件=自作業intact)。net変更ゼロ。P2-P4は本タスク対象外(次回)。残課題=executor cwdサンドボックス化。
+  - result: 
+
 - [ ] [[2026-05-31_done-criteria]]
   - createdAt: 2026-05-31 20:09
   - app: progress
