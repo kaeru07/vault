@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_epic-contract]]
+  - createdAt: 2026-05-31 16:29
+  - app: progress
+  - project: progress / AI工場統合 / Epic契約形式整備(自動化テスト前提)
+  - priority: high
+  - summary: Epic作成を明示的な契約形式に整備。必須(title/goal/doneCriteria/decisionPolicy[autonomous/approval_required/manual]/priority[P0-P2]/riskFlags[7種])+任意(notes/targetApp/relatedRepo/preferred・fallbackExecutor/factoryEligible)。3方式=画面フォーム(doneCriteria動的行・riskFlagsチェックボックス・モバイル優先)/JSONインポート(① preview dryRun→② confirm)/JSONテンプレコピー(入れ子コードブロックなし)。バリデーション(title/goal/doneCriteria空→error、policy/priority不正→error、riskFlags未知値→error)。Factory対象判定evaluateFactoryEligibility(goal非空&doneCriteria≥1&policy/priority設定&manual除外&危険riskFlags[billing/production_db/auth_secret/deploy/migration/destructive]除外&external_publishもApproval必須で除外&Approval待ち0&status≠blocked&factoryEligible≠false)。Auto Resumeにepic-scope eligibilityゲート追加(安全ゲートは不変)。新正本なし(epics.json拡張)・既存Epic破壊なし・ExecutionRun削除なし・executor非依存。自動化テスト用Epic JSON同梱([[../03_prompts/epic-contract-test-epic.json]])。検証:build/tsc/lint OK、不正JSON→5エラー/テストEpic→eligible/deploy・manual→対象外/実作成epic-progress→eligible/既存epic-91→対象外で壊れない、検証後復元(epic-91のみ/autoResume=false)。次の一手=このテストEpicをJSON投入して最初の自動化テスト開始。
+  - result: 
+
 - [ ] [[2026-05-31_ai-factory-next-phase]]
   - createdAt: 2026-05-31 15:50
   - app: progress
