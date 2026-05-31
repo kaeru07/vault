@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_factory-ux]]
+  - createdAt: 2026-05-31 15:20
+  - app: progress
+  - project: progress / AI工場統合 / 工場ページUX改善
+  - priority: medium
+  - summary: 工場(/epic)・Epic詳細・Automationの初見UXを改善。(1)工場の使い方モーダル(FactoryGuideModal:工場とは/普段の流れ/続きから実行/Codexへ引き継ぐ※自動起動しない/承認待ち/よくあるケースClaude上限→Codex)。(2)現在地表示(FactoryStatusBar:既存health/automation/claude-limit APIを読むだけで🔴Claude上限>🟡承認待ち>🟢作業中>🟣Codex引き継ぎ可能>⚪待機を優先度判定+一言ガイド+CTA遷移)。(3)ボタン説明文(続きから実行『Claudeへ続きを依頼するための情報をまとめます』/Codex引き継ぎ『Claude上限時にCodexへ作業を引き継ぐためのプロンプトを作ります』)。(4)blocked導線改善(AutoFallbackPanelのblockedを『なぜ止まっているか』+理由別ワンタップ遷移:承認/Decision/設定)。(5)/epic上部に運用導線インフォカード。変更禁止範囲(Auto Fallback/Codex安全判定/Approval/Decision/ExecutionRun保存仕様)は不変・新規APIゼロ・既存機能削除なし。検証:build/tsc/lint OK、/epic・/epic/epic-91・/automation全て200+新要素描画、現在地は実データで🟣に解決、モバイル優先。未対応:初回自動表示・実上限時の見え方確認・progressコード未commit(ユーザー判断)。
+  - result: 
+
 - [ ] [[2026-05-31_claude-limit-detection]]
   - createdAt: 2026-05-31 14:51
   - app: progress
