@@ -18,6 +18,8 @@
 
 
 
+
+- 2026-06-01: AI動画生成 / Claude Opus 4.8 公開 / Google Antigravity 2.0 / AIノート・議事録・学習ログ系は、無料枠 + 月額課金 + 文字起こし上限の組み合わせが作りやすい / エラーなし / partial(market,news,tools)
 - 2026-05-31: AIアプリ発見最適化 / Claude Opus 4.8 公開 / GitHub Copilot app / Google Play Shorts 対応を前提に、アプリの 15-30 秒デモ動画を自動生成するマ… / エラーなし / partial(market,news,tools)
 - 2026-05-30: AI動画生成 / Claude Opus 4.8 と Dynamic Workflows 公開 / Google Antigravity 2.0 / Google Play の Play Shorts 向けに、15-30秒の機能デモ動画を前提にしたテ… / エラーなし / partial(market,news,tools)
 - 2026-05-29: AI学習アプリ / Claude Opus 4.8 発表 / Claude Opus 4.8 / AI学習アプリ: 無料でPDF/動画1件まで変換、月額で無制限ノート・クイズ・暗記カードを解放 / エラーなし / partial(market,news,tools)
