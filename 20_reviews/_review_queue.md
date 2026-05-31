@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-05-31_factory-dispatch]]
+  - createdAt: 2026-05-31 16:56
+  - app: progress
+  - project: progress / AI工場統合 / Factory Dispatch準備フェーズ
+  - priority: high
+  - summary: Factory本体の前段。選んだEpicをClaude/Codex/manual executorへ渡す準備を実装。scan→pick→Dispatch Plan(生成ビュー・新正本なし)→executor選択(requiresClaude→claude/canRunOnCodex&safety OK→codex/riskFlags・承認待ち・決定待ち・manual→dispatch不可)→Claude用プロンプト(安全判定/Goal/DoneCriteria/RiskFlags/現在地/NextActions/禁止事項/ExecutionRun記録指示)・Codex用プロンプト(既存generateCodexPrompt再利用・安全判定冒頭)→コピー→結果戻し(CodexReportFormにdispatchPlanId付与でExecutionRunにfactoryDispatch/dispatchMode=manual_copy/executorCandidate/promptGenerated/resultReturned記録)。生成時はAutomationLog factory_dispatch記録。UIはAutomationにFactory Dispatch（準備）セクション(候補Epic/Plan詳細/プロンプト生成/コピー/blocked理由/結果戻し)。完全自動実行・Codex/Claude CLI直叩き・cron/pm2/systemd・無限ループなし。新正本なし(正本はExecutionRun)・executor非依存(preferred/fallback両対応)。検証:build/tsc/lint OK、scan(picked=テストEpic/candidates1/blocked2[epic-91契約不足・危険Epic deploy])・claude_factory/codex_handoffプロンプト・危険Epic→null・結果戻し永続化・AutomationLog×3、検証後復元(epic-91のみ/factoryDispatch run 0)。次の一手=小Epic投入で手動疎通1周テスト。
+  - result: 
+
 - [ ] [[2026-05-31_epic-contract]]
   - createdAt: 2026-05-31 16:29
   - app: progress
