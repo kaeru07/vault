@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-02_market-discovery-cycle2]]
+  - createdAt: 2026-06-02 20:46
+  - app: company-meta
+  - project: AI工場 / 市場調査・新規アプリ発掘（定時継続業務 第2サイクル）
+  - priority: high
+  - summary: 定時継続発掘業務の第2サイクル。前回発掘5件(#9-13)をcandidate登録済として除外し、Vault在庫(local-first-app-ideas-2026-05-14 未昇格案)から収益化順に新規5件発掘(1位 野鳥観察ノートBirdLog 83/2位 自家焙煎ジャーナル 76/3位 卓上ゲーム戦績手帳 74/4位 発酵食ジャーナル 70/5位 盆栽育成カレンダー 67)。全件 local-first・API不要・静的JSON・習慣/記録/収集/趣味系・日本+海外両対応。除外: 既存アプリ/Epic/candidate(001・005)/前回5件/ドメイン重複(打牌採点・詰将棋)/飽和(クラフトビア)。収益化候補一覧.mdに第2サイクル表(#14-18)追記。1位 BirdLog のFactory登録候補Epic Contract JSON生成(登録未実施=Epic生成まで/external_publish→approval_required)。次回観点=05-28以降の新規daily取得+各カテゴリ競合ASO実査で再スコア。
+  - result: 
+
 - [ ] [[2026-06-02_new-app-epic-discovery]]
   - createdAt: 2026-06-02 20:22
   - app: company-meta
