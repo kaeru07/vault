@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-02_new-app-epic-discovery]]
+  - createdAt: 2026-06-02 20:22
+  - app: company-meta
+  - project: AI工場 / 新規アプリ候補の横断発掘
+  - priority: high
+  - summary: Vault/Progress Epic/Research/news-app daily を横断し、既存資産(mahjong/shogi/news/progress/NetScope/Goal Planner/candidate-001・005等)と重複しない新規アプリ候補を収益化順に5件発掘(1位 釣果ログ AnglerLog/2位 部位レスト筋トレ/3位 香水台帳/4位 レコード台帳/5位 AI日めくりパズル)。全件 local-first・API不要・静的JSONで成立、日本+海外両対応・AI開発相性◎。出典 local-first-app-ideas-2026-05-14(idea段階)を2026-05-27市場シグナル(Play Shorts縦動画ASO/汎用AIチャット飽和)で再評価し昇格。収益化候補一覧.mdに新規発掘テーブル追記→push 7435e89。1位のFactory登録候補Epic Contract JSONを生成(登録は未実施=Epic生成まで/external_publish→approval_required)。
+  - result: 
+
 - [ ] [[2026-05-31_codex-adapter-fix]]
   - createdAt: 2026-05-31 21:09
   - app: progress
