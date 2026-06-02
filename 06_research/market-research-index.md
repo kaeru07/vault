@@ -20,6 +20,8 @@
 
 
 
+
+- 2026-06-03: AIエージェント実行管理 / Anthropic が Project Glasswing を約150組織へ拡大 / Base MCP / AIエージェント実行ログ・コスト・失敗理由を可視化する軽量SaaSを月額課金にする。 / エラーなし / partial(market,tools)
 - 2026-06-02: AIショート動画制作 / Microsoft Build 2026 開幕 / Google Antigravity 2.0 / AIショート動画の台本・字幕・投稿文・サムネ案を一括生成する月額ミニSaaS。 / エラーなし / partial(market,tools)
 - 2026-06-01: AI動画生成 / Claude Opus 4.8 公開 / Google Antigravity 2.0 / AIノート・議事録・学習ログ系は、無料枠 + 月額課金 + 文字起こし上限の組み合わせが作りやすい / エラーなし / partial(market,news,tools)
 - 2026-05-31: AIアプリ発見最適化 / Claude Opus 4.8 公開 / GitHub Copilot app / Google Play Shorts 対応を前提に、アプリの 15-30 秒デモ動画を自動生成するマ… / エラーなし / partial(market,news,tools)
