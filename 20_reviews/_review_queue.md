@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-04_factory-scope-rule]]
+  - createdAt: 2026-06-04 01:35
+  - app: progress
+  - project: AI工場 / 作業範囲ルール修正
+  - priority: high
+  - summary: AI工場の作業範囲をEpic生成ロジックに反映。収益化候補/おすすめ候補のMVP Epicを autonomous/riskFlags:[]/factoryEligible:true 化(ローカル実装・検証のみ=AI工場自走範囲)。Google Play/App Store公開・審査申請(external_publish/manual)と課金/サブスク/AdMob本番・支払い情報(billing/approval_required)を別Epic候補(slug-publish/slug-billing)に分離。external_publishは公開Epicだけ・billingは課金Epicだけに付与。安全ゲートFACTORY_BLOCKING_RISK_FLAGSは不変(緩和なし)。検証: AnglerLog MVP承認→epic-anglerlog-mvp が autonomous/[]/factoryEligible true=自動実行対象(承認Run warnings空)、公開=manual/external_publish/対象外・課金=approval_required/billing/対象外に分離、tsc/lint/build OK。テスト生成物除去・recommended再生成20件。変更=lib/monetization-store.ts, lib/recommended-epics-store.ts。
+  - result: 
+
 - [ ] [[2026-06-04_factory-run-history-extend]]
   - createdAt: 2026-06-04 00:10
   - app: progress
