@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-03_recommended-epics]]
+  - createdAt: 2026-06-03 21:07
+  - app: progress
+  - project: AI工場 / おすすめ追加Epic
+  - priority: high
+  - summary: Progressに「おすすめ追加Epic」機能を実装(/recommended-epics 一覧, /recommended-epics/[id] 詳細)。Vault(収益化候補)/active未完Epic/失敗Runから追加Epic候補を抽出→人間承認した候補だけepics.jsonへ追加。新規Epic化と既存EpicへのNext Action追記の2種別。抽出生成API(suggestedのみ)・状態遷移API・承認API(重複チェック→Epic Contract→createEpic→epic_created→ExecutionRun source=recommended_epics)。自動Epic追加禁止・承認は人間のみ・安全ゲート不変(deploy/billing/migration/auth_secret/production_db/destructive自動実行なし・external_publishはApproval必須)。検証:tsc/lint/build OK、API実機(生成8/dedupe/詳細/承認新規Epic化/二重登録409/既存Next Action追記/hold/reject/Factory判定)確認、テスト生成物除去・recommended-epics.json再生成で8件suggested整合。pm2 deploy済。未配線=定例11:00/23:00/起動時の自動抽出(統合点POST用意)。
+  - result: 
+
 - [ ] [[2026-06-03_monetization-hub]]
   - createdAt: 2026-06-03 14:41
   - app: progress
