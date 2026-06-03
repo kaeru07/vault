@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-03_monetization-hub]]
+  - createdAt: 2026-06-03 14:41
+  - app: progress
+  - project: AI工場 / 収益化候補管理（Monetization Hub）
+  - priority: high
+  - summary: Progressに収益化候補管理機能を新規実装(/monetization 一覧, /monetization/[id] 詳細)。発掘→調査→人間レビュー→Epic化承認→Factory実行の導線。候補CRUD・状態遷移(Draft/Candidate/Review/Hold/Approved/Rejected/EpicCreated/Building/Released)・調査履歴API、Epic化API(重複チェック→Epic Contract生成→epics.json追記→status EpicCreated→操作履歴→ExecutionRun source=monetization_hub)。自動Epic化禁止・人間ボタンのみ。data/real/monetization-candidates.json 新設(発掘済み6件seed)。iPhone優先カードUI(スコア/状態/ブルーオーシャン色分け)。検証:tsc/lint/build OK、API実機(一覧/詳細/追加/更新/調査ログ/Epic化)確認、重複防止(mahjong/progress/二重Epic化)を409でブロック確認、テスト生成物除去。pm2 deploy済。Vault同期方針(正本分離・書き戻し手動)を提案。未配線=11:00/23:00定例の自動候補投入(統合点POST /api/monetizationは用意)。
+  - result: 
+
 - [ ] [[2026-06-02_market-discovery-cycle2]]
   - createdAt: 2026-06-02 20:46
   - app: company-meta
