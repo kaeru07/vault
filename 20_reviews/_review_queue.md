@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-04_factory-run-history-extend]]
+  - createdAt: 2026-06-04 00:10
+  - app: progress
+  - project: AI工場 / Factory定期実行履歴（二重実装回避・既存拡張）
+  - priority: medium
+  - summary: 「Factory定期実行履歴ページ」新規作成前に既存調査→『既存に同等機能あり』判定。/logs?mode=history が全ExecutionRunを表示しexecution-runs.jsonが単一正本、別JSON(factory-runs等)も専用APIも無し。よって/factory-runs新設・別JSON複製・二重API・新ナビは行わず、既存/logsを拡張: (1)『🏭定期実行のみ』フィルタ(source=schedule/boot/factory_runner・trigger=systemd/cron/startup・factoryRun=trueで絞る) (2)ExecutionRunCardにFactoryメタ(src/trig/Run#/stop)。検証: 全215→定期実行のみ29に絞込み、factoryページ全カードに🏭メタ、tsc/lint/build OK、pm2 deploy。新規ページ0/JSON0/API0/ナビ0。
+  - result: 
+
 - [ ] [[2026-06-03_recommended-epics]]
   - createdAt: 2026-06-03 21:07
   - app: progress
