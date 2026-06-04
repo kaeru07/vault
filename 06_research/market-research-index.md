@@ -22,6 +22,8 @@
 
 
 
+
+- 2026-06-05: AI アプリ発見最適化 / OpenAI が Codex を非エンジニア業務にも拡張 / GitHub Copilot App / Google Play 向けに「Ask Play 対応 ASO 診断」「Play Shorts 用 … / エラーなし / partial(market,news,tools)
 - 2026-06-04: AI生産性アプリ / Codex が「知識労働ツール」化 / GitHub Copilot App technical preview拡大 / 月額課金: 「AI要約」「読み上げ」「SNSトレンド監視」「定型業務エージェント」は月額980円から… / エラーなし / partial(market,news,tools)
 - 2026-06-03: AIエージェント実行管理 / Anthropic が Project Glasswing を約150組織へ拡大 / Base MCP / AIエージェント実行ログ・コスト・失敗理由を可視化する軽量SaaSを月額課金にする。 / エラーなし / partial(market,tools)
 - 2026-06-02: AIショート動画制作 / Microsoft Build 2026 開幕 / Google Antigravity 2.0 / AIショート動画の台本・字幕・投稿文・サムネ案を一括生成する月額ミニSaaS。 / エラーなし / partial(market,tools)
