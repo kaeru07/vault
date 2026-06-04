@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-04_monetization-vault-sync]]
+  - createdAt: 2026-06-04 12:27
+  - app: progress
+  - project: AI工場 / 収益化候補 定期取り込み・調査元可視化
+  - priority: high
+  - summary: Factory定期実行(11:00/23:00/boot)時にVault(/obsidian-sync-vault の候補表・06_research・20_reviews)を走査し、未反映の収益化候補をMonetization Hub(monetization-candidates.json=正本)へ取り込む機能を、既存/monetizationを拡張して実装(新規ページ/二重JSON/二重APIなし)。新規→追加、既存→sourceRefs/researchLogs/evidenceLinks/historyに追記のみ(Vaultは読み取り専用・相互上書きなし)。型にSourceRef/EvidenceLink追加・ResearchLog/HistoryEntry拡張。runScheduledFactory先頭にbest-effort同期ステップ追加、POST /api/monetization/sync追加。詳細に調査元一覧/根拠リンク/取込履歴、一覧に調査元数バッジ。重複判定=id/slug/title/targetApp/類似名/既存Epic/既存アプリ/既存candidate。安全=候補追加のみ・Epic化しない・epics.json不変・public/billing/deploy/secret非接触・二重追加なし(冪等)。検証:added6/updated6→2回目0/0/skip12、birdlog sourceRefs6、過剰一致を英語フレーズ条件で解消、ExecutionRun(monetization_sync)記録、tsc/lint/build OK・deploy。
+  - result: 
+
 - [ ] [[2026-06-04_factory-scope-rule]]
   - createdAt: 2026-06-04 01:35
   - app: progress
