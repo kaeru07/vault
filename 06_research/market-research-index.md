@@ -25,6 +25,8 @@
 
 
 
+
+- 2026-06-07: AIチャット・AIエージェント / Codexが知識労働向けに拡大 / GitHub Copilot app / 月額課金: 特定業務向けのAIエージェント、例: 営業メモ整理、学習計画、契約書読み上げ。 / エラーなし / partial(market,news,tools)
 - 2026-06-06: AI会議メモ / OpenAI、Codexを職種別プラグインと共有可能なSitesへ拡張 / Buzzy Builder MCP / 会議メモ・音声入力・PDF要約など、利用頻度が高いユーティリティは月額 $6-$20 程度のサブスク… / エラーなし / partial(market,news,tools)
 - 2026-06-05: AI アプリ発見最適化 / OpenAI が Codex を非エンジニア業務にも拡張 / GitHub Copilot App / Google Play 向けに「Ask Play 対応 ASO 診断」「Play Shorts 用 … / エラーなし / partial(market,news,tools)
 - 2026-06-04: AI生産性アプリ / Codex が「知識労働ツール」化 / GitHub Copilot App technical preview拡大 / 月額課金: 「AI要約」「読み上げ」「SNSトレンド監視」「定型業務エージェント」は月額980円から… / エラーなし / partial(market,news,tools)
