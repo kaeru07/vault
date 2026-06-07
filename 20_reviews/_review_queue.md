@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-07_tenhou-paifu-collection-research]]
+  - createdAt: 2026-06-07 21:22
+  - app: mahjong
+  - project: mahjong / 天鳳 公開牌譜 収集方法の調査（/yomi用）
+  - priority: high
+  - summary: /yomi用に天鳳の公開牌譜を認証不要・Cookie不要で集める方法を調査。結論=公開フル牌譜は鳳凰卓(scc)のみ(sc/raw年次zip scrawYYYY.zip+list.cgi約5分毎・認証不要)。特上卓上位の公開フル牌譜は本人DLのみで入手不可だが、鳳凰卓=七段+/特上点到達の最上位公開帯なので高品質目的は達成。推奨ツール=Apricot-S/houou-logs(Python/MIT・phoenix-logs後継、fetch→download→export・レート制御内蔵)+mjlog2json(XML→JSON)/tenhou-to-mjai(→mjai)。実装難易度=低〜中(収集低・変換低・mjai→yomiアダプタ中)。継続収集=可(list.cgi増分+年次zip+SQLite差分)。自動化=技術的に可(cron・同時1session/20分間隔マナー必須)。最大リスク=天鳳/houou-logs双方が牌譜の再配布を禁止→生牌譜のGitHub pushは規約抵触・/yomi適用もグレー。対策=.gitignoreに生牌譜(*.mjlog/data/imported配下xml/json/raw/tenhou)除外を追加(git check-ignore検証・READMEはtracked維持)、調査をdocs/tenhou-collection.mdに整理。実データ収集は未実行。公開可否は人間の法務判断(承認必須・自走しない)。mahjong cb802fc push済。確認観点=規約リスク評価/鳳凰卓のみで品質達成の妥当性/自動化の線引き/代替ソース。
+  - result: 
+
 - [ ] [[2026-06-07_yomi-ingestion-rule]]
   - createdAt: 2026-06-07 19:00
   - app: mahjong
