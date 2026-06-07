@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-07_yomi-ingestion-rule]]
+  - createdAt: 2026-06-07 19:00
+  - app: mahjong
+  - project: mahjong / /yomi 牌譜取り込みルール・パイプライン土台
+  - priority: high
+  - summary: 実戦牌譜を承認待ちせず/yomiへ自走取り込みする運用ルールを恒久化し、アプリ側に土台を整備。docs/yomi-ingestion.md(取り込み先/条件10項/ソース優先度4帯/品質ランクS-D/標準フロー/報告フォーマット)、scripts/validate-yomi.mjs(4人河・ロンツモ・correctTile=hiddenTile∈waits・選択肢一意・リーチ後手出し違反・牌4枚・10巡目・読み根拠の整合を機械検証し終了コードで採用可否)、types/yomi.tsにYomiSource/YomiQualityRankと任意source/qualityRank追加、data/imported(B保留)・data/rejected(C隔離/D破棄・削除でなく理由付き隔離)を新設。方針=問題数より品質優先・上級者帯(魂天/王座/魂の間/鳳凰卓)優先・採用S/Aのみ。禁止=元牌譜削除/既存良問大量削除/force push/課金API/牌譜外部送信/認証情報保存/本番データ削除。CLAUDE.local.md・メモリにも反映。検証=validate全10問PASS/tsc0err/build成功/secret OK。mahjong main 1b98f02..9e64d13 push済(local=origin/clean)。実牌譜は未提供(土台のみ)。確認観点=取り込み条件/品質基準の妥当性・validate検証の抜け・自走の事故ポイント。
+  - result: 
+
 - [ ] [[2026-06-07_forward-progress-rule]]
   - createdAt: 2026-06-07 16:02
   - app: company-meta
