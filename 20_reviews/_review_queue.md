@@ -5,6 +5,46 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-07_forward-progress-rule]]
+  - createdAt: 2026-06-07 16:02
+  - app: company-meta
+  - project: 運用ルール / 前進優先ルール（承認待ちで停止しない）
+  - priority: high
+  - summary: ユーザー指示で『承認待ちで停止しない』前進優先ルールを恒久化。承認必須を6点(本番データ削除/DBスキーマ破壊変更/外部課金発生/認証権限変更/不可逆操作=force push・履歴改変・復元不能削除/高セキュリティリスク)に限定し、通常のcommit&push含むそれ以外は実装→検証→GitHub反映まで事後報告で自動実施。CLAUDE.local.mdに§前進優先ルール(2026-06-07)を追記し旧『push/deploy明示指示まで保留』と§commit後push必須化/§GitHub反映ルールのpush待ち保留を上書き。機密スキャン・push前後チェックは継続必須・本番デプロイは6点該当時のみ確認。メモリfeedback-execution-confirmation-policyも同期。適用として前タスク(/yomi品質改善)の未pushを2コミット(804d12e卓レイアウト/1b98f02品質改善)に分けmahjong mainへpush成功(582fdd7..1b98f02 FF/local=origin/clean)。確認観点=承認必須6点の線引き妥当性・安全策の十分性・旧ルール上書きの漏れ矛盾。
+  - result: 
+
+- [ ] [[2026-06-07_mahjong-yomi-quality-improve]]
+  - createdAt: 2026-06-07 14:17
+  - app: mahjong
+  - project: mahjong / 当たり牌読み 問題品質改善（実戦読み訓練化）
+  - priority: medium
+  - summary: /yomiを暗記問題から実戦読み訓練へ改善。型にdangerLevel(危険度1-5)とreadingBasis(読み根拠)を追加。問題を12→10問に厳選(良問優先で残置)し河を巡目相当(13-17巡)に拡張。旧y005のリーチ後手出し(対子落とし=ルール違反)をダマに修正、材料不足/重複の3問(旧y003/旧y010/y011)を削除。全10問に無スジ/スジ/スジ引っ掛け/現物/壁(ノーチャンス)/字牌処理(生牌)/対子落とし/リャンメン落とし/ツモ切り手出し読み/親リーチ打点読み/字牌単騎変則待ち の読み根拠を付与。当たり牌の無スジ/スジ判定が対面河と整合するよう盤面を再構成。回答後UIに危険度★★★★★と読み根拠セクションを追加。検証=tsc0err/next build成功/自作nodeスクリプトで牌4枚制限・correctTile=hiddenTile=waits整合・選択肢に当たり牌混入なし・hiddenWinTileが放銃者に1枚・リーチ後tedashi無し を全10問PASS。既存「何切る」quiz/result無変更。変更=types/yomi.ts, data/yomi-questions.json, app/yomi/quiz/page.tsx。未commit/push(mahjongリポジトリ・ユーザー指示待ち)。
+  - result: 
+
+- [ ] [[2026-06-07_mahjong-yomi-table-layout]]
+  - createdAt: 2026-06-07 11:17
+  - app: mahjong
+  - project: mahjong / 当たり牌読み 盤面を麻雀卓レイアウト化
+  - priority: medium
+  - summary: /yomi盤面を縦4段スタックから麻雀卓配置(雀魂風: 対面上/上家左/下家右/自分下)へ全面刷新。牌を席別回転(self0/toimen180/kamicha270/shimocha90)、河は6枚折返し、上家下家は縦積み(下家90度は最新chunk中央寄りで逆順)。リーチ宣言牌は(席回転+90)で横向き、ツモ切り半透明+青点、副露はプレイヤー脇、当たり牌のみ？枠維持→回答後に実牌+amber ringでreveal。中央パネル=局/本場/供託/巡目/ドラ、各家=自風/座席/点数/リーチ/和了/放銃。解説部分(quiz/result)は無変更。TileDisplayに非破壊のplaceholderプロップ追加(？枠が牌footprintを回転込みで保持)。検証: tsc0err/build成功(全9ルート静的・API非依存)、headless Chromium 390pxで横スクロール0・卓box358x450収まる・？描画→reveal・読み筋表示。既存何切るBoardView無変更。変更=components/YomiBoardView.tsx, components/TileDisplay.tsx。未commit(本タスクではcommit/push未指示)。
+  - result: 
+
+- [ ] [[2026-06-06_mahjong-yomi-verify-deploy]]
+  - createdAt: 2026-06-06 23:27
+  - app: mahjong
+  - project: mahjong / 当たり牌読みモード 仕上げ確認・本番反映
+  - priority: medium
+  - summary: 実装済み/yomi当たり牌読みモードの仕上げ確認とGitHub反映。git差分=HomeContent導線ボタン追加(additive)+yomi新規のみ・デバッグ残りなし。headless Chromium(iPhone幅390px)で/yomi・/yomi/quiz・/yomi/resultを確認: 横スクロール0px・河4ゾーン1行6枚見切れなし・牌選択肢タップ領域84x59px・当たり牌のみ？で伏せ→回答後にreveal・読み筋/危険理由/待ち形/役/解説/他選択肢否定/復習モード全表示。データ12問整合(correctTile∈choices,==result.hiddenTile,∈waits,ron時loser最終打牌==hiddenTile,tsumo時河伏せ0,河4人非空,turn>=10)pass。tsc0err/build成功(全9ルート静的・API非依存)。commit 582fdd7をorigin/mainへpush成功(221eec4..582fdd7 FF)。未対応=Vercel本番URL確認・実機Safari目視。実装run=20260606-220319/本run=20260606-232717。
+  - result: 
+
+- [ ] [[2026-06-06_mahjong-atari-yomi-mode]]
+  - createdAt: 2026-06-06 22:03
+  - app: mahjong
+  - project: mahjong / 当たり牌読み(捨て牌読み)練習モード新設
+  - priority: medium
+  - summary: 既存「何切る」クイズ(mahjong)を非破壊で流用し、当たり牌だけを「？」で伏せて予想する捨て牌読み練習モードを別ルート/yomiに新設。4人河(1行6枚)+手出し(濃)/ツモ切り(薄+青点)+リーチ宣言牌(赤枠)+副露+ドラ+場風自風+点数+巡目を表示し、当たり牌のみ伏せる。回答後に正解牌/ロンツモ/和了者/放銃者/待ち形/役/読み筋/危険理由/他選択肢の否定理由を表示。ホームに難易度/タグ/問題数選択、結果画面に正答率+復習モード(誤答のみ再出題)。問題12問新規(10巡目以降・読み要素あり=リーチ/ダマ/染め手ホンイツ/対子落とし/リャンメン落とし/スジ引っ掛け/壁/字牌/手出しツモ切り/単騎/カンチャン/親リーチ/ツモ)。TileDisplayスプライト再利用。API非依存・全9ルート静的のままtsc0err/build成功。整合スクリプトで全12問(correctTile∈choices, ==result.hiddenTile, ∈waits, loser最終打牌==hiddenTile, 河4人非空, turn>=10)pass。変更=types/yomi.ts,lib/yomi.ts,data/yomi-questions.json,components/YomiBoardView.tsx,app/yomi/{page,quiz/page,result/page}.tsx,components/HomeContent.tsx。未対応=iPhone実機確認・問題拡充・commit/push(未実施)。
+  - result: 
+
 - [ ] [[2026-06-04_monetization-vault-sync]]
   - createdAt: 2026-06-04 12:27
   - app: progress
