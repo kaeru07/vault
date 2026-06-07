@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-07_yomi-ingest-no-raw-retention]]
+  - createdAt: 2026-06-07 22:48
+  - app: mahjong
+  - project: mahjong / /yomi 取り込み 生牌譜非保管・処理後削除
+  - priority: high
+  - summary: 牌譜取り込みを「生牌譜を保管・公開せず問題データのみ保存し処理後に元牌譜削除」へ改修(利用規約=牌譜再配布禁止対応)。scripts/ingest-yomi.mjs新規(候補JSON→整合検証→品質判定S/A採用・B保留・C/D隔離→重複除外(id+盤面signature)→正本マージ→採用後再検証→--rawの元牌譜削除→集計、--dry-run対応)。scripts/lib/yomi-validate.mjs新規(検証共有化・source.gameId/mjlog/xml/mjai/raw等の牌譜ポインタ保持をエラー化)。scripts/yomi-stats.mjs新規(sourceRank/sourceType別=鳳凰卓/魂天/王座問題数集計)。types/yomi.tsのYomiSourceをsourceType/sourceRank/importedAtへ整理(gameId等廃止)、lib/yomi.tsにgetYomiSourceStats追加、.gitignoreでdata/rejected配下も無視しコミットはyomi-questions.jsonのみ。保持=問題/解説/読み筋/危険度/カテゴリ/出典種別、非保持=生牌譜/mjlog/xml/mjai/gameId。検証=ingest E2E(/tmp合成候補5→採用2(houou,ouza)/保留1/隔離2(整合エラー+gameId保持禁止)・raw削除確認・dry-runで削除なし・正本10件不変)/validate全10問PASS/yomi-stats動作/tsc0err/next build成功/secret OK/意図変更のみstaged。mahjong cb802fc..4993af4 push済。旧『元牌譜削除禁止』とingestの削除の矛盾を解消(一時生牌譜削除は正規動作・唯一原本の独断削除は禁止)。牌譜由来問題の公開可否は人間の法務判断(承認必須)。確認観点=再配布リスク低減の十分性/ingestの安全性(誤削除取りこぼし)/ポインタ禁止と追跡性のトレードオフ/mjlog→候補変換の残課題。
+  - result: 
+
 - [ ] [[2026-06-07_tenhou-paifu-collection-research]]
   - createdAt: 2026-06-07 21:22
   - app: mahjong
