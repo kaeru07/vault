@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-08_yomi-quality-scoring]]
+  - createdAt: 2026-06-08 00:44
+  - app: mahjong
+  - project: mahjong / /yomi 候補品質 自動採点(B→A判定)
+  - priority: high
+  - summary: 天鳳候補が全件B止まりの問題を解消。scripts/lib/yomi-score.mjsで和了者の河+盤面から読み要素を検出し加点→S/A/B/C判定(スジ引っ掛け+3/無スジ+2/字牌+2/対子落とし+2/リャンメン落とし+2/染め手+2/壁+1/ワンチャンス+1/現物+1/リーチ+1、コア要素なしC、score>=7S/>=5A/>=3B)。reasonsで「なぜA」出力しapplyScoreでqualityRank/dangerLevel/readingBasis/explanationに反映。CLI yomi-quality-score.mjsで候補数/S/A/B/C・A判定サンプル・不採用理由上位をレポート。tenhou-to-yomi.mjsへ採点統合。試験(実データ公開取得0/log/?ref・鳳凰卓4鳳半荘3戦12候補): S3/A5/B4/C0、採用相当8/不採用4、A判定サンプル3件(例 ron7筒 無スジ+ワンチャンス+現物+染め手=score6)、不採用理由上位=4件「コア要素はあるが加点不足」。graded validate全PASS/正本10問PASS/tsc0err/build成功/secret OK/生牌譜削除。canonicalは未変更(自動S/Aは人手レビュー前提)。mahjong 7639773..5fc9fe5 push。注意=配点閾値v1要調整・無スジ×染め手の重複加点。確認観点=配点閾値妥当性/A率8-12は高すぎないか/重複加点補正/検出誤りリスク/自動S/A採用の前提。
+  - result: 
+
 - [ ] [[2026-06-07_yomi-tenhou-ingest-trial]]
   - createdAt: 2026-06-07 23:45
   - app: mahjong
