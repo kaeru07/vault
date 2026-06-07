@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-07_yomi-tenhou-ingest-trial]]
+  - createdAt: 2026-06-07 23:45
+  - app: mahjong
+  - project: mahjong / 天鳳公開牌譜 取り込み試験
+  - priority: high
+  - summary: 天鳳の公開鳳凰卓牌譜URLを少数取得し/yomi取り込みパイプラインを実データ試験。公開アーカイブsc/raw(list.cgi→scc{YYYYMMDDHH}.html.gz)から四鳳南喰赤(4人鳳凰半荘)の?log=URLを3件特定。取得経路実証: find.cgi?log=は非会員ERROR(認証突破しない)、tenhou.net/0/log/?{ref}が生mjlog XMLを認証/Cookie無しで返す→1件のみ一時取得(13KB)。scripts/tenhou-to-yomi.mjs新規(XML解析: seed/draws TUVW/discards DEFGでtedashi/tsumogiri判定/REACH/AGARI who-fromWho-machi、牌id 0-135デコード、放銃者=self相対席、当たり牌=ロン牌、distractor=和了者の現物、idハッシュ化でgameId非保持、qualityRank未設定でB保留)。1牌譜→ロン局5件抽出(turn>=10・4人河)→validate全件PASS→ingest投入→採用0/保留5(自動生成=読み筋未検証=B、S/Aのみ採用で不採用=設計通り)→--rawで生牌譜削除確認→正本yomi-questions.json 10問不変。tsc0err/build成功/secret OK/diffにref混入なし。mahjong 4993af4..7639773 push(変換器+docsのみ。生牌譜/候補/refは非コミット)。報告: 探したページ=sc/raw・list.cgi・scc・nnkr(参考)/候補URL3/取得1/採用0/不採用理由=自動生成で読み筋未検証(B)/生牌譜削除=確認済。確認観点=公開URL限定取得の妥当性/採用0(B止まり)の品質判断/gameId非保持で再配布リスク低減十分か/読み筋ヒューリスティックの優先順位。
+  - result: 
+
 - [ ] [[2026-06-07_yomi-ingest-no-raw-retention]]
   - createdAt: 2026-06-07 22:48
   - app: mahjong
