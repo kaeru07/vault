@@ -27,6 +27,8 @@
 
 
 
+
+- 2026-06-09: AIノート・議事録 / OpenAI、ChatGPTを「スーパーアプリ」化する計画が報道 / Codex plugins / サブスク: AI議事録、AIノート、AI動画広告生成など、継続利用が発生する業務・制作系は月額課金と… / エラーなし / partial(market,news,tools)
 - 2026-06-08: AI業務エージェント / OpenAI frontier models と Codex が AWS で一般提供 / Codex Sites / 月額課金: 議事録、調査、SNS投稿、営業メールなど反復タスクを月額 $9-29 程度で提供する。 / エラーなし / partial(market,tools)
 - 2026-06-07: AIチャット・AIエージェント / Codexが知識労働向けに拡大 / GitHub Copilot app / 月額課金: 特定業務向けのAIエージェント、例: 営業メモ整理、学習計画、契約書読み上げ。 / エラーなし / partial(market,news,tools)
 - 2026-06-06: AI会議メモ / OpenAI、Codexを職種別プラグインと共有可能なSitesへ拡張 / Buzzy Builder MCP / 会議メモ・音声入力・PDF要約など、利用頻度が高いユーティリティは月額 $6-$20 程度のサブスク… / エラーなし / partial(market,news,tools)
