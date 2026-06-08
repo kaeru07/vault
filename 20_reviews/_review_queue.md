@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-08_yomi-ai-human-review-ui]]
+  - createdAt: 2026-06-08 10:53
+  - app: mahjong
+  - project: mahjong / AI良問判定×人間評価すり合わせレビュー画面
+  - priority: high
+  - summary: AIのS/A良問判定が人間感覚と一致するか検証する画面を/yomi/reviewに新規追加。AIがS/A判定した問題(現状10問 y001-y012)を表示し、問題ID/盤面(YomiBoardView revealed)/河/当たり牌/AIスコア/AI判定理由(読み要素の加点内訳)を提示。人間がS/A/B/Cを採点(localStorage保存)。集計=一致率/過大評価トップ5/過小評価トップ5/AI:A以上×人間:C件数/重み修正案(過大評価に頻出する読み要素を配点引き下げ候補として提示)/コピー用プレーンテキスト。採点ロジックyomi-score.mjsをlib/yomiScore.tsへTS移植しtsxで全10問の出力一致を検証。yomiトップに導線追加。tsc0err/build成功(/yomi/review静的生成)/eslint0err/dev HTTP200で全要素描画確認。mahjong 23b5aed push済。注意=yomi-score.mjsとlib/yomiScore.tsの配点二重管理(変更時は両方同時更新)。確認観点=AI vs 人間一致率で良問判定の質を測る設計の妥当性/delta算出の歪み/修正案ヒューリスティックの妥当性/S/A10問での配点調整は早計でないか/二重管理リスク/採点ガイドUXの要否。
+  - result: 
+
 - [ ] [[2026-06-08_yomi-quality-scoring]]
   - createdAt: 2026-06-08 00:44
   - app: mahjong
