@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-08_app-urls-iphone-view]]
+  - createdAt: 2026-06-08 23:51
+  - app: progress
+  - project: progress / アプリURL一覧をiPhone確認用に再設計
+  - priority: medium
+  - summary: URL一覧がiPhoneから確認するための一覧なのに多くのアプリがlocalhostを主要URL表示しiPhoneで開けなかった問題を修正。lib/app-urls.tsにiPhone到達性分類(classifyRecordAccess: host=localhost/127.0.0.1/0.0.0.0/::1/プライベートIP・kind=ssh_port_forward→blocked, url未確認→unknown, 公開host→ok)とenrichApp(公開URL選好vercel>vps>apiでiphonePrimary決定・actionHint=要Vercel化/要公開URL確認生成)を追加。AppUrlsBoard.tsx新規(iPhone確認URLを緑枠で最優先表示+iPhoneで開くボタン、localhost/内部ポート/未確認枠はdetails折りたたみ+iPhone直接不可バッジ、iPhone確認可否バッジ、すべて/見れる/直接不可/未確認フィルタ+件数、ok→blocked→unknown順ソート)。page.tsxをenrich+board委譲の薄いサーバーコンポーネントに作り直し。tsc0err/build成功(/app-urls 2.78kB)/eslint0err。実データ12件分類確認=NetScope(localhost:3000/8080/8888)・progress(localhost:3010)=blockedで確認URL非表示、news-app=unknown、iPhone確認OK公開URL所持は現状0件(推測URL不作成のため正直に0)。commit d5a8977 push済(9e6af71..d5a8977 origin main)。pm2本番3010は要restartで新UI未反映。確認観点=host基準分類(kind=vpsでもlocalhostはblocked)の妥当性/公開URL選好順とactionHint文言/未確認を推測で埋めない徹底/既存機能非破壊。
+  - result: 
+
 - [ ] [[2026-06-08_progress-factory-fix-deploy-to-prod]]
   - createdAt: 2026-06-08 18:47
   - app: progress
