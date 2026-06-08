@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-08_progress-factory-fix-deploy-to-prod]]
+  - createdAt: 2026-06-08 18:47
+  - app: progress
+  - project: progress / Factory判定修正の本番反映
+  - priority: high
+  - summary: 3セッション分のFactory判定修正(対象外誤判定/承認過多解消/deployプロンプト注意化)を本番反映。孤立commitはapp/epic/page.tsx→未追跡FactoryGuideModal/FactoryStatusBarの依存連鎖で不可能のため、coherent最小単位としてprogressソース95ファイル(他アプリ・data/・.next・tsbuildinfo除外)を機密スキャン後にcommit 9e6af71→push origin main(d30959e..9e6af71)。npm run build成功(41/41)→pm2 restart progress(restarts=1/online)→GET /epic=200。本番(live 3010)検証: /epicバッジ=⚙Factory対象/✅自律実行可/⚠デプロイ注意/🛡要承認0/🚫対象外(構造不完全のみ)。factory-dispatch scan=factoryEnabled true・candidates[epic-birdlog,epic-progress-url,epic-progress-todo]・blocked[epic-91:doneCriteria/priority未設定]。URL一覧/動作確認Todoとも個別plan safetyStatus=ok/executor=claude/promptType=claude_factory/blockedReasonなし。dispatchプロンプトにdeploy禁止文言なし・デプロイ注意あり。factory-run dry_run=200。data非破壊(コミット外・未変更)。実auto実行は未実施(autonomousコード改変のため候補確認・プロンプト生成・dry_runに留めた)。確認観点=progressソース一式commit判断の妥当性/data実行時JSON扱い/実auto見送り判断/rebuild+restartとpushの責務分離。
+  - result: 
+
 - [ ] [[2026-06-08_progress-deploy-prompt-guard-fix]]
   - createdAt: 2026-06-08 17:36
   - app: progress
