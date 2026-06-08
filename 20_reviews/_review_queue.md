@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-08_progress-deploy-prompt-guard-fix]]
+  - createdAt: 2026-06-08 17:36
+  - app: progress
+  - project: progress / 実行プロンプトのdeploy禁止文言を注意扱いへ
+  - priority: high
+  - summary: Factory判定はdeployを自動実行対象にしたが、Claude/Codexへ渡す実行プロンプトの禁止事項にdeployがハードコード残存(factory-dispatch.ts:178の[6]禁止事項『課金/本番DB/認証/deploy/migration/destructive/secret・token・.env操作をしない』とoperations-store CODEX_SAFETY_GUARDの『Codexで実行してはいけない作業…deploy…』)。判定とプロンプトが不一致だった。修正: lib/epic-contract.tsにbuildExecutionGuard(riskFlags)を新設しforbidden(課金/本番DB/認証/migration/destructive/外部公開/.env等)とcautions(deploy=注意)を分離する単一ソース化。factory-dispatchの[6]禁止事項をhelper駆動にしdeployを除去・deploy時[6-1]注意事項『デプロイ注意(実装/build/lint/typecheck/必要なpushまで可・本番反映は事後報告)』追加。CODEX_SAFETY_GUARDをcodexSafetyGuard(riskFlags)関数化しdeployを禁止から除外。CODEX_DENY_SIGNALSのタイトル語deployは不変(Codex非委譲で安全側維持)。検証(data/real実測): deployのみtest-deploy-only→candidates入り＆picked＆プロンプトにdeploy禁止系出ない([6-1]デプロイ注意のみ)。本物epic-progress-url/epic-progress-todoもcandidates入り・deploy禁止系出ない。billing→safetyStatus=blocked(要承認)維持。tsc0err/build41-41/eslint0err。テストEpicは検証後削除しreal(diff一致)/sample完全復元。URL一覧/動作確認Todoは実行可能(キュー入り＋Claude実行プロンプト上もdeployで止まらない)。git commit/pushは無関係WIP混在で保留(累計18ファイル)。pm2本番3010は要restart。確認観点=deploy注意化後も本番破壊/.env/課金/DBが禁止維持か/両プロンプトの単一ソース一致/CODEX_DENY_SIGNALS残置判断/本番反映=事後報告の運用整合。
+  - result: 
+
 - [ ] [[2026-06-08_progress-factory-approval-overflow-fix]]
   - createdAt: 2026-06-08 14:40
   - app: progress
