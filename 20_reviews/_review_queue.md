@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-08_progress-factory-eligibility-fix]]
+  - createdAt: 2026-06-08 13:36
+  - app: progress
+  - project: progress / EpicカードのFactory対象外誤判定 修正
+  - priority: high
+  - summary: URL一覧Epic・動作確認TodoページEpicが画面で「Factory対象外」になる原因を特定し修正。実データ(epics.jsonのfactoryEligible:true/autonomous/riskFlags:[deploy])は正しく、evaluateFactoryEligibility(lib/epic-contract.ts)がriskFlags(deploy)/approval_required/pending/blocked/構造不備を全てeligible=false=「対象外」に畳み込む表示ロジックが原因(deployはFACTORY_BLOCKING_RISK_FLAGSのハード除外)。判定を3区分(excluded=factoryEligible false/manual/構造不備, approval=riskFlags/approval_required/pending/blocked, auto=他)に再設計。riskFlagsは「要承認」としてFactory管理対象に残す。eligible(実行ゲート)はautoのみtrueでfactory-dispatch/runner/auto-resumeの自動実行ガードは厳格維持=安全性不変。表示は主バッジ(Factory対象/対象外)+副バッジ(要承認/自律実行可)、describeFactoryで文言統一。変更9ファイル(型/判定/一覧/詳細/おすすめ一覧/詳細/インポート/store/preview型)。tsc0err/build成功/eslint0err/dev3019でHTTP200・対象2件が⚙Factory対象+🛡要承認・詳細対象外表示0を確認。データ補正不要(既にtrue・データ未変更)。git commit/pushは作業ツリーに無関係WIP多数のため保留(ユーザー判断・9ファイル選択commitコマンドをレビューファイルに記載)。pm2本番3010は要restart。確認観点=表示緩和後もdeploy系が承認なし自動実行されない経路保証/区分定義(manual=excluded,approval_required=approval)妥当性/preview後方互換fallback/commit保留判断の妥当性。
+  - result: 
+
 - [ ] [[2026-06-08_yomi-ai-human-review-ui]]
   - createdAt: 2026-06-08 10:53
   - app: mahjong
