@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-08_progress-factory-approval-overflow-fix]]
+  - createdAt: 2026-06-08 14:40
+  - app: progress
+  - project: progress / Factory承認過多の解消（deploy=注意扱い）
+  - priority: high
+  - summary: 「承認待ち/要承認」過多を解消。原因は前段修正(runId 20260608-133645)でriskFlagsを1つでも持てば一律「要承認」にしていたこと(deploy含む)。riskFlagsを2分割: APPROVAL_RISK_FLAGS(billing/production_db/auth_secret/migration/destructive/external_publish=要承認)とCAUTION_RISK_FLAGS(deploy=承認不要・注意のみ)。evaluateFactoryEligibilityを4概念に分離(factoryManaged=工場処理可/approvalRequired=人間承認要/riskLevel=none|caution|approval/displayBadge=describeFactory)。deploy単独→eligible=true(auto)+⚠デプロイ注意。危険6フラグ→要承認。autonomous+factoryEligible:true+危険なし→auto。manual→対象外。eligible(実行ゲート)はautoのみtrueで危険フラグはブロック維持。変更6ファイル(型/判定/一覧/詳細/作成フォーム/インポート)。tsc0err/build成功41-41/eslint0err/dev3019でHTTP200・/epic要承認0件・対象2件が⚙Factory対象+✅自律実行可+⚠デプロイ注意・詳細対象外0要承認0。合成11ケースで全分岐確認。既存データ補正なし(2件は元から正しい・誤判定はロジック由来)。AI工場オペセンEpicはdoneCriteria/priority未設定で正しく対象外(捏造補正せず)。git commit/pushは無関係WIP混在のため保留(前タスク9+本6=15ファイル選択commit推奨)。pm2本番3010は要restart。確認観点=deploy格上げの安全性/危険6フラグの自動実行ブロック保証/フラグ分類の線引き妥当性/riskLevel3段の十分性/未知フラグのフェイルセーフ/commit保留判断。
+  - result: 
+
 - [ ] [[2026-06-08_progress-factory-eligibility-fix]]
   - createdAt: 2026-06-08 13:36
   - app: progress
