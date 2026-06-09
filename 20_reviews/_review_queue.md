@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-09_app-urls-vps-public-url]]
+  - createdAt: 2026-06-09 01:30
+  - app: progress
+  - project: progress / URL一覧をiPhone確認用のVPS公開URL形式に修正（Epic完了）
+  - priority: medium
+  - summary: /vloopでEpic epic-url-iphone-vps-urlを完了まで消化。直前作業(20260608-235115)はlocalhostを一律blockedにしただけで「VPS稼働アプリを公開IP160.251.143.146:<port>/<path>形式で登録」が未達だった点を補完。ss/curl/pm2で実測: 公開IP=160.251.143.146、0.0.0.0 LISTEN=3000(NetScope)/3010(progress)/8080/8888(NetScope docker)、3030(Scrape Lab)未起動、公開IP直curlで全200応答確認。lib/app-urls.tsにvps_internal種別追加(公開IPはok/localhostはvps_internalでblocked)、AppUrlsBoardにVPS内部URLラベル追加・vps=VPS公開URLにリネーム。data/real/app-urls.jsonにprogress/NetScopeの公開IP主URL登録+localhost内部格下げ+memo更新、epics.jsonでepic-url-iphone-vps-urlをdone/100。tsc0/lint0/build成功。pm2 restart progressでlive /app-urls反映確認(公開IP URL7件・iPhone確認URL/VPS内部URL/iPhone直接不可バッジ)。分類=iPhone確認OK2(progress/NetScope)/直接不可1/未確認9。commit c50faa9 push済(d5a8977..c50faa9)。data/realは運用データでコミット対象外(ライブ反映済)。確認観点=公開IP直載せ方針(HTTPS/リバースプロキシ要否)/confirmed(バインド)とremainingWork(外部FW)の粒度/vps・vps_internal分離設計/data/realコミット対象外運用。
+  - result: 
+
 - [ ] [[2026-06-08_app-urls-iphone-view]]
   - createdAt: 2026-06-08 23:51
   - app: progress
