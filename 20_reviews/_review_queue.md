@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-09_news-app-vault-sync-fix]]
+  - createdAt: 2026-06-09 20:47
+  - app: news-app
+  - project: news-app / 市場調査ビューのVault更新停止を調査・修正
+  - priority: high
+  - summary: news-appの市場調査ビューがVault(06-09まで更新済)を反映せず2026-05-27で停止して見える問題を調査・修正。停止箇所2点=(1)研究ビュー機能一式(force-dynamic/ステータスバー/RescanButton/vault.tsライブルート参照/topic・tag・todoページ/structured parser/summary.ts)が前回セッションで実装されたまま未コミット→Vercel未反映 (2)同梱content/researchが05-27で凍結しVault本体を持たないVercelはfallbackで古い日付しか出せない。修正=scripts/sync-research-content.mjs追加(破壊削除なし/dry-run)で55ファイル同期(05-27→06-09)、package.jsonにsync:research/prebuild追加で再凍結防止、未コミット機能含めcommit 7328f42 push。検証=tsc0/build成功/next start実画面でrootKind=Vault本体・最新06-09・status=最新を確認。Phase4可視化は既存実装で充足済み・今回コミットで本番反映。確認観点=参照先解決の優先順とVercel同梱コピー依存の構造妥当性/prebuildがVercelでexit0する設計(定期コミット前提)/同梱孤立ファイル(--prune未実装)リスク/研究ビュー1コミットpushのスコープ判断。
+  - result: 
+
 - [ ] [[2026-06-09_app-urls-vps-public-url]]
   - createdAt: 2026-06-09 01:30
   - app: progress
