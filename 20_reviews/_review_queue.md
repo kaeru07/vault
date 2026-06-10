@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-10_app-urls-canonical-url-normalize]]
+  - createdAt: 2026-06-10 21:21
+  - app: progress
+  - project: progress / アプリURL一覧 入力URLをcanonical URLに正規化して表示（中断作業の仕上げ）
+  - priority: medium
+  - summary: 前回(commit 3a33325)でURL編集UIを入れた直後に途中で落ちていた「URL正規化」対応を仕上げ。lib/url-normalize.ts新規(normalizeUrlString=スキーム無し→ドメインhttps/IP・localhost http、protocol-relative→https、new URL().hrefでcanonical化、client/server両用純粋関数)。app-urls.tsのnormalizeUrlInputがこれを使用。AppUrlsBoardの入力欄をtype=url→text化しonBlurで正規化、placeholderに自動補完明示。tsc0/lint0/build成功、正規化8ケース単体OK、PATCH実機で160.251.143.146:3010/app-urls→http補完を確認。commit 0d2d730 push。注意: PATCH実機テストを本番data/realに投げ置換セマンティクスでprogressエントリurls配列を上書き→観測事実(pm2/ss/curl)から3件復元(バックアップ機構なし、evidenceDetail細部は要UI確認)。確認観点=スキーム推定の妥当性/onBlur正規化UX/data/real直書き+バックアップ無しの運用リスク。
+  - result: 
+
 - [ ] [[2026-06-10_progress-app-urls-user-edit]]
   - createdAt: 2026-06-10 12:31
   - app: progress
