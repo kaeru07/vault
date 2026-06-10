@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-10_yomi-source-validation]]
+  - createdAt: 2026-06-10 22:01
+  - app: mahjong
+  - project: mahjong / /yomi 原本再現性の検証(sourceValidation)
+  - priority: high
+  - summary: /yomi が問題データを表示しているだけで原本再現性の保証が無い問題に対し、原本(牌譜JSON/原本画像書き起こし)とアプリ表示の差異を14項目(プレイヤー位置/自風/場風/河枚数/河順序/手牌枚数/鳴き内容/鳴き位置/ドラ/巡目/点数/リーチ有無/放銃者/和了者)で突き合わせるsourceValidation層を追加。各項目をmatch/mismatch/missing/unknown判定し一致率とstatus(exact/partial/failed)を算出。failed=致命項目(和了者・放銃者・巡目)不一致or一致率<0.5。比較エンジンyomi-source-validate.mjs(compareToOriginal/formatDiffReport)、取り込み統合(ingest-yomi --original で差分failedのS/Aを隔離・差分レポートをdata/source-validation/に生成)、単体CLI yomi-source-report.mjs、検証ゲート(validate-yomiがfailed+S/Aを弾く)、/yomi/reviewに一致率バッジ+差分パネル、docs追記。差分例(上家河12→8/下家鳴き欠落/自風不一致)を実テストで再現。tsc0/build成功/validate-yomi(正本10問)PASS。commit 89dd84e push。確認観点=14項目の粒度と抜け(役/打点/供託は対象外で良いか)/status閾値設計/missingとunknownの切り分け/手牌枚数検証設計/原本JSON運用の現実性。
+  - result: 
+
 - [ ] [[2026-06-10_app-urls-canonical-url-normalize]]
   - createdAt: 2026-06-10 21:21
   - app: progress
