@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-11_ai-factory-os-v2-strategy]]
+  - createdAt: 2026-06-11 00:10
+  - app: progress / company-meta
+  - project: AI工場OS v2（運用モデル戦略レビュー）
+  - priority: high
+  - summary: CTO/PMO/AI工場OS設計者としての運用モデル戦略レビュー（コード実装なし）。実データ確認でgoals.jsonが空(0 Goal/mainGoal null)・Epic.goalが外部キーでなく自由文・候補3ストリーム(recommended20/app5/monetization)未統合・factoryEnabled=false(自走停止)を特定。根本原因=Goal層が空で全Epicが横並び→人間が毎セッション事実上のプライオリタイザ=同期ブロッカー化。提案: Goal層を埋める(3〜5+北極星)/Epic.goalId必須化/承認をインライン→毎日5〜15分の非同期バッチキューへ/候補をGoal-scored単一backlogに統合+WIP制限/完了→Knowledge→次Epic生成ループの閉鎖/factory段階ON。Progressホーム表示TOP10・OS v2中核データモデル(Goal-Epic-Project-ExecutionRun-Review-Knowledge)・Codex実装TOP10・最優先TOP3・30日計画を整理。本体=06_research/2026-06-11_ai-factory-os-v2.md。確認観点=Goal個数/寿命/達成判定の妥当性・承認非同期バッチで本当に5〜15分に収まるか・候補統合スコアリング・WIP制限の機会損失・factory段階ONの前提十分性。
+  - result: 
+
 - [ ] [[2026-06-10_yomi-source-validation]]
   - createdAt: 2026-06-10 22:01
   - app: mahjong
