@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-11_ai-factory-os-v2-ops-review]]
+  - createdAt: 2026-06-11 01:33
+  - app: progress / company-meta
+  - project: AI工場OS v2（運用レビュー・v2実装後フォロー）
+  - priority: high
+  - summary: v2実装完了後の運用レビュー10項目（ボトルネック/自走率95%/Goal運用/Next Epic生成/収益化/ホーム情報/人間介在/factoryEnabled/90日後/v3設計）。実データで最大ボトルネック=Review工程を特定（67run中65件not_reviewed・Knowledge1件→Review→Knowledge→Next Epicループが実質1回しか発火していない）。候補20件suggested滞留・意思決定ログ0行・Goal metric計測値なし・収益流入経路なしも確認。提案=AI一次レビュー導入(人間はneeds_humanのみ)/未レビュー滞留によるFactory WIP制限/人間タスクレーン分離+BirdLog収益貫通テスト最優先/metric自動計測/North Starを収益側へ移す再考/v3=計測レイヤ(アプリ別P/L・reviewer agent正式化)。調査中にprogress API全404(6/11 01:17不完全ビルド)を発見しFactory停止状態を再ビルド+restartで復旧。確認観点=AI一次レビューの信頼条件・WIP閾値・貫通優先vs幅出しのバランス・North Star変更の副作用。
+  - result: 
+
 - [ ] [[2026-06-11_ai-factory-os-v2-strategy]]
   - createdAt: 2026-06-11 00:10
   - app: progress / company-meta
