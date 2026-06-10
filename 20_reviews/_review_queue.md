@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-11_review-backlog-pipeline]]
+  - createdAt: 2026-06-11 02:25
+  - app: progress
+  - project: AI工場OS v2（Review滞留解消パイプライン）
+  - priority: high
+  - summary: Review滞留65件の解消実装。ルールベースAI一次レビュー(8ルール→reviewed/needs_human/partial/failed 4分類・理由をreviewMemo+aiReviewに保存)、直近10件一括処理API+ホームUI、Factoryバックプレッシャー(not_reviewed>10で減速maxRuns=1/>20で起動スキップ・factoryEnabled不変・automation-log記録)、Metrics8項目(closed_loop_rate等)ホーム表示、Decision Log拡充(approve/reject/assignGoal/changePriority/markReviewed/pause/drop/factory pause・resume/goal_adjust)、Human/AI Queue分離。needs_human承認決定はRunのreviewStatusへ反映しループ閉鎖。実測: 2バッチ20件処理でclosed_loop_rate 1.5%→23.5%・Knowledge 1→15件・needs_human 1件(Vercel本番反映)がHuman Queue表示。tsc0/lint0/build成功・既存68run保持。commit 562623f push済。確認観点=clean_completed誤判定リスクとサンプリング頻度/閾値10・20の妥当性/reviewed毎のNext Epic候補自動生成の是非(suggested 20→34件増)/危険キーワード5系統の抜け/Decision Log粒度。
+  - result: 
+
 - [ ] [[2026-06-11_ai-factory-os-v2-ops-review]]
   - createdAt: 2026-06-11 01:33
   - app: progress / company-meta
