@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-10_progress-app-urls-user-edit]]
+  - createdAt: 2026-06-10 12:31
+  - app: progress
+  - project: progress / アプリURL一覧をユーザー編集可能にする
+  - priority: medium
+  - summary: progressのアプリURL一覧(/app-urls)が読み取り専用だったため、画面からURLを手入力・追加・削除・保存できるようにした。lib/app-urls.tsにwriteAppUrls/normalizeUrlInput/applyAppUrlEdit追加(手入力URLはconfidence=documented・evidence=ユーザー入力で正規化、kind/confidenceは許可値のみ、url/label空行は破棄、既存メタは保持)。app/api/app-urls/[appId]/route.tsにPATCH新設(urls配列置換、404=app不在/400=不正body)。AppUrlsBoardのAppCardに「✏️ URL編集」UI(kind選択/ラベル/URL入力/行追加削除/保存PATCH→router.refresh/キャンセル/エラー表示)、保存後iPhone到達性を自動再判定。tsc0/lint0/build成功。一時データ複製(port3099)でE2E確認(編集ボタン/PATCH success/既存メタ保持/新規ユーザー入力既定/total12不変/不在404)、実データ未変更。pm2 restart progressで本番3010反映確認。commit 3a33325 push。確認観点=urls丸ごと置換設計/手入力正規化既定値/data/real直書き安全性/URL形式バリデーションをtype=url依存にした点。
+  - result: 
+
 - [ ] [[2026-06-09_news-app-vault-sync-fix]]
   - createdAt: 2026-06-09 20:47
   - app: news-app
