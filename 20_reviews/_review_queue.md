@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-11_progress-operations-guide]]
+  - createdAt: 2026-06-11 12:47
+  - app: progress
+  - project: AI工場OS v2（運用理解・自己説明UX）
+  - priority: high
+  - summary: 📖運用タブ(/guide)新設。初見5分理解を目標に8セクション(このアプリとは/今日の流れ朝夜図解/AI工場の流れ+ボトルネック動的表示/今日やること動的生成+予想時間/用語辞典TERMS連動/現在の工場状態/収益化ロードマップ/FAQ5問)。最終更新フッターはdocs/operations/current-operating-model.md frontmatterから動的表示。BottomNav6タブ化。セット更新ルール(機能追加/UI変更/運用変更→運用ページ・用語・図・doc同時更新)をdoc+CLAUDE.local.mdに明文化。tsc0/lint0/build成功/iPhoneビューポートスクショ3枚(attachments/screenshots/)。実測=レビュー待ち51件ボトルネック警告・今日やること4件約4分。commit 164c736 push済。確認観点=8セクションの分量/ボトルネック閾値/予想時間1件1分の妥当性/セット更新ルール形骸化防止/TERMS正本一元化。
+  - result: 
+
 - [ ] [[2026-06-11_progress-newux-resume]]
   - createdAt: 2026-06-11 12:08
   - app: progress
