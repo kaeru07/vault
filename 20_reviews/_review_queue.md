@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-12_inbox-tabs]]
+  - createdAt: 2026-06-12 01:33
+  - app: progress
+  - project: AI工場OS v2（Inbox UI改善）
+  - priority: low
+  - summary: Inboxの4区分(今日の判断/レビュー/Epic候補/AI保留)を縦積みからタブ切り替えへ変更。件数バッジ付き(今日の判断のみ赤字)。「今日の判断」タブだけ処理すれば工場は止まらない構成。tsc0/lint0/build成功/各タブ切替スクショ確認。commit 7c8994c push済。確認観点=タブ化で②③④に気づきにくくなるリスク/デフォルトタブの妥当性。
+  - result: 
+
 - [ ] [[2026-06-12_factory-stop-policy-change]]
   - createdAt: 2026-06-12 00:57
   - app: progress
