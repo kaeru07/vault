@@ -4,7 +4,7 @@ type: vault-todo-by-project
 issue: kaeru07/vault#80
 relatedIssues: [kaeru07/vault#74, kaeru07/vault#76, kaeru07/vault#77, kaeru07/vault#78, kaeru07/vault#79, kaeru07/vault#70]
 created: 2026-05-24
-updated: 2026-05-30 (vloop #91 反映)
+updated: 2026-05-25 (vloop11)
 status: active（vloop ごとに更新 / 本ページが正本）
 tags: [入口, ToDo, 案件別, 正本]
 ---
@@ -76,16 +76,6 @@ tags: [入口, ToDo, 案件別, 正本]
 |---|---|---|---|---|
 | — | 収益化 | Hermes Agent 最小運用フロー実行（candidate-001 approved 後）| blocked（candidate-001 承認待ち）| 承認後に着手 |
 
-## 6. 🏭 AI工場オペレーションセンター（Issue #91）
-
-| 優先 | 案件 | ToDo | 状態 | 次の 1 アクション |
-|---|---|---|---|---|
-| — | AI工場 | #90 前段完了内容と #91 本文を確認し、承認不要範囲 / 承認待ち範囲を Vault 正本へ反映 | **done**（vloop 2026-05-30 / [[2026-05-30_issue-91-ops-center-next-phase]]） | D セクションへ移動 |
-| — | AI工場 | executor 抽象（claude / codex / manual / other）と automation readiness を Progress `/operations` に read-only 実装 | **done**（vloop 2026-05-30 / [[2026-05-30_ai-factory-automation-mvp]]） | D セクションへ移動 |
-| — | AI工場 | Approval Queue生成 / Decision Log読み戻し / ExecutionRun nextActions→pending_approval生成 | **done**（vloop 2026-05-30 / [[2026-05-30_ai-factory-automation-phase2]]） | D セクションへ移動 |
-| **A-6-1** | AI工場 | executor blocked 時に Approval Queue生成APIを呼ぶ導線 | open（承認不要範囲 / 自動実行開始なし） | 次回 vloop で実装 |
-| **A-6-2** | AI工場 | pending_approval ToDoをモバイルで approve / hold / reject しやすくする | open（承認不要範囲） | 次回 vloop でUI改善 |
-
 ---
 
 # B. あなた確認待ち（user_check / Claude 完了済 / あなたの確認で前進）
@@ -120,9 +110,6 @@ tags: [入口, ToDo, 案件別, 正本]
 - [ ] **Hermes Agent 公式仕様確認**（[[../06_research/hermes-agent-codex-組み込み検討]] §9）→ 採用判断 OK / NG
 - [ ] **候補-005 pending_approval 昇格判断**（resources 4 ファイル完備）→ 昇格する / hold
 - [ ] **candidate-005 ChatGPT 承認待ち.md への追加判断**（pending_approval 昇格後）→ Claude が追加 / 追加しない
-- [ ] **#91 自動起動トリガ承認**（VPS 起動時 / 毎朝 11:00 / Claude 上限回復後）→ 実装する / hold
-- [ ] **#91 pm2 / cron / systemd 実操作承認** → 実操作する / 設計のみ継続
-- [ ] **#91 外部公開・認証情報利用を伴う連携承認** → 実装する / hold
 
 ---
 
@@ -134,12 +121,6 @@ tags: [入口, ToDo, 案件別, 正本]
 
 - **Vaultの見方ガイド簡略化**（1 分索引 + 最新候補状況 + 分割方針追加 / 破壊的削除なし）
 - **全 .md 横断「存在しないパス案内」grep 検査**（185 件検出 / カテゴリ A-F 分類 / 06_research/2026-05-25_broken-links-検査結果.md）
-
-## 2026-05-30 vloop 完了分（次回 vloop で [[完了ToDoログ]] へ移動）
-
-- **Issue #91 実行境界の Vault 正本反映**（#90 前段完了確認 + #91 本文確認 + 承認不要 / 承認待ち境界を [[2026-05-30_issue-91-ops-center-next-phase]] に固定）
-- **AI工場自動化 MVP / executor 抽象実装**（Claude/Codex 固定を避け、Progress `/operations` に automation readiness / executor / handoff 状態を read-only 表示）
-- **AI工場自動化 Phase2**（Approval Queue生成API / Decision Log context API / nextActions→pending_approval生成API / handoff生成ビュー）
 
 ## vloop10 完了分（次回 vloop11 で [[完了ToDoログ]] へ移動 → vloop11 で実施済）
 

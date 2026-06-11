@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-11_progress-newux-resume]]
+  - createdAt: 2026-06-11 12:08
+  - app: progress
+  - project: AI工場OS v2（新UX・人間用司令塔）
+  - priority: high
+  - summary: 09:13頃に中断した新UX実装を再開・完成。ホーム=司令塔(今日やること/AI工場状態/収益マイルストーン/直近の成果)、/decide=Inbox統合(承認/orphan Epic目標紐付け/おすすめ承認/needs_human確認+AI一括確認)、/portfolio・/revenue新設、BottomNav5タブ化、旧ホームは/legacy/homeへ無削除退避。lib/command-center.tsで既存データから都度算出(新正本なし・用語を人間語翻訳)。Goal Mapping移行(goals.json 4 Goal/North Star=goal-ai-factory-os/Epic10件goalId付与)とKnowledge loop基盤も同梱。tsc0/lint0/build成功/全新ルート200/pm2反映。commit 679467f push済。確認観点=司令塔の情報設計(5〜15分に絞る取捨選択)/Inbox4種別の十分性/Legacy退避移行のリスク/収益マイルストーンのハードコード判定/1コミット同梱判断の是非。
+  - result: 
+
 - [ ] [[2026-06-11_review-backlog-pipeline]]
   - createdAt: 2026-06-11 02:25
   - app: progress

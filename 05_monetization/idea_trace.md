@@ -4,9 +4,9 @@ type: monetization-idea-trace
 issue: kaeru07/vault#63
 relatedIssues: [kaeru07/vault#60, kaeru07/vault#61, kaeru07/vault#62]
 created: 2026-05-24
-updated: 2026-05-29
+updated: 2026-05-24
 status: active（vloop ごとに更新）
-tags: [idea, source, candidate, prototype, trace, research-os]
+tags: [idea, source, candidate, prototype, trace]
 ---
 
 # idea_trace — 全アプリ案の情報源・着想理由・採用判断
@@ -39,7 +39,7 @@ tags: [idea, source, candidate, prototype, trace, research-os]
 
 ---
 
-## 案カード一覧（15 件・§1-10 = Epic B 由来 / §11-15 = 市場調査 Research OS 由来 2026-05-29 追加）
+## 案カード一覧（主要 10 件・vloop2 で N-03 / N-04 追加）
 
 ### 1. 🟡🆓 candidate-001: 何切るAI（mahjong + AI 解説 Web）
 
@@ -214,109 +214,11 @@ tags: [idea, source, candidate, prototype, trace, research-os]
 
 ---
 
-## 市場調査由来の案（news-app Research OS / 2026-05-26〜27）
-
-> [!note] 新しい情報源チャネル: 構造化市場調査（Research OS）
-> Hermes の市場調査ログ（[[../06_research/daily-market-research/2026-05-27]] / [[../06_research/daily-market-research/2026-05-26]]）を news-app の **Research OS** が「1 トピック = 1 カード」の構造化 Topic として解析する。各 Topic は topicId / 種別 / 重要度 / 確度 / sourceType / 既存PJへの影響 / **ToDo化** を持ち、`/research/topic/[id]`・`/research/tag/[tag]`・`/research/todo-candidates` で横断できる。
-> ここではその Topic から派生したアプリ案を **idea（案）段階**で登録する（candidate / approved にはしない。判断は次サイクル + ChatGPT 承認ゲート）。
-
-### 11. 🔵🆓 Indie App ASO Monitor（ストア順位・説明文・レビュー監視）
-
-| 項目 | 内容 |
-|---|---|
-| 状態 | idea（市場調査由来 / candidate 化は次サイクル判断） |
-| 情報源タイプ | 市場調査（Research OS）→ ranking / official |
-| 情報源 | [[../06_research/daily-market-research/2026-05-27]] Topic `google-play-discovery-shift`・`aso-video-subscription-bundle` / [[../06_research/daily-market-research/2026-05-26]] Topic `aso-monitoring-saas`（Research OS: `/research/topic/aso-monitoring-saas`） |
-| 気づき | Google Play の発見導線が Gemini / Play Shorts へ移り、個人開発者は「順位・説明文・レビュー不満」を日次で追う必要が増す。既存 ASO ツールは法人向けで高価 |
-| 採用理由 | Scrape Lab v2 の取得基盤を流用でき、APIなしで成立 / 低価格サブスクの収益導線が明確 |
-| APIなし範囲 🆓 | ストア順位・説明文・スクショ文言・レビュー要約の定点取得（Scrape Lab）/ 差分通知 / ダッシュボード |
-| 有料 API 範囲 💸 | レビュー文の高度な要約に LLM を使う場合（任意・MVP は事前ルールで回避） |
-| 収益化導線 | 個人開発者向け低価格サブスク / note（ASO まとめ） |
-| 試作状況 | なし（Scrape Lab v2 を情報源に流用予定） |
-| 試作リンク | [[../02_apps/scrape-lab-v2]]（情報源パイプライン候補） |
-| 判断履歴 | 2026-05-26/27 市場調査で観測（todoCandidate=yes）→ 2026-05-29 vloop で idea 登録 |
-| 次の判断 | candidate 化するか（Scrape Lab v2 連携 MVP の現実性を次サイクルで確認） |
-| 関連 Issue | #63 / #60(Scrape Lab) |
-
-### 12. 🔵🆓 学習スライド自動投稿メーカー（PDF/メモ → 縦スライド）
-
-| 項目 | 内容 |
-|---|---|
-| 状態 | idea |
-| 情報源タイプ | 市場調査（Research OS）→ ranking / social |
-| 情報源 | [[../06_research/daily-market-research/2026-05-27]] Topic `ai-learning-video-funnel`（`/research/topic/ai-learning-video-funnel`） |
-| 気づき | AI 学習アプリは単体より TikTok / Lemon8 / Play Shorts の縦動画導線と組む方が集客しやすい。素材生成がボトルネック |
-| 採用理由 | 既存の縦動画素材生成（candidate 群と共通）を流用でき、APIなしのテンプレ生成で成立 |
-| APIなし範囲 🆓 | PDF/メモ → 縦長スライド・字幕・投稿文のテンプレ生成 |
-| 有料 API 範囲 💸 | 高度な要約・画像生成に LLM/画像 API を使う場合（任意） |
-| 収益化導線 | 月額/クレジット課金 / Shorts 送客 |
-| 試作状況 | なし |
-| 試作リンク | — |
-| 判断履歴 | 2026-05-27 市場調査で観測（todoCandidate=yes）→ 2026-05-29 vloop で idea 登録 |
-| 次の判断 | nanikiru-shorts の素材生成と共通化できるか確認 |
-| 関連 Issue | #63 / #61 |
-
-### 13. 🔵🆓 AI Study Battle（クイズ生成 + 1v1 学習バトル + 継続記録）
-
-| 項目 | 内容 |
-|---|---|
-| 状態 | idea |
-| 情報源タイプ | 市場調査（Research OS）→ social / reddit |
-| 情報源 | [[../06_research/daily-market-research/2026-05-27]] Topic `ai-learning-commoditized`（`/research/topic/ai-learning-commoditized`） |
-| 気づき | AI 学習アプリは要約・クイズ・カードが横並びで同質化。継続率要因（バトル・習慣化・進捗可視化）を持つアプリが課金に繋がりやすい |
-| 採用理由 | 「生成機能」以外の差別化軸（対戦・習慣化）。何切るアプリの対戦 UI 知見を流用できる |
-| APIなし範囲 🆓 | 事前生成クイズ / 1v1 マッチング / 連続学習記録 / ランキング |
-| 有料 API 範囲 💸 | 動的クイズ生成に LLM を使う場合（任意・MVP は事前生成） |
-| 収益化導線 | 広告 / サブスク（無制限バトル）/ Shorts |
-| 試作状況 | なし |
-| 試作リンク | — |
-| 判断履歴 | 2026-05-27 市場調査で観測（todoCandidate=yes / 確度=低）→ 2026-05-29 vloop で idea 登録 |
-| 次の判断 | 低評価レビュー収集で継続率の痛点を確認してから candidate 化判断 |
-| 関連 Issue | #63 / #61 |
-
-### 14. 🔵🆓 MCP Profile Pack（プロフィール/FAQ/文体を AI へ配るレイヤー）
-
-| 項目 | 内容 |
-|---|---|
-| 状態 | idea |
-| 情報源タイプ | 市場調査（Research OS）→ news / official |
-| 情報源 | [[../06_research/daily-market-research/2026-05-27]] Topic `mcp-context-management`（`/research/topic/mcp-context-management`） |
-| 気づき | AI エージェントに毎回プロフィール/業務文脈を渡す手間の解消に需要。Unabyss 等が登場し企業の MCP 採用も進む |
-| 採用理由 | 個人開発者・小規模チーム向けに markdown を配るだけで成立。progress の作業文脈連携にも応用可 |
-| APIなし範囲 🆓 | プロフィール/商品説明/FAQ/文体の markdown 管理・配布（MCP server） |
-| 有料 API 範囲 💸 | なし（自分の AI ツール側が API を持つ） |
-| 収益化導線 | サブスク（有料文脈レイヤー） |
-| 試作状況 | なし |
-| 試作リンク | — |
-| 判断履歴 | 2026-05-27 市場調査で観測（確度=中）→ 2026-05-29 vloop で idea 登録 |
-| 次の判断 | 権限管理・プライバシー設計の最小要件を整理してから candidate 化判断 |
-| 関連 Issue | #63 |
-
-### 15. 🔵🆓 Agent Cost Logger（Codex/Claude Code/Gemini API ログ・コスト可視化）
-
-| 項目 | 内容 |
-|---|---|
-| 状態 | idea |
-| 情報源タイプ | 市場調査（Research OS）→ official / news |
-| 情報源 | [[../06_research/daily-market-research/2026-05-26]] Topic `agent-dev-cost-logging`（`/research/topic/agent-dev-cost-logging`） |
-| 気づき | Antigravity 2.0 / Managed Agents 等で開発エージェントが急増する一方、実行ログ・費用・失敗理由の可視化は空白 |
-| 採用理由 | progress の作業ログ × コスト可視化の発想を応用でき、APIなし（ログ貼付/取り込み）で成立 |
-| APIなし範囲 🆓 | 実行ログの貼付/取り込み・コスト集計・失敗理由分類・ダッシュボード |
-| 有料 API 範囲 💸 | なし（対象は他ツールのログ） |
-| 収益化導線 | 開発者向け SaaS サブスク |
-| 試作状況 | なし |
-| 試作リンク | [[progress_収益パイプライン設計]]（作業ログ可視化の知見） |
-| 判断履歴 | 2026-05-26 市場調査で観測（todoCandidate=yes）→ 2026-05-29 vloop で idea 登録 |
-| 次の判断 | 対象エージェント 1 つに絞った最小スコープを定義してから candidate 化判断 |
-| 関連 Issue | #63 |
-
----
-
 ## 着想経路の流れ（1 枚図）
 
 ```mermaid
 flowchart LR
-  Source["情報源<br/>HN / Reddit / iTunes / 既存資産<br/>+ 市場調査(Research OS)"]:::done --> Insight["気づき<br/>市場空白・差別化軸"]:::done
+  Source["情報源<br/>HN / Reddit / iTunes / 既存資産"]:::done --> Insight["気づき<br/>市場空白・差別化軸"]:::done
   Insight --> Idea["案<br/>(自動生成された案プールに登録)"]:::done
   Idea --> Score["上位抽出<br/>収益化6軸スコア"]:::done
   Score --> Candidate["有力候補<br/>(ChatGPT 方向性レビュー待ち)"]:::user
