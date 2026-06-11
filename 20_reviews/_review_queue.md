@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-11_inbox-six-decision-types]]
+  - createdAt: 2026-06-11 21:15
+  - app: progress
+  - project: AI工場OS v2（社長向け意思決定アプリ・Inbox 6分類）
+  - priority: high
+  - summary: Inboxの分類軸を「タスクの種類」→「人間が何を判断するか」へ再設計。6分類=検収[問題なし/修正する/あとで]/実行許可[進める/あとで/やめる]/方針選択[目標名ボタン/不要]/人間作業[完了した/あとで/不要]/危険判断[許可する/許可しない]/AI保留(カード非表示・「AI保留55件 AIが整理中です」のみ)。優先順=危険判断→検収→方針選択→実行許可→人間作業で最大3件約3分。AI保留自動退避(定期実行/内容不足/重複/同テーマ大量候補は各テーマ1件のみ)。カード本文はラベル付き説明行(AIがやったこと/人間がやること/放置すると/影響/選ばないと)。Goal紐付けは目標名ボタン直接選択。ホーム①②③に分類ラベル。fs依存moduleのクライアントimportによるビルド失敗をinbox-labels.ts分離で解消。guide/TERMS/current-operating-model.mdセット更新。tsc0/lint0/build成功/禁止語13種0件/Before・Afterスクショ。commit 97a9741 push済。確認観点=6分類の網羅性/優先順/AI保留退避で重要候補が沈むリスク/「あとで」ローカル動作/完了した=rejected記録の是非。
+  - result: 
+
 - [ ] [[2026-06-11_inbox-decision-app-v2]]
   - createdAt: 2026-06-11 20:39
   - app: progress
