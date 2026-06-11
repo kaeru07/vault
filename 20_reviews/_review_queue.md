@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-11_inbox-president-redesign]]
+  - createdAt: 2026-06-11 19:47
+  - app: progress
+  - project: AI工場OS v2（社長向けUX・今日の判断）
+  - priority: high
+  - summary: Inboxを「今日の判断」(社長向け承認アプリ)に全面リデザイン。カード3分類(作業結果の確認[問題なし/修正する]/次の作業[はい/あとで/やめる]/Goal紐付け[目標選択/不要])に統一、内部概念(ExecutionRun/runId/reviewed/Knowledge/candidate/suggested等)はカード本文表示禁止・「詳細を見る」内のみ。humanizeTitle/humanizeOptionLabelで内部命名除去。ホームは「今日の判断 残りN件 [Inboxを開く]」カードへ。運用ページ・TERMS・current-operating-model.mdセット更新。検証=tsc0/lint0/build成功/可視テキスト禁止語0件/Before・Afterスクショ6枚(attachments/screenshots/)。commit 705f43a push済。確認観点=3分類畳み込みヒューリスティックの頑健性/「あとで」挙動の種別差/詳細内の内部ID開示/はい連打の誤操作対策/humanizeパターンの保守性。
+  - result: 
+
 - [ ] [[2026-06-11_progress-operations-guide]]
   - createdAt: 2026-06-11 12:47
   - app: progress
