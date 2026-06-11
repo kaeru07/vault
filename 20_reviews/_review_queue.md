@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-12_ai-factory-os-design-review]]
+  - createdAt: 2026-06-12 08:57
+  - app: progress
+  - project: AI工場OS v2（全体設計レビュー・実装なし）
+  - priority: high
+  - summary: 社長OSとして成立しているかを10観点でレビュー(実装なし・実データ根拠付き)。総合58点(操作単純化80点台/状況把握40点台)。最大欠落=①Now/Next/Later可視化なし(稼働情報は内部語1行のみ) ②「修正する」押下後の閉ループ欠損(needs_followup6件宙吊り) ③Goal metric手動固定で北極星形骸化 ④メタ候補再帰生成の発生源未対策。レビュー滞留で止めない方針は妥当(前提=AI一次レビュー定期自動実行)。Inbox4分類は適切(欠け=修正依頼の行き先/人間作業の復活条件)。実装TOP10提示(1位=Now/Next/Later、2位=修正依頼閉ループ、3位=AIレビュー自動化)。確認観点=58点の妥当性/TOP10順位/判断空振りリスク評価。
+  - result: 
+
 - [ ] [[2026-06-12_exclude-premature-human-tasks]]
   - createdAt: 2026-06-12 08:32
   - app: progress
