@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-12_exclude-premature-human-tasks]]
+  - createdAt: 2026-06-12 08:32
+  - app: progress
+  - project: AI工場OS v2（今日の判断の精度改善）
+  - priority: low
+  - summary: ストア公開申請・課金/サブスク・AdMob・アカウント登録系の自動生成候補を「今日の判断」から除外しAI保留へ(全アプリ未公開で時期尚早・ユーザー指示)。今日の判断0件=🎉工場稼働継続に。必要時はRevenueロードマップで案内。tsc0/lint0/build成功/スクショ確認。commit b4d65b9 push済。確認観点=人間作業の表示経路喪失リスク/milestone連動の復活条件設計。
+  - result: 
+
 - [ ] [[2026-06-12_inbox-tabs]]
   - createdAt: 2026-06-12 01:33
   - app: progress
