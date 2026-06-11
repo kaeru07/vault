@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-11_inbox-decision-app-v2]]
+  - createdAt: 2026-06-11 20:39
+  - app: progress
+  - project: AI工場OS v2（社長向け意思決定アプリ・今日の判断v2）
+  - priority: high
+  - summary: 今日の判断をさらに社長向けへ強化。タイトルをタスク名→状況文に自動変換(🚨市場調査ビューの自動更新が止まっています 等)、全カードに「放置するとどうなるか」影響1行必須、分類を🚨問題/📈改善/✅確認へ変更、表示3件制限(優先順=問題→確認→Goal未設定→改善)+AI保留40件は件数のみ、上部サマリー(残り3件約3分/AI保留)、ホーム今日やることに①②③見出しリスト+約3分+Inboxを開く。内部ID(epic-xxx)の見出し漏れバグ修正(humanizeTitle強化)。完了済み作業の誤「止まっています」防止(confirm優先判定)。guide/TERMS/current-operating-model.mdセット更新。tsc0/lint0/build成功/禁止語13種0件/Before・Afterスクショ。commit 37f5e55 push済。確認観点=ルールベース変換vsデータ側AI生成headline/impact/優先順の妥当性/AI保留とholdの並存リスク/影響推定が外れた時の害/26文字省略。
+  - result: 
+
 - [ ] [[2026-06-11_inbox-president-redesign]]
   - createdAt: 2026-06-11 19:47
   - app: progress
