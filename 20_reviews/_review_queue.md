@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-12_factory-stop-policy-change]]
+  - createdAt: 2026-06-12 00:57
+  - app: progress
+  - project: AI工場OS v2（工場停止条件の運用方針変更）
+  - priority: high
+  - summary: 工場停止条件を変更。旧=not_reviewed>10で減速・>20で停止 → 新=レビュー件数では止めない(レビュー32件で稼働継続を実測)。停止条件は危険判断待ち(全体停止)/Goal未設定Epic(該当Epicスキップ・全部未設定なら停止)/人間作業(AI対象外・他Epic稼働継続)のみ。Inboxを4セクション化(①今日の判断=停止要因のみ最大3件約3分 ②レビュー=検収・放置可 ③Epic候補=実行許可・放置可 ④AI保留=件数のみ)。ホームは「今日の判断 残りN件」主表示・レビューは参考情報化。入れ子メタ候補(レビュー起点×5重)の内部語漏れ修正+AI保留自動退避。guide/TERMS/current-operating-model.mdセット更新。tsc0/lint0/build成功/禁止語0件/スクショ3枚。commit e9d6ce7 push済。確認観点=レビュー無制限滞留のKnowledgeループ停滞リスク/人間作業=項目待ち解釈/検収系をexternal_publishでも停止要因除外する安全性/Goal未設定スキップの静かな放置リスク/メタ候補発生源対策。
+  - result: 
+
 - [ ] [[2026-06-11_inbox-six-decision-types]]
   - createdAt: 2026-06-11 21:15
   - app: progress
