@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-12_ai-factory-os-review-top10]]
+  - createdAt: 2026-06-12 21:24
+  - app: progress
+  - project: AI工場OS v2（運用設計レビュー+Codex実装TOP10）
+  - priority: high
+  - summary: Fable5が10観点レビュー(総合72点)、不足TOP10をCodexが全件実装し本番反映完了。①修正依頼閉ループ(needs_followup→followupOfRunId候補生成、6件backfill) ②実行中running表示(30分stale回復) ③Epic候補30日expired ④収益ロードマップrevenue-config.json駆動化(BirdLogハードコード除去) ⑤承認時Goal同時指定 ⑥停止経過日数バンド ⑦アーカイブ閾値300 ⑧request cache ⑨Goal根拠表示 ⑩data-health。tsc/lint/build成功・データ件数保全・pm2再起動後全ページ200・commit 9b85d79 push済。確認観点=followupリンクのEpic notes経由伝搬の脆さ/running stale回復のエッジ/expired30日・archive300の妥当性。
+  - result: 
+
 - [ ] [[2026-06-12_factory-dashboard-redesign]]
   - createdAt: 2026-06-12 09:28
   - app: progress
