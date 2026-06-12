@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-13_progress-review-copy-design]]
+  - createdAt: 2026-06-13 00:11
+  - app: progress
+  - project: レビュー用コピー機能（設計レビュー・実装なし）
+  - priority: high
+  - summary: Fable5が設計レビュー実施。実装すべき・優先度高と判定。必要データの9割がbuildCommandCenter()に集約済みのため低コスト低リスク。確定設計=司令塔ホームに2タップ式コピーモーダル（iOS Safariクリップボード制約対応）/Markdown単独・12,000字バジェット・直近7日窓/既存ビルダー再利用必須/読み取り専用でInboxカード化なし/Legacy取り込み系・AdhocReviewCopyPanelは共存。Codex実装5タスク分解+投入プロンプト作成済み。確認観点=2タップの手数許容/字数バジェット妥当性/レビュー後の戻り道（人間手動起票）で閉ループ十分か。
+  - result: 
+
 - [ ] [[2026-06-12_ai-factory-os-review-top10]]
   - createdAt: 2026-06-12 21:24
   - app: progress
