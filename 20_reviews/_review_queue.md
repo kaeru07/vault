@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-13_progress-review-copy-impl]]
+  - createdAt: 2026-06-13 01:33
+  - app: progress
+  - project: レビュー用コピー機能（Codex実装→Fable検証・本番反映）
+  - priority: high
+  - summary: 設計（20260613-001054）通りにCodexが実装、Fableが検証して本番反映。lib/review-copy.ts（14セクションMarkdown・12,000字バジェット・機密マスキング）/ GET /api/operations/review-copy / 2タップ式モーダル（iOS Safari対応・手動コピーfallback）/ 司令塔ホーム設置 / 運用ドキュメント4点セット更新。tsc・lint・build OK、pm2再起動後ライブAPI 200・実データ3,840字・ホーム表示OK、commit b77c4b7 push済み。残=iPhone実機コピー確認のみ。確認観点=3,840字の情報量過不足/危険・注意が直近10run依存で見逃しないか/2タップUX改善余地。
+  - result: 
+
 - [ ] [[2026-06-13_progress-review-copy-design]]
   - createdAt: 2026-06-13 00:11
   - app: progress
