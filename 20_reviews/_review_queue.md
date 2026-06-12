@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-12_factory-dashboard-redesign]]
+  - createdAt: 2026-06-12 09:28
+  - app: progress
+  - project: AI工場OS v2（計器盤化 再設計・実装なし）
+  - priority: high
+  - summary: 「判断アプリ」から「工場の計器盤」への再設計。12観点評価(◎=判断整理/停止原因、✗=Now・Next・Later/今夜の予定(timer11・14・23時JST非表示)/Goal実測/修正閉ループ/半年持続性)。理想画面=ホーム1画面5分把握。TOP10をROI×難易度で再評価し実装順確定: 第1波(Factory自走可)=Now/Next/Later+今夜の予定・稼働サマリー・内部語人間語化・AIレビュー夜間自動化・メタ候補発生源ガード、第2波(人間確認)=修正閉ループ・進捗%・収益化ラベル、第3波=Goal自動計測・スヌーズ統一。自動実行組込判定付き。確認観点=修正閉ループを第2波に回した判断/Now・Next・Laterの粒度/夜間AIレビューの位置付け。
+  - result: 
+
 - [ ] [[2026-06-12_ai-factory-os-design-review]]
   - createdAt: 2026-06-12 08:57
   - app: progress
