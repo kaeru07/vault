@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-13_inbox-review-full-list]]
+  - createdAt: 2026-06-13 13:46
+  - app: progress
+  - project: Inboxレビュー待ちUI改修（全件表示・消し込み運用）
+  - summary: Fable5が実装＋検証。レビュー待ちの隠れ表示（ほか◯件/処理すると次が出ます・5件截断）と「10件まとめて確認」固定を廃止。レビュー待ちを未消込リストとして全件表示し、各カードに完了日時(YYYY/MM/DD HH:mm)を表示・completedAt(finishedAt→startedAtフォールバック)降順で最新を上に。未確認/要修正/あとで/レビュー済みの件数サマリー＋フィルタ＋50件明示ページング。状態遷移整理=問題なし→reviewed消込(レビュー済みタブに残置・物理削除なし)/あとで→新ReviewStatus snoozed(後回し残置)/修正する→needs_followup(要修正残置)。AI一括整理は未確認全件(サーバ安全上限200件)。guide/operating-model運用ドキュメントもセット更新。tsc0/build成功(48ページ)/lint0/全ページ200/RSCにcompletedAtText89件・reviewCounts・reviewedHistory反映を確認。commit 2dc7134 push済み。残=iPhone実機でフィルタ/ページング/バッジの崩れ確認。確認観点=状態遷移の袋小路有無/snooze追加の影響漏れ/reviewed履歴200件制限の妥当性/AI一括整理全件化の大量書き込みリスク。
+  - priority: medium
+  - result: 
+
 - [ ] [[2026-06-13_auto-execution-queue-design]]
   - createdAt: 2026-06-13 12:50
   - app: progress
