@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-13_auto-queue-resolution-howto]]
+  - createdAt: 2026-06-13 17:47
+  - app: progress
+  - project: 自動実行キュー 候補外の解消手順表示
+  - priority: medium
+  - summary: ユーザー指摘「候補外と出るがどう解消するか分かりにくすぎる」を改善。AutoQueueItem.resolution(how/actionLabel/actionHref)追加、deriveResolution()でstatus別の次アクション案内(review_waiting/waiting_user→Inboxでレビュー/承認(/decide)、blocked→Epic詳細、ai_hold→保留解除、manual対象外→対象に戻す)。control APIにinclude(対象に戻す)追加、/queueに対象に戻すボタン。司令塔トップ「最優先指定中だが候補外」枠と/queueカードに「👉こうすれば動きます」手順＋ボタン表示。運用ページも更新。tsc0/lint0/build(49)/全ページ200。実データでpin済みAI工場オペレーションセンター(review_waiting)に「Inboxでレビューする→/decide」確認。pinはgating非上書き維持。commit f265460 push済。確認観点=status別文言/遷移先の適切さ・includeでfactoryEligible=true復帰の安全性・解消導線の分かりやすさ・カードの情報過多。
+  - result: 
+
 - [ ] [[2026-06-13_auto-queue-pin-reflect-fix]]
   - createdAt: 2026-06-13 16:01
   - app: progress
