@@ -5,6 +5,22 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-13_auto-queue-pin-reflect-fix]]
+  - createdAt: 2026-06-13 16:01
+  - app: progress
+  - project: 自動実行キュー pin反映不具合修正＋運用説明（Codex実装→Fableレビュー）
+  - priority: high
+  - summary: /queueでpinしてもトップの次に反映されない件をCodex修正→Fableレビュー。原因=複合: pin保存は機能していたが(1)pin済みでもreview_waitingで候補外なのにUIが未説明(2)司令塔トップに旧factoryOutlook由来の次/その次が残り食い違い(3)force-dynamic/revalidate不足。修正=トップと/queueをgetAutoQueueView()由来に統一・旧表示撤去、control/goals priority APIでrevalidatePath(/)(/queue)+force-dynamic、AutoQueueViewにpinnedExcluded・各itemにcandidateEligible/candidateBlockedReason追加、トップに「最優先指定中だが候補外」枠・/queueに候補入否/理由/queueScore/pin済み候補外警告、保留をレビューより先にai_hold導出、最優先ボタンを自動実行最優先/復帰時最優先に分岐(pinはgating非上書き)、運用ページにキューの使い方/status/操作意味/安全注意追加。レビュー結論PASS: tsc0/lint0/build(49)/全ページ200。実データでpin済みAI工場オペレーションセンターがreview_waiting・candidateEligible=falseで「最優先指定中だが候補外(レビュー待ち)」表示を確認。Codexのcontrol APIテストで実epics.jsonにhold=true副作用(BirdLog/progress-todo)→Fableがunhold復旧。commit 3a4ff67 push済。確認観点=pin非上書き仕様で不満解消十分か/保留先行導出の副作用/revalidate範囲/テストが実データ汚染した運用問題。
+  - result: 
+
+- [ ] [[2026-06-13_factory-schedule-add-16]]
+  - createdAt: 2026-06-13 15:36
+  - app: progress
+  - project: Factory定時自動実行に16:00 JST追加
+  - priority: medium
+  - summary: ユーザー依頼でFactory定時自動実行に16:00 JSTを追加(11/14/16/23)。/etc/systemd/system/factory-schedule.timerのOnCalendarに16:00を1行追加→daemon-reload+timer再起動→list-timersで次回Sat 16:00発火・active+enabled確認。UIの定時表示が読むrepo正本docs/factory-schedule/factory-schedule.timerも11/14/16/23へ同期(従来docsは11/23のみで14欠落も補正)。README定時表記・operating-model変更履歴更新。各定時はrunScheduledFactoryの安全ゲート(factoryEnabled/Blocked/二重起動lock)経由で無条件起動ではない。commit 1eb1ddf push済。確認観点=4回/日の頻度妥当性/安全ゲート経由確認/repo docsと/etc実体の二重管理。
+  - result: 
+
 - [ ] [[2026-06-13_auto-execution-queue-mvp-codex]]
   - createdAt: 2026-06-13 15:01
   - app: progress
