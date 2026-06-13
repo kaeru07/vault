@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-13_review-fix-prompt]]
+  - createdAt: 2026-06-13 23:48
+  - app: progress
+  - project: Inboxレビュー「修正する」修正指示プロンプト→次回自動実行反映
+  - priority: high
+  - summary: Codex実装→Fableレビュー。「修正する」を修正依頼ボックス化。押下時カード内textarea展開→保存でreviewStatus=needs_followup＋ExecutionRunにfixPrompt/fixRequestedAt/fixRequestedBy=human保存(reviewMemoにも反映)、空欄は警告。要修正カードに修正指示表示。buildFollowupRecommendationでfixPromptをreason冒頭(人間の修正指示:)・doneCriteria先頭(人間の修正指示を満たす:)・notesに反映、既存候補も更新パスで反映→承認後Epic/Factory実行時に人間指示が作業指示に。問題なし/あとで/レビュー済み・物理削除なしは不変。検証PASS: tsc0/lint0/build成功(50)/全ページ200、実needs_followup run(20260608-140533)へのPATCHでfixPrompt保存＋followow候補反映をe2e確認し検証後テストデータ消去。commit f5214fb push済。確認観点=保存先をrunにした判断/recommendation経由(承認必須)で『優先的に拾う』要件充足か・dispatch本文直接注入の要否/空欄ブロック・キャンセル状態不変の回帰/後編集UIの要否。
+  - result: 
+
 - [ ] [[2026-06-13_monetization-daily-ingestion]]
   - createdAt: 2026-06-13 22:57
   - app: progress
