@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-13_auto-execution-queue-design]]
+  - createdAt: 2026-06-13 12:50
+  - app: progress
+  - project: 自動実行キュー管理（Auto Execution Queue 設計・実装なし）
+  - priority: high
+  - summary: Fable5が設計のみ実施。司令塔トップが未整理/低関連案件（野鳥観察系）を先頭に出す問題の根本原因を「work-queue.json と Epic Contract の二重正本」と特定。確定方針=Epic(実行正本)/Goal(優先度の親・配下へboost伝播)/Project(表示軸)/ExecutionRun(履歴正本)、自動実行キューは新正本を作らず buildAutoQueue() の派生ビュー、ユーザー手動操作のみ Epic.queueControl/Goal.priorityBoost に書き戻す。Goal vs item優先度の矛盾=加点(floor boost)方式（pin>Goal pin>priority+boost）、gating=item単位で全体を止めない、review_waitingはP2・危険なしなら工場継続、Inbox未整理はキュー非投入、waiting_user(人間が動かないと永久停止)とai_hold(AI再開可)を分離。15成果物+Codex仕様書(§14)+プロンプト(§15)+受け入れテスト1〜9。MVP=buildAutoQueue/トップ表示元差し替え/queue画面4操作/reason生成/Inbox除外。確認観点=Epicを実行正本にする移行リスク/加点方式の穴/item単位gatingで永久未着手itemが出ないか/ai_hold自動再開条件の曖昧さ/Codex仕様の実装可能粒度。
+  - result: 
+
 - [ ] [[2026-06-13_progress-review-copy-impl]]
   - createdAt: 2026-06-13 01:33
   - app: progress
