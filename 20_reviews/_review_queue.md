@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-14_inbox-goal-scope-deeplink]]
+  - createdAt: 2026-06-14 02:12
+  - app: progress
+  - project: Inboxゴール紐づけ＋次回実行予定→該当レビュー直接遷移
+  - priority: high
+  - summary: Codex実装→Fableレビュー。司令塔トップ「Inboxでレビューする」が/decide固定でInboxTabsがURLクエリ未対応・今日の判断0件に飛んで詰まるバグを修正。InboxTabsをuseSearchParams対応(tab/reviewFilter/filter=needs_followup/focusRunId/goalId)、focusRunIdで該当カードへスクロール+ハイライト+「次回実行予定から移動しました」+状態に応じフィルタ自動切替。goalIdを変換レイヤーで付与(run.epicId→Epic.goalId→targetApp→unassigned・未紐づけは消さず表示/絞り込み可)。ゴール件数をInboxと同一ソースで集計。deriveResolution遷移先を/decide?tab=...&goalId=...&focusRunId=...に修正(0件today禁止)。次回自動実行予定カードにGoal名/候補外理由/こうすれば動きます/該当レビュー・Goalレビュー一覧・キュー調整。0件タブで同Goal他タブ件数あれば案内。検証PASS: tsc0/lint0/build成功、resolution href=review tab確認、/decide?tab=reviewでレビュータブ35件・goalId絞り込み35→17・focusRunIdハイライト案内を確認、goalIdはgoal-ai-factory-osに正割当。reviewed/snoozed/needs_followup回帰なし。commit d582a50 push済。確認観点=goalId推定順の妥当性/誤割当リスク・SSRとクライアント初期表示ズレ・focus対象の可視保証・ゴール件数とInbox件数一致・0件相互案内UX。
+  - result: 
+
 - [ ] [[2026-06-13_review-fix-prompt]]
   - createdAt: 2026-06-13 23:48
   - app: progress
