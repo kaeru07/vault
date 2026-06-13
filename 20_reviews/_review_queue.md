@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-14_fixprompt-dispatch-reflect]]
+  - createdAt: 2026-06-14 08:52
+  - app: progress
+  - project: 修正依頼(fixPrompt)が次回自動実行に反映されるか確認テスト＋修正
+  - priority: high
+  - summary: ユーザー依頼「保存した修正依頼が本当に自動実行で再修正に使われるか確認テスト」。テスト結果=反映されていなかった(欠落特定)→修正→再テストで反映確認。原因: fixPromptはrun→followow候補→(承認で)epic.remainingWorkまで流れるが、Factory Dispatchプロンプト(generateClaudeFactoryPrompt/generateCodexPrompt)はepic.goal/doneCriteria/ExecutionRun由来nextActionsのみ参照しremainingWork/fixPromptを読まないため次回自動実行に乗らなかった。修正: buildDispatchPlanにhumanFixInstructions(当該Epicのneeds_followup Run fixPrompt＋承認済みremainingWork修正指示)追加、Claude[3-1]/Codex[4-1]に『人間の修正指示(最優先で対応)』出力、FactoryDispatchPlan型拡張。検証: tsc0/lint0/build成功。修正前=プロンプトに修正指示無し(False)→修正後: (a)GET dispatch?epicId=epic-91でhumanFixInstructions取得 (b)epic-91を一時dispatch可化しclaudeプロンプト[3-1]に修正指示が出ることを確認(True)→epic原状復帰。commit 1a5d275 push済。注意=doneCriteria/priority無Epicはdispatch自体blockedのため修正依頼だけでは自動実行されない(契約必要)。確認観点=収集元の十分性/重複・古い指示混入/承認時doneCriteria掲載の要否/[3-1][4-1]位置文言/プロンプト肥大化。
+  - result: 
+
 - [ ] [[2026-06-14_inbox-goal-scope-deeplink]]
   - createdAt: 2026-06-14 02:12
   - app: progress
