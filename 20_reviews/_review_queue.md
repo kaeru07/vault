@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-13_monetization-daily-ingestion]]
+  - createdAt: 2026-06-13 22:57
+  - app: progress
+  - project: 収益化候補 定期取り込み・調査元可視化（既存実装調査＋日次フォルダ走査拡張）
+  - priority: medium
+  - summary: 事前調査で依頼機能の約9割が既存実装済みと判明（sourceRefs/researchLogs/evidenceLinks/history等のデータ構造、syncCandidatesFromVaultのFactory定時取り込み、重複判定、ExecutionRun記録、/monetization一覧の調査元数・最終調査、/monetization/[id]の調査元一覧・調査履歴・根拠リンク・スコア変更履歴）。「既存に近い機能は新規作成せず拡張」に従い、未走査だった日次調査サブフォルダ(06_research/daily-market-research・daily-ai-news・daily-ai-tools)を走査対象に追加・daily種別分類・上限300→400に拡張のみ実施。検証: tsc0/build成功/手動同期2回でscannedFiles=302・added0updated1→added0updated0(冪等・二重追加なし)・mc-birdlog-001で調査元一覧43件/調査履歴/根拠リンク描画確認。安全ルール順守(候補追加のみ・Epic化/課金/deploy非接触・Vault読み取りのみ)。commit 42692d4 push済。確認観点=新規作成せず既存流用の判断/日次メモが候補名照合しないと付かない限界(エイリアス要否)/302ファイル毎定時走査の性能/daily種別分類の妥当性。
+  - result: 
+
 - [ ] [[2026-06-13_auto-queue-resolution-howto]]
   - createdAt: 2026-06-13 17:47
   - app: progress
