@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-13_auto-execution-queue-mvp-codex]]
+  - createdAt: 2026-06-13 15:01
+  - app: progress
+  - project: 自動実行キュー(/queue) MVP（Codex実装→Fableレビュー）
+  - priority: high
+  - summary: 設計(20260613-125025)の§11 MVPをCodex(gpt-5.2)が実装、Fableが独立レビュー・検証。buildAutoQueue()がEpic/Goal/ExecutionRun/Approval/Inboxから派生(work-queue.json不使用・新正本なし)。WorkItemStatus導出＋queueScore(pin>Goal pin>P0/P1/P2+boost>freshness)＋reason機械生成。司令塔トップの次回自動実行予定を旧work-queueからbuildAutoQueueへ差し替え。/queue(最優先/上下/保留/対象外)＋API3本。旧UIは/legacy/queueへ退避。レビュー結論PASS: tsc0/lint0/build成功(49)/全ページ200。実データ検証で野鳥BirdLog(P1)はwaiting_userに分類され次回候補に出ない=二重正本(野鳥)問題を解消。pin round-tripでpinはgating非上書き(安全)。指摘(非ブロッキング)=manualOrder stickiness(一度並べ替えると新規高優先が沈む)/factoryEligible未設定の分類/goal_todoの危険gating迂回。運用ドキュメント4点セット更新。commit 89fc8b0 push済。残=iPhone実機確認。確認観点=manualOrder採番設計/fe未設定の扱い/goal_todo安全性/pin非上書き/executable=0の空表示UX/MVP範囲。
+  - result: 
+
 - [ ] [[2026-06-13_inbox-review-full-list]]
   - createdAt: 2026-06-13 13:46
   - app: progress
