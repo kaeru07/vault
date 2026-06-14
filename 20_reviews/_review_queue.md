@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-15_review-copy-reviewing-state]]
+  - createdAt: 2026-06-15 01:03
+  - app: progress
+  - project: レビュー用コピー「レビュー中」表示
+  - priority: low
+  - summary: ユーザー要望「レビュー用コピー押したらレビュー中と表示」。ReviewCopyButton.tsxで『全体をコピー』成功時に主ボタンを🔍レビュー中(amber)へ切替、localStorage(reviewCopy:reviewing)保持で画面遷移/再読込でも維持、モーダルにバナー＋『レビューを終了』で解除。operating-model更新。検証: tsc0/lint0/build成功・/ 200・idleはレビュー用コピー表示。commit fd8fc8b push済。確認観点=localStorage保持のUX(端末/タブ間非共有)・自動解除条件(時間経過)の要否・レビュー中対象/時刻の可視化要否。
+  - result: 
+
 - [ ] [[2026-06-15_goalplanner-queue-integration]]
   - createdAt: 2026-06-15 00:14
   - app: progress
