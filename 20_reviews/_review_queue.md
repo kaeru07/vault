@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-14_bottomnav-restructure]]
+  - createdAt: 2026-06-14 10:51
+  - app: progress
+  - project: モバイル下タブ再編・自動実行(/queue)主要タブ昇格
+  - priority: high
+  - summary: ルート棚卸しレビュー(20260614-101321)の最重要指摘=自動実行キュー(/queue)がモバイル下タブに無くiPhone未到達、を実装で解消(ユーザー指示「2をいますぐ」)。BottomNavを ホーム/ToDo(/decide)/Project(/portfolio)/目標(/goal-planner)/自動実行(/queue)/その他(/legacy) の6タブへ再編。orphan回避でRevenue/運用(/guide)/作業予約(/prompt-queue)/動作確認を/legacyハブの新グループ『よく使う(下タブにない主要画面)』へ集約＋旧キュー非正本明記＋ToDo JSON取り込みリンク追加。/queueを自動実行ハブ化(作業予約/実行履歴logs導線)。guide/operating-model更新。登録済み実装タスクpq-mqd3acmp-k0tp3rをcompletedにして定時Factory重複防止。検証PASS: tsc0/lint0/build成功・新下タブ描画・全主要ルート200・/legacyにRevenue/運用/作業予約・/queueハブ導線を確認。commit f4fa2f9 push済。確認観点=6タブ構成とその他ハブ集約のiPhone導線・Revenue/運用を主要から外した是非・自動実行タブのハブ画面化・旧画面廃止優先度。
+  - result: 
+
 - [ ] [[2026-06-14_progress-route-audit]]
   - createdAt: 2026-06-14 10:13
   - app: progress
