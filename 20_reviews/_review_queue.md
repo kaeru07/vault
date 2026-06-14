@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-14_review-fix-auto-priority]]
+  - createdAt: 2026-06-14 17:53
+  - app: progress
+  - project: レビュー「修正する」fixPromptの最優先自動実行（承認不要）
+  - priority: high
+  - summary: ユーザー選択オプション3=レビュー修正プロンプトを承認なしで定時自動実行の最優先で作業する運用を実装(Codex実装→Fableレビュー)。新規runReviewFixDispatch(lib/review-fix-runner.ts)をrunScheduledFactory先頭(Epic factory/Prompt Queueより前)に接続=最優先。対象=needs_followup＋fixPrompt非空(未消化)。安全ゲート=classifyCodexEligibility＋hard-deny(課金/billing/deploy/本番/production/secret/.env/認証/migration/削除/destructive/force)。危険該当は実行せずneeds_followupのままreviewMemoに理由。dry_run=記録のみ/auto+confirm(定時のみ)=getAdapter実起動・成功時のみ元runをreviewedに消化(source=review_fix/followupOfRunIdで重複防止)。cap1〜2。検証PASS: tsc0/lint0/build成功・呼び出し順review-fix→Epic→PromptQueue・pickTargets/安全ゲート読み取り検証。重要発見=ユーザー2件目fixPrompt(Goal Planner統合)は本文に『削除』含みブロック→自動実行されず人手対応、1件目(inboxフィルター)は次回定時で最優先auto実行。auto実adapterはテスト未実施(安全方針)。commit b823fc1 push済。確認観点=承認なし最優先自動実行の暴走防止・hard-denyに一般語『削除』を含む過剰ブロックの是非・消化マーキングの二重実行リスク・実行順とcap。
+  - result: 
+
 - [ ] [[2026-06-14_bottomnav-all-pages]]
   - createdAt: 2026-06-14 13:29
   - app: progress
