@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-15_goalplanner-queue-integration]]
+  - createdAt: 2026-06-15 00:14
+  - app: progress
+  - project: Goal Planner×自動実行キュー データ統合
+  - priority: high
+  - summary: ユーザー要望「Goal Plannerと自動実行キューを同じ文脈に統合」を実装(Codex実装→Fableレビュー)。ズレ原因=Goal Plannerはgoals.json(Todo/phase 0%)、/queueはbuildAutoQueue派生を別々に参照。統合=集計源をbuildAutoQueue().goalProgressに統一(別正本作らない)。GoalProgressRowにnextCandidateCount/manual/latestWorkTitle/nextActionTitle追加。Goal Plannerの各Goalカード＋メイン目標にキュー要約(次回候補/実行可能/判断待ち/レビュー待ち/候補外/最新作業/次にやること)を表示し、自動実行キューを見る(/queue?goalId)・ToDoを見る(/decide?goalId)・作業予約 導線追加。/queueはgoalIdでカウンタ/フィルタ/一覧をGoal絞り込み(全体に戻る/Goalバナー)。GoalPlannerFormのrole選択UI撤去(保存は内部既定addToQueueRoles=[claude])。GoalとGoal進捗非分離維持・旧phases/todos互換残置。検証PASS: tsc0/lint0/build成功・/goal-planner /queue /decide 200・カード要約描画・goalProgress件数と/queue?goalIdアイテムstatusクロスチェック一致(reviewWaiting=1)・role UI撤去/対象案件select存続。commit 36a35c8 push済。確認観点=同一source統合の件数整合の抜け・旧phases/todos併存の是非と撤去時期・role撤去の影響(goal import)・目標カード指標の過不足。
+  - result: 
+
 - [ ] [[2026-06-14_review-fix-auto-priority]]
   - createdAt: 2026-06-14 17:53
   - app: progress
