@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-14_prompt-queue]]
+  - createdAt: 2026-06-14 09:29
+  - app: progress
+  - project: Prompt Queue（作業プロンプト貯蔵庫）新設・入力簡素化
+  - priority: high
+  - summary: Codex実装→Fableレビュー。新機能/prompt-queue。入力をタスク名/プロンプト/Project/Goal進捗の4項目に簡素化、実行対象AI(codex/claude/fable_review/auto)・優先度(P0/P1/P2)はUI非表示(内部既定auto/未指定)。GoalとGoal進捗を分けず単一goalProgress(既存Goal参照)。正本data/real/prompt-queue.json(物理削除なし・DELETE→archived)。API GET/POST/PATCH/DELETE/import。JSON一括取り込みpromptQueue/todos両形式・goal→goalProgress正規化・status未指定→queued・priority/assignee/preferredExecutor無視(警告)・title/prompt無しエラー・project不一致は未紐付け警告。次回やる候補は未完了(queued/reserved/not_started/failed/needs_retry/needs_user_prompt_fix)をProject/Goal進捗状態順で理由付き表示・completed/canceled/archived/snoozed除外。ナビ(Legacy)作業予約。検証PASS: tsc0/lint0/build成功、フォーム4項目・import両形式と正規化/無視/バリデーション・次回候補と理由・snooze除外(3→2)・DELETE→archived・既存回帰なしをe2e確認(テストデータ消去)。未接続=実Factory自動実行(貯蔵庫＋候補表示まで)。commit dd560a7 push済。確認観点=優先度/実行AI非保持の運用耐性・候補並び順ロジック・取り込みバリデーションの穴・実Factory接続方針。
+  - result: 
+
 - [ ] [[2026-06-14_fixprompt-dispatch-reflect]]
   - createdAt: 2026-06-14 08:52
   - app: progress
