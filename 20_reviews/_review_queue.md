@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-14_prompt-queue-factory-connect]]
+  - createdAt: 2026-06-14 10:04
+  - app: progress
+  - project: Prompt Queueを実Factory自動実行に接続（安全ゲート付き）
+  - priority: high
+  - summary: Codex実装→Fableレビュー。新規runPromptQueueDispatch()を定時起動runScheduledFactory(11/14/16/23)のlock内・Epic Factory実行後にmaxItems:1で接続。対象は次回やる候補。安全ゲート=classifyCodexEligibility＋hard-deny正規表現(課金/billing/deploy/本番/production/secret/.env/認証/migration/削除/destructive/force)で危険プロンプトは実行せずneeds_user_prompt_fixへ隔離。mode別=dry_run(既定)は実起動せずreserved/auto+confirm(定時のみ)は既存adapter実起動、結果でcompleted/failed/needs_retry。ExecutionRun source=prompt_queue/factoryRun/dispatchMode/promptUsed記録・item.executionRunIdに戻す。factoryEnabled=false/Blockedは何もしない。Epic dispatch不変更。検証PASS: tsc0/lint0/build成功、dry_run実機テスト(一時endpoint作成→検証→削除)でconsidered2/reserved1/blocked1/executed0・安全→reserved+runId(adapter未起動)・危険「本番DBを削除 force」→needs_user_prompt_fix(未実行)・既存回帰なしを確認(テストデータ消去)。commit 3dcc134 push済。リスク=定時autoで安全分は実adapter起動するため多層防御の堅牢性が要。確認観点=安全ゲートの十分性(すり抜け/過剰ブロック)・承認なし実行の線引き・mode分岐とstatus遷移の穴・同一lock順次実行の負荷。
+  - result: 
+
 - [ ] [[2026-06-14_prompt-queue]]
   - createdAt: 2026-06-14 09:29
   - app: progress
