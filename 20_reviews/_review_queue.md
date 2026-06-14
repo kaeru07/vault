@@ -5,6 +5,22 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-14_bottomnav-all-pages]]
+  - createdAt: 2026-06-14 13:29
+  - app: progress
+  - project: モバイル下タブ＝横スクロール全画面タブ化
+  - priority: high
+  - summary: ユーザー指示「下タブにない主要画面はなくして／リンクで飛べるものは全て下タブに追加」を実装。BottomNavを横スクロール化し、先頭5=アイコン付き主要タブ(ホーム/ToDo/Project/目標/自動実行)＋moreItemsで残り主要画面24(作業予約/Revenue/運用/実行履歴/ToDo管理/JSON取込/動作確認/おすすめEpic/収益化/承認/自動化/工場Epic/Codex/朝会/日別/AI自走/レーダー/案件/旧Inbox/決定事項/工場候補/URL/旧キュー/旧ダッシュ/画面一覧)を全てテキストタブで列挙。legacy catch-all/NEW_ROUTES撤去。/legacyは『下タブにない主要画面』表記撤廃し全画面カテゴリ別一覧(画面一覧)として存続。リンクで飛べる主要画面計29が全て下タブ直接到達=『下タブにない主要画面』撤廃。guide/operating-model更新。検証PASS: tsc0/lint0/build成功・全ルート200・下タブ描画確認。commit e82e014 push済。確認観点=約29項目横スクロール下タブのiPhone実用性(主要5固定＋すべてシート方式の是非)・主要5アイコン＋残テキストの視覚階層・旧画面まで全部出すノイズvs到達性・/legacy存続要否。
+  - result: 
+
+- [ ] [[2026-06-14_progress-verify-todos]]
+  - createdAt: 2026-06-14 11:05
+  - app: progress
+  - project: 動作確認Todoページ（/verify-todos）実装確認＋検証（Factory Dispatch epic-progress-todo）
+  - priority: medium
+  - summary: Factory Dispatch（epic-progress-todo / goal-ai-factory-os）。Claude Code/Codexの作業やEpic完了後に人間が確認すべき画面・URL・手順をprogress内で一元管理する動作確認Todoページ /verify-todos。前回(Jun 13)実装一式（page / API GET,POST,PATCH,DELETE / lib verify-todos / VerifyTodosBoard / seed 1件 / ナビ導線TopNav・legacy・guide section9・command-center TERMS）が存在することを確認し、未実施だった検証を本セッションで完了。DoneCriteria全6項目充足を照合: ①ページ追加 ②アプリ名/Epic名/確認URL/確認手順/期待結果/状態の登録 ③未確認/確認済/NG/保留の4状態管理 ④アプリ/Epic/状態の3軸絞り込み ⑤運用メモ(operationMemo＋guide section9) ⑥確認URLを開く(a href target=_blank、url-normalizeでhttps補完)。検証PASS: tsc0/lint0(対象5ファイル No warnings)/build成功(/verify-todos ルート3.42kB)。本セッションはコード変更ゼロ(既存実装の検証のみ)のためprogress側commitなし。本番反映(Vercel)未実行・iPhone実機E2Eは人間側seed Todo(vt-seed-progress-verify)で実施想定。確認観点=app-urls.json(URL台帳)との責務分担/確認URL公開URL推奨運用のiPhone消化十分性/4状態・3軸絞り込み設計/本番反映要否。
+  - result: 
+
 - [ ] [[2026-06-14_bottomnav-restructure]]
   - createdAt: 2026-06-14 10:51
   - app: progress
