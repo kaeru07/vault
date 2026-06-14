@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-14_progress-route-audit]]
+  - createdAt: 2026-06-14 10:13
+  - app: progress
+  - project: 全ルート棚卸し・旧画面/下タブ未掲載ページのナビ整合性レビュー
+  - priority: high
+  - summary: Fableがprogress全39ルートを棚卸し。最重要発見=モバイルBottomNav(BottomNav.tsx)は6タブ(司令塔/Inbox=decide/Projects=portfolio/Revenue/運用=guide/Legacy)で、自動実行キュー(/queue)とPrompt Queue(/prompt-queue)が含まれずiPhoneから辿れない(desktop TopNav/司令塔リンク/legacyハブのみ)。Queue整理: /queue=Epic派生のAI工場自動実行キュー(正本・最重要)、/legacy/queue=旧work-queue並べ替え(廃止候補)、/prompt-queue=作業プロンプト貯蔵庫(定時Factory接続済)。重複=/inbox↔/decide、/projects↔/portfolio、/recommended-epics↔Inbox Epic候補、/monetization↔Revenue。/operations→/automation・/pending→/tasksはリダイレクト。提案=BottomNavに自動実行タブ追加(/queue+/prompt-queue+/logs統合)、5タブ案(ホーム/ToDo/Project/Goal進捗/自動実行)、即時最小修正=/queueをBottomNavに追加。実装タスクをPrompt Queueに登録(pq-mqd3acmp-k0tp3r/queued→次回定時候補)。コード変更なし(レビュー＋登録)。確認観点=BottomNav再編の5タブ案是非・即時/queue追加・旧inbox/projects/legacy queue廃止可否・recommended-epics↔Inbox統合・登録タスクを定時Factory任せか手動か。
+  - result: 
+
 - [ ] [[2026-06-14_prompt-queue-factory-connect]]
   - createdAt: 2026-06-14 10:04
   - app: progress
