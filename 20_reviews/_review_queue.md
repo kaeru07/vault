@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-16_autonomy-anchor-impl-and-review]]
+  - createdAt: 2026-06-16 00:20
+  - app: progress
+  - project: 自走化Goal最優先アンカー化（Phase1 Codex実装／Phase2 Fableレビュー close_ok）
+  - priority: high
+  - summary: 設計レビュー(20260615-212004)に基づくEpic実装＋実装後レビュー。既存goal-ai-factory-os(AI工場OS自走化/North Star)を正本に、epic-91をP0/factoryEligible=true/doneCriteria7件の実行アンカーEpic化し『pin済みだが候補外』を解消。buildAutoQueue(表示)とscanFactoryDispatch/runFactory(実行)を共通の自走化アンカー判定で最優先化(順 pin>review-fix>autonomy>通常P0)し表示=実行一致。ExecutionRun.selection記録(Goalは最小ポインタ)・/api/operations/goal-ai-factory-os-next-run-selection-test(実関数read-only)・completed時メール通知土台(noop/log・実送信未導入)。Phase2 Fableレビュー結論close_ok＋1修正: no-op通知が実送信フラグautonomyNotifiedAtを消費し将来実メールが永久に飛ばないfootgunを、autonomyNotifyNoopAt分離＋実送信はAUTONOMY_EMAIL_PROVIDER構成時に成功後のみnotifiedAtに是正。検証PASS: tsc0/lint0/build成功・next=epic-91/candidateEligible=true/pinnedExcluded=[]・dry-runでbuildAutoQueueとscanFactoryDispatch一致・Running時wouldRunNext=true/Blocked時false。安全(危険/判断要/二重送信)維持。epic-91契約はruntime data(commit対象外)。commit bc31630 push済。確認観点=epic-91 ID固定アンカーの堅牢性・永久ピン飢餓対策・表示=実行boost規則一致・通知idempotency再設計の穴・epic-91 doneCriteria自己参照でcompletion成立するか。
+  - result: 
+
 - [ ] [[2026-06-15_autonomy-goal-priority-design-review]]
   - createdAt: 2026-06-15 21:20
   - app: progress
