@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-15_queue-review-pending-nonblocking]]
+  - createdAt: 2026-06-15 20:47
+  - app: progress
+  - project: 自動実行キュー「レビュー待ちで止まる」判定見直し
+  - priority: high
+  - summary: Codex実装→Fableレビュー(整合性バグ修正含む)。ただのレビュー待ち(not_reviewed)で工場が止まる問題を是正。deriveWorkItemStatus再設計=危険riskFlags(billing/production_db/auth_secret/external_publish/destructive/migration)/failed/blocker→blocked、pendingApproval/approval_required/needs_human→waiting_user、それ以外は止めない。not_reviewed/copied→executable継続＋reviewPending=true(レビュー未確認あり・継続)。P0/P1エスカレーションと『レビュー待ちのため候補外』表記廃止・review_waitingはnot_reviewedから非生成。needs_followup/fixPrompt→executable＋fixRequested=true＋queueScore+700 boost。AutoQueueItemにreviewPending/fixRequested追加・/queue/司令塔にバッジ。Fable修正: reviewPending/fixRequestedがfactoryEligible無視でexecutable返し対象外Epicが全リスト漏れ(counts executable1/next None)の不整合を、factoryEligibleに従いexecutable/else manual・flagはstatus=executable時のみ付与に修正。検証PASS: tsc0/lint0/build成功・review_waiting1→0・対象外epic-91はmanualで可視・候補可否整合。安全(危険/判断要停止)維持。commit fbc3e5a push済。確認観点=未レビューでも継続する方針の是非・deployをblock非対象の妥当性・fixRequested +700 boostバランス・status/候補可否整合。
+  - result: 
+
 - [ ] [[2026-06-15_review-copy-reviewing-state]]
   - createdAt: 2026-06-15 01:03
   - app: progress
