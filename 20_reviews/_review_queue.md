@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-15_autonomy-goal-priority-design-review]]
+  - createdAt: 2026-06-15 21:20
+  - app: progress
+  - project: 設計レビュー 自走化ゴール最優先＋達成メール通知＋dry-run（実装前）
+  - priority: high
+  - summary: Fableが設計レビュー(実装なし)。自走化を次回自動実行の最優先固定＋達成時メール(toku106ma@yahoo.co.jp)＋dry-run検知 のCodex実装前レビュー。結論=条件付きGo。重大懸念3: (1)Goal単体は実行されない→doneCriteria付きP0 Epic必須(epic-91と同じ対象外化) (2)終わらないゴールの永久ピンで他作業飢餓 (3)新規factory-autonomyは重複正本→既存goal-ai-factory-os『AI工場OS自走化』(active/main)再利用。抜け漏れ=buildAutoQueue(表示)とscanFactoryDispatch/runFactory(実行)の2系統に両方反映必須/completion判定主体未定義/factory現在Blocked(危険承認5件)でdry-runはwouldRunNext=false。データ=selectionはExecutionRunに集約・Goalは最小ポインタ(二重管理回避)。メール=email依存なし新規/done永続化後・未通知時のみ・autonomyNotifiedAt不可逆で二重送信防止・try/catch隔離・秘密.env(.env.exampleは変数名)・dry-runから送らない・リトライ上限3。dry-run=実選定関数read-onlyでドリフト防止。Codex完成版プロンプト(目的/前提/OK禁止/role/手順10/検証/報告)提示。確認観点=Goalでなく実行Epic必須の妥当性・永久ピン飢餓防止の十分性・2系統反映漏れ・メールidempotencyと順序・completion定義の妥当性・プロンプト過不足。ユーザー判断待ち=自走化の具体doneCriteria定義/メールプロバイダ選定/factory Blocked解除。
+  - result: 
+
 - [ ] [[2026-06-15_queue-review-pending-nonblocking]]
   - createdAt: 2026-06-15 20:47
   - app: progress
