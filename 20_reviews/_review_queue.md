@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-16_goal-todo-queue-integration-full]]
+  - createdAt: 2026-06-16 22:50
+  - app: progress
+  - project: Goal/Todo/Queue/JSON取込のデータ統合（フル・8項目）中断実装の検証＋確定
+  - priority: high
+  - summary: 実装前監査(20260616-184355)でスコープ判断待ちだったGoal/Todo/Queue統合が、未コミット作業ツリーに着手済み・未検証で中断していた実体を特定。フル(8項目)スコープをユーザー承認のうえ検証→選択コミット→push完了。Task/NewTaskInputにgoalId/phaseId、GoalTodoにsource/queueControl/decisionPolicy/riskFlags、AutoQueueItemにtodoId/source enum、controlにprioritize/complete追加。lib(progress-writer/goal-reader/goal-writer/auto-queue/command-center)・api(tasks/goals/auto-queue control)・UI(TodoManager/JsonImportManager/GoalPlannerForm/queue/tasks/import)を統合フィールド対応。Todoを選択Goalに紐づけ二重Todo系統(GoalTodo埋込 vs project-tasks)を解消。変更は加算的で後方互換。検証: tsc0 OK/next build OK/pm2 restart後 /queue /tasks/import /goal-planner 実描画200+参照チャンク200(白画面なし)/機密scan clean(ヒットはauth_secret enumのみ)。ランタイムデータ蓄積(execution-runs.json等)・別アプリ(ai-trend-sns/news-app)の未コミット変更は対象外で残置。残: ny01ドキュメントセット(guide/page.tsx・current-operating-model.md)追補・API機能スモーク。commit 452f1eb push済。確認観点=二重Todo系統解消の設計妥当性/後方互換(既存project-tasks Todo)/Goal-linked Todoの保存先(goals.json vs project-tasks.json)/既存機能非破壊。
+  - result: 
+
 - [ ] [[2026-06-16_progress-filter-ui]]
   - createdAt: 2026-06-16 09:06
   - app: progress
