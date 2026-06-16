@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-17_queue-goal-ordering]]
+  - createdAt: 2026-06-17 01:06
+  - app: progress
+  - project: 自動実行キューをGoal順で並べる（表示＋実行）
+  - priority: medium
+  - summary: ユーザー要望「自動実行キューにGoalを表示・Goal順でキュー順が決まる」。スコープ確認で「表示＋実行の両方」を選択。共有ヘルパrankGoals(pin>boost>優先度>goals.json安定順)を新設し、compareItems(auto-queue・表示)とscanFactoryDispatch(factory・実行next選択)の両ソートに同一階層を適用: ①明示pin ②安全枠(要修正/自走化アンカー) ③Goal順 ④Goal内(手動順→score→優先度)。/queueをGoalグループ表示化(Goalヘッダに進捗/boost/このGoalだけ/Goal詳細導線、未紐付けは末尾「Goal未設定」)。自走化アンカー(goal-ai-factory-os)/pin/要修正はGoal順より上位据置で飢餓回避(既存boost値据置)。データスキーマ変更なし(読み取り順のみ)。guide/operating-model更新。検証: tsc0/build0/pm2再起動後 /queue /guide 実描画200+チャンク200/rankGoals順序規則 独立テストPASS。現状キュー0件のためグループ表示はライブ未観測(空状態は正常描画)。commit 4bd93f9 push済。確認観点=表示順と実行next選択順の一致/自走化アンカーの飢餓有無/Goal順規則がユーザーの並べ替え期待に合うか/既存pin・hold・manualOrderとの整合。
+  - result: 
+
 - [ ] [[2026-06-16_goal-todo-queue-integration-full]]
   - createdAt: 2026-06-16 22:50
   - app: progress
