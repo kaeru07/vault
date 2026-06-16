@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-16_progress-filter-ui]]
+  - createdAt: 2026-06-16 09:06
+  - app: progress
+  - project: 全画面 表示専用URL同期フィルターUI追加（Phase1 Codex／Phase2 Fable close_ok）
+  - priority: medium
+  - summary: queue/Inbox(decide)/tasks/goal-planner/portfolio に「画面操作でき・URLに同期し・再読込/共有で復元できる」表示専用フィルター(チップ+ドロワー+検索+件数表示+0件空状態ガイド)を追加。判定/スコア/Factory実行順は不変(表示層のみ)。Phase2 Fable独立レビュー=close_ok・実装是正不要。検証: tsc0/lint0/build成功・判定/スコア系(auto-queue-score/auto-queue/factory-dispatch/factory-runner/factory-schedule/review-fix/prompt-queue)git diff無変更=表示専用担保・deep link9件全200(?tab/goalId/focusRunId/filter=needs_followup/reviewStatus互換維持)・フィルタ実効性(全1件中: /queue=1, excluded(候補外)=0+空状態, filter=executable=1+選択中chip, q=nomatch=0+空状態)・件数「全N件中M件表示」/URL復元/×クリア動作確認・機密scan clean。leftover/data/realはcommit除外。commit cb56917 push済。確認観点=表示専用に閉じているか/deep link後方互換/URL同期設計の取りこぼし/0件導線の実用性/iPhone操作性。
+  - result: 
+
 - [ ] [[2026-06-16_autonomy-anchor-impl-and-review]]
   - createdAt: 2026-06-16 00:20
   - app: progress
