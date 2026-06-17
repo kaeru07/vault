@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-17_goal-auto-advance-resume]]
+  - createdAt: 2026-06-17 13:43
+  - app: progress
+  - project: ToDo/Epic無しの未達成Goalを「達成まで自動で進める」(type=goal + 次の一歩Epic自動生成)
+  - priority: medium
+  - summary: 中断作業の再開・完了。前セッションで未コミット・未検証だった goal-resume 機能を検証・確定。AutoQueueItem.type に 'goal' を追加し、buildAutoQueue で「ToDo も open Epic も無い未達成 active Goal(達成率<100%)」を type='goal'「○○(達成まで自動で進める)」としてキュー投入。runFactory が auto+confirm かつ実行可能 Epic 0 件のとき新規 ensureNextGoalStepEpic(lib/goal-step-epic.ts)が Goal順最上位の対象 Goal に「次の一歩」Epic(epic-goalstep-<id>)を1つだけ idempotent に自動生成→再scan、達成まで繰り返す。承認要/手動/危険 riskFlags の Goal は type=goal で出すが自動実行せず解消手順(Inbox承認/Goal詳細)を表示。read経路/dry_run/manualでは生成しない。/queue は type=goal でも pin/hold 許可。運用ドキュメント4点(guide FAQ/TERMS goalStepEpic/operating-model本文+用語+frontmatter+変更履歴)更新。検証: tsc0/next build0/pm2再起動後 /queue /guide 実描画200・goalアイテム「達成まで自動で進める」6件ライブ表示・チャンク200・白画面なし・/guide新FAQ/用語描画。機密scan clean。commit 13766cb push済。無関係な未コミット残置(verify-todos等)は本作業では触らず残置。確認観点=step-epicの無限増殖防止(idempotent=1Goal同時1つ)/承認要・手動・危険Goalの自動実行されない安全設計/「実行可能Epic0件時だけ生成」トリガの飢餓・暴走両リスク/既存Goal順・自走化アンカーとの優先順位整合。step-epic自動生成はライブ未観測(現状実行可能Epicありfallback未到達)。
+  - result: 
+
 - [ ] [[2026-06-17_queue-goal-ordering]]
   - createdAt: 2026-06-17 01:06
   - app: progress
