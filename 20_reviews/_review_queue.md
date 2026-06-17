@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-18_hamburger-nav]]
+  - createdAt: 2026-06-18 00:58
+  - app: progress
+  - project: 全画面ハンバーガーメニュー(☰)新設・全ページ到達保証
+  - priority: medium
+  - summary: ユーザー指示「存在するページはタブかハンバーガーから遷移できるように／遷移しづらい画面は困る」に対応。全ページをカテゴリ別に一覧する☰ドロワー(HamburgerMenu.tsx)をヘッダー右(モバイルfixed/デスクトップflex両方)に常時設置。現在地ハイライト・画面遷移で自動クローズ・背面スクロールロック。メニュー項目の正本lib/nav-menu.ts(NAV_GROUPS/ALL_NAV_LINKS)を新設し、画面一覧/legacyのインライン定義を削除して同一正本を参照(二重管理解消)。到達照合スクリプトで全33実ページ中31がメニュー/タブ掲載・残2(/operations→/automation,/pending→/tasks)はリダイレクトのみ＝孤立0を機械確認。BottomNav/TopNavの既存タブは近道として残置。検証: tsc0/next build0/到達照合PASS/pm2再起動後 / /legacy /usage /queue 実描画200・☰両クラスタ描画・/legacy正本参照で全カテゴリ描画・白画面なし・チャンク200。commit 98c10a5 push済。確認観点=単一正本nav-menu.tsによる到達保証設計の妥当性/モバイル・デスクトップ両対応のハンバーガーUX/既存タブ(BottomNav横スクロール約30項目)との役割重複整理/新ページ孤立を防ぐ運用ルール・自動チェックの組み込み方。実機通し確認は未(curl/スクリプト代替)、BottomNav横スクロール項目削減は残置。
+  - result: 
+
 - [ ] [[2026-06-17_usage-tracking]]
   - createdAt: 2026-06-17 22:13
   - app: progress
