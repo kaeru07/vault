@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-18_goal-progress-zero-investigation]]
+  - createdAt: 2026-06-18 01:20
+  - app: progress
+  - project: 調査 — 自動実行のゴール進捗が0%になる原因解析
+  - priority: medium
+  - summary: ユーザー依頼「なぜ自動実行のゴール進捗が0%か原因解析」。根本原因=表示進捗 buildGoalProgress().ratio(lib/auto-queue.ts:328-371)が done/total(todos＋キューアイテム数のみ)で算出し goal.target/current(数値指標)を一切使わない。4ゴールは全て todos=0・target/current管理(15/60,80/10,90/30,5/0)、開いてるEpicはstatus=doneにならず完了Epicはitemsから除外→done≒0→全ゴール常に0%(/api/auto-queueで実測 ratio:0×4)。target/currentを使うgoalAchievement(goal-reader.ts:99)は存在するが表示に未使用。表示経路 goal-planner/page.tsx:195・GoalListItem.tsx:23 が queueProgress?.ratio??calcGoalProgress().ratio で両方とも数値指標不使用。運用docの「todo→Epic平均→数値指標」フォールバックの数値指標が未実装。すべきこと=①buildGoalProgressをdoc通りのフォールバックに(todo完了率→Epic doneCriteria完了率平均→goalAchievement) ②Epic進捗はdone件数でなくdoneCriteria完了率平均で算出 ③進捗計算を単一関数に集約し二系統の不整合解消 ④データ是正(goal-ai-factory-os current60>target15→cap100%) ⑤進捗の正本(数値指標 vs 作業完了)の方針確定。調査のみ・ファイル変更なし。確認観点=進捗の正本選定/フォールバック設計/単一化の設計/target&currentの意味づけ。
+  - result: 
+
 - [ ] [[2026-06-18_hamburger-nav]]
   - createdAt: 2026-06-18 00:58
   - app: progress
