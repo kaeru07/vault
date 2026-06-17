@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-17_usage-tracking]]
+  - createdAt: 2026-06-17 22:13
+  - app: progress
+  - project: 使用状況ページ(/usage)新設 — 画面別アクセス/ボタン操作TOP/最終使用/放置検知
+  - priority: medium
+  - summary: ユーザー要望「progressの使用を細かく記述して把握したい」→選択肢で「実際の使用状況を記録・可視化」を選択。横断キャプチャ方式(既存画面・ボタンの改修ゼロ)で実装。layout常駐UsageTracker(client)がpage_view(usePathname変化)とaction(button/[role=button]のdocument委譲click・文言80字)を記録し、navigator.sendBeacon→POST /api/usage→usage-store.tsでusage-log.ndjson(PROGRESS_DATA_PATH配下・既存ログと独立)へ追記。/usage(server/force-dynamic)はbuildUsageSummary(7)で 画面別アクセス回数(直近7日・棒グラフ)/よく使うボタン操作TOP(最大20)/画面別最終使用日時(全期間)/放置画面(直近7日未アクセス) を表示。画面レジストリ正本lib/usage-screens.ts(ルート→人間語・詳細ページは親に丸め)。導線=BottomNav/TopNav「使用状況」。data-usage-ignore/data-usage-labelで個別制御可。表示専用で判定・スコア・実行に非干渉。検証: tsc0(Map iterator spread→Array.from修正)/next build0(/usage・/api/usage生成)/pm2再起動後 /usage実描画200・全セクション描画・チャンク200・白画面なし。/api/usageにpage_view×2/action×1 POST→usage-log.ndjson 3行追記→/usage集計反映(自動実行画面回数・最優先ボタン操作)確認。機密scan clean。commit c6108ab push済。確認観点=document委譲click横断キャプチャの妥当性と副作用(他clickハンドラ干渉/性能)/sendBeacon記録の取りこぼし/ログ肥大対策(ローテーション・上限)要否/全button記録のノイズ絞り込み/プライバシー(UI文言記録)。実ブラウザのsendBeacon自動記録はcurl POSTで代替検証(headless実click未実施)。
+  - result: 
+
 - [ ] [[2026-06-17_goal-auto-advance-resume]]
   - createdAt: 2026-06-17 13:43
   - app: progress
