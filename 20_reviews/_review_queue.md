@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-19_manual-goal-add]]
+  - createdAt: 2026-06-19 00:08
+  - app: progress
+  - project: ゴール手動追加を直接追加/JSON一括追加に整理・分解プロンプト生成UIを廃止
+  - priority: medium
+  - summary: ユーザー指示「ゴールを完全に手動で追加できるように(直接追加とjson追加)、プロンプト生成はいらない」に対応。components/goals/GoalPlannerForm.tsxから分解プロンプト生成(目標を入力する→プロンプト生成→コピーのStep1/2)と関連state/関数(goalText/monetizationFirst/phaseHint/generatedPrompt/promptCopied/buildPrompt/handleCopyPrompt/copy/fallbackText)・未使用useMemoを削除。残すのは①ゴールを直接追加(項目入力1件・upsertSingle)②JSONで一括追加(validate→import)。直接追加にmetric/今(current)/目標(target)入力を追加し、SingleGoalInput+upsertSingleGoal(lib/goal-writer.ts)にmetric/target/currentを反映=進捗(=current/target)を手動設定可能に。単体promptラベルは説明(任意)に変更、見出しを「ゴールを直接追加」「JSONで一括追加」に整理。検証: tsc0(未使用localなし)/next build0/pm2再起動後 /goal-planner 200で直接追加・JSON追加・今(current)・目標(target)描画、分解プロンプト/プロンプトをコピーは非表示(0件)/guide 200/直接追加API E2E(upsertSingle current3 target12→goals.json反映→/api/auto-queueで3/12=25%実測、テストゴール削除)/機密scan clean。commit d73816b push済。未対応=直接追加は初期todo自動生成あり(抑制オプション未)・実ブラウザ通し操作未(API代替)。確認観点=プロンプト生成廃止と2方式整理の妥当性/target&current手動設定→進捗反映の設計/初期todo自動生成を残すか抑制するか/JSON一括追加スキーマ説明の十分性。
+  - result: 
+
 - [ ] [[2026-06-18_research-goal-proposal]]
   - createdAt: 2026-06-18 22:13
   - app: progress
