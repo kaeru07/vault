@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-19_goal-approval-tab]]
+  - createdAt: 2026-06-19 00:44
+  - app: progress
+  - project: 今日の判断(Inbox)に「ゴール承認」タブを新設＋初回候補を生成
+  - priority: medium
+  - summary: ユーザー指示「todoにgoal承認タブを追加／自動実行時に追加したゴール候補の承認依頼を入れて／初回として候補出して」に対応。components/newux/InboxTabs.tsxのTabKeyにgoalApprovalを追加し、tabFromQuery/タブ配列(ゴール承認・count=承認待ち件数・alert付き)/quickFilters/tabCounts/filteredProposedGoalsを追加。提案ゴール(inbox.proposedGoals)の描画を「今日の判断」タブ上部のセクションから専用タブ(?tab=goalApproval)へ移設、スコープ/検索フィルタ対応・空状態ガイド付き。自動実行履歴(autoRuns)は今日の判断に残置。初回としてproposeGoalsFromResearchIfNeeded(PROGRESS_DATA_PATH=data/real)を実行し調査結果から3件をproposed登録(MCPセキュリティ対策カテゴリを試す[P0]/OpenClawを試す/MCP Appsを調査する・source=research)。承認すると既存フロー(active+autonomous→ensureNextGoalStepEpic)で自動実行対象。検証: tsc0/next build0/pm2再起動後 /decide?tab=goalApproval 200・「ゴール承認」タブ＋「自動実行が提案した目標」見出し＋候補3件描画。commit b6b730a push済(コード/ドキュメントのみ・data/realは実行時データのため除外、候補は稼働アプリに反映済み)。未対応=定時実行冒頭の候補補充ライブ確認未(手動生成で代替)・候補タイトルの冗長語・モバイル下タブからの直接導線未。確認観点=ゴール承認を専用タブに分離した設計(今日の判断との役割分担)/初回候補の質・タイトル整形要否/data/realに候補直接生成し保持した判断/モバイル到達性。
+  - result: 
+
 - [ ] [[2026-06-19_manual-goal-add]]
   - createdAt: 2026-06-19 00:08
   - app: progress
