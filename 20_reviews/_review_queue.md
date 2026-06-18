@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-19_goal-approval-unify]]
+  - createdAt: 2026-06-19 08:45
+  - app: progress
+  - project: ゴール追加を「追加→承認」に統一＋承認カードを詳細化(できること/メリット/デメリット)
+  - priority: medium
+  - summary: ユーザー指示「追加したら基本的にゴール承認タブで承認ボタンを押したら追加されるように／承認タブにできるようになることやメリット・デメリットを詳細に」に対応。GoalPlannerFormの直接追加をupsertSingle(即active)からPOST /api/goals/propose(source=manual・status=proposed)へ変更=手動追加もゴール承認タブ経由で承認して初めてactiveになるよう統一(追加=即active廃止)。Goalにproposal Enables/Pros/Cons追加(types/goal.ts)、ProposeGoalInput+proposeGoals(goal-writer)で反映、buildResearchGoalCandidates(research-goals)が研究候補にenables/pros/cons自動付与。buildInbox(command-center)のproposedGoalsカードを✅できるようになること/👍メリット/👎デメリット・注意/承認すると/やめるとの詳細表示に拡張(無ければ既定文)。InboxActionsのrow ddにwhitespace-pre-lineで箇条書き改行保持。ボタン文言「承認して追加する」。検証: tsc0/next build0/手動propose API E2E(status=proposed・source=manual・proposalEnables反映を実測)/.next/serverに新カード文字列(できるようになること/デメリット・注意/承認して追加する/ゴール承認へ追加)含有確認/goal-planner decide 200/テストゴール削除。commit ed43306 push済。注意=goalApprovalタブはclient描画でSSR grepはemoji付きラベル検出しづらく実機headless最終確認は未(build文字列+E2E代替)。未対応=JSON一括追加は直active(承認経由未)・既存active化済み候補(OpenClaw等)は遡及変更なし・候補メリデメ文の質改善。確認観点=追加=即activeを追加→承認に変えた設計の妥当性/承認カードの情報設計と自動生成文の質/JSON一括追加も承認経由にすべきか/proposed activeの扱いとqueue非表示の安全性。
+  - result: 
+
 - [ ] [[2026-06-19_goal-form-simplify-guide-tab]]
   - createdAt: 2026-06-19 07:57
   - app: progress
