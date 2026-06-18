@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-18_goal-progress-fix]]
+  - createdAt: 2026-06-18 08:58
+  - app: progress
+  - project: ゴール進捗0%問題の修正（進捗率を「今/目標」target/currentに統一）
+  - priority: medium
+  - summary: 調査(runId 20260618-012023)で特定した0%問題の修正。原因=buildGoalProgress が ratio=done/total(todos＋キューアイテム数のみ)で算出し goal.target/current を無視→全ゴール todos=0・数値指標管理のため done≒0→全ゴール0%。ユーザー選択「一番単純: 今/目標の数字で出す」に基づき、進捗率の正本をgoalAchievement(target>0→round(min(100,current/target*100))、target無→Todo完了率)に統一。buildGoalProgress(lib/auto-queue.ts・/queue/目標タブ)とbuildGoalProgressCards(lib/command-center.ts・司令塔/現状未使用)を変更し、表示done/totalもtargetありならcurrent/target(％と一致)。旧フォールバック(Todo→紐付Epic平均→数値指標)廃止＝作業の進み具合は進捗率に使わない。検証: tsc0/next build0/pm2再起動後 /api/auto-queueで実測 100%(60/15)/13%(10/80)/33%(30/90)/0%(0/5)(旧 全0%)・/queue /goal-planner 実描画200・白画面なし。commit 851b7c5 push済。未対応=goal-ai-factory-os current60>target15(上限100%)のスケール是正(データ運用判断)。確認観点=進捗の正本を今/目標に固定する設計の妥当性(作業進捗を使わない判断)/target未設定ゴールのTodoフォールバック/done&total表示とratioの整合/進捗計算の単一ヘルパ集約の要否。
+  - result: 
+
 - [ ] [[2026-06-18_goal-progress-zero-investigation]]
   - createdAt: 2026-06-18 01:20
   - app: progress
