@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-18_goal-proposal-approval]]
+  - createdAt: 2026-06-18 12:58
+  - app: progress
+  - project: ゴール提案→承認→自動実行フロー新設（自動実行中AI提案＋Inbox承認＋自動実行履歴）
+  - priority: high
+  - summary: ユーザー指示(段階的明確化)に対応。抽出元=自動実行中にAIがその場で考えて提案、承認=今日の判断(Inbox)を選択。Factoryがauto+confirmでアイドル時にrequestGoalProposalIfIdle(lib/goal-proposal.ts)が提案依頼プロンプトを生成し自動化ログfactory_goal_proposal_requestedに記録(承認待ち3件で打ち止め)。実候補生成はexecutor(Claude/Codex)がPOST /api/goals/proposeを呼ぶ前提(FactoryはLLM非搭載=依頼発行まで)。proposeGoals(lib/goal-writer.ts)がstatus=proposed/decisionPolicyDefault=autonomousで登録(同名skip)。buildInbox().proposedGoalsが今日の判断(Inbox)上部「🎯ゴール承認」カード(cap無し)、承認→POST /api/goals/[id]/approve→setGoalApprovalでactive(=自動実行対象)、却下→dropped。active+autonomousになると既存ensureNextGoalStepEpicが次の一歩Epicを自動生成して達成まで進める。buildInbox().autoRuns(factoryRun/source直近10件)をInbox下部「🤖自動実行の履歴」に表示。proposedはbuildGoalProgress/goal-planner一覧から除外。Inboxは既存判断パイプライン非変更の追加方式・承認カードは既存InboxCardItem汎用action再利用。GoalStatusにproposed追加。検証: tsc0/next build0(propose/approve API生成)/E2E(POST propose→goals.json proposed登録→/decideに🎯ゴール承認カード→approve→status=active+autonomous実測、テストゴール削除)/Inbox🤖自動実行の履歴描画/decide 200・白画面なし/機密scan clean。commit c91e5ab push済。未対応=実候補生成はexecutorがpropose呼ぶ前提(自動呼出し連携は未実装)・定時実行のライブ確認は未(API直叩き代替)。確認観点=Factory依頼発行とexecutor実生成の分担の妥当性/自動propose連携の実装方法/承認=active+autonomousで即対象化する安全性(危険フラグ)/proposedをqueue目標タブ除外の設計/Inbox追加方式の判断/収益化medium妥当性。
+  - result: 
+
 - [ ] [[2026-06-18_goal-progress-fix]]
   - createdAt: 2026-06-18 08:58
   - app: progress
