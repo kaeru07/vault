@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-18_research-goal-proposal]]
+  - createdAt: 2026-06-18 22:13
+  - app: progress
+  - project: ゴール提案の抽出元を日々の調査結果に強化（優先順処理＋達成後に次提案）
+  - priority: high
+  - summary: ユーザー指示「自動実行はゴール優先順で処理／ゴールが終わったら次のゴールを提案／自動実行の最初にnewsアプリ等の日々の調査結果を参照し効果がありそうなものからゴール作成(例Fableを試す)」に対応。lib/research-goals.tsを新設し、news-app/content/research/daily-ai-tools/YYYY-MM-DD.md(直近3日・RESEARCH_CONTENT_PATHで変更可)の「## 導入価値評価」をパース→★4以上(即試したい/即調査/必須/PoC向き)を効果がありそうなこととして抽出→○○を試す/調査するゴール候補(★5→P0/★4→P1)を生成(buildResearchGoalCandidates)。proposeGoalsFromResearchIfNeededが承認待ち<3件のときproposeGoals(source=research)で登録(既存ゴール全status同名除外=承認済/却下済を蒸し返さない)。runFactory(lib/factory-runner.ts)のauto+confirm冒頭で呼ぶ=自動実行の最初に調査からゴール提案。優先順処理は既存rankGoals/ensureNextGoalStepEpic、優先順消化で承認待ちが減ると次回また補充=ゴール達成後に次提案。承認は今日の判断(Inbox)🎯ゴール承認→active+autonomousで自動実行対象。検証: tsc0/next build0/実データ抽出ドライラン(OpenClawを試す/MCP Appsを調査する/MCPセキュリティ★5/OpenAI Codex SDK★5等生成)/E2E(PROGRESS_DATA_PATH=data/realでproposeGoalsFromResearchIfNeeded→goals.json proposed(source=research)3件→/decide🎯ゴール承認描画→両データパスから後始末削除proposed残0)/decide guide 200/機密scan clean。commit 7705246 push済。注意=tsx素実行はdata/sample既定(本番data/real)。未対応=抽出はdaily-ai-tools中心(market-research/ai-news未拡張)・定時実行ライブ確認未・タイトルに冗長語混じる場合あり。確認観点=抽出ロジック(導入価値評価★4+)の妥当性と拡張元/達成後提案を承認待ち<3補充で実現する設計vs明示的goal-done検知/タイトル品質/承認=active+autonomousの安全性/収益化medium妥当性。
+  - result: 
+
 - [ ] [[2026-06-18_goal-proposal-approval]]
   - createdAt: 2026-06-18 12:58
   - app: progress
