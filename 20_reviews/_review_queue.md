@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-19_goal-form-simplify-guide-tab]]
+  - createdAt: 2026-06-19 07:57
+  - app: progress
+  - project: ゴール直接追加フォーム簡素化(タイトルのみ必須)＋運用ページを主要タブへ昇格
+  - priority: medium
+  - summary: ユーザー指示「タイトルだけ必須／プロジェクトは未設定でも良い／status・decisionPolicy・riskFlag・指標は消す／プロンプトは任意。あと全体のタブに運用ページを追加」に対応。components/goals/GoalPlannerForm.tsxの「ゴールを直接追加」をタイトル(必須)/案件(任意)/説明=prompt(任意)の3項目に簡素化(priority/status/decisionPolicy/riskFlags/metric/今(current)/目標(target)/notesの入力欄・state・submit body・リセットを削除、未指定はupsertSingleGoal既定=status active/priority medium/autonomous/target100・current0で補完)。BottomNav.tsxに運用(/guide)を主要アイコンタブとして追加(6タブ化・moreItems重複除外)、TopNav.tsxの新ナビに運用追加＋/guideをNEW_ROUTESに追加。検証: tsc0/next build0/pm2再起動後 /goal-planner 200で「タイトル *」「案件(任意)」「説明(任意)」のみ描画・decisionPolicy/riskFlags/指標は非表示/guide・ホーム200で運用タブ描画/タイトルのみ直接追加API E2E(upsertSingle({title})→status=active・priority=medium既定補完を実測、テストゴール削除)。commit 4e1a3c8 push済。未対応=進捗(今/目標)は既定0/100で作成され後から編集する導線は未整備・実機通し確認は未(API代替)。確認観点=直接追加を3項目に絞った設計と既定値補完の妥当性/進捗を後から編集する導線の要否/運用を主要タブ昇格(6タブの収まり)。
+  - result: 
+
 - [ ] [[2026-06-19_goal-approval-tab]]
   - createdAt: 2026-06-19 00:44
   - app: progress
