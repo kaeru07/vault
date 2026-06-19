@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-19_ops-autoexec-report-tab]]
+  - createdAt: 2026-06-19 21:48
+  - app: progress
+  - project: 運用ページをタブ化し「自動実行レポート」タブを追加
+  - priority: medium
+  - summary: ユーザー指示「運用タブをメイン画面に追加して、その中に自動実行内容の報告タブを作って」に対応。運用は既に下タブ/上タブの主要タブに追加済み。app/guide/page.tsxを?tab=reportで分岐するタブUI(GuideTabBar: 使い方ガイド/自動実行レポート)に。新規components/operations/AutoExecReport.tsx(server)でAI工場の状態(稼働/停止)・次回予定(11/14/16/23 JST)・自動実行サマリー(完了/一部完了/失敗/計)・直近の自動実行12件・自動化の動き(factory_goal_proposal_requested/factory_goal_step_epic_created/factory_dispatch等の最近ログを人間語ラベルで)・承認待ちゴール候補件数→/decide?tab=goalApprovalリンクを表示(readExecutionRuns/getAutomationLog/readGoals/getAutomationConfig使用)。guide FAQ追加。検証: tsc0/next build0/guide?tab=report 200・全セクション描画・白画面なし。commit c914da5 push済。未対応=次回実際に動くEpic(選定候補)の表示は未・実機最終確認は未。確認観点=自動実行レポートの情報設計(社長がひと目で把握できるか)/次回選定候補を出すべきか/ログイベント→人間語ラベルの網羅性。
+  - result: 
+
 - [ ] [[2026-06-19_proposed-fix-bulk-import]]
   - createdAt: 2026-06-19 13:00
   - app: progress
