@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-19_autoexec-report-per-run]]
+  - createdAt: 2026-06-19 22:57
+  - app: progress
+  - project: 自動実行レポートを「1実行＝1記事」形式に（できたこと/できなかったこと/詳細全文）
+  - priority: low
+  - summary: ユーザー指示「もっと詳細に、一実行につき1ページぐらいの量で記事のようにできたこと・できなかったことを深く」に対応(日次から1実行=1記事へ変更)。components/operations/AutoExecReport.tsxをRunArticle(1自動実行=1記事)に再構成、新しい順・最大25件。各記事: ヘッダ(#連番/タイトル/状態バッジ/日時/Epic/経路source/実行者executorUsed)・概要(summary)・✅できたこと(完了表示or変更ファイル列挙file—change最大12)・⚠️できなかったこと課題(errors/warnings、未完了はreviewMemo/errorsを理由に)・🔍検証結果(checks build/tsc/lint/手動)・→次にやること(nextActions)・詳細レポート全文(rawReportをdetailsで全文max-h-96)。全体リード(稼働状態/累計/成功率/承認待ち・進行中)は冒頭維持。検証: tsc0/next build0/guide?tab=report 200・各記事に全セクション描画(25記事)。commit 4c320a1 push済。未対応=rawReport機械情報の整形未・個別実行ページ(/guide/report/[runId])化未・アーカイブ済み古い実行は対象外・実機確認未。確認観点=1記事の情報設計(できたこと/できなかったことの切出し妥当性)/rawReport全文表示の是非(整形要否)/25件連続表示でよいか(個別ページ・ページング要否)。
+  - result: 
+
 - [ ] [[2026-06-19_autoexec-report-detail]]
   - createdAt: 2026-06-19 22:19
   - app: progress
