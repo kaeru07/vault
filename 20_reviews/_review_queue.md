@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-19_proposed-fix-bulk-import]]
+  - createdAt: 2026-06-19 13:00
+  - app: progress
+  - project: 【重大修正】proposed読込時active矯正バグ修正＋ChatGPT一括取込＋手動追加に任意プロンプト
+  - priority: high
+  - summary: ユーザー報告「ゴール承認にみつからない」「openclew等を承認前に戻して」の根本原因を特定・修正。原因=lib/goal-reader.tsのnormalizeGoalがVALID_STATUSES('proposed'未含有)でstatus検証し、読込時にproposed→activeへ矯正していた→ゴール承認タブ(status===proposedでフィルタ)が常に空・承認ゲート素通り。VALID_STATUSESに'proposed'追加で修正(修正前goalProgress=7=全active扱い→修正後4=proposed3除外、/decide?tab=goalApproval approveURL=6・できること/メリット/デメリット描画)。あわせてChatGPT一括取込を実装: validateGoalImport/importGoal(goal-writer)でprojectId任意化(未存在は警告)・phases未指定時に既定フェーズ自動生成、/api/goals route を{goals:[...]}/配列/単一すべて受ける複数取込に拡張(集約レスポンス)、GoalPlannerFormに「📋ChatGPT用プロンプトをコピー」ボタン＋ゴール+ToDo生成テンプレ(既存案件埋め込み)・複数取込結果(createdCount)対応、手動直接追加の欄を「プロンプト・説明(任意)」に。検証: tsc0/next build0/複数ゴール一括E2E({goals:[A,B]}→createdCount2/todo3/projectId任意/phases自動/未存在projectIdは警告のみ、テスト削除)/gp decide 200。commit 53c6dc8 push済。未対応=JSON一括は直active(手動直接追加はproposed経由)・承認カード実機最終確認は未。確認観点=VALID_STATUSES漏れの再発防止(GoalStatus定義とreader/writerのVALID配列の単一ソース化)/一括取込を承認経由に統一すべきか/import緩和の妥当性/ChatGPTテンプレ出力安定性。
+  - result: 
+
 - [ ] [[2026-06-19_goal-approval-unify]]
   - createdAt: 2026-06-19 08:45
   - app: progress
