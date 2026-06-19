@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-19_autoexec-report-detail]]
+  - createdAt: 2026-06-19 22:19
+  - app: progress
+  - project: 自動実行レポートを記事スタイルの詳細1ページに刷新
+  - priority: low
+  - summary: ユーザー指示「自動実行レポートをもっと記事みたいに一ページ使って細かく詳細に残して」に対応。components/operations/AutoExecReport.tsxを拡張: ①リード文(稼働状態/累計実行回数/成功率/ゴール提案・次の一歩回数/承認待ち・進行中件数/記録期間を文章で)②数値サマリー(計/完了/一部完了/失敗/成功率/提案・次の一歩)③日次タイムライン(直近40件を日付ごとにグループ化し各実行をRunDetailカードで 概要/変更ファイル(file—change最大8)/検証(checks:build/tsc/lint/手動)/エラー・警告/次のアクション/時刻・epicId・source を詳細表示)④自動化ログ20件。ExecutionRunのsummary/changedFiles/checks/errors/warnings/nextActions/epicId/sourceを活用。検証: tsc0/next build0/guide?tab=report 200・サマリー/日次タイムライン/変更ファイル(12)/成功率/自動化の動き描画。commit c93b43e push済。未対応=期間フィルタ(7/30/全)未(直近40件固定)・実機の読みやすさ確認未。確認観点=記事スタイルの情報設計(読み物として把握できるか/冗長すぎないか)/直近40件固定でよいか期間フィルタ要否/各実行の詳細項目の粒度。
+  - result: 
+
 - [ ] [[2026-06-19_bottomnav-6tabs]]
   - createdAt: 2026-06-19 22:09
   - app: progress
