@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-19_bottomnav-6tabs]]
+  - createdAt: 2026-06-19 22:09
+  - app: progress
+  - project: モバイル下タブを主要6タブのみに整理（合計6・均等配置、moreItemsは☰へ集約）
+  - priority: low
+  - summary: ユーザー指示「全体のタブに加えて。6つにして合計」に対応。components/navigation/BottomNav.tsxから旧moreItems(横スクロール全画面25件列挙)を廃止し、主要6タブ(ホーム/ToDo/Project/目標/自動実行/運用)をflex-1 min-w-0で均等配置(横スクロール撤廃)。それ以外の全画面は右上☰メニュー(HamburgerMenu/正本lib/nav-menu.ts)に集約。安全確認: 削除前にmoreItems25件すべてが☰メニュー掲載済みを照合(孤立0)、削除後も到達照合スクリプトで全33実ページが6タブ+☰+リダイレクト2(/pending,/operations)で到達可能と確認。検証: tsc0/next build0/到達照合PASS/pm2再起動後ホーム200・下タブに6ラベル描画・旧moreItemsラベル(作業予約/工場Epic/おすすめEpic/旧ダッシュ)非表示(0件)。commit 235d43a push済。未対応=実機での6タブ収まり(文字切れ)・☰からの全画面到達の通し確認は未(curl+照合で代替)。確認観点=下タブ6絞り＋残り☰集約の妥当性(よく使う画面が隠れないか)/端末幅での6タブ収まり(ラベル短縮要否)。
+  - result: 
+
 - [ ] [[2026-06-19_ops-autoexec-report-tab]]
   - createdAt: 2026-06-19 21:48
   - app: progress
