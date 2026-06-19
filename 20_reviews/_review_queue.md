@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-19_autoexec-report-filter-format]]
+  - createdAt: 2026-06-19 23:21
+  - app: progress
+  - project: 自動実行レポートに期間/状態フィルタ＋詳細レポートの整形
+  - priority: low
+  - summary: ユーザー指示「フィルタと整形やって」に対応。AutoExecReportに期間フィルタ(7日/30日=既定/全期間)＋状態フィルタ(すべて/完了/一部完了/失敗)をチップ(Link)で追加、/guide経由で?range=?status=をURL同期・該当件数表示・0件時ガイド文。詳細レポート全文はcleanRawReport()でrawReportの「progressレビュー用」ブロック以降とmonetizationImpact/theme/obsidianSummary/obsidianSaveTarget/reviewStatus/runId/changedFiles等の機械メタ行を除去し、連続改行で段落分割して<p>表示(旧<pre>ベタ貼り廃止)。検証: tsc0/next build0/guide?tab=report フィルタ描画(期間7/30/全・状態すべて/完了/一部/失敗・該当件数)/range=7・status=failed 200/詳細レポートにprogressレビュー用・monetizationImpact・obsidianSaveTarget残らないこと(0件)確認。commit 196035d push済。未対応=Goal/Epic別フィルタ未・cleanRawReportは固定キー除去(網羅的でない可能性)・実機確認未。確認観点=既定30日の妥当性/cleanRawReport除去対象の網羅性(消しすぎ残りすぎ)/フィルタ軸(期間状態)で十分か。
+  - result: 
+
 - [ ] [[2026-06-19_autoexec-report-per-run]]
   - createdAt: 2026-06-19 22:57
   - app: progress
