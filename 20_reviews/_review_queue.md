@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_factory-idle-improvement-goals]]
+  - createdAt: 2026-06-20 07:35
+  - app: progress
+  - project: 自動実行アイドル時のゴール生成モード（progress優先で承認対象を補充）
+  - priority: medium
+  - summary: ユーザー要望「自動実行対象が無かった時、ゴール生成モードに変えてprogress優先で改善事項や試した方がいいことをゴール承認対象へ追加し、次の自動実行が空にならないように」に対応。lib/improvement-goals.ts新設(proposeImprovementGoalsIfIdle): アイドル時(!scan.picked)に優先順=(1)失敗/エラーRunの解消[改善事項・後に成功Run無しのみ]→(2)未消化nextActionsのゴール化[試した方がいいこと]→(3)progress改善seed[空回避の保険3件]でstatus=proposed候補を実生成(上限3・全status重複除外・progress優先・source=factory_idle_improvement)。factory-runnerのアイドル分岐に配線し実登録、従来のプロンプトのみrequestGoalProposalIfIdleは補助フォールバック化。GoalStatusは既存proposed再利用(VALID配列変更なし)。検証: tsc0/next build0/lint0。現在proposed=3(上限)で「上限尊重で新規提案せず」が正しく動作・失敗Run1件/223runsのnextActionsが補充ソースとして存在を確認。実生成は実データ汚染回避のため未実行。commit c650726 push済。未対応=proposed枠<3での実機候補生成確認・seed3件内容精査(ユーザー判断)・/guide反映。確認観点=ソース設計(失敗→nextActions→seed)と優先順の妥当性/空回避保証とノイズ提案のバランス(上限3で十分か)/nextActionsゴール化の粒度問題。
+  - result: 
+
 - [ ] [[2026-06-19_autoexec-report-filter-format]]
   - createdAt: 2026-06-19 23:21
   - app: progress
