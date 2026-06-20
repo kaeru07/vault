@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_mahjong-ios-codemagic]]
+  - createdAt: 2026-06-20 21:54
+  - app: mahjong
+  - project: 麻雀アプリをCapacitorでiOS化＋Codemagic(TestFlight)ビルド準備
+  - priority: high
+  - summary: レンタルMac無しでCodemagicのクラウドMacでiOS(TestFlight)ビルドする準備。/root/mahjong/mahjong(Next.js16/React19/App Router・API route無し全8ページStatic)をbranch ios-codemagic-testで対応。next.config.tsにoutput:export/images.unoptimized/trailingSlash統合→out/8html生成。Capacitor8(core/cli/ios 8.4.1)導入＋capacitor.config.ts(appId com.kaeru07.mahjong/appName Mahjong/webDir out)。npx cap add ios/sync成功。重要=Capacitor8はCocoaPodsでなくSwiftPM構成(Podfile/.xcworkspace無し・ios/App/App.xcodeproj＋CapApp-SPM/Package.swift)。共有スキーム不在→App.xcscheme(BlueprintId 504EC3031FED79650016851F)を新規作成しCIでscheme App解決可能に。codemagic.yaml新規(mac_mini_m2/xcode latest/node22/cocoapods default(SPMのため実使用なし)、ios_signing app_store/bundle com.kaeru07.mahjong、npm ci→build→cap sync→xcode-project use-profiles→build-ipa --project ios/App/App.xcodeproj --scheme App、artifacts ipa+xcodebuild log、publishing app_store_connect auth:integration submit_to_testflight:true)。秘密情報非記載・ASC integrationはUI登録前提。検証=npm ci/build/cap sync全OK・out8html・ios/App.xcodeproj・webDir out・public同期・秘密スキャン実値なし。自分の変更25ファイルのみcommit(BoardView/AGENTS/CLAUDE除外・ios配下public/生成configはgitignore)。git push -u origin ios-codemagic-test成功(kaeru07/mahjong)。未対応=実iOSビルド/署名/IPA/TestFlightはCodemagic・Apple Developer/ASC API Key登録はユーザー手動。確認観点=SPM構成のbuild-ipa妥当性/cocoapods:default残置の無害性/auth:integrationでTestFlight到達十分か/Next16 output:exportのWebView注意点。
+  - result: 
+
 - [ ] [[2026-06-20_integration-map-button]]
   - createdAt: 2026-06-20 19:25
   - app: progress
