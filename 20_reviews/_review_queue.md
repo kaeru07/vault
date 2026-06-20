@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_mahjong-codemagic-yaml-fix]]
+  - createdAt: 2026-06-20 23:11
+  - app: mahjong
+  - project: codemagic.yaml更新(workflow ios-capacitor-test)＋No configuration file found解消
+  - priority: high
+  - summary: Codemagicが Branch:main で「No configuration file found」になる原因=codemagic.yamlがios-codemagic-testブランチのみでmainに無い。ユーザー新仕様に合わせcodemagic.yaml刷新: workflow id ios-capacitor-test/name iOS Capacitor Test、mac_mini_m2/xcode latest/node latest/cocoapods default、integrations.app_store_connect:ASC_API_KEY追加、vars(BUNDLE_ID/XCODE_PROJECT ios/App/App.xcodeproj/XCODE_SCHEME App)、scripts(npm ci||install→build→cap sync→keychain initialize/app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE --create/keychain add-certificates/xcode-project use-profiles→build-ipa --project --scheme App)、artifacts ipa+xcodebuild log、publishing auth:integration submit_to_testflight:true。重要差異=Capacitor8はSwiftPMでApp.xcworkspace無し→ユーザーテンプレの--workspaceを--projectに変更。秘密情報非記載。検証=build OK/cap sync OK/yamlルート/workflow ios-capacitor-test/integrations有/build-ipa --project/秘密スキャンclean。commit Add Codemagic iOS build configuration→push origin ios-codemagic-test(219c1a2)・origin確認。未対応=実ビルド/署名/TestFlightはCodemagic・main未反映(意図的)。ユーザー次手=CodemagicでBranchをios-codemagic-testに変更→Check for configuration files→integration名一致→Start build。確認観点=SPM構成の--projectビルド妥当性/fetch-signing-files --create+integrationでTestFlight到達十分か/main非配置運用の是非。
+  - result: 
+
 - [ ] [[2026-06-20_mahjong-ios-codemagic]]
   - createdAt: 2026-06-20 21:54
   - app: mahjong
