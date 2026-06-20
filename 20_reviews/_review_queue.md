@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_integration-map-button]]
+  - createdAt: 2026-06-20 19:25
+  - app: progress
+  - project: 司令塔トップに対応表ページへの一時ボタンを配置
+  - priority: low
+  - summary: ユーザー要望「progressアプリから遷移できるように一時ボタンも配置」に対応。app/page.tsxのReviewCopyButton直後に/integration-mapへのLink(インディゴ枠・🗺旧Vault→今のゴール運用 対応表・「一時 →」バッジ)を追加。統合完了後撤去予定とコメント明記。☰メニュー掲載と併用。検証tsc0/build0/lint0・/ 200でボタン文言と/integration-map href描画確認。commit fd38e09 push済。未対応=統合完了後にボタン/ページ撤去。確認観点=導線の置き場所・一時バッジで意図が伝わるか。
+  - result: 
+
 - [ ] [[2026-06-20_integration-map-page]]
   - createdAt: 2026-06-20 18:11
   - app: progress
