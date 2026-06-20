@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_legacy-ops-integration]]
+  - createdAt: 2026-06-20 14:42
+  - app: progress / Vault運用
+  - project: 旧Vault運用と現ゴール運用の統合点検＋段階別統合ゴール6件を承認へ追加
+  - priority: high
+  - summary: ユーザー要望「旧運用のvault等を再点検し最新のゴール運用へ統合・段階に分けてゴール承認へ追加・今点検しきってもよい」に対応し点検をやり切り。旧Vault運用(05_monetizationのcandidate-001〜007/Epic A-D/収益化ロードマップ＋20_reviewsのChatGPT承認待ち/vloop_queue/案件別ToDo一覧/案件別ゴール進捗/完了ToDoログ＋vloopスキル＋GitHub Issue＋ChatGPT承認)と現progressゴール運用(Goal/ゴール承認/auto-queue/factory-runner/ExecutionRun)が『候補→承認→キュー→実行→完了→進捗』で並行2系統(旧は〜2026-05-25 vloop11で停滞)であることを確認。概念対応表を作成し正本寄せ先を確定(実行/キュー/ToDo/進捗/完了=progress、Vault=判断ログ/ナレッジ/ChatGPTレビュー入口)。点検doc=06_research/2026-06-20_旧Vault運用と現ゴール運用の統合点検.md。段階別統合ゴール6件をゴール承認(アプリ系)へ追加(P1対応表確定/P2 candidate→Goal移行/P3 ToDo・キュー一本化/P4 承認フロー一本化/P5 vloop位置づけ確定/P6 旧ドキュメントarchive・索引現行化、各enables/pros/cons付)。検証=/api/goals/propose created6/skipped0・/decide?tab=goalApproval 200で統合P1〜P6描画。proposed43(試した方がいい系16+アプリ系27)。未対応=P1〜P6実移行は承認後。確認観点=正本をprogressに寄せる方針の妥当性/P順序・粒度/vloop廃止orprogress連携/candidate移行の取捨軸。
+  - result: 
+
 - [ ] [[2026-06-20_try-goals-enrich]]
   - createdAt: 2026-06-20 14:15
   - app: progress
