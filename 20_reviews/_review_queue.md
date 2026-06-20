@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_try-goals-enrich]]
+  - createdAt: 2026-06-20 14:15
+  - app: progress
+  - project: 試した方がいい系(残16件)に「試すと何ができる/どんな良い影響か」を詳細追記＋enrichエンドポイント新設
+  - priority: medium
+  - summary: ユーザー要望「残した試した方がいい系に、もっと試したらどういい影響があるか・どんなことができるかを詳細に追記」に対応。対象16件はenables/prosが空(normalizeGoal脱落バグで消失)で承認カードが薄かった。app/api/goals/enrich-proposals/route.ts新設(items[{title,enables,pros[],detail}]をproposedへタイトル一致で適用・detailはnotes先頭へ🔍試す価値マーカー付き追記)。16ツール個別に詳細作成し適用(updated16/notFound0)。各々ユーザー文脈に接続(Claude Code/Agent SDK=工場自律度・changedFiles根治、Codex SDK/Goal mode/Appshots=Fallback自動化・ゴール自走・UI自動検証、Codex Sites/Google AI Studio=収益化LP・プロト高速化、GitHub MCP secret scanning=push前機密チェック自動化、Figma MCP=iPhone UI改善、Remote MCP=モバイル↔VPS、MCPセキュリティ=連携安全土台、ADK/AI Studio=新規収益アプリの種)。検証tsc0/build0/lint0・/decide?tab=goalApproval 200で「できるようになること/メリット/🔍試す価値/収益化ロードマップに直結」描画確認。commit 0bc6394 push済。未対応=アプリ系27件への同様肉付け・文面の質確認。確認観点=各ツールの記述が承認判断に役立つか/環境紐づけの的確さ/アプリ系にも詳述すべきか。
+  - result: 
+
 - [ ] [[2026-06-20_research-goals-triage]]
   - createdAt: 2026-06-20 14:00
   - app: progress
