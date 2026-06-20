@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_priority-code-to-human]]
+  - createdAt: 2026-06-20 16:35
+  - app: progress
+  - project: 統合ゴールを平易な名前に改名＋アプリ全体のP0/P1/P2表記を高/中/低へ統一
+  - priority: medium
+  - summary: ユーザー指示「progressに寄せる方針でよい/P1P2の用語は分かりにくいのでアプリ上もこの言葉を使わないように変換」に対応。(1)ゴール改名: enrich-proposals APIにnewTitle/summary/cons編集を追加し【運用統合P1〜P6】を①旧Vaultと今のゴール運用を見比べてまとめ方を決める〜⑥移行後の古い運用メモを片付ける の平易な日本語へ改名(P番号除去updated6)。(2)アプリ全体のP0/P1/P2廃止: lib/epic-priority-label.ts新設(P0→高/P1→中/P2→低・値据え置き)。司令塔/自動実行キュー(フィルタ/チップ/カード/最優先で次回実行ボタン/スコア要因reasonFactors)/Epic詳細/おすすめEpic/承認パネル/Epic作成フォーム/JSON取込プレビュー/legacy/guide FAQの優先度表示を高/中/低へ。reasonFactorsの生P0はauto-queue-score.ts:139とauto-queue.ts:279の2経路修正。検証tsc0/build0・/ /queue /decide /legacy /recommended-epics 200でP0/P1/P2リーク0・高/中/低描画・ゴール承認①〜⑥表示。commit a5fc103 push済。残置(意図的)=JSON記入例placeholder/コピー用プロンプト文のP表記(AI向け)/EpicPriority型自体。方針=正本progress集約を承認(06_research点検doc追記)。未対応=統合ゴール①の実移行は承認後・task優先度英語表示統一は別軸。確認観点=P表記の見落とし有無/コピー文のP残置の是非/task優先度の日本語化要否。
+  - result: 
+
 - [ ] [[2026-06-20_legacy-ops-integration]]
   - createdAt: 2026-06-20 14:42
   - app: progress / Vault運用
