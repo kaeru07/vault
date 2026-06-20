@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_integration-map-page]]
+  - createdAt: 2026-06-20 18:11
+  - app: progress
+  - project: 旧Vault→今のゴール運用 対応表ページ(一時)をprogressアプリに追加
+  - priority: medium
+  - summary: ユーザー指示「対応表作って、一時的にprogressアプリから見れるようにして」に対応(統合ゴール①の成果物)。app/integration-map/page.tsx新設(server component): 一時ページ説明＋対応表10行(旧Vault→今のprogress→所見)＋正本の寄せ先(実行/キュー/ToDo/進捗/完了=progress、Vault=判断ログ/レビュー入口)＋統合の進め方①〜⑥をgoals.jsonとタイトル先頭丸数字で照合し状態バッジ(承認待ち/実行中/後で/完了)を動的表示＋ゴール承認リンク＋承認待ち件数(試した方がいい系/アプリ系)。iPhone向け横スクロールテーブル＋簡潔レイアウト。lib/nav-menu.ts「計画・候補」に/integration-map追加(☰・/legacyから到達・孤立防止・一時ページ明記)。検証tsc0/build0/lint0・/integration-map 200で全セクション描画・/legacy掲載確認。commit 5bd5d69 push済。判断=一時ページのため/guide・TERMS・operating-modelフルセット更新スキップ(撤去前提・nav掲載のみ)・正本資料は06_research点検doc。未対応=②〜⑥は承認後・統合完了後にページ撤去予定。確認観点=対応表の粒度/所見の抜け漏れ・運用ドキュメント更新スキップの是非・②から着手すべきか。
+  - result: 
+
 - [ ] [[2026-06-20_priority-code-to-human]]
   - createdAt: 2026-06-20 16:35
   - app: progress
