@@ -5,6 +5,22 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_research-goals-bulk]]
+  - createdAt: 2026-06-20 12:55
+  - app: progress
+  - project: 日々調査のゴール承認候補を一括追加（58件）＋一括追加エンドポイント新設
+  - priority: medium
+  - summary: ユーザー要望「日々調査のゴール承認をできるだけ多く追加」に対応。既存自動提案は承認待ち上限3・maxDays3・max3で絞られ★4以上ユニーク61件中3件しか入らなかった。app/api/goals/propose-research/route.ts新設(buildResearchGoalCandidates+proposeGoalsを上限無視で呼ぶ手動トリガ・既定maxDays60/max100・既存同名除外)。実行しcreatedCount=58(proposed 3→61)。候補はAIツール「試す/調査する」系(Claude Codeを試す/OpenAI Codex SDKを試す等)。検証: tsc0/build0/lint0・/decide?tab=goalApproval 200で新候補描画確認。commit 1f2c612 push済。注意=proposed61で自動の調査/アイドル提案(上限3)は承認で減るまで停止(設計通り)。未対応=大量承認候補の一括承認/絞り込みUI。確認観点=proposed61運用の妥当性/自動上限3据え置き+手動大量追加の切り分け/一括承認UIの要否。
+  - result: 
+
+- [ ] [[2026-06-20_autoexec-report-content]]
+  - createdAt: 2026-06-20 12:55
+  - app: progress
+  - project: 自動実行レポートの中身を充実（何をしたかが分かるよう結果/対象/やったことを常時表示）
+  - priority: medium
+  - summary: ユーザー指摘「自動実行レポートが内容書いてなさすぎる・できたことに『ファイル変更履歴なし』とあるが何をしたか分かるようにして」に対応。実データ74runでchangedFilesは10件だけ、summary74全件/stopReason72/selectionありを未活用だった。AutoExecReport.tsxにdescribeOutcome(stopReason→「何をしてなぜ終わったか」の人間語訳・blocked/no_candidate/epic_done/continue/approval_required/max_runs_reached/rate_limited/run_failed等)とdidRealWorkを追加し、記事を①結果(outcome+summary常時)②対象と選定理由(selection)③やったこと(changedFiles列挙orsummary/outcome説明・コード変更なしの回も理由付き明示)④課題⑤検証⑥次⑦詳細に刷新。cleanRawReportで[factory-runner]/[factory-schedule]/executor=機械プレフィックス除去。検証: tsc0/build0/lint0・/guide?tab=report 200で新セクション(やったこと×25記事相当/結果/「コードを変更する作業はしていません」/「起動条件を満たさず」)描画確認。commit 1f2c612 push済。未対応=factory-runner側のchangedFiles記録不足は別途・iPhone実機確認。確認観点=各記事で何をしたか掴めるか/stopReason人間語訳の自然さ/changedFiles薄さの根本を直すべきか説明側で十分か。
+  - result: 
+
 - [ ] [[2026-06-20_system-spec-autoexec-flow]]
   - createdAt: 2026-06-20 09:26
   - app: progress
