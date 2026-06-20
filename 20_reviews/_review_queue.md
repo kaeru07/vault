@@ -5,6 +5,22 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_research-goals-triage]]
+  - createdAt: 2026-06-20 14:00
+  - app: progress
+  - project: 試した方がいい系ゴールのトリアージ（★5に理由追記・★4以下を後でへ）＋triageエンドポイント新設
+  - priority: medium
+  - summary: ユーザー指示「試した方がいい系で特に試した方がよさそうなものは理由追記、あとででも良さそうなものは後で扱いに変更」に対応。app/api/goals/triage-research/route.ts新設。research系proposedを対象に★5(priority high)=承認待ち維持+notesへ理由追記(⭐特に試した方がいい:調査で最高評価★5・cue…Claude/Codex/MCP中心の開発に直結…重複追記なし)、★4以下=status=paused(後で・保留)へ変更、剥がれたproposalSource=research修復。実行結果enriched=16/movedLater=45/repairedSource=61。後で(paused)は削除でなく目標タブで再有効化可。検証tsc0/build0/lint0・/decide?tab=goalApproval 200で試した方がいい系16件・理由描画確認。commit 3dbe800 push済。未対応=後で(paused)を承認画面内『あとで』タブで可視化する案・★5/★4基準の妥当性確認。確認観点=★5/★4境界の妥当性/後で=paused運用の是非/理由文(テンプレ寄り)の質。
+  - result: 
+
+- [ ] [[2026-06-20_goal-approval-categories]]
+  - createdAt: 2026-06-20 13:59
+  - app: progress
+  - project: ゴール承認のカテゴリサブタブ分割＋progress改善ゴール27件追加＋proposalSource保持バグ修正
+  - priority: high
+  - summary: ユーザー要望「progressの運用/機能/操作フローを深く見直し改善ゴールを多数追加・ゴール承認を試した方がいい系/アプリ系でサブタブ分割」に対応。command-center proposalCategoryOf(research=試した方がいい系/他=アプリ系)+InboxCard.proposalCategory付与、InboxTabs goalApprovalにサブタブ(すべて/試した方がいい系/アプリ系・client state goalCat)追加。コード精査で見えた実在の改善点27件を/api/goals/propose(source=app_improvement)で一括追加(自動実行RunのchangedFiles10/74・selection5/74・nextActions1/74記録不足解消、ゼロダウンタイムデプロイ=build中_error.jsクラッシュ事故、一括承認/検索UI、stale自動修復、doneCriteria精度点検、iPhone表示点検、成功率/Executor統計、危険語ゲート点検等)。さらにnormalizeGoalがproposalSource/proposedAt/approvedAt/proposalEnables/Pros/Consを返さずread→writeのたびに提案元が脱落するバグを発見・修正(27件追加時のreadで既存61件のresearch source消失で発覚)。検証tsc0/build0/lint0・/decide?tab=goalApproval 200でサブタブ・アプリ系ゴール描画・proposalSource分布app27/research61(修復後)確認。commit 3dbe800 push済。未対応=一括承認UI・iPhone実機。確認観点=try/app2分類で十分か/27改善ゴールの粒度優先度/normalize他フィールド脱落の有無。
+  - result: 
+
 - [ ] [[2026-06-20_research-goals-bulk]]
   - createdAt: 2026-06-20 12:55
   - app: progress
