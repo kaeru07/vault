@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-20_system-spec-autoexec-flow]]
+  - createdAt: 2026-06-20 09:26
+  - app: progress
+  - project: システム仕様ページを自動実行フロー中心に再構成＋調査/ゴール生成モードを明記（iPhone向け折りたたみ）
+  - priority: medium
+  - summary: ユーザー要望「自動実行時の調査もシステム仕様にまとめて/システム仕様ページが縦長で分かりづらい・iPhone意識で縦長にしすぎないで/一番知りたいのは自動実行の処理フローだからその方針でまとめ直して」に対応。SystemSpecification.tsxを全面再構成: 旧16セクション縦積み(344行)→(A)ヘッダ (B)主役「自動実行で行われる処理(11/14/16/23時)」を全体像+12ステップ番号リストで先頭固定(②調査/③-bゴール生成モードをタグで明示) (C)参照系(安全条件/Runner・Executor/キュー並び順/状態モデル/正本データ/API/画面/用語/設計原則・互換・変更時チェック)をdetailsアコーディオンで既定折りたたみ→iPhone初期スクロール短縮。実フローをrunScheduledFactory→runFactory実装どおり正確化(lock→ON確認→危険判断スキップ→①Review Fix→②調査ゴール提案proposeGoalsFromResearchIfNeeded→③Epic選定→③-a次の一歩ensureNextGoalStepEpic→③-bゴール生成モードproposeImprovementGoalsIfIdle→④Claude実行(上限→Codex)→⑤検証+ExecutionRun→⑥doneCriteria→⑦Prompt Queue→⑧Envelope Run)。guide systemタブ説明をフロー中心に更新+FAQ「作業が無くなったら」追加、command-center TERMS.proposedGoalを調査(外)/ゴール生成モード(中)2系統に更新、current-operating-model.md frontmatter+パイプライン節更新(CLAUDE運用ドキュメント4点セット更新)。検証: tsc0/build0/lint0/pm2 restart後 /guide?tab=system 200で新フロー・調査・ゴール生成モード・折りたたみ描画と旧16セクション削除を実描画確認・他タブ200回帰なし。commit b4cf4ca push済。未対応=iPhone実機での折りたたみ操作感・折返し最終確認。確認観点=12ステップの過不足/参照系アコーディオン既定折りたたみの妥当性(重要情報が隠れすぎないか)/調査・ゴール生成モード2系統整理の分かりやすさ。
+  - result: 
+
 - [ ] [[2026-06-20_factory-idle-improvement-goals]]
   - createdAt: 2026-06-20 07:35
   - app: progress
