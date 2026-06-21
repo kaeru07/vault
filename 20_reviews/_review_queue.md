@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-21_project-with-goals]]
+  - createdAt: 2026-06-21 18:34
+  - app: progress
+  - project: プロジェクト＋ゴール手動一括追加(JSON)機能＋自動実行対象テスト
+  - priority: high
+  - summary: ユーザー要望「プロジェクト手動追加・キュー追加で優先調整・ゴールも一緒にJSONテンプで追加・次回自動実行対象かテスト」に対応。実装(Codex委譲)=app/api/projects/with-goals/route.ts(addProject+各goalをupsertSingleGoal status active/projectId付与・重複proj追記続行)、app/projects/import/page.tsx(JSONテンプレ貼付フォーム→POST→/queue・/portfolio?tab=goalsリンク)、nav-menuに/projects/import。検証(Claude実テスト)=tsc0/build0/lint0・/projects/import 200・POST with-goals(autoexec-test-proj+ゴール2)→200(goalsCreated2)・project存在・ゴール2件active+todo1・/api/auto-queue executableにtodo:2件(factoryEligible true/candidateEligible true=次回自動実行対象/priority P0P1)・factory-run dry_run200・prioritize200(優先調整可)。後片付け=テストゴールdropped/プロジェクトarchived。commit 0efb800 push済。確認観点=active即時化(承認スキップ)運用の妥当性/重複proj時の追記挙動。
+  - result: 
+
 - [ ] [[2026-06-21_queue-priority-fix]]
   - createdAt: 2026-06-21 17:37
   - app: progress
