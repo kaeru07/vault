@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-21_queue-reorder-rebuild]]
+  - createdAt: 2026-06-21 23:56
+  - app: progress
+  - project: 自動実行キューの並び替えを根本修正(即時反映UI・上下が効かない問題)
+  - priority: high
+  - summary: ユーザー報告「キュー上下を押しても変わらない・仕組みが微妙」を根本対応。原因=compareItemsがgoalRankをmanualOrderより先に評価し手動順が戻る+全ページ再読込で反応不明+先頭pin固定で混乱。修正(Codex委譲・Claude検証)=compareItemsでmanualOrderをgoalRankより優先、QueueReorderList(client楽観更新・↑↓で即座にローカル入替→/api/auto-queue/reorderで一括保存・全ページ再読込なし・pinは📌固定+解除)、一括API /api/auto-queue/reorder(orderedWorkItemIds→manualOrder一括永続化epic/todo/goal)、queue pageをQueueReorderListに置換。検証=tsc0/build0/lint0・stale pin解除後reorderで先頭3逆順送信→executable先頭3逆順反映・/queueに即座に反映/固定解除描画。commit ce6ec5c push済。未対応=iPhone実機で即時反映確認。優先支配順=pin>手動>goal。確認観点=支配順の妥当性/楽観更新とサーバ順(pin floating)の乖離扱い。
+  - result: 
+
 - [ ] [[2026-06-21_project-with-goals]]
   - createdAt: 2026-06-21 18:34
   - app: progress
