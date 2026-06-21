@@ -5,6 +5,22 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-21_queue-priority-fix]]
+  - createdAt: 2026-06-21 17:37
+  - app: progress
+  - project: キュー優先順位操作を全アイテム種別で機能・即時反映(#13エラー/上下無効を根本修正)
+  - priority: high
+  - summary: ユーザー報告「キュー#13(goal達成系)で最優先押下→workItemId(epic:* or todo:*) required エラー・上下矢印効かない・優先順位変更が確実&即時反映するよう根本見直し」に対応。原因=control APIがepic:/todo:のみでgoal:*を弾く、Goalはqueue Controlを持たずmanualOrder不可、canMoveがepic限定。修正(Codex委譲・精密仕様→Claude実APIテスト検証)=types/goal.ts Goalにqueue Control追加・goal-reader normalizeGoalで保持・goal-writer updateGoalControl追加・auto-queue goalアイテムがgoal.queueControl使用+hold反映・control route parseGoalId+goalブロック(pin/unpin/prioritize/hold/unhold/exclude/include/moveUp/Down/complete422)+writeManualOrderをepic/todo/goal汎用化・queue page canMove=executable全種別。検証=tsc0/build0/lint0・実goal:goal-mqluko5f-wbefyでprioritize200(pinnedTop/priorityBoost2/queueControl)・moveDown200(manualOrder3永続化)・hold200、テスト変更はunhold/unpin原状回復。即時反映=API応答にqueue返却+revalidate+router.refresh。commit b2b6668 push済。未対応=UI実機での即時反映確認。確認観点=種別ごとの優先制御モデル統一の妥当性/manualOrderと自動スコアの整合。
+  - result: 
+
+- [ ] [[2026-06-21_portfolio-goals-tab]]
+  - createdAt: 2026-06-21 17:37
+  - app: progress
+  - project: プロジェクト×ゴール進捗をProjectタブ内の新規タブに統合
+  - priority: medium
+  - summary: ユーザー要望「project-goalsをプロジェクトタブの中に新規タブで追加」に対応。Codex委譲・Claude検証。components/projects/ProjectGoalsView.tsx切り出し、app/portfolio/page.tsxに案件一覧/ゴール進捗タブバー(?tab=goalsでProjectGoalsView表示)、app/project-goals/page.tsxはラッパー化、nav-menuを/portfolio?tab=goalsへ。検証tsc0/build0/lint0・/portfolio 200・/portfolio?tab=goals 200(company-mgmt描画)。commit 7e4abfe push済。確認観点=タブ統合のUX。
+  - result: 
+
 - [ ] [[2026-06-21_opmodel-freshness-codex]]
   - createdAt: 2026-06-21 15:28
   - app: progress
