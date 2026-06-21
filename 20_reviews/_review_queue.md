@@ -5,6 +5,22 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-21_compat-data-retire-decision]]
+  - createdAt: 2026-06-21 09:54
+  - app: progress
+  - project: 互換データ(work-queue/work-candidates)廃止の参照棚卸し＋廃止方針を今日の判断へ
+  - priority: low
+  - summary: 集中作業モードでactive[low]goal-mqluko5l-ixkhfに着手。ユーザー指示「微妙なところは今日の判断に追加して承認できるように」を実践。work-queue.json/work-candidates.jsonの参照をgrep棚卸し→operations-store(3read)/session-reader,writer/app/api/queue/app/tasks/app/morning/app/radar/app/legacy/queue/SystemSpecificationが依存(正本はauto-queueだが旧readerが一部画面を支える)。単純削除はradar/morning/legacyを壊すリスク+人間判断必要のため自走せず、【要判断】互換データ廃止のやり方を決める をproposedゴール(source=focus_decision)で今日の判断(ゴール承認)へ追加(選択肢A現状維持/B移植後削除/Clegacyごと撤去)。コード変更なし(調査+エスカレーションのみ)。runId 20260621-095414。未対応=ユーザーが方針承認後に移植/撤去。確認観点=どの方針が安全か/radar・morningのauto-queue移植可否。
+  - result: 
+
+- [ ] [[2026-06-21_goal-dashboard]]
+  - createdAt: 2026-06-21 09:45
+  - app: progress
+  - project: ゴール達成率ダッシュボードを作る
+  - priority: low
+  - summary: 集中作業モードでactive[low]goal-mqluko5k-q6n7pに着手。app/goal-dashboard/page.tsx新設(server component): 状態内訳カード6種(実行中/承認待ち/後で/完了/取りやめ/保管・人間語)＋実行中の平均達成率＋実行中ゴールの達成率バー(goalAchievement・進んでいない順・%色分け)＋承認待ちカテゴリ内訳(試す/アプリ)。goalAchievement/proposalCategoryOf再利用・iPhone向けgrid。lib/nav-menu.ts「計画・候補」に/goal-dashboard追加。goal-planner(per-goal管理・proposed除外)と非重複。検証tsc0/build0/lint0・/goal-dashboard 200・全セクション描画・/legacyにnav掲載。commit 4c5b09b push済。確認観点=指標(current/target)の見せ方の十分性。
+  - result: 
+
 - [ ] [[2026-06-21_autoexec-nextactions-fix]]
   - createdAt: 2026-06-21 09:11
   - app: progress
