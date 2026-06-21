@@ -5,6 +5,22 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-21_autoexec-nextactions-fix]]
+  - createdAt: 2026-06-21 09:11
+  - app: progress
+  - project: 自動実行RunのnextActionsを必ず埋める
+  - priority: medium
+  - summary: 集中作業モード(自動実行)でactiveゴール[medium]goal-mqluko5g-rt044に着手。claude/codex両アダプタがnextActions:[]固定(実データ74runでnextActions=1件)だったのを修正。lib/executors/shell.tsにparseNextActions(stdout)追加(見出し『次にやること/次のアクション/Next steps/やり残し/TODO』以降の箇条書き- * ・ → 数字.を抽出、見出し無くてもnext/todo含む箇条書きを拾う、重複排除・各200字・最大5件)、両アダプタでnextActions:[]→parseNextActions(r.stdout)。検証=単体テスト4ケース(見出し+箇条書き/番号付き/見出し無しTODO/空)期待通り・tsc0/build0/lint0・pm2 restart api200。commit ed28d6c push済。未対応=実factory自動実行での実地反映。確認観点=抽出パターンの十分性/誤抽出リスク。
+  - result: 
+
+- [ ] [[2026-06-21_autoexec-changedfiles-fix]]
+  - createdAt: 2026-06-21 08:58
+  - app: progress
+  - project: 自動実行RunにchangedFilesを確実に記録する
+  - priority: high
+  - summary: 集中作業モード(自動実行)でactiveゴール[high]goal-mqluko5f-wbefyに着手。自動実行レポートが薄い主因(実データ74runでchangedFiles=10件)を根治。原因=lib/executors/{claude,codex}.tsが実行前後のgit status --porcelain差分で、executorが変更をコミットするとcleanになりchangedFiles空。修正=shell.tsにgitHead(cwd)とchangedFilesSince(cwd,beforeHead,beforeDirty)追加(git diff --name-only beforeHead..HEAD[コミット済み]＋実行後porcelain[実行前dirty除外]を集約)、両アダプタで実行前beforeHead/beforeDirty取得→実行後changedFilesSinceで算出。検証=tsc0(Set spread→Array.from修正)/build0/lint0/pm2 restart api200・dry_run挙動不変・changedFilesIn温存(後方互換)。commit 834a9c9 push済。未対応=実factory自動実行での実地反映。確認観点=HEAD差分＋porcelain集約方式の妥当性/実行前dirty除外の副作用。
+  - result: 
+
 - [ ] [[2026-06-20_mahjong-codemagic-yaml-fix]]
   - createdAt: 2026-06-20 23:11
   - app: mahjong
