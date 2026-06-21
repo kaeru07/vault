@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-21_remove-legacy-queue-screen]]
+  - createdAt: 2026-06-21 10:13
+  - app: progress
+  - project: 旧運用画面/legacy/queueを削除＋残り旧画面の削除可否を今日の判断へ
+  - priority: medium
+  - summary: ユーザー指示「旧運用専用画面は消す・迷うなら今日の判断へ」に対応。被リンク棚卸しで判定し、非正本・互換のみの旧キュー/legacy/queue(正本は/queue)を削除、参照4箇所整理(TopNav旧キューリンク/app/queueの旧キューLink/nav-menuエントリ/SystemSpecification記述を廃止へ)。迷う画面=/legacy/home(TopNav旧ナビ分岐依存)・/approvals(7箇所被リンク)・/inbox(Vault連携)・/radar/morning(work-queue依存の機能画面)は自走削除せず【要判断】残りの旧運用画面を消すか決める をproposedゴール(source=focus_decision)で今日の判断へ追加。検証=next build0・pm2 restart後/legacy/queue→404・/queue/legacy/_/decide→200・残参照0。commit d44cf3e push済。未対応=残り旧画面の取捨はユーザー判断待ち。確認観点=/approvals(7被リンク)・/radar/morning(work-queue依存)を移植して消すか残すか。
+  - result: 
+
 - [ ] [[2026-06-21_compat-data-retire-decision]]
   - createdAt: 2026-06-21 09:54
   - app: progress
