@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-21_decision-routing-to-inbox]]
+  - createdAt: 2026-06-21 12:11
+  - app: progress
+  - project: 今日の判断に判断系が出ない問題の点検と是正(ルーティング＋表示)
+  - priority: high
+  - summary: ユーザー指摘「消すか決める等の判断系がゴール承認に行き今日の判断に出ない・妥当か点検して」に対応。点検=今日の判断(decisions)の元はapprovals.json、pending19件中16件がdanger系(Run一次レビュー)で上限3・danger優先sliceにより方針選択(direction)が枠を取れず埋もれていた。さらに自分の【要判断】はproposedゴールで作成しゴール承認タブへ誤ルーティング(1件はactive承認されゴール化)。是正=(1)判断系は/api/operations/approvals/generate(category multi_option=方針選択)で今日の判断へ入れると確認し【要判断】2件(互換データ廃止/残りの旧画面)を方針選択approvalとして作成(appr-1782006446950/447285)(2)ゴール版2件をsetGoalApproval(false)でdropped(3)command-center.tsのdecisions選択をdanger→direction→human_taskのラウンドロビンに変更し各種別最低1枠表示。検証=tsc0/build0・/decide 200で互換データ/残りの旧運用画面/判断してください が今日の判断に表示。commit 39d85b1(並行作業のloopHealth TERMS1行同梱)push済。memory(feedback_decision_routing_inbox)記録。未対応=旧Run一次レビューdanger16件のトリアージ(ユーザー判断)。確認観点=ラウンドロビンで危険判断のurgencyが損なわれないか/旧danger16件はdecisionsでなくレビュー扱いにすべきか。
+  - result: 
+
 - [ ] [[2026-06-21_remove-legacy-queue-screen]]
   - createdAt: 2026-06-21 10:13
   - app: progress
