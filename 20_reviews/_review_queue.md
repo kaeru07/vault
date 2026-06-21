@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-21_project-goals-linkage]]
+  - createdAt: 2026-06-21 14:36
+  - app: progress
+  - project: 理想運用の監査＋ゴールのプロジェクト紐付け・プロジェクト×ゴール進捗一覧
+  - priority: high
+  - summary: ユーザーの理想運用(収益化自動ループ/ゴールは必ずプロジェクト紐付け/プロジェクト×ゴール進捗一覧/App Store公開=完成表示/新アプリ提案/運用改善)を監査。最大の不足=active16中15ゴールが未紐付け。是正(優先度高・今作業)=lib/goal-writer.ts linkGoalProject+/api/goals/link-projectでactive16をcompany-mgmtへ紐付け(16/16)・app/project-goals/page.tsx新設(プロジェクト別にゴール/達成率/優先度一覧・App Store公開仕様到達を推定して完成バッジ・未紐付け警告・nav掲載)。残りの仕組みはゴール承認6件(収益化自動ループP0/新アプリ自動提案P1/新規ゴールのプロジェクト紐付け必須化P1/App Store完成フラグP2/運用改善定期提案P2/自動実行の実装Codex優先化P1・全てcompany-mgmt紐付け)、プロジェクト整理方針は今日の判断(方針選択appr-1782020129265)へ追加。検証tsc0/build0/lint0・/project-goals 200・active16/16紐付け確認。commit d175c1f push済。Codex委譲方針もmemory記録。未対応=承認後に各仕組み実装・研究系proposedは未紐付け(承認時付与方針)。確認観点=company-mgmt一括紐付けの妥当性(研究系別PJ要否)/App Store完成判定基準/プロジェクト整理の進め方。
+  - result: 
+
 - [ ] [[2026-06-21_mahjong-codemagic-signing]]
   - createdAt: 2026-06-21 12:46
   - app: mahjong
