@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-21_mahjong-codemagic-signing]]
+  - createdAt: 2026-06-21 12:46
+  - app: mahjong
+  - project: CodemagicビルドIPA失敗(status65/provisioning profile)の署名調査・yaml堅牢化
+  - priority: high
+  - summary: Build IPA status65『App requires a provisioning profile』を調査。原因=use-profilesが適用するApp Store用プロファイルが取得/適用されず自動署名(CODE_SIGN_STYLE=Automatic)のままarchive。調査=Bundle ID com.kaeru07.mahjong統一(pbxproj/capacitor/yaml)・pbxprojは自動署名で手動署名固定/Profile手書き無し(OK編集不要)・アプリ/ios/yamlはリポジトリ直下(cd不要)・共有スキームApp.xcschemeコミット済・build-ipaは--project ios/App/App.xcodeproj --scheme App(SwiftPM・--workspace不使用)で整合・integration名ASC_API_KEY。修正=codemagic.yaml署名ステップにfetch-signing-files --platform IOS追加＋use-profiles後にProvisioning Profiles をlsし0件なら原因(API Key App Manager/Admin要・Bundle ID/配布証明書上限)を明示してexit1(自動署名のままarchiveする前に止める)・set -e。pbxprojは編集せず標準レシピ通りuse-profilesに署名委譲。検証=YAML parse全項目OK・秘密情報clean・Bundle ID統一。push origin ios-codemagic-test(f060cf8)・ブランチ直下yaml確認。未対応=実archive/署名/TestFlightはCodemagic・ユーザーのAPI Key設定依存。次手=ios-codemagic-testをRebuild→署名ログでprofile取得有無確認→0件ならAPI Keyロール/アプリ登録/証明書上限。確認観点=ProvisioningStyle=Automaticがarchiveで悪さしないか/fetch --createが配布証明書も作るか。
+  - result: 
+
 - [ ] [[2026-06-21_decision-routing-to-inbox]]
   - createdAt: 2026-06-21 12:11
   - app: progress
