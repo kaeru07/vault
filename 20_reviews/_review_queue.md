@@ -5,6 +5,14 @@
 
 ## 未レビュー
 
+- [ ] [[2026-06-21_opmodel-freshness-codex]]
+  - createdAt: 2026-06-21 15:28
+  - app: progress
+  - project: 運用ドキュメント鮮度チェック(Codex委譲実装・Claude検証)
+  - priority: low
+  - summary: ユーザー方針「実装はCodexに委譲してClaude消費を抑える」の初適用。active[low]ゴール「/guide運用ページ鮮度点検」をmcp__codex(workspace-write/approval never)へ委譲実装。lib/operating-model.tsにoperatingModelStaleDays/getOperatingModelFreshness(updatedから経過日数・stale=days>=14)、app/guide/page.tsxのsystemタブにstale時amber警告バナー。Claudeは仕様提示・検証・commit/POSTに専念。検証=変更2ファイルのみ・tsc0/build0/lint0・秘密なし・/guide?tab=system 200・現在updated=2026-06-21でdays0非stable非表示(正常)。commit fb71478 push済。Codex委譲方針memory記録。確認観点=Codex委譲→Claude検証の分担妥当性/鮮度閾値14日。
+  - result: 
+
 - [ ] [[2026-06-21_project-goals-linkage]]
   - createdAt: 2026-06-21 14:36
   - app: progress
