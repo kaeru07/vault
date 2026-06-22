@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-06-22_auto-exec-timeout-fix]]
+  - createdAt: 2026-06-22 21:30
+  - app: progress
+  - project: progress自動実行基盤
+  - priority: high
+  - summary: 自動実行が成果ゼロだった真因(実行タイムアウト300秒)を修正＋レポート明確化
+  - result: 
 
 - [ ] [[2026-06-21_queue-reorder-rebuild]]
   - createdAt: 2026-06-21 23:56
