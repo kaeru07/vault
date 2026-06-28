@@ -4,6 +4,14 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-06-28_all-pages-compact]]
+  - createdAt: 2026-06-28 22:28
+  - app: progress
+  - project: progress全ページの縦長レイアウトをiPhone向けにコンパクト化
+  - priority: medium
+  - summary: ユーザー指示「運用に限らず全ページに適用」に対応。先行の/guideコンパクト設計を全41 page.tsxへ一貫適用。純表示カード/タイル/統計/凡例の縦1列→2列横並び・入れ子余白平坦化・padding/text圧縮。ホーム/・queue・activity・epic([epicId])・monetization([id])・recommended-epics([id])・projects([projectId])・morning・daily・logs・usage・goal-planner等。interactive(onClick/state/fetch/form)のロジック不変・Tailwind調整のみ。途中指示でlegacyは対象外化(HEADへ戻す)。検証=tsc0/build0/pm2再起動後 静的37+動的4(実ID)全200・error0。既存lib変更は非混入でpage.tsxのみcommit 7618931 push済。確認観点=375pxで2列が潰れないか/詰まりすぎ無いか/ページ間の密度不整合/interactive子の縦積み横並び化の進め方。
+  - result: 
+
 - [ ] [[2026-06-28_guide-compact-layout]]
   - createdAt: 2026-06-28 21:15
   - app: progress
