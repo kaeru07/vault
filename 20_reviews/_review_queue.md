@@ -4,6 +4,14 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-06-28_guide-compact-layout]]
+  - createdAt: 2026-06-28 21:15
+  - app: progress
+  - project: 運用ガイド等の縦長レイアウトをiPhone向けにコンパクト化
+  - priority: medium
+  - summary: ユーザー指摘「用語欄や使い方ページが縦長で見づらい/iPhone前提/横並びで他ページも確認」に対応。主因=Slideの三重余白+用語41件1列+凡例1列。/guideでSlide余白平坦化・用語辞典2列化・凡例2列化・KPI/Roadmap/フロー圧縮・キュー操作/並び順をdetails折りたたみ。他ページ横並び監査でportfolio/revenue/goal-dashboard/legacy-homeの純表示カードを2列化、automationは外側余白のみ(ロジック不変)。内容不変・表示密度のみ。検証=tsc0/build0/pm2再起動後6ページ全200・error0・grid-cols-2 10箇所/details37件実描画。commit 920335b push済。確認観点=375pxで2列が潰れないか/詰まりすぎ無いか/折りたたみで重要情報が埋もれないか/interactive縦積み(automation等)の横並び化の進め方。
+  - result: 
+
 - [ ] [[2026-06-28_guide-visual-slides]]
   - createdAt: 2026-06-28 19:05
   - app: progress
