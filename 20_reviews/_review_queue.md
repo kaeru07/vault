@@ -4,6 +4,14 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-06-28_guide-visual-slides]]
+  - createdAt: 2026-06-28 19:05
+  - app: progress
+  - project: 運用ガイド(/guide)を図ベースのスライド型に刷新
+  - priority: medium
+  - summary: ユーザー指示「運用ページを図でわかりやすく/文字でなく図ベース/iPhone前提/パワポ風」の再開作業(前回JSON破損で中断)。/guide使い方ガイドを各セクション=1スライドの縦スクロール構成に再構成。新設SlideKit(Slide/FlowDiagram/LoopDiagram/StatTiles/Roadmap/LegendGrid)とFaqAccordion。AI工場の流れ=循環図・工場状態=KPIタイル・収益化=ロードマップ・状態=色分け凡例。文言/データ/3タブ/footer不変・表示のみ。再発防止でdata/realに不接触。検証=tsc0/build0/pm2再起動後 /guide200・図要素実描画・error0。commit aa27a65 push済。確認観点=iPhone375pxで図が崩れないか/1スライド1メッセージか/図化で欠落ないか。
+  - result: 
+
 - [ ] [[2026-06-22_auto-exec-timeout-fix]]
   - createdAt: 2026-06-22 21:30
   - app: progress
