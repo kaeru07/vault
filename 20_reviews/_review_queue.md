@@ -4,6 +4,14 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-06-29_app-proposals-enrich-portfolio-link]]
+  - createdAt: 2026-06-29 19:13
+  - app: progress
+  - project: アプリ開発の自動実行フロー整理
+  - priority: medium
+  - summary: アプリ概要承認(/app-proposals)の改善。①モックが全アプリ同じ→sourceProjectId別の具体画面テンプレ(将棋囲い/麻雀/ny-ai/news-app/解析)で個別化・未定義は汎用フォールバック ②既存アプリ向け「作成不要(not_needed)」操作追加(decide API許可値+ボタン) ③反映状況の可視化(ステータスバッジ+集計チップ+未判断優先並び+決定済トーンダウン) ④/portfolioのプロジェクトカードをタップで詳細/projects/[id]へ遷移。検証=tsc0/build0/app-proposals200(アプリ別内容/作成不要/集計)・decide not_needed200・portfolio200(詳細リンク18/遷移200)・error0。commits 2980b1c,6e9e245 push済。確認観点=アプリ別モックの妥当性/作成不要の運用/反映状況の分かりやすさ/詳細導線。
+  - result: 
+
 - [ ] [[2026-06-29_goal-approval-filter-nav]]
   - createdAt: 2026-06-29 15:28
   - app: progress
