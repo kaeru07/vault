@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-06-29_autoexec-report-humanize]]
+  - createdAt: 2026-06-29 23:23
+  - app: progress
+  - project: 自動実行レポートの人間語化
+  - priority: medium
+  - summary: ユーザー繰り返し要望「自動実行レポートにblock0等の機械語が出て分からない/人間語で記事・記録のように」に対応。定時実行のsummary機械文(Factory起動/block0/executed=0/no_candidate)をhumanizeAutoSummaryで記録文化、stripMachineTokensで表示用テキストから残留トークン除去。生ログ全文は情報保全で維持(既定非表示)。検証=tsc0/build0/report200・block0/block1=0・人間語記録文・error0。commit e85bd94 push済。確認観点=記録文の十分性/変換漏れ/生ログ維持の是非。
+  - result: 
 - [ ] [[2026-06-29_app-proposals-enrich-portfolio-link]]
   - createdAt: 2026-06-29 19:13
   - app: progress
