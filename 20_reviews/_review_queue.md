@@ -4,6 +4,14 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-06-29_app-dev-flow-phase3-4]]
+  - createdAt: 2026-06-29 14:15
+  - app: progress
+  - project: アプリ開発の自動実行フロー整理
+  - priority: high
+  - summary: アプリ開発フロー7ステップ整理の後半完了。Phase3=/decideに「ゴール達成確認」タブ追加(既存レビューを達成ゴールdone/100%に絞った再フレーム・ゴール別グループ・OK=レビュー済み/NG=修正する=fixPrompt→次回自動実行でstep5,6)。Phase4=/project-complete新設(全ゴール達成プロジェクトの提供内容=達成ゴール一覧+残確認リンク+次候補proposed/recommended・読取専用・全達成0件のため空状態+進捗一覧でstep7)。検証=tsc0/build0/decide?tab=achievement200/project-complete200・error0。commit 910b160,1968f2c push済。これで7ステップ(案調査→概要承認→詳細仕様ゴール承認→作業→達成確認→NG修正→完了サマリー)全対応。確認観点=達成確認の再フレーム設計/達成閾値/現運用差分の解釈/概要承認→詳細仕様ゴール自動起票の接続。
+  - result: 
+
 - [ ] [[2026-06-29_app-dev-flow-phase1-2]]
   - createdAt: 2026-06-29 12:43
   - app: progress
