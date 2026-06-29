@@ -4,6 +4,14 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-06-29_app-dev-flow-phase1-2]]
+  - createdAt: 2026-06-29 12:43
+  - app: progress
+  - project: アプリ開発の自動実行フロー整理
+  - priority: high
+  - summary: アプリ開発の自動実行フロー7ステップを整理し段階実装。Phase1=ゴール承認タブをプロジェクト別グループ化(step3前提・InboxTabs.tsx)。Phase2=アプリ概要承認ページ/app-proposals新設+iPhone簡易HTMLモックプレビュー(MockPhone)、承認/却下/保留→/api/app-proposals/[id]/decideでoperational-decisions記録(既存store経由・data手編集なし)。設計runId 20260629-093418/モック方式=簡易HTML生成・着手順=段階(ユーザー選択)。検証=tsc0/build0/decide200・app-proposals200(5アプリ/モック描画)・API不正400/hold正常→ndjson記録無破損。commit a5d52d4,6f06c0c push済。残=Phase3(達成確認欄+NG接続・既存レビューとの重複回避要確認)/Phase4(プロジェクト完了サマリー)。確認観点=7ステップ設計の妥当性/達成確認欄は既存レビュー再フレームか新欄か/概要承認→詳細仕様ゴール承認の接続。
+  - result: 
+
 - [ ] [[2026-06-28_all-pages-compact]]
   - createdAt: 2026-06-28 22:28
   - app: progress
