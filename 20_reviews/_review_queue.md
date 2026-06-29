@@ -4,6 +4,14 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-06-29_goal-approval-filter-nav]]
+  - createdAt: 2026-06-29 15:28
+  - app: progress
+  - project: アプリ開発の自動実行フロー整理
+  - priority: medium
+  - summary: アプリ開発フロー追補。ユーザー指摘「ゴール承認のプロジェクト別グループが縦長でiPhoneで見られない/フィルター追加/他画面も横並び/新ページはタブに追加/モックへ行けるように」に対応。ゴール承認・達成確認タブに横スクロールのプロジェクトフィルターチップ(すべて+各件数・local state)+グループ折りたたみ既定で縦長解消。新ページ/app-proposals(アプリ承認・モック)と/project-complete(PJ完了)をBottomNav・TopNavに追加。検証=tsc0/build0/decide両タブ200・home両タブ描画・両ページ200・error0。commits df4b909,f35e51b push済。確認観点=チップ+折りたたみの見やすさ/localとURLフィルタ併用/下タブ項目増の使い勝手。
+  - result: 
+
 - [ ] [[2026-06-29_app-dev-flow-phase3-4]]
   - createdAt: 2026-06-29 14:15
   - app: progress
