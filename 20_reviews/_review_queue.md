@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-07-17_codemagic-token-build-automation]]
+  - createdAt: 2026-07-17 00:07
+  - app: hima-app
+  - project: iOSリリース自動化（Codemagic）
+  - priority: high
+  - summary: 保存されたCODEMAGIC_API_TOKENでビルド自動化を検証。トークン形式は正常だがAPIが401拒否→値が無効と切り分け、再発行待ち。副産物で秘密スキャンの自己マッチ誤検出を修正(c398942 push済)。checkはCodemagic API以外全緑。確認観点=401切り分けの妥当性/branch不一致(master vs ios-release-automation)の解消方針/初回ビルドの課金リスク最小化。
+  - result: 
 - [ ] [[2026-06-29_autoexec-report-humanize]]
   - createdAt: 2026-06-29 23:23
   - app: progress
