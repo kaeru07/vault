@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-07-17_codemagic-build-testflight-success]]
+  - createdAt: 2026-07-17 09:13
+  - app: hima-app
+  - project: iOSリリース自動化（Codemagic）
+  - priority: high
+  - summary: 再発行トークンでビルド自動化が開通。CLIブランチをmasterへ統合(24935d1)、API起動の1回目はASC 90189(build#1重複)で失敗→buildNumber2(be7f15e)で再ビルド→全12ステップ成功・App.ipaをTestFlightへアップロード完了。確認観点=buildNumber手動管理の是非/master直運用/手動工程の切り分け。前件401問題はトークン再発行で解消。
+  - result: 
 - [ ] [[2026-07-17_codemagic-token-build-automation]]
   - createdAt: 2026-07-17 00:07
   - app: hima-app
