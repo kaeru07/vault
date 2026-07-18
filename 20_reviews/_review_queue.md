@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-07-18_progress-ios-builds-screen]]
+  - createdAt: 2026-07-18 23:24
+  - app: progress
+  - project: iOSリリース自動化（Codemagic）
+  - priority: high
+  - summary: progressにiOSビルド状況画面を追加。Codemagic直近ビルド/TestFlight状態(ASCキー配置で自動有効)/候補判定3条件を表示し、候補→今日の判断(multi_option)とビルド実行を実装(commit e6bd5ac)。副産物でリモートmainのtsc破損(execution-run-errorsコミット漏れ)を修復。確認観点=候補判定3条件の妥当性/手動ピックアップvs定時自動化/承認→自動ビルド起動まで進めるべきか。
+  - result: 
 - [ ] [[2026-07-18_hima-result-screen-center]]
   - createdAt: 2026-07-18 17:33
   - app: hima-app
