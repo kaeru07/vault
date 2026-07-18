@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-07-18_hima-result-screen-center]]
+  - createdAt: 2026-07-18 17:33
+  - app: hima-app
+  - project: 暇潰し！iOSアプリ
+  - priority: medium
+  - summary: クリア後結果画面の上詰めをauto margin方式で縦中央寄せに修正。headless実描画で中央(211/209px)・低画面の上端切れなしを検証し、build#3(1.0.0(3))をTestFlightへアップロード完了(commit 899f7cf)。確認観点=auto margin方式の妥当性/ランキング展開時の挙動/#rankviewも中央化すべきか。
+  - result: 
 - [ ] [[2026-07-17_codemagic-build-testflight-success]]
   - createdAt: 2026-07-17 09:13
   - app: hima-app

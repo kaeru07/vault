@@ -8,5 +8,8 @@ iOS App Store公開を目指すCapacitorアプリ。リポジトリ: kaeru07/him
 
 ## 直近の更新
 
+- 2026-07-18 runId: 20260718-173245 — 結果画面を縦中央寄せに修正しbuild#3(1.0.0(3))をTestFlightへアップロード完了（関連: [[../20_reviews/2026-07-18_hima-result-screen-center]]）
+- 次の確認事項: iPhone TestFlightでビルド3へ更新し、クリア後画面が中央に表示されるか確認
+
 - 2026-07-17 runId: 20260717-091246 — Codemagic再発行トークンでビルド自動化が開通。build#2（v1.0.0）が全ステップ成功しTestFlightへアップロード完了（関連: [[../20_reviews/2026-07-17_codemagic-build-testflight-success]]）
 - 次の確認事項: App Store ConnectのTestFlightでビルド#2の処理完了（processing→ready）をiPhoneから確認する
