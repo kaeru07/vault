@@ -96,3 +96,5 @@ url: http://localhost:3010
 
 - 2026-07-18 runId: 20260718-232410 — iOSビルド状況画面(/ios-builds)を追加。Codemagic/TestFlight状態確認とビルド候補→今日の判断のピックアップが可能に（関連: [[../20_reviews/2026-07-18_progress-ios-builds-screen]] / [[hima-app]]）
 - 次の確認事項: iPhoneでアプリ開発タブ→iOSビルドを開き、hima-app/mahjongの状態表示と「iOSビルド候補: 麻雀読みトレーニング」の今日の判断を確認
+- 2026-07-19 runId: 20260719-093122 — iOSビルドを下タブへ追加。今日の判断カード(ビルド候補/完了作業の危険確認)を人間語化（関連: [[../20_reviews/2026-07-19_decide-cards-humanize-ios-tab]]）
+- 次の確認事項: iPhone下タブの「iOSビルド」と、今日の判断の麻雀ビルド候補・hima完了作業確認カードの文言を確認

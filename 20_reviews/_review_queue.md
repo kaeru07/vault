@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-07-19_decide-cards-humanize-ios-tab]]
+  - createdAt: 2026-07-19 09:31
+  - app: progress
+  - project: iOSリリース自動化（Codemagic）
+  - priority: medium
+  - summary: iOSビルドを下タブに追加。今日の判断カードを人間語化: iOSビルド候補(JST日時・未配信コミット件名)と、完了済み作業の危険確認カード(「実行しようとしています」誤解表示→「完了した作業の確認」+やったこと/確認ポイント)。既存カード2枚も新形式へ更新(commit 22c4c27)。確認観点=事後確認カード文言/option key変更の互換/前セッション変更同梱の判断。
+  - result: 
 - [ ] [[2026-07-18_progress-ios-builds-screen]]
   - createdAt: 2026-07-18 23:24
   - app: progress
