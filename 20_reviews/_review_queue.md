@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-07-19_hima-safe-area-build4]]
+  - createdAt: 2026-07-19 16:30
+  - app: hima-app
+  - project: 暇潰し！iOSアプリ
+  - priority: high
+  - summary: 全画面の上寄りをiOSセーフエリア未適用と特定し、#app/#toast/#endless/#rankviewのCSSを調整。ランキング画面はインラインmarginがauto中央化を打ち消していたため除去。ノッチ模擬headlessで4画面×2サイズ確認、build#4(1.0.0(4))をTestFlightへアップロード完了(commit 8e0d06c)。確認観点=safe-areaの二重余白/トースト・下部ボタン追随/#rankview副作用。
+  - result: 
 - [ ] [[2026-07-19_card-lint-danger-scope-usage]]
   - createdAt: 2026-07-19 11:21
   - app: progress

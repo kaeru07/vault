@@ -8,6 +8,9 @@ iOS App Store公開を目指すCapacitorアプリ。リポジトリ: kaeru07/him
 
 ## 直近の更新
 
+- 2026-07-19 runId: 20260719-163024 — 全画面のiOSセーフエリア対応で上寄りを解消し、ランキング画面も縦中央化。build#4(1.0.0(4))をTestFlightへアップロード完了（関連: [[../20_reviews/2026-07-19_hima-safe-area-build4]]）
+- 次の確認事項: iPhone TestFlightでビルド4へ更新し、ホーム/プレイ/結果/ランキングの4画面でノッチ回避と中央寄せを確認
+
 - 2026-07-18 runId: 20260718-173245 — 結果画面を縦中央寄せに修正しbuild#3(1.0.0(3))をTestFlightへアップロード完了（関連: [[../20_reviews/2026-07-18_hima-result-screen-center]]）
 - 次の確認事項: iPhone TestFlightでビルド3へ更新し、クリア後画面が中央に表示されるか確認
 
