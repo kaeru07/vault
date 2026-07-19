@@ -1,15 +1,21 @@
 ---
 status: active
-last_touched: 2026-05-13
+last_touched: 2026-07-19
 monetization_impact: medium
 theme: [mahjong, app-strategy, monetization, app-store, google-play, ads]
-phase: development
+phase: testflight
 sub_apps: [mahjong-trainer, mahjong-quiz, mahjong-analyzer, nanikiru-shorts]
 ---
 
 # mahjong（麻雀問題アプリ全体）
 
 > 麻雀系アプリ群（trainer / quiz / analyzer）と Shorts チャネル（[[nanikiru-shorts]]）の**統合戦略ページ**。
+
+---
+
+## 直近の更新
+
+- 2026-07-19: `apps/mahjong` の `ios-codemagic-test` に当たり牌読み練習(`/yomi`)を取り込み、Codemagic build 2（buildId `6a5c8a4ecdcd9fa083e88c5e`）が TestFlight へアップロード完了。次は iPhone TestFlight で `/yomi` 入口 → クイズ → 結果 → レビュー画面を実機確認する。詳細: [[../20_reviews/2026-07-19_mahjong-yomi-testflight-build2]]
 
 ---
 
