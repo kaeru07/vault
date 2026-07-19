@@ -4,12 +4,26 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-07-19_codemagic-auto-signing]]
+  - createdAt: 2026-07-19 23:50
+  - app: mahjong-trainer
+  - project: iOSリリース自動化（Codemagic）
+  - priority: high
+  - summary: Codemagicビルドがプロファイルで停止していた件を、ios_signingの手動参照をASC APIキー連携の自動署名(distribution_type+bundle_identifier)へ置換して解消(commit 994d987)。プロファイルDL/UL不要に。確認観点=ASC統合名一致/APIキー権限App Manager以上/ASCアプリレコード存在の3前提。
+  - result: 
 - [ ] [[2026-07-19_hima-safe-area-build4]]
   - createdAt: 2026-07-19 16:30
   - app: hima-app
   - project: 暇潰し！iOSアプリ
   - priority: high
   - summary: 全画面の上寄りをiOSセーフエリア未適用と特定し、#app/#toast/#endless/#rankviewのCSSを調整。ランキング画面はインラインmarginがauto中央化を打ち消していたため除去。ノッチ模擬headlessで4画面×2サイズ確認、build#4(1.0.0(4))をTestFlightへアップロード完了(commit 8e0d06c)。確認観点=safe-areaの二重余白/トースト・下部ボタン追随/#rankview副作用。
+  - result: 
+- [ ] [[2026-07-19_news-app-article-layout]]
+  - createdAt: 2026-07-19 16:14
+  - app: news-app
+  - project: 朝の自動調査の記事化
+  - priority: medium
+  - summary: /research日次ページを記事レイアウト化。Hermes出力の記事本文がトピック一覧無しで全文ベタ表示にfallbackしていた問題を修正し、結論カード+記事本文+調査メモの1日1ページ表示に(commit e479c72)。jest113件/tsc/build OK。確認観点=表示側先行の順序/調査メモ全表示の是非/生成プロンプト移行タイミング。
   - result: 
 - [ ] [[2026-07-19_card-lint-danger-scope-usage]]
   - createdAt: 2026-07-19 11:21
