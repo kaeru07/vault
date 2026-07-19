@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-07-20_codemagic-signing-testflight]]
+  - createdAt: 2026-07-20 02:10
+  - app: mahjong-trainer
+  - project: iOSリリース自動化（Codemagic）
+  - priority: high
+  - summary: 管理型ios_signingの失敗原因を診断(Bundle ID登録済/証明書はDISTRIBUTIONタイプ/ASCキーに作成権限あり/Codemagic側秘密鍵不一致)し、cli-tools方式(secure変数の専用秘密鍵+fetch-signing-files --create)へ切替。実ビルド全ステップsuccess、IPA生成〜TestFlightアップロード完了(commit a4ac26a)。残=ASCテスト情報の手動入力のみ。確認観点=方式選定の妥当性/秘密鍵保管リスク/新規アプリへのテンプレ横展開。
+  - result: 
 - [ ] [[2026-07-19_codemagic-auto-signing]]
   - createdAt: 2026-07-19 23:50
   - app: mahjong-trainer
