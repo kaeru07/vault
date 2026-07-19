@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-07-19_card-lint-danger-scope-usage]]
+  - createdAt: 2026-07-19 11:21
+  - app: progress
+  - project: iOSリリース自動化（Codemagic）
+  - priority: high
+  - summary: 判断カード機械文を起票時lintで防止(9サイト監査・3件修正)。危険判断待ちのFactory停止を全体→関係プロジェクトのみへ設計変更(未スコープ時のみ全体停止)。iOSビルドページに使い方説明追加(commit d1b8568)。確認観点=スコープ化のfail-safe十分性/lint過剰過少/警告のみ運用の妥当性。
+  - result: 
 - [ ] [[2026-07-19_decide-cards-humanize-ios-tab]]
   - createdAt: 2026-07-19 09:31
   - app: progress
