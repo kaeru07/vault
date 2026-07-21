@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-07-22_mahjong-ui-queue-and-image-intake]]
+  - createdAt: 2026-07-22 00:50
+  - app: ny01/mahjong-trainer + apps/mahjong
+  - project: 麻雀アプリUI刷新 / 問題データ拡充
+  - priority: high
+  - summary: mahjong-trainerのUI刷新を自動実行キュー(pq-mrup6ppe-6kow50)へ登録。過去3回失敗の原因を「実描画を目視していない」と特定し、スクショ+牌はみ出し実座標判定スクリプトを先に用意して完了条件を9ToDoへ分解。apps/mahjongでは未取り込み画像47枚(市販ドリル本「手牌読み」撮影・約23問分)を発見しHEIC変換基盤を整備、問題生成は著作権判断待ちで未着手。確認観点=市販本問題をストア配信アプリへ転記する法的リスク(既に26問配信済)/再発防止ゲートの十分性/mainが10コミット遅れのブランチ整理方針。
+  - result: 
 - [ ] [[2026-07-20_codemagic-signing-testflight]]
   - createdAt: 2026-07-20 02:10
   - app: mahjong-trainer
