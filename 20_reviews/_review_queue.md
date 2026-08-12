@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-08-12_mahjong-analyzer-engine-v2]]
+  - createdAt: 2026-08-12 08:36
+  - app: mahjong-analyzer
+  - project: 麻雀解析エンジンV2再構築
+  - priority: high
+  - summary: 手牌解析の計算正本を@kobalab/majiang-core(MIT)にadapter経由で一元化。辞書順ランキング+同率rank/tieGroup(推奨をindex0でなくrank1全件に)、受け入れ内訳(牌ごと残り枚数)、入力検証、役の4分類(断定廃止)、効率/点数タブと詳細カードの候補ID同期を実装。自作DFSは第2独立実装=検算オラクルに。検証=差分50k(seed固定)不一致0/固定fixtureは2実装一致で固定/fast-check性質/Stryker(重要計算関数の生存0・adapter残存34は等価と判断)/tsc/build(静的export)OK。commit ccc8fa2。確認観点=(1)runtime権威@kobalab+検算オラクル自作DFSの二本立ての妥当性 (2)受け入れ=手牌のみ最大残り枚数のUI表現 (3)Stryker等価除外の根拠十分性 (4)役ヒューリスティック(参考)の扱い。
+  - result: 
 - [ ] [[2026-07-22_mahjong-ui-queue-and-image-intake]]
   - createdAt: 2026-07-22 00:50
   - app: ny01/mahjong-trainer + apps/mahjong
