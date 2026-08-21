@@ -9,7 +9,7 @@
   - app: ny01/progress
   - project: App Store 審査提出フロー整備
   - priority: high
-  - summary: 前セッションのクラッシュで未コミットだった「審査提出準備」タブを再開し、読み取り専用から「人が入力して保存・コピーできる」画面へ作り替え。17項目・保存値>fastlane既定値>空の解決モデル・GET/PUT API・保存ストア(app-review-fields.json)・自動/入力値/未保存バッジ・自動値に戻すを実装。検証=tsc/191テスト/build/API round-trip/Playwright 390px実描画。公開リポジトリのためデモアカウント・電話番号は入力対象外。commit 8009a69 push済。追補で全文プレビューをワンタップコピー対応（cf8b505 / runId 20260821-120702）。確認観点=(1)保存値と fastlane 更新の整合 (2)公開repoでの機密ガードが「入力させない」で足りるか (3)PUT の後勝ち許容 (4)Codex使用上限(8/27まで)下でFactory executorをclaudeへ切替えるか。
+  - summary: 前セッションのクラッシュで未コミットだった「審査提出準備」タブを再開し、読み取り専用から「人が入力して保存・コピーできる」画面へ作り替え。17項目・保存値>fastlane既定値>空の解決モデル・GET/PUT API・保存ストア(app-review-fields.json)・自動/入力値/未保存バッジ・自動値に戻すを実装。検証=tsc/191テスト/build/API round-trip/Playwright 390px実描画。公開リポジトリのためデモアカウント・電話番号は入力対象外。commit 8009a69 push済。追補で全文プレビューをワンタップコピー対応（cf8b505）、入力順をApp Store Connectのバージョンページ順に固定＋文字数カウンタ（2214107）、実画面スクショの撮影・ダウンロード・画像コピー・削除に対応（072595c / runId 20260822-011730）。mahjong-analyzerがストア用(apps/mahjong-analyzer)とAI工場作業用(ny01/mahjong-analyzer)の2箇所に存在する問題を発見。確認観点=(1)保存値と fastlane 更新の整合 (2)公開repoでの機密ガードが「入力させない」で足りるか (3)PUT の後勝ち許容 (4)Codex使用上限(8/27まで)下でFactory executorをclaudeへ切替えるか。
   - result: 
 - [ ] [[2026-08-12_mahjong-analyzer-engine-v2]]
   - createdAt: 2026-08-12 08:36

@@ -5,8 +5,8 @@ runId: 20260821-090235
 targetApp: ny01-progress
 monetizationImpact: medium
 theme: [app-strategy, workflow]
-relatedRunIds: [20260821-051731-575, 20260821-120702]
-commitHashes: [8009a69, cf8b505, f9a24e2]
+relatedRunIds: [20260821-051731-575, 20260821-120702, 20260822-011730]
+commitHashes: [8009a69, cf8b505, 2214107, 072595c, f9a24e2]
 reviewFileCommit:
 ---
 
@@ -28,6 +28,8 @@ App Store 審査の提出作業で、App Store Connect に入力する値（価�
 - 機密ガード: `ny01` が公開リポジトリで `data/real` も追跡対象のため、審査用デモアカウントID/PW・連絡先電話番号は入力対象から除外し、画面に警告を表示
 - progress の運用ドキュメント4点セット（/guide・TERMS・図の要否確認・current-operating-model.md）を更新
 - 追補（runId 20260821-120702 / commit cf8b505）: 手動選択が必要だった「手動コピー用全文」を「全文プレビュー」に改称し、**ワンタップの「全文をコピー」ボタン**を追加
+- 追補（commit 2214107）: ユーザー指摘「これが順番だから」を受け、入力欄の並びを **App Store Connect のバージョンページ順**に固定（プレビューとスクリーンショット → バージョン情報 → App Reviewに関する情報 → App Storeバージョンのリリース → App情報／価格／プライバシー）。項目追加（バージョン=MARKETING_VERSION初期値 / リリース方法 / スクショ準備メモ）と **ASC文字数上限カウンタ**（超過で赤）
+- 追補（runId 20260822-011730 / commit 072595c）: ユーザー指摘「生成じゃなくてスクショ取れないの？撮ったものをダウンロードできるようにしたい」を受け、**実画面のスクリーンショット撮影＋ダウンロード**を実装。playwright-core でアプリを実際に開き iPhone 6.5インチ（1284×2778）/ iPad 13インチ（2064×2752）で撮影。撮影URL未指定時はアプリの `out/` を 127.0.0.1 のランダムポートで一時配信して撮る。一覧は `fastlane/screenshots/` 直下と `ja/` の両方を拾い、PNGヘッダから実サイズを読んで入れられるディスプレイ枠を表示。1枚ずつ ダウンロード / 画像コピー / 削除
 
 ## 変更ファイル
 
@@ -56,6 +58,8 @@ App Store 審査の提出作業で、App Store Connect に入力する値（価�
 - 機密スキャン: 新規ファイルに実値ヒットなし
 - commit `8009a69` → `git push origin main` 成功
 - 追補分: tsc OK / build exit 0 / Playwright headless で「全文をコピー」クリック → ラベルが「コピー済み」に変化 → `navigator.clipboard.readText()` で全文39行を取得できることを確認。commit `cf8b505` push 済
+- ASC並び替え分: tsc OK / 193テスト全pass / build exit 0 / ブラウザでグループ順・ラベル順が ASC と一致することを確認、171文字入力でカウンタが赤（rgb(254,226,226)）になることを確認。commit `2214107` push 済
+- スクショ分: tsc OK / 196テスト全pass / build exit 0 / 撮影API で実際に 1284×2778 の PNG を生成（`baseUrlUsed` はアプリ out/ の一時サーバー）/ ブラウザでサムネイル7枚表示・ダウンロードリンクの実クリックで 237KB の PNG を取得・横スクロールなし・pageerror なし / DELETE API で削除確認 / `../../../../etc/passwd` は 400 で拒否。commit `072595c` push 済
 
 ## 未対応
 
@@ -63,6 +67,9 @@ App Store 審査の提出作業で、App Store Connect に入力する値（価�
 - モノレポに残る他アプリの未コミット変更（mahjong-analyzer / mahjong-trainer / data/real）は本作業の対象外として触っていない
 
 ## 危険ポイント
+
+- **`mahjong-analyzer` が2箇所に存在する**。ストア用の正本は `/root/company/apps/mahjong-analyzer`（独立リポジトリ `kaeru07/mahjong-analyzer`・codemagic.yaml / fastlane / ios あり・審査提出準備タブが参照しているのはこちら）。一方 **AI工場が毎晩作業しているのは `/root/company/apps/ny01/mahjong-analyzer`**（expo あり・codemagic.yaml なし・2026-08-21 02:32 更新）。審査に出す成果物がどちらなのか要確認。取り違えると「直したはずの画面が審査に出ない」事故になる
+- スクショ撮影はサーバー側でヘッドレスブラウザを起動する。撮影URLは画面から任意の http(s) を指定できるため、外部URLを入れれば外部サイトも撮れる（単一ユーザー・Basic認証前提の運用として許容）
 
 - **Codex が使用上限（2026-08-27 まで）で実行不可**。本作業の実装も Codex へ委譲できず Claude が直接実装した。朝 5:17 の Factory 失敗（`Codexが終了コード1で終了しました（出力なし）`）も同一原因の可能性が高く、**このままだと自動実行が空振りし続ける**
 - `ny01` は public リポジトリで `data/real` も git 追跡対象。この画面の保存値は GitHub に公開される。デモアカウント・電話番号を入力対象から外したのはこのため（画面にも警告あり）
