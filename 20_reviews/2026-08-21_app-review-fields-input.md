@@ -5,8 +5,8 @@ runId: 20260821-090235
 targetApp: ny01-progress
 monetizationImpact: medium
 theme: [app-strategy, workflow]
-relatedRunIds: [20260821-051731-575]
-commitHashes: [8009a69, f9a24e2]
+relatedRunIds: [20260821-051731-575, 20260821-120702]
+commitHashes: [8009a69, cf8b505, f9a24e2]
 reviewFileCommit:
 ---
 
@@ -27,6 +27,7 @@ App Store 審査の提出作業で、App Store Connect に入力する値（価�
 - 年齢レーティング注記を修正: 元実装は全アプリに「麻雀のため…」と出す誤りだったため、麻雀アプリ判定を入れて分岐
 - 機密ガード: `ny01` が公開リポジトリで `data/real` も追跡対象のため、審査用デモアカウントID/PW・連絡先電話番号は入力対象から除外し、画面に警告を表示
 - progress の運用ドキュメント4点セット（/guide・TERMS・図の要否確認・current-operating-model.md）を更新
+- 追補（runId 20260821-120702 / commit cf8b505）: 手動選択が必要だった「手動コピー用全文」を「全文プレビュー」に改称し、**ワンタップの「全文をコピー」ボタン**を追加
 
 ## 変更ファイル
 
@@ -54,6 +55,7 @@ App Store 審査の提出作業で、App Store Connect に入力する値（価�
 - Playwright headless（390px）: 入力 → 「未保存」バッジ → 保存 → 「保存しました」 → リロード後も保存値保持 → 自動値へ復帰。横スクロールなし、pageerror なし、スクリーンショット目視OK
 - 機密スキャン: 新規ファイルに実値ヒットなし
 - commit `8009a69` → `git push origin main` 成功
+- 追補分: tsc OK / build exit 0 / Playwright headless で「全文をコピー」クリック → ラベルが「コピー済み」に変化 → `navigator.clipboard.readText()` で全文39行を取得できることを確認。commit `cf8b505` push 済
 
 ## 未対応
 
