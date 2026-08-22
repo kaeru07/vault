@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-08-22_sou-tiles-and-queue]]
+  - createdAt: 2026-08-22 15:40
+  - app: mahjong-analyzer
+  - project: 麻雀手牌解析AI ストア提出準備
+  - priority: high
+  - summary: 索子（ソーズ）牌を手書きSVGから生成スクリプト方式へ変更し、実物寄りの竹デザイン（円筒グラデーション+節2本+先端の締まり）に刷新。実物どおり5索=中央1本・7索=上1本・9索=上段3本を赤にし、赤ドラ5索は全本赤で通常5索と区別。1索(鳥)は対象外。あわせて残タスク4件を振り分け（Codex executor方針・950MB削除可否→今日の判断 / スクショ撮り直し・退役パス棚卸し→自動実行キュー）、退役パスを指していた goal-app-ny01-mahjong-analyzer を正本へ修正。検証=build/cap sync ios/26px実描画目視/回帰。commit b8e7db4 push済。確認観点=(1)実物の赤位置と配置の正しさ (2)赤ドラの表現と色依存判別のリスク (3)26px相当での可読性 (4)生成スクリプトを萬子・筒子へ広げる際の構造。
+  - result: 
 - [ ] [[2026-08-22_mahjong-analyzer-merge]]
   - createdAt: 2026-08-22 13:10
   - app: mahjong-analyzer
