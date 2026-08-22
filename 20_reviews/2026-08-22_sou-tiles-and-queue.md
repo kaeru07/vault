@@ -5,8 +5,8 @@ runId: 20260822-153443
 targetApp: mahjong-analyzer
 monetizationImpact: medium
 theme: [app-strategy, workflow]
-relatedRunIds: [20260822-130457, 20260822-231900]
-commitHashes: [b8e7db4, d815b80]
+relatedRunIds: [20260822-130457, 20260822-231900, 20260823-011653]
+commitHashes: [b8e7db4, d815b80, 765d55e]
 reviewFileCommit:
 ---
 
@@ -88,6 +88,31 @@ reviewFileCommit:
 `/apps` 応答がアプリ登録前の古い内容のまま返っていたこと。`cache: 'no-store'` を指定して解消し、
 今回のビルドが一覧に出ることを確認（tsc / 196テスト全pass / build exit 0）。
 
+### 追補: iPhoneでスクショ保存すると戻れなくなる不具合の対策（runId 20260823-011653 / commit 765d55e）
+
+**症状（ユーザー報告）**: 審査提出準備でスクショの「ダウンロード」を押すと「プレビューで開く / その他」が表示され、そこから progress に戻れなくなる。
+
+**原因**: `<a href="/api/app-review-screenshots/file?...&download=1" download>` の素のリンクで、
+`Content-Disposition: attachment` と組み合わさると **iOS Safari は現在のページ自体を画像リソースへ遷移させる**。
+遷移先は戻る先を持たないため詰む。
+
+**対策（3段構え）**:
+
+1. **共有シート優先** — `navigator.canShare({files})` が使えるなら `navigator.share` でファイルを渡す。
+   iOS では「画像を保存」で写真アプリへ入り、**シートを閉じれば元の画面に戻る**。
+   `AbortError`（シートを閉じただけ）はエラー表示しない
+2. **共有不可の環境** — fetch した blob を `URL.createObjectURL` して動的 `<a download>` をクリック。
+   ページ遷移は発生しない。URL は10秒後に revoke
+3. **逃げ道** — 「別タブで開く」（`target="_blank" rel="noopener"` / inline配信）を併設。
+   長押し保存してもこの画面は残る
+
+あわせて、同じカード内に入力欄の「保存」とスクショの「保存」が並んで紛らわしかったため
+**「画像を保存」へ改名**し、iPhone での挙動を画面に明記した。
+
+検証: tsc / 196テスト全pass / build exit 0 / ヘッドレス(390px)で「画像を保存」クリック後も
+**URLが変わらない**こと・237KBのPNGがダウンロードされること・「別タブで開く」で新規タブが開き
+元ページが残ることを確認（iOSの共有シート経路は実機確認が必要）。
+
 ## 未対応
 
 - 1索（鳥）は今回の生成対象外。他の索子と質感を揃えるなら別途描き直しが必要
@@ -95,6 +120,7 @@ reviewFileCommit:
 - ストア用スクリーンショットの差し替えは自動実行キューに登録済み（未実施）
 - **ASCキー（asc.env / asc_key.p8）が未配置**のため、progress から TestFlight の処理状況を確認できない。アップロード成否は Codemagic の Publishing 成功で判断している
 - TestFlight の配信・審査提出操作はユーザーが行う（自動化しない）
+- iOS 実機での共有シート経路（画像を保存 → 写真アプリ → 戻る）は未確認
 
 ## 危険ポイント
 
