@@ -5,8 +5,8 @@ runId: 20260822-153443
 targetApp: mahjong-analyzer
 monetizationImpact: medium
 theme: [app-strategy, workflow]
-relatedRunIds: [20260822-130457]
-commitHashes: [b8e7db4]
+relatedRunIds: [20260822-130457, 20260822-231900]
+commitHashes: [b8e7db4, d815b80]
 reviewFileCommit:
 ---
 
@@ -74,11 +74,27 @@ reviewFileCommit:
 - 統合済みアプリの回帰: 14枚タップ入力 → 解析 → 第1候補バッジ → リロード後の下書き復元 → 横スクロールなし・JSエラーなし
 - push: `kaeru07/mahjong-analyzer` `b8e7db4`
 
+### 追補: TestFlight ビルド（runId 20260822-231900）
+
+索子刷新後の版（`b8e7db4`）で TestFlight ビルドを実行した。
+
+- Codemagic `ios-testflight` / branch main / buildId `6a89925cf40d413198da4ef6`
+- **全11ステップ success**（Preparing / Fetching / Install / Build Next.js / cap sync / export compliance / version & build number / code signing / Build IPA / Publishing / Cleaning up）
+- artefact: `App.ipa` 1,254,274 bytes、所要約3分
+- ワークフローが要求する `CERTIFICATE_PRIVATE_KEY` は `/root/.secrets/appstore/` の配布証明書秘密鍵を環境変数として注入（値はログ・リポジトリに残していない）
+
+**付随して見つけた不具合と修正**（commit `d815b80`）: progress の `/ios-builds` が mahjong-analyzer を
+「Codemagic appId未解決」と表示していた。原因は **Next.js の fetch 既定キャッシュ**で、Codemagic の
+`/apps` 応答がアプリ登録前の古い内容のまま返っていたこと。`cache: 'no-store'` を指定して解消し、
+今回のビルドが一覧に出ることを確認（tsc / 196テスト全pass / build exit 0）。
+
 ## 未対応
 
 - 1索（鳥）は今回の生成対象外。他の索子と質感を揃えるなら別途描き直しが必要
 - 萬子・筒子は従来デザインのまま。索子だけ質感が上がった状態
 - ストア用スクリーンショットの差し替えは自動実行キューに登録済み（未実施）
+- **ASCキー（asc.env / asc_key.p8）が未配置**のため、progress から TestFlight の処理状況を確認できない。アップロード成否は Codemagic の Publishing 成功で判断している
+- TestFlight の配信・審査提出操作はユーザーが行う（自動化しない）
 
 ## 危険ポイント
 
