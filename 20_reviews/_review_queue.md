@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-08-22_mahjong-analyzer-merge]]
+  - createdAt: 2026-08-22 13:10
+  - app: mahjong-analyzer
+  - project: mahjong-analyzer 二重管理の解消
+  - priority: high
+  - summary: 同名アプリが apps/mahjong-analyzer（独立repo・エンジンV2・fastlane・TestFlight到達）と ny01/mahjong-analyzer（AI工場が作業・未コミット6,503行）の2箇所で並行更新されていた問題を解消。ユーザー判断で独立repoを正本とし、ny01側の改善（下書き復元/入力検証強化/日本語牌名の読み上げ/役の出入り/error・404・manifest/PWAメタ）を移植、Expo試作とテキスト入力UIは不採用。ny01側はREADMEのみ残して退役（削除前状態は b14ee68 に保存）。検証=tsc/62テスト全pass/build/実ブラウザで14枚タップ→解析→下書き復元。commit b7317bd・5983ffd push済。確認観点=(1)捨てた判断(Expo/テキスト入力)の妥当性 (2)役の出入りを参考情報としてUIに出す是非 (3)下書き復元の防御の十分性 (4)AI工場が退役パスを選ぶ事故の防ぎ方。
+  - result: 
 - [ ] [[2026-08-21_app-review-fields-input]]
   - createdAt: 2026-08-21 09:05
   - app: ny01/progress
