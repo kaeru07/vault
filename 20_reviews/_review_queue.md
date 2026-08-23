@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-08-23_ipad-screenshots]]
+  - createdAt: 2026-08-23 10:35
+  - app: mahjong-analyzer
+  - project: 麻雀手牌解析AI ストア提出準備
+  - priority: high
+  - summary: Universal(TARGETED_DEVICE_FAMILY="1,2")のためApp Store Connectが要求するiPad 13インチ(2064x2752)のスクショを追加。撮影をscripts/generate-store-screenshots.mjsに固定化し、6.5(1242x2688)/6.7(1290x2796)/iPad13の3端末×3状態=9枚を実画面から撮影。iPadは表示倍率1.55で余白を圧縮、入力画面は13枚で撮影(14枚だとパレット全グレー)。ヘッダーの絵文字🀄が撮影環境で豆腐になりストア画像に写っていた問題もアプリアイコン差し替えで解消。別件で自動実行の危険シグナル判定が secretary/ を secret と誤判定してタスクをブロックしていた不具合を単語境界判定へ修正＋回帰テスト追加。検証=analyzer build/62テスト、progress tsc/197テスト/build、9枚すべてサイズ判定OK。commit 8929117・3f3b514 push済。確認観点=(1)iPadを倍率で埋める掲載画像の審査リスク (2)Universal維持の是非 (3)安全ゲート緩和で通る危険パターン。
+  - result: 
 - [ ] [[2026-08-22_sou-tiles-and-queue]]
   - createdAt: 2026-08-22 15:40
   - app: mahjong-analyzer
