@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-08-23_app-market-research]]
+  - createdAt: 2026-08-23 18:55
+  - app: ny01/progress
+  - project: ヒットアプリ継続調査
+  - priority: high
+  - summary: 日本のApp Storeで個人・小規模チームが出して実際にヒットしているアプリを、自動実行のたびに3本前後ずつ継続調査してprogressに蓄積する仕組みを実装。アプリ1本=1レコード（App Store数値IDがキー）＋調査ごとのスナップショットappendで、順位・評価件数・DL推移と前回差分を保持（過去データを消さず行も増やさない）。買い切り除外・規模不明は参考候補どまりをコードで強制。画面/app-market-researchはマトリクス一覧＋行展開（なぜ伸びたか/差別化案/負荷/前回差分/調査履歴/情報源URL）、フィルタ5種・並び替え7種。定時起動のたびにensureMarketResearchTaskが調査タスクを1件だけ予約（未完了があれば積まない）。検証=tsc/205テスト全pass(新規8)/build/予約の重複防止を実データ確認/390px実描画。commit 95fb024 push済。確認観点=(1)長期推移を追うデータ構造の穴 (2)executor任せの値の信頼性を上げる制約 (3)判定ルールの妥当性 (4)失敗継続時の滞留対策。
+  - result: 
 - [ ] [[2026-08-23_ipad-screenshots]]
   - createdAt: 2026-08-23 10:35
   - app: mahjong-analyzer
