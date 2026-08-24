@@ -5,8 +5,8 @@ runId: 20260824-234944
 targetApp: company-mgmt
 monetizationImpact: low
 theme: [workflow]
-relatedRunIds: [20260824-213636, 20260825-002642]
-commitHashes: [eb12398, 6007ee0]
+relatedRunIds: [20260824-213636, 20260825-002642, 20260825-005750]
+commitHashes: [eb12398, 6007ee0, 4948908]
 reviewFileCommit:
 ---
 
@@ -79,12 +79,34 @@ pm2 の常駐化・`CLAUDE_BIN`/`CODEX_BIN` のフルパス指定・`core.autocr
 > 補足: 完了待ちの監視ループが**自分自身の `pgrep` パターンに一致**して終了しない状態になっていた。
 > 停止して実測に切り替えた。バックアップ自体は正常に完了していた。
 
+### 追補2: バックアップの GitHub 冗長化（runId 20260825-005750）
+
+**バックアップ不在だった2系統を private リポジトリで解消した。**
+
+| 新設リポジトリ | 中身 | 件数 |
+|---|---|---|
+| `kaeru07/company`（private） | 管理ファイル（CLAUDE.md / pm / secretary / engineering / scripts / archive / docs） | 74件・792KB |
+| `kaeru07/vault-sync-backup`（private） | 稼働Vaultの中身（zip除く） | 2,937件・23MB |
+
+- `/root/company` の `.git` は**中身が壊れた残骸**（`info/` のみ）だったため退避して作り直した
+- `.gitignore` で apps・Vault・`_backups`・logs・inbox・`.env`・鍵・ツール状態を除外。**機密の実値混入なしを確認**
+- 稼働Vault自体には `.git` を作らず、`_backups/vault-sync-backup` へ rsync してから commit する構成にした
+  （`sync-vault は ob sync / obsidian-vault は git` の責務分離を壊さないため）
+- `scripts/backup-to-github.sh` を用意。以後は**1コマンドで両方更新**できる
+
+**重要な発見**: GitHubミラー `kaeru07/vault` は sync-vault との差分が **2,171件**あり、
+**実バックアップとして機能していなかった**（rsync ミラーの取りこぼし）。今回の新リポジトリで初めて
+稼働Vaultの実バックアップが GitHub 上に存在する状態になった。
+
+**容量の内訳が判明**: 稼働Vault 608MB のうち **586MB は `00_inbox` の ChatGPTエクスポート zip 1個**。
+これを除けば23MBしかないため、git バックアップが現実的になった。
+
 ## 未対応
 
 - **実行形態が未決定**（WSL2 / ネイティブ Windows / 両対応）。決まるまで絶対パスの env 化などの改修はしていない
-- **tar の別媒体コピーが未実施**（手順書フェーズ0-2）。今は同一ディスク上にしか無い
-- **`/root/company` の private リポジトリ化が未実施**（フェーズ0-3）
-- `/root/company` に git remote が無い。管理ファイル群は tar 退避しただけで、**GitHub 上のバックアップは無いまま**
+- **586MB の ChatGPTエクスポート zip の別媒体退避**（git に載せられない唯一の大物）。
+  移行後も Vault に置き続けるのかの判断も要る（外せばバックアップ対象が 608MB → 23MB になる）
+- tar 退避も同一ディスク上にしかない（zip と同様、VPS から到達できる外部媒体が無いため人の操作が必要）
 - `netscope` / `hack-lab` は `/root/company` の外（`/root/map`・`/root/hack`）にあり、移すなら別途コピーが必要
 
 ## 危険ポイント
