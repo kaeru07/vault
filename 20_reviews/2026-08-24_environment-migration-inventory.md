@@ -5,8 +5,8 @@ runId: 20260824-234944
 targetApp: company-mgmt
 monetizationImpact: low
 theme: [workflow]
-relatedRunIds: [20260824-213636]
-commitHashes: [eb12398]
+relatedRunIds: [20260824-213636, 20260825-002642]
+commitHashes: [eb12398, 6007ee0]
 reviewFileCommit:
 ---
 
@@ -55,9 +55,35 @@ reviewFileCommit:
 - 秘密情報は**ファイル名と鍵名のみ**記載し、値は一切書いていない
 - push: `kaeru07/ny01` `eb12398`
 
+### 追補: 実行手順書へ拡張（runId 20260825-002642 / commit 6007ee0）
+
+棚卸しに続き、**フェーズ0〜5のコピペで実行できる手順書**へ拡張した。各手順に `【VPS】`『今の環境』/
+`【Win】`『移行先』/ `【手】`『人の操作』の実行主体を明示している。
+
+| フェーズ | 内容 |
+|---|---|
+| 0 退避 | tar 退避（実施済み）→ **別媒体へコピー** → `/root/company` の private リポジトリ化 |
+| 1 土台 | 形態を決める → Node22/git/pm2 → **claude / codex を入れてログイン** → GitHub 認証 |
+| 2 移送 | リポジトリ clone → tar 展開 → **秘密情報を手で置く**（`.env.local` の `PROGRESS_DATA_PATH` を直す） |
+| 3 起動確認 | `npm ci && npm run build` → pm2 起動 → `factory-status` 応答確認 → 画面確認（**自動実行はまだ止めたまま**） |
+| 4 切り替え | **VPS のタイマー停止** → 最終データ push → 新環境で pull → 定時実行を作る → pm2 起動時復帰 → 1回見届ける |
+| 5 後片付け | VPS は1〜2週間温存（切り戻し用） |
+
+ネイティブ Windows を選ぶ場合の差分表（パスの env 化・bash→PowerShell 移植・タスクスケジューラ4本・
+pm2 の常駐化・`CLAUDE_BIN`/`CODEX_BIN` のフルパス指定・`core.autocrlf=false`）と、
+切り替え前チェックリスト8項目も追加した。
+
+**バックアップの健全性を確認**: `company-mgmt-20260824.tar.gz`（174KB / 78ファイル）、
+`sync-vault-20260824.tar.gz`（623MB / **2,969ファイル**）とも `tar tzf` で読み出し可能。
+
+> 補足: 完了待ちの監視ループが**自分自身の `pgrep` パターンに一致**して終了しない状態になっていた。
+> 停止して実測に切り替えた。バックアップ自体は正常に完了していた。
+
 ## 未対応
 
 - **実行形態が未決定**（WSL2 / ネイティブ Windows / 両対応）。決まるまで絶対パスの env 化などの改修はしていない
+- **tar の別媒体コピーが未実施**（手順書フェーズ0-2）。今は同一ディスク上にしか無い
+- **`/root/company` の private リポジトリ化が未実施**（フェーズ0-3）
 - `/root/company` に git remote が無い。管理ファイル群は tar 退避しただけで、**GitHub 上のバックアップは無いまま**
 - `netscope` / `hack-lab` は `/root/company` の外（`/root/map`・`/root/hack`）にあり、移すなら別途コピーが必要
 
