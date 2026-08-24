@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-08-24_environment-migration-inventory]]
+  - createdAt: 2026-08-24 23:55
+  - app: company-mgmt
+  - project: 環境移行（VPS→Windows）
+  - priority: high
+  - summary: 稼働環境（Ubuntu VPS）をWindowsへ移すための棚卸し。常駐6プロセス（自動実行必須はprogress:3010のみ）、定時実行3種（トリガーはAPIを叩くだけでロジック移植不要）、秘密情報の置き場所（値は非記載）、データ204MB+Vault 608/638MB、リポジトリ19本、ランタイム（Node22/Claude Code 2.1.238/Codex 0.149.1/Playwright 1.3GB）、絶対パス直書き34箇所を実測。git管理外だったobsidian-sync-vault(608MB)とcompany管理ファイルをtar退避。実行形態(WSL2/ネイティブ/両対応)は未決でVPSは最終的に完全移行方針。commit eb12398 push済。確認観点=(1)持ち物の抜け (2)WSL2かネイティブかの選択と電源が落ちる機での24時間運用の是非 (3)移行期間中のデータ競合を避ける切替手順 (4)同一ディスク上のtar以外の冗長化案。
+  - result: 
 - [ ] [[2026-08-24_no-op-gate]]
   - createdAt: 2026-08-24 21:40
   - app: ny01/progress
