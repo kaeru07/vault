@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-08-24_no-op-gate]]
+  - createdAt: 2026-08-24 21:40
+  - app: ny01/progress
+  - project: AI工場の品質改善
+  - priority: medium
+  - summary: 実行1,408件のうちファイル変更を伴ったのが51%しかなく、「（出力なし）」の実質no-opが作業予約上completedになっていた問題（実例 runId 20260822-160657-718）に対し、機械ゲートを追加。classifyNoOpRun()で「変更0かつstdout空かつ要約が空/出力なし系」のみ空振り判定（failedは対象外）し、Factory本体とPrompt Queueの両方でcompleted→partialへ格下げ、作業予約はneeds_retryで再試行に回す。既存lintゲートと併存。同時にヒットアプリ調査をアプリ開発タブへ追加し、市場分析のスマホ縦長を54,471px(64.5画面分)→2,916px(3.5画面分)へ短縮（details/summaryのみ・JS不使用）。検証=tsc/209テスト全pass(新規4)/build。commit bc81977・c67db08 push済。確認観点=(1)空振り判定条件の厳しさ (2)ファイル変更しないのが正常な調査タスクの扱い (3)needs_retryの試行回数上限の要否 (4)過去Runを遡及修正すべきか。
+  - result: 
 - [ ] [[2026-08-23_app-market-research]]
   - createdAt: 2026-08-23 18:55
   - app: ny01/progress
