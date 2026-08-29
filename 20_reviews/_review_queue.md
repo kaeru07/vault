@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-08-29_git-inventory]]
+  - createdAt: 2026-08-29 14:30
+  - app: company-mgmt
+  - project: 環境移行（VPS→Windows）
+  - priority: high
+  - summary: git管理の全体棚卸し。管理外だったアプリ5本（うち実体4本）と未コミット57件を発見し全解消。kusoge-close-button/neon-slash/nanikiru-shorts/anglerlog-protoをprivate新規登録、apps/generatedはAI工場の中間生成物として意図的に管理外（READMEで来歴記録）。ny01には自動実行が実装したまま放置の「撮影シナリオ」機能(+146行)が含まれtsc/209テスト/buildで検証後に取り込み。noteはリモートPhase2実装とローカルnextセキュリティ更新の競合を両立させてrebase解決。shogi-kakoi-trainerはAndroid(Capacitor)53ファイル追加（署名鍵なし確認）。全アプリで機密スキャン実施。最終状態=apps配下21本すべてgit管理下・未コミット0件。commit fa66443・69db1ee push済。確認観点=(1)管理する/しないの線引きと稼働と管理のズレ検出 (2)依存競合の手動統合のリスク (3)anglerlog二重管理の放置リスク (4).gitignore置き忘れでnode_modules 564MB巻き込みの予防策。
+  - result: 
 - [ ] [[2026-08-24_environment-migration-inventory]]
   - createdAt: 2026-08-24 23:55
   - app: company-mgmt
