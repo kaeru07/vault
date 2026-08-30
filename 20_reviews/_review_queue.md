@@ -4,6 +4,13 @@
 > iPhone Obsidianでは、このチェック状態をレビュー状態の正本として扱う。
 
 ## 未レビュー
+- [ ] [[2026-08-30_root-git-inventory]]
+  - createdAt: 2026-08-30 17:50
+  - app: company-mgmt
+  - project: 環境移行（VPS→Windows）
+  - priority: high
+  - summary: 棚卸しを/root直下まで拡大。11ディレクトリ中9つが管理外、管理下2つに未コミット48件を発見。実体のある4本をprivate登録（company-helper / hack-lab＝pm2でport3002常駐中なのに管理外 / docker-envs / mahjong-quiz-docker＝remoteが無く唯一の実体）。埋め込みリポジトリ2件（hack/memo・docker/mahjong-quiz）が「pushしても中身が付いてこない」状態だったため整理。正本と異なる未コミット実装3件（mahjong BoardView+57 / map 分析API+2046行 / dashboard Gantt+580行）はmainに入れずsalvage/root-clone-20260830ブランチで保全。my-dashboard内に誤配置のny01 clone 2.9GBを発見しgitignore除外。空ディレクトリ3つとclone専用3つは登録せず理由を台帳に記録。確認観点=(1)pm2稼働とgit管理のズレ検出 (2)salvageブランチの扱いと取込基準 (3)埋め込みリポジトリはsubmoduleかignoreか (4)重複cloneの整理方針。
+  - result: 
 - [ ] [[2026-08-29_git-inventory]]
   - createdAt: 2026-08-29 14:30
   - app: company-mgmt
