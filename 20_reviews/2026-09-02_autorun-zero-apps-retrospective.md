@@ -5,10 +5,21 @@ runId: 20260902-002949
 targetApp: progress
 monetizationImpact: high
 theme: [workflow, app-strategy, monetization]
-relatedRunIds: [20260823-110457, 20260824-213636]
-commitHashes: [bce345c]
+relatedRunIds: [20260823-110457, 20260824-213636, 20260904-220650]
+commitHashes: [bce345c, c850d0a]
 reviewFileCommit:
 ---
+
+> **【訂正 2026-09-04】この記録の「ストア公開 0本」は誤りです。**
+> **暇つぶし アプリ**（`jp.kaeru07.himatsubushi` / App ID **6790418497**）は
+> **2026-08-12 に App Store 公開済み**でした（https://apps.apple.com/jp/app/id6790418497 ）。
+> 正しくは **「App Store 公開1本。ただし自動実行が起点のものは0本」**。
+> 誤りの原因は、公開が App Store Connect 上で完結しローカル記録に反映されないため、
+> 手元データだけで「公開されていない」と判断したこと。ストア側を照会していなかった。
+> 他3本（analyzer / mahjong / trainer）は照会時点で未公開。
+> 訂正の記録: progress runId `20260904-220650`。
+>
+> **この訂正は結論を変えません**（暇つぶしアプリも人間指示で作られたもので、自動実行起点ではない）。
 
 ## 作業目的
 
@@ -25,7 +36,7 @@ reviewFileCommit:
 | アプリ/ストア関連のRun | 104件 |
 | アプリ系ゴール | 18件（done 11 / active 4 / proposed 3） |
 | **自動実行が起点で完成したアプリ** | **0本** |
-| ストア公開 / 収益 | **0本 / 0円** |
+| ストア公開 / 収益 | **1本**（暇つぶしアプリ・2026-08-12公開）/ 0円 ※当初「0本」と誤記 |
 
 TestFlight に到達した4本は、**すべて人間の指示が起点**だった。
 
